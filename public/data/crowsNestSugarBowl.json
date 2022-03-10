@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.3506261, 39.2927697]
+      },
+      "type": "Feature",
+      "properties": {
+        "title": "pAAger",
+        "description": "Crows Peak",
+        "marker-symbol": "rail-metro",
+        "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=67",
+        "lines": ["Orange"],
+        "address": "3000 Pennsy Drive, Hyattsville, MD 20785"
+      }
+    }
+  ]
+}
