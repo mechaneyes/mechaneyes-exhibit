@@ -36,8 +36,12 @@ const MapOne = () => {
   //   const [lat, setLat] = useState(39.1982388);
 
   // Granite Chief
-  const [lng, setLng] = useState(-120.2868638);
-  const [lat, setLat] = useState(39.1982388);
+//   const [lng, setLng] = useState(-120.2868638);
+//   const [lat, setLat] = useState(39.1982388);
+
+  // Mt Lincoln
+  const [lng, setLng] = useState(-120.330005);
+  const [lat, setLat] = useState(39.2875296);
 
   const [zoom, setZoom] = useState(13);
 
@@ -52,7 +56,8 @@ const MapOne = () => {
         },
         properties: {
           title: "Granite Chief",
-          description: "imagery composed somewhat randomly, bordering on autonomy",
+          description:
+            "imagery composed somewhat randomly, bordering on autonomy",
         },
       },
       {
@@ -87,6 +92,92 @@ const MapOne = () => {
         // Mapbox Terrain v2
         // https://docs.mapbox.com/data/tilesets/reference/mapbox-terrain-v2/
         url: "mapbox://mapbox.mapbox-terrain-v2",
+      });
+
+      // Create and style clusters
+      // https://docs.mapbox.com/mapbox-gl-js/example/cluster/
+      // Add a new source from our GeoJSON data and
+      // set the 'cluster' option to true. GL-JS will
+      // add the point_count property to your source data.
+      map.addSource("mountains", {
+        type: "geojson",
+        // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
+        // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
+        data: "/data/mountains.geojson",
+        cluster: true,
+        clusterMaxZoom: 17, // Max zoom to cluster points on
+        clusterRadius: 250, // Radius of each cluster when clustering points (defaults to 50)
+      });
+
+      map.addLayer({
+        id: "clusters",
+        type: "circle",
+        source: "mountains",
+        filter: ["has", "point_count"],
+        paint: {
+          // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+          // with three steps to implement three types of circles:
+          //   * Blue, 20px circles when point count is less than 100
+          //   * Yellow, 30px circles when point count is between 100 and 750
+          //   * Pink, 40px circles when point count is greater than or equal to 750
+          "circle-color": [
+            "step",
+            ["get", "point_count"],
+            "#51bbd6",
+            100,
+            "#f1f075",
+            750,
+            "#f28cb1",
+          ],
+          "circle-radius": [
+            "step",
+            ["get", "point_count"],
+            100,
+            2,
+            150,
+            20,
+            40,
+          ],
+        },
+      });
+
+      map.addLayer({
+        id: "cluster-count",
+        type: "symbol",
+        source: "mountains",
+        filter: ["has", "point_count"],
+        layout: {
+          "text-field": "Design",
+          "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+          "text-size": 24,
+        },
+      });
+
+      map.addLayer({
+        id: "unclustered-point",
+        type: "circle",
+        source: "mountains",
+        filter: ["!", ["has", "point_count"]],
+        paint: {
+          "circle-color": "#11b4da",
+          "circle-radius": 80,
+          "circle-stroke-width": 10,
+          "circle-stroke-color": "#fff",
+        },
+      });
+
+      map.addLayer({
+        "id": "clusters-label",
+        "type": "symbol",
+        "source": "mountains",
+        "layout": {
+          "text-field": "{title}",
+          "text-font": [
+            "DIN Offc Pro Medium",
+            "Arial Unicode MS Bold"
+          ],
+          "text-size": 24,
+        }
       });
 
       map.addLayer({
