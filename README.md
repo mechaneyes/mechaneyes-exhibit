@@ -2,6 +2,8 @@
 # Mechaneyes: Portfolio 22SS
 
   
+<br />
+<br />
 
 ### [mechaneyes.com](http://mechaneyes.com/)
 
@@ -94,8 +96,6 @@ The first time I saw this vibration effect was at [Max Fish](https://maxfishbar.
   
 
 ### GitHub repo: [mechaneyes-exhibit](https://github.com/rayweitzenberg/mechaneyes-exhibit)
-
-  
 
   
 
