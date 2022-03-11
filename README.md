@@ -1,10 +1,6 @@
 
 # Mechaneyes: Portfolio 22SS
 
-  
-<br />
-<br />
-
 ### [mechaneyes.com](http://mechaneyes.com/)
 
 <br />
