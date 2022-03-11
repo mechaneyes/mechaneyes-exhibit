@@ -127,12 +127,8 @@ const MapOne = () => {
           clusterMaxZoom: 17, // Max zoom to cluster points on
           clusterRadius: 250, // Radius of each cluster when clustering points (defaults to 50)
           clusterProperties: {
-            // keep separate counts for each magnitude category in a cluster
-            // resort: ["get", interest, 1, 0],
-            // resort2: ["+", ["case", resort2, 1, 0]],
-            // resort3: ["+", ["case", resort3, 1, 0]],
-            // resort4: ["+", ["case", resort4, 1, 0]],
-            // resort5: ["+", ["case", resort5, 1, 0]],
+            sugarBowl: ["any", ["==", ["get", "interest"], "design"]],
+            palisades: ["any", ["==", ["get", "interest"], "photo"]],
           },
         })
         .addLayer({
@@ -146,14 +142,22 @@ const MapOne = () => {
             //   * Blue, 20px circles when point count is less than 100
             //   * Yellow, 30px circles when point count is between 100 and 750
             //   * Pink, 40px circles when point count is greater than or equal to 750
+            // "circle-color": [
+            //   "step",
+            //   ["get", "point_count"],
+            //   "#51bbd6",
+            //   100,
+            //   "#f1f075",
+            //   750,
+            //   "#f28cb1",
+            // ],
             "circle-color": [
-              "step",
-              ["get", "point_count"],
+              "case",
+              ["get", "sugarBowl"],
               "#51bbd6",
-              100,
-              "#f1f075",
-              750,
-              "#f28cb1",
+              ["get", "palisades"],
+              "#ff0000",
+              "#51bbd6",
             ],
             "circle-radius": [
               "step",

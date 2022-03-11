@@ -3,6 +3,10 @@
 
 ### [mechaneyes.com](http://mechaneyes.com/)
 
+### GitHub repo: [mechaneyes-exhibit](https://github.com/rayweitzenberg/mechaneyes-exhibit)
+
+
+
 <br />
 <br />
 
@@ -86,12 +90,6 @@ The first time I saw this vibration effect was at [Max Fish](https://maxfishbar.
 <br />
 
 ## Notes
-
-  
-
-  
-
-### GitHub repo: [mechaneyes-exhibit](https://github.com/rayweitzenberg/mechaneyes-exhibit)
 
   
 
