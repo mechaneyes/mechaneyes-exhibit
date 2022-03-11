@@ -45,35 +45,6 @@ const MapOne = () => {
 
   const [zoom, setZoom] = useState(13);
 
-  const geojson = {
-    type: "FeatureCollection",
-    features: [
-      {
-        type: "Feature",
-        geometry: {
-          type: "Point",
-          coordinates: [-120.2868638, 39.1982388],
-        },
-        properties: {
-          title: "Granite Chief",
-          description:
-            "imagery composed somewhat randomly, bordering on autonomy",
-        },
-      },
-      {
-        type: "Feature",
-        geometry: {
-          type: "Point",
-          coordinates: [-122.414, 37.776],
-        },
-        properties: {
-          title: "Mapbox",
-          description: "San Francisco, California",
-        },
-      },
-    ],
-  };
-
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainer.current,
@@ -81,6 +52,16 @@ const MapOne = () => {
       center: [lng, lat],
       zoom: zoom,
     });
+
+    // filters for classifying earthquakes into five categories based on magnitude
+    const resort1 = ["get", "resort"];
+    // const resort2 = ["all", [">=", ["get", "resort"], 2], ["<", ["get", "resort"], 3]];
+    // const resort3 = ["all", [">=", ["get", "resort"], 3], ["<", ["get", "resort"], 4]];
+    // const resort4 = ["all", [">=", ["get", "resort"], 4], ["<", ["get", "resort"], 5]];
+    // const resort5 = [">=", ["get", "resort"], 5];
+
+    // colors to use for the categories
+    const colors = ["#fed976", "#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c"];
 
     map.on("load", () => {
       map.addSource("mapbox-terrain", {
@@ -140,12 +121,19 @@ const MapOne = () => {
       map
         .addSource("mountains", {
           type: "geojson",
-          // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
-          // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
+          // Point to GeoJSON data. Ski resorts and their mountains
           data: "/data/mountains.geojson",
           cluster: true,
           clusterMaxZoom: 17, // Max zoom to cluster points on
           clusterRadius: 250, // Radius of each cluster when clustering points (defaults to 50)
+          clusterProperties: {
+            // keep separate counts for each magnitude category in a cluster
+            // resort: ["get", interest, 1, 0],
+            // resort2: ["+", ["case", resort2, 1, 0]],
+            // resort3: ["+", ["case", resort3, 1, 0]],
+            // resort4: ["+", ["case", resort4, 1, 0]],
+            // resort5: ["+", ["case", resort5, 1, 0]],
+          },
         })
         .addLayer({
           id: "clusters",
@@ -211,13 +199,6 @@ const MapOne = () => {
             "text-size": 24,
           },
         });
-
-      // Add custom markers in Mapbox GL JS
-      // https://docs.mapbox.com/help/tutorials/custom-markers-gl-js/
-      //
-      const graniteChief = new mapboxgl.Marker()
-        .setLngLat([-120.2868638, 39.1982388])
-        .addTo(map);
     });
   });
 

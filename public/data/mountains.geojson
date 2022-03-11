@@ -8,6 +8,7 @@
       },
       "type": "Feature",
       "properties": {
+        "interest": "design",
         "title": "Sound Noir",
         "description": "Mount Judah",
         "marker-symbol": "rail-metro",
@@ -23,6 +24,7 @@
       },
       "type": "Feature",
       "properties": {
+        "interest": "design",
         "title": "Stereoh",
         "description": "Mt Lincoln",
         "marker-symbol": "rail-metro",
