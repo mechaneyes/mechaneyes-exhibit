@@ -4,33 +4,27 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.3208632, 39.2967328]
+        "coordinates": [-120.315747, 39.298561]
       },
       "type": "Feature",
       "properties": {
         "type": "design",
         "title": "Sound Noir",
         "description": "Mount Judah",
-        "marker-symbol": "rail-metro",
-        "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=107",
-        "lines": ["Green"],
-        "address": "1411 Southern Avenue, Temple Hills, MD 20748"
+        "url": "https://www.peakbagger.com/peak.aspx?pid=23416"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.330005, 39.2875296]
+        "coordinates": [-120.328394, 39.287903]
       },
       "type": "Feature",
       "properties": {
         "interest": "design",
         "title": "Stereoh",
         "description": "Mt Lincoln",
-        "marker-symbol": "rail-metro",
-        "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=83",
-        "lines": ["Green"],
-        "address": "399 M Street SW, Washington, DC 20024"
+        "url": "https://www.peakbagger.com/peak.aspx?pid=23389"
       }
     },
     {
@@ -43,58 +37,59 @@
         "interest": "design",
         "title": "pAAger",
         "description": "Mount Disney",
-        "marker-symbol": "rail-metro",
-        "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=81",
-        "lines": ["Green", "Yellow"],
-        "address": "701 Pennsylvania Avenue NW, Washington, DC 20004"
+        "url": "http"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.3043733, 39.1982374]
+        "coordinates": [-120.350158, 39.297067]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "design",
+        "title": "pAAger",
+        "description": "Crows Nest",
+        "url": "https://www.peakbagger.com/peak.aspx?pid=2557"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.287064, 39.198239]
       },
       "type": "Feature",
       "properties": {
         "type": "photo",
         "title": "Sound Noir",
         "description": "Granite Chief",
-        "marker-symbol": "rail-metro",
-        "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=107",
-        "lines": ["Green"],
-        "address": "1411 Southern Avenue, Temple Hills, MD 20748"
+        "url": "https://www.peakbagger.com/peak.aspx?pid=2562"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.2871501, 39.1807378]
+        "coordinates": [-120.269674, 39.180667]
       },
       "type": "Feature",
       "properties": {
         "interest": "photo",
         "title": "Stereoh",
         "description": "Squaw Peak",
-        "marker-symbol": "rail-metro",
-        "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=83",
-        "lines": ["Green"],
-        "address": "399 M Street SW, Washington, DC 20024"
+        "url": "https://www.peakbagger.com/peak.aspx?pid=2563"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.2399258, 39.1579605]
+        "coordinates": [-120.223217, 39.157976]
       },
       "type": "Feature",
       "properties": {
         "interest": "photo",
         "title": "pAAger",
         "description": "Scott Peak",
-        "marker-symbol": "rail-metro",
-        "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=81",
-        "lines": ["Green", "Yellow"],
-        "address": "701 Pennsylvania Avenue NW, Washington, DC 20004"
+        "url": "https://www.peakbagger.com/peak.aspx?pid=24126"
       }
     }
   ]

@@ -137,20 +137,6 @@ const MapOne = () => {
           source: "mountains",
           filter: ["has", "point_count"],
           paint: {
-            // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
-            // with three steps to implement three types of circles:
-            //   * Blue, 20px circles when point count is less than 100
-            //   * Yellow, 30px circles when point count is between 100 and 750
-            //   * Pink, 40px circles when point count is greater than or equal to 750
-            // "circle-color": [
-            //   "step",
-            //   ["get", "point_count"],
-            //   "#51bbd6",
-            //   100,
-            //   "#f1f075",
-            //   750,
-            //   "#f28cb1",
-            // ],
             "circle-color": [
               "case",
               ["get", "sugarBowl"],
@@ -175,10 +161,41 @@ const MapOne = () => {
           type: "symbol",
           source: "mountains",
           filter: ["has", "point_count"],
+          // Formatting headlines and sub headlines
+          // https://blog.mapbox.com/create-a-clear-context-with-rich-text-labels-3f54a36c716b
           layout: {
-            "text-field": "Sugar Bowl \n\n Design",
+            "text-field": [
+              "case",
+              ["get", "sugarBowl"],
+              [
+                "format",
+                "Design",
+                {},
+                "\n",
+                {},
+                "Sugar Bowl",
+                {
+                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
+                  "font-scale": 0.8,
+                },
+              ],
+              ["get", "palisades"],
+              [
+                "format",
+                "Photograhy",
+                {},
+                "\n",
+                {},
+                "Palisades",
+                {
+                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
+                  "font-scale": 0.8,
+                },
+              ],
+              "#51bbd6",
+            ],
             "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-            "text-size": 24,
+            "text-size": 28,
           },
         })
         .addLayer({
@@ -194,7 +211,7 @@ const MapOne = () => {
           },
         })
         .addLayer({
-          id: "clusters-label",
+          id: "unclustered-label",
           type: "symbol",
           source: "mountains",
           layout: {
