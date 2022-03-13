@@ -23,14 +23,6 @@ const MapOne = () => {
   //   const [lng, setLng] = useState(-112.3183959);
   //   const [lat, setLat] = useState(37.573297);
 
-  // Needles South Dakota
-  //   const [lng, setLng] = useState(-103.5991371);
-  //   const [lat, setLat] = useState(43.7856554);
-
-  // Liberty Bell Mountain, Washington
-  //   const [lng, setLng] = useState(-120.6755025);
-  //   const [lat, setLat] = useState(48.515577);
-
   // Homewood
   //   const [lng, setLng] = useState(-120.2868519);
   //   const [lat, setLat] = useState(39.1982388);
@@ -52,16 +44,6 @@ const MapOne = () => {
       center: [lng, lat],
       zoom: zoom,
     });
-
-    // filters for classifying earthquakes into five categories based on magnitude
-    const resort1 = ["get", "resort"];
-    // const resort2 = ["all", [">=", ["get", "resort"], 2], ["<", ["get", "resort"], 3]];
-    // const resort3 = ["all", [">=", ["get", "resort"], 3], ["<", ["get", "resort"], 4]];
-    // const resort4 = ["all", [">=", ["get", "resort"], 4], ["<", ["get", "resort"], 5]];
-    // const resort5 = [">=", ["get", "resort"], 5];
-
-    // colors to use for the categories
-    const colors = ["#fed976", "#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c"];
 
     map.on("load", () => {
       map.addSource("mapbox-terrain", {
@@ -140,9 +122,9 @@ const MapOne = () => {
             "circle-color": [
               "case",
               ["get", "sugarBowl"],
-              "#51bbd6",
+              "#1FF2E3",
               ["get", "palisades"],
-              "#ff0000",
+              "#F2661F",
               "#51bbd6",
             ],
             "circle-radius": [
@@ -170,9 +152,7 @@ const MapOne = () => {
               [
                 "format",
                 "Design",
-                {},
                 "\n",
-                {},
                 "Sugar Bowl",
                 {
                   "text-font": ["literal", ["DIN Offc Pro Italic"]],
@@ -183,9 +163,7 @@ const MapOne = () => {
               [
                 "format",
                 "Photograhy",
-                {},
                 "\n",
-                {},
                 "Palisades",
                 {
                   "text-font": ["literal", ["DIN Offc Pro Italic"]],
@@ -204,9 +182,17 @@ const MapOne = () => {
           source: "mountains",
           filter: ["!", ["has", "point_count"]],
           paint: {
-            "circle-color": "#11b4da",
+            "circle-color": [
+                "match",
+                ["get", "interest"],
+                "design",
+                "#1FF2E3",
+                "photo",
+                "#FF7C3B",
+                "#0000ff",
+              ],
             "circle-radius": 80,
-            "circle-stroke-width": 10,
+            "circle-stroke-width": 3,
             "circle-stroke-color": "#fff",
           },
         })
@@ -215,7 +201,16 @@ const MapOne = () => {
           type: "symbol",
           source: "mountains",
           layout: {
-            "text-field": "{title} \n {description}",
+            "text-field": [
+              "format",
+              ["get", "title"],
+              "\n",
+              ["get", "description"],
+              {
+                "text-font": ["literal", ["DIN Offc Pro Italic"]],
+                "font-scale": 0.8,
+              },
+            ],
             "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
             "text-size": 24,
           },

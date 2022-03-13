@@ -8,7 +8,7 @@
       },
       "type": "Feature",
       "properties": {
-        "type": "design",
+        "interest": "design",
         "title": "Sound Noir",
         "description": "Mount Judah",
         "url": "https://www.peakbagger.com/peak.aspx?pid=23416"
@@ -60,7 +60,7 @@
       },
       "type": "Feature",
       "properties": {
-        "type": "photo",
+        "interest": "photo",
         "title": "Sound Noir",
         "description": "Granite Chief",
         "url": "https://www.peakbagger.com/peak.aspx?pid=2562"
@@ -90,6 +90,32 @@
         "title": "pAAger",
         "description": "Scott Peak",
         "url": "https://www.peakbagger.com/peak.aspx?pid=24126"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.277183, 39.189108]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "photo",
+        "title": "photo",
+        "description": "Emigrant Peak",
+        "url": "https://www.peakbagger.com/peak.aspx?pid=30655"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.245917, 39.147966]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "photo",
+        "title": "photo",
+        "description": "Ward Peak",
+        "url": "https://www.peakbagger.com/peak.aspx?pid=24125"
       }
     }
   ]
