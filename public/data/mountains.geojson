@@ -149,7 +149,7 @@
       "type": "Feature",
       "properties": {
         "interest": "generative",
-        "resort": "resort",
+        "resort": "Homewood",
         "title": "Generative",
         "description": "Ellis Peak",
         "elevation": "8744 ft / 2665 m",
@@ -164,7 +164,7 @@
       "type": "Feature",
       "properties": {
         "interest": "generative",
-        "resort": "resort",
+        "resort": "Homewood",
         "title": "Generative",
         "description": "Ellis Lifthouse",
         "elevation": "8744 ft / 2665 m",

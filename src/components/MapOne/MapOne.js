@@ -22,7 +22,7 @@ const MapOne = () => {
   // Bryce
   //   const [lng, setLng] = useState(-112.3183959);
   //   const [lat, setLat] = useState(37.573297);
-  
+
   // Emerald Bay
   const [lng, setLng] = useState(-120.10073846533709);
   const [lat, setLat] = useState(38.95397959307656);
@@ -148,17 +148,6 @@ const MapOne = () => {
           layout: {
             "text-field": [
               "case",
-              [">", ["get", "point_count"], 9],
-              [
-                "format",
-                "wut i done did",
-                "\n",
-                "stuff",
-                {
-                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
-                  "font-scale": 0.8,
-                },
-              ],
               ["get", "sugarBowl"],
               [
                 "format",
@@ -203,6 +192,17 @@ const MapOne = () => {
                   "font-scale": 0.8,
                 },
               ],
+              [">", ["get", "point_count"], 9],
+              [
+                "format",
+                "wut i done did",
+                "\n",
+                "stuff",
+                {
+                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
+                  "font-scale": 0.8,
+                },
+              ],
               "#51bbd6",
             ],
             "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
@@ -222,6 +222,8 @@ const MapOne = () => {
               "#1FF2E3",
               "photo",
               "#13F265",
+              "generative",
+              "#F21D13",
               "#51bbd6",
             ],
             "circle-radius": 100,
