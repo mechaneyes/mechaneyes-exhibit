@@ -3,7 +3,7 @@
 //
 
 import React, { useRef, useEffect, useState } from "react";
-import mapboxgl from '!mapbox-gl'
+import mapboxgl from "!mapbox-gl";
 import "./MapOne.scss";
 
 /* eslint import/no-webpack-loader-syntax: off */
@@ -12,6 +12,12 @@ mapboxgl.accessToken =
   "pk.eyJ1IjoibWVjaGFuZXllcyIsImEiOiJ6V2F6bmFNIn0.mauWWMuRub6GkCxkc49sTg";
 
 const MapOne = () => {
+  const [isVisible, setVisible] = useState(true);
+
+  let wheelie = () => {
+    setVisible(false);
+  };
+
   const mapContainer = useRef(null);
   // Fitz Roy
   //   const [lng, setLng] = useState(-73.0508902);
@@ -36,6 +42,7 @@ const MapOne = () => {
       container: mapContainer.current,
       style: "mapbox://styles/mechaneyes/ckb6f9oyu2j4l1ilayacdz8yy",
       center: [lng, lat],
+      pitch: 50,
       zoom: zoom,
     });
 
@@ -92,16 +99,16 @@ const MapOne = () => {
       // Create and style CLUSTERS
       // https://docs.mapbox.com/mapbox-gl-js/example/cluster/
       // Add a new source from our GeoJSON data and
-      // set the 'cluster' option to true. GL-JS will
-      // add the point_count property to your source data.
+      // set the 'cluster' option to true. GL-JS adds
+      // the point_count property to the source data.
       map
         .addSource("mountains", {
           type: "geojson",
-          // Point to GeoJSON data. Ski resorts and their mountains
+          // GeoJSON data: Ski resorts and their mountains
           data: "/data/mountains.geojson",
           cluster: true,
           clusterMaxZoom: 17, // Max zoom to cluster points on
-          clusterRadius: 100, // Radius of each cluster when clustering points (defaults to 50)
+          clusterRadius: 100,
           clusterProperties: {
             sugarBowl: ["any", ["==", ["get", "interest"], "design"]],
             palisades: ["any", ["==", ["get", "resort"], "Palisades"]],
@@ -118,7 +125,7 @@ const MapOne = () => {
             "circle-color": [
               "case",
               [">", ["get", "point_count"], 9],
-              "#0000ff",
+              "#0381ff",
               ["get", "sugarBowl"],
               "#1FF2E3",
               ["get", "palisades"],
@@ -256,9 +263,14 @@ const MapOne = () => {
   });
 
   return (
-    <>
+    <main className="map-one" onWheel={() => wheelie()}>
+      <div className={isVisible ? "overlay" : "overlay overlay--hidden"}>
+        {/* https://pierrerougemont.tumblr.com/post/135589893117 */}
+        <img src="/images/mousewheel.gif" />
+        <h2>Mousewheel | Click | Drag</h2>
+      </div>
       <div ref={mapContainer} className="map-container" />
-    </>
+    </main>
   );
 };
 
