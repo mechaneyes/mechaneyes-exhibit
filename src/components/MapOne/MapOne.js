@@ -3,8 +3,10 @@
 //
 
 import React, { useRef, useEffect, useState } from "react";
-import mapboxgl from "mapbox-gl";
+import mapboxgl from '!mapbox-gl'
 import "./MapOne.scss";
+
+/* eslint import/no-webpack-loader-syntax: off */
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWVjaGFuZXllcyIsImEiOiJ6V2F6bmFNIn0.mauWWMuRub6GkCxkc49sTg";
