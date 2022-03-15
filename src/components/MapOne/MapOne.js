@@ -22,20 +22,12 @@ const MapOne = () => {
   // Bryce
   //   const [lng, setLng] = useState(-112.3183959);
   //   const [lat, setLat] = useState(37.573297);
+  
+  // Emerald Bay
+  const [lng, setLng] = useState(-120.10073846533709);
+  const [lat, setLat] = useState(38.95397959307656);
 
-  // Homewood
-  //   const [lng, setLng] = useState(-120.2868519);
-  //   const [lat, setLat] = useState(39.1982388);
-
-  // Granite Chief
-  //   const [lng, setLng] = useState(-120.2868638);
-  //   const [lat, setLat] = useState(39.1982388);
-
-  // Mt Lincoln
-  const [lng, setLng] = useState(-120.330005);
-  const [lat, setLat] = useState(39.2875296);
-
-  const [zoom, setZoom] = useState(10);
+  const [zoom, setZoom] = useState(7);
 
   useEffect(() => {
     const map = new mapboxgl.Map({
@@ -110,9 +102,9 @@ const MapOne = () => {
           clusterRadius: 250, // Radius of each cluster when clustering points (defaults to 50)
           clusterProperties: {
             sugarBowl: ["any", ["==", ["get", "interest"], "design"]],
-            palisades: ["any", ["==", ["get", "interest"], "photo"]],
+            palisades: ["any", ["==", ["get", "resort"], "Palisades"]],
             homewood: ["any", ["==", ["get", "interest"], "generative"]],
-            kirkwood: ["any", ["==", ["get", "interest"], "generative"]],
+            kirkwood: ["any", ["==", ["get", "interest"], "kirkwood"]],
           },
         })
         .addLayer({
@@ -142,7 +134,7 @@ const MapOne = () => {
               20,
               40,
             ],
-            "circle-stroke-width": 35,
+            "circle-stroke-width": 55,
             "circle-stroke-color": "#fff",
           },
         })
@@ -200,6 +192,17 @@ const MapOne = () => {
                   "font-scale": 0.8,
                 },
               ],
+              ["get", "kirkwood"],
+              [
+                "format",
+                "Photograhy",
+                "\n",
+                "Kirkwood",
+                {
+                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
+                  "font-scale": 0.8,
+                },
+              ],
               "#51bbd6",
             ],
             "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
@@ -213,15 +216,15 @@ const MapOne = () => {
           filter: ["!", ["has", "point_count"]],
           paint: {
             "circle-color": [
-                "match",
-                ["get", "interest"],
-                "design",
-                "#1FF2E3",
-                "photo",
-                "#13F265",
-                "#0000ff",
-              ],
-            "circle-radius": 80,
+              "match",
+              ["get", "interest"],
+              "design",
+              "#1FF2E3",
+              "photo",
+              "#13F265",
+              "#51bbd6",
+            ],
+            "circle-radius": 100,
             "circle-stroke-width": 5,
             "circle-stroke-color": "#fff",
           },
@@ -250,7 +253,6 @@ const MapOne = () => {
 
   return (
     <>
-      {/* <h1>MapOne</h1> */}
       <div ref={mapContainer} className="map-container" />
     </>
   );

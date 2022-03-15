@@ -9,7 +9,7 @@
       "type": "Feature",
       "properties": {
         "interest": "design",
-        "resort": "resort",
+        "resort": "Sugar Bowl",
         "title": "Sound Noir",
         "description": "Mount Judah",
         "url": "https://www.peakbagger.com/peak.aspx?pid=23416"
@@ -23,7 +23,7 @@
       "type": "Feature",
       "properties": {
         "interest": "design",
-        "resort": "resort",
+        "resort": "Sugar Bowl",
         "title": "Stereoh",
         "description": "Mt Lincoln",
         "url": "https://www.peakbagger.com/peak.aspx?pid=23389"
@@ -37,7 +37,7 @@
       "type": "Feature",
       "properties": {
         "interest": "design",
-        "resort": "resort",
+        "resort": "Sugar Bowl",
         "title": "pAAger",
         "description": "Mount Disney",
         "url": "http"
@@ -51,7 +51,7 @@
       "type": "Feature",
       "properties": {
         "interest": "design",
-        "resort": "resort",
+        "resort": "Sugar Bowl",
         "title": "pAAger",
         "description": "Crows Nest",
         "url": "https://www.peakbagger.com/peak.aspx?pid=2557"
@@ -64,8 +64,8 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "design",
-        "resort": "resort",
+        "interest": "photo",
+        "resort": "Palisades",
         "title": "Sound Noir",
         "description": "Granite Chief",
         "url": "https://www.peakbagger.com/peak.aspx?pid=2562"
@@ -78,8 +78,8 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "design",
-        "resort": "resort",
+        "interest": "photo",
+        "resort": "Palisades",
         "title": "Stereoh",
         "description": "Squaw Peak",
         "url": "https://www.peakbagger.com/peak.aspx?pid=2563"
@@ -92,8 +92,8 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "design",
-        "resort": "resort",
+        "interest": "photo",
+        "resort": "Palisades",
         "title": "pAAger",
         "description": "Scott Peak",
         "url": "https://www.peakbagger.com/peak.aspx?pid=24126"
@@ -106,8 +106,8 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "design",
-        "resort": "resort",
+        "interest": "photo",
+        "resort": "Palisades",
         "title": "photo",
         "description": "Emigrant Peak",
         "url": "https://www.peakbagger.com/peak.aspx?pid=30655"
@@ -120,8 +120,8 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "design",
-        "resort": "resort",
+        "interest": "photo",
+        "resort": "Palisades",
         "title": "photo",
         "description": "Ward Peak",
         "url": "https://www.peakbagger.com/peak.aspx?pid=24125"
@@ -134,8 +134,8 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "design",
-        "resort": "resort",
+        "interest": "photo",
+        "resort": "Palisades",
         "title": "photo",
         "description": "KT-22",
         "url": "https://www.peakbagger.com/peak.aspx?pid=18860"
@@ -178,7 +178,7 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "generative",
+        "interest": "kirkwood",
         "resort": "Kirkwood",
         "title": "Generative",
         "description": "Thimble Peak",
@@ -193,7 +193,7 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "generative",
+        "interest": "kirkwood",
         "resort": "Kirkwood",
         "title": "Generative",
         "description": "Covered Wagon Peak",
@@ -204,31 +204,40 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.008049, 38.662542]
+        "coordinates": [-120.07066658390274, 38.66873640392365]
       },
       "type": "Feature",
       "properties": {
-        "interest": "generative",
+        "interest": "kirkwood",
         "resort": "Kirkwood",
         "title": "Generative",
-        "description": "The Sisters",
-        "elevation": "10,158 ft / 3096 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=24114"
+        "description": "The Sisters"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.008049, 38.662542]
+        "coordinates": [-120.09200931523972, 38.68841624323919]
       },
       "type": "Feature",
       "properties": {
-        "interest": "generative",
+        "interest": "kirkwood",
         "resort": "Kirkwood",
         "title": "Generative",
-        "description": "The Sisters",
-        "elevation": "10,158 ft / 3096 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=24114"
+        "description": "Martin Point"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.08663407971336, 38.68409173400719]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "kirkwood",
+        "resort": "Kirkwood",
+        "title": "Generative",
+        "description": "Glove Rock"
       }
     }
   ]
