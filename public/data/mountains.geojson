@@ -9,6 +9,7 @@
       "type": "Feature",
       "properties": {
         "interest": "design",
+        "resort": "resort",
         "title": "Sound Noir",
         "description": "Mount Judah",
         "url": "https://www.peakbagger.com/peak.aspx?pid=23416"
@@ -22,6 +23,7 @@
       "type": "Feature",
       "properties": {
         "interest": "design",
+        "resort": "resort",
         "title": "Stereoh",
         "description": "Mt Lincoln",
         "url": "https://www.peakbagger.com/peak.aspx?pid=23389"
@@ -35,6 +37,7 @@
       "type": "Feature",
       "properties": {
         "interest": "design",
+        "resort": "resort",
         "title": "pAAger",
         "description": "Mount Disney",
         "url": "http"
@@ -48,6 +51,7 @@
       "type": "Feature",
       "properties": {
         "interest": "design",
+        "resort": "resort",
         "title": "pAAger",
         "description": "Crows Nest",
         "url": "https://www.peakbagger.com/peak.aspx?pid=2557"
@@ -60,7 +64,8 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "photo",
+        "interest": "design",
+        "resort": "resort",
         "title": "Sound Noir",
         "description": "Granite Chief",
         "url": "https://www.peakbagger.com/peak.aspx?pid=2562"
@@ -73,7 +78,8 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "photo",
+        "interest": "design",
+        "resort": "resort",
         "title": "Stereoh",
         "description": "Squaw Peak",
         "url": "https://www.peakbagger.com/peak.aspx?pid=2563"
@@ -86,7 +92,8 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "photo",
+        "interest": "design",
+        "resort": "resort",
         "title": "pAAger",
         "description": "Scott Peak",
         "url": "https://www.peakbagger.com/peak.aspx?pid=24126"
@@ -99,7 +106,8 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "photo",
+        "interest": "design",
+        "resort": "resort",
         "title": "photo",
         "description": "Emigrant Peak",
         "url": "https://www.peakbagger.com/peak.aspx?pid=30655"
@@ -112,10 +120,115 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "photo",
+        "interest": "design",
+        "resort": "resort",
         "title": "photo",
         "description": "Ward Peak",
         "url": "https://www.peakbagger.com/peak.aspx?pid=24125"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.241808, 39.18302]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "design",
+        "resort": "resort",
+        "title": "photo",
+        "description": "KT-22",
+        "url": "https://www.peakbagger.com/peak.aspx?pid=18860"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.198218, 39.068502]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "generative",
+        "resort": "resort",
+        "title": "Generative",
+        "description": "Ellis Peak",
+        "elevation": "8744 ft / 2665 m",
+        "url": "https://www.peakbagger.com/peak.aspx?pid=26156"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.18402925362022, 39.07543510314162]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "generative",
+        "resort": "resort",
+        "title": "Generative",
+        "description": "Ellis Lifthouse",
+        "elevation": "8744 ft / 2665 m",
+        "url": "https://www.peakbagger.com/peak.aspx?pid=26156"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.060661, 38.662497]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "generative",
+        "resort": "Kirkwood",
+        "title": "Generative",
+        "description": "Thimble Peak",
+        "elevation": "9809 ft / 2990 m",
+        "url": "https://www.peakbagger.com/peak.aspx?pid=24495"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.047479, 38.657164]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "generative",
+        "resort": "Kirkwood",
+        "title": "Generative",
+        "description": "Covered Wagon Peak",
+        "elevation": "9570 ft / 2916 m",
+        "url": "https://www.peakbagger.com/peak.aspx?pid=32751"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.008049, 38.662542]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "generative",
+        "resort": "Kirkwood",
+        "title": "Generative",
+        "description": "The Sisters",
+        "elevation": "10,158 ft / 3096 m",
+        "url": "https://www.peakbagger.com/peak.aspx?pid=24114"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.008049, 38.662542]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "generative",
+        "resort": "Kirkwood",
+        "title": "Generative",
+        "description": "The Sisters",
+        "elevation": "10,158 ft / 3096 m",
+        "url": "https://www.peakbagger.com/peak.aspx?pid=24114"
       }
     }
   ]

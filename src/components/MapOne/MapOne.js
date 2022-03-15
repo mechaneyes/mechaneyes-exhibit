@@ -35,7 +35,7 @@ const MapOne = () => {
   const [lng, setLng] = useState(-120.330005);
   const [lat, setLat] = useState(39.2875296);
 
-  const [zoom, setZoom] = useState(13);
+  const [zoom, setZoom] = useState(10);
 
   useEffect(() => {
     const map = new mapboxgl.Map({
@@ -111,6 +111,8 @@ const MapOne = () => {
           clusterProperties: {
             sugarBowl: ["any", ["==", ["get", "interest"], "design"]],
             palisades: ["any", ["==", ["get", "interest"], "photo"]],
+            homewood: ["any", ["==", ["get", "interest"], "generative"]],
+            kirkwood: ["any", ["==", ["get", "interest"], "generative"]],
           },
         })
         .addLayer({
@@ -121,10 +123,14 @@ const MapOne = () => {
           paint: {
             "circle-color": [
               "case",
+              [">", ["get", "point_count"], 9],
+              "#0000ff",
               ["get", "sugarBowl"],
               "#1FF2E3",
               ["get", "palisades"],
-              "#F2661F",
+              "#13F265",
+              ["get", "homewood"],
+              "#F21D13",
               "#51bbd6",
             ],
             "circle-radius": [
@@ -136,6 +142,8 @@ const MapOne = () => {
               20,
               40,
             ],
+            "circle-stroke-width": 35,
+            "circle-stroke-color": "#fff",
           },
         })
         .addLayer({
@@ -148,6 +156,17 @@ const MapOne = () => {
           layout: {
             "text-field": [
               "case",
+              [">", ["get", "point_count"], 9],
+              [
+                "format",
+                "wut i done did",
+                "\n",
+                "stuff",
+                {
+                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
+                  "font-scale": 0.8,
+                },
+              ],
               ["get", "sugarBowl"],
               [
                 "format",
@@ -165,6 +184,17 @@ const MapOne = () => {
                 "Photograhy",
                 "\n",
                 "Palisades",
+                {
+                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
+                  "font-scale": 0.8,
+                },
+              ],
+              ["get", "homewood"],
+              [
+                "format",
+                "Photograhy",
+                "\n",
+                "Homewood",
                 {
                   "text-font": ["literal", ["DIN Offc Pro Italic"]],
                   "font-scale": 0.8,
@@ -188,11 +218,11 @@ const MapOne = () => {
                 "design",
                 "#1FF2E3",
                 "photo",
-                "#FF7C3B",
+                "#13F265",
                 "#0000ff",
               ],
             "circle-radius": 80,
-            "circle-stroke-width": 3,
+            "circle-stroke-width": 5,
             "circle-stroke-color": "#fff",
           },
         })
