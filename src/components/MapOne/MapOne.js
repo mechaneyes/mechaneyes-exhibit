@@ -27,7 +27,7 @@ const MapOne = () => {
   const [lng, setLng] = useState(-120.10073846533709);
   const [lat, setLat] = useState(38.95397959307656);
 
-  const [zoom, setZoom] = useState(7);
+  const [zoom, setZoom] = useState(6);
 
   useEffect(() => {
     const map = new mapboxgl.Map({
@@ -99,7 +99,7 @@ const MapOne = () => {
           data: "/data/mountains.geojson",
           cluster: true,
           clusterMaxZoom: 17, // Max zoom to cluster points on
-          clusterRadius: 250, // Radius of each cluster when clustering points (defaults to 50)
+          clusterRadius: 100, // Radius of each cluster when clustering points (defaults to 50)
           clusterProperties: {
             sugarBowl: ["any", ["==", ["get", "interest"], "design"]],
             palisades: ["any", ["==", ["get", "resort"], "Palisades"]],
@@ -128,8 +128,8 @@ const MapOne = () => {
             "circle-radius": [
               "step",
               ["get", "point_count"],
-              100,
-              2,
+              150,
+              5,
               150,
               20,
               40,
