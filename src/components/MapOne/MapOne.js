@@ -263,7 +263,7 @@ const MapOne = () => {
   });
 
   return (
-    <main className="map-one" onWheel={() => wheelie()}>
+    <main className="map-one" onClick={() => wheelie()} onWheel={() => wheelie()} onTouchStart={() => wheelie()}>
       <div className={isVisible ? "overlay" : "overlay overlay--hidden"}>
         {/* https://pierrerougemont.tumblr.com/post/135589893117 */}
         <img src="/images/mousewheel.gif" />
