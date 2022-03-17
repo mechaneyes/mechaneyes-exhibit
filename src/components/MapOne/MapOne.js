@@ -4,22 +4,24 @@
 
 import { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl";
-import "./MapOne.scss";
-
 /* eslint import/no-webpack-loader-syntax: off */
+
+import useWindowDimensions from '../../utils/windowDimensions'
+import "./MapOne.scss";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWVjaGFuZXllcyIsImEiOiJ6V2F6bmFNIn0.mauWWMuRub6GkCxkc49sTg";
 
 const MapOne = () => {
+  const { height, width } = useWindowDimensions();
+
   const [isVisible, setVisible] = useState(true);
+  const mapContainer = useRef(null);
+  const map = useRef(null);
   
   let triggerOverlay = () => {
     setVisible(false);
   };
-
-  const mapContainer = useRef(null);
-  const map = useRef(null);
 
   // Fitz Roy
   //   const [lng, setLng] = useState(-73.0508902);
