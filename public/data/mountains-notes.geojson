@@ -1,0 +1,15 @@
+{
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-119.897655, 38.922804]
+  },
+  "type": "Feature",
+  "properties": {
+    "interest": "heavenly",
+    "resort": "Heavenly",
+    "title": "Generative",
+    "description": "Monument Peak",
+    "elevation": "10,072 ft / 3069 m",
+    "url": "https://www.peakbagger.com/peak.aspx?pid=2573"
+  }
+}

@@ -2,7 +2,7 @@
 // Use Mapbox GL JS in a React app
 //
 
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl";
 import "./MapOne.scss";
 
@@ -13,12 +13,14 @@ mapboxgl.accessToken =
 
 const MapOne = () => {
   const [isVisible, setVisible] = useState(true);
-
-  let wheelie = () => {
+  
+  let triggerOverlay = () => {
     setVisible(false);
   };
 
   const mapContainer = useRef(null);
+  const map = useRef(null);
+
   // Fitz Roy
   //   const [lng, setLng] = useState(-73.0508902);
   //   const [lat, setLat] = useState(-49.2740535);
@@ -32,13 +34,15 @@ const MapOne = () => {
   //   const [lat, setLat] = useState(37.573297);
 
   // Emerald Bay
-  const [lng, setLng] = useState(-120.10073846533709);
+  const [lng, setLng] = useState(-120.10383846533709);
   const [lat, setLat] = useState(38.95397959307656);
 
   const [zoom, setZoom] = useState(6);
+  // const [zoom, setZoom] = useState(10);
 
   useEffect(() => {
-    const map = new mapboxgl.Map({
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/mechaneyes/ckb6f9oyu2j4l1ilayacdz8yy",
       center: [lng, lat],
@@ -46,8 +50,8 @@ const MapOne = () => {
       zoom: zoom,
     });
 
-    map.on("load", () => {
-      map.addSource("mapbox-terrain", {
+    map.current.on("load", () => {
+      map.current.addSource("mapbox-terrain", {
         type: "vector",
         // Use any Mapbox-hosted tileset using its tileset id.
         // Learn more about where to find a tileset id:
@@ -58,7 +62,7 @@ const MapOne = () => {
         url: "mapbox://mapbox.mapbox-terrain-v2",
       });
 
-      map.addLayer({
+      map.current.addLayer({
         id: "terrain-data",
         type: "line",
         source: "mapbox-terrain",
@@ -68,7 +72,7 @@ const MapOne = () => {
           "line-cap": "round",
         },
         paint: {
-          "line-color": "#0381ff",
+          "line-color": "#0D77FF",
           "line-width": 2,
         },
       });
@@ -80,7 +84,7 @@ const MapOne = () => {
       // https://blog.mapbox.com/designing-the-swiss-ski-style-in-mapbox-studio-d6d25d1a2aa0#:~:text=Mapbox%20Terrain%20includes%20elevation%20contour%20lines%20from%20zoom%20level%209%20and%20higher.%20You%20can%20use%20the%20index%20field%20to%20highlight%20or%20label%20every%202nd%2C%205th%2C%20or%2010th%20line.
       // https://github.com/mapbox/mapbox-gl-swiss-ski-style/blob/master/cij1zoclj002y8rkkdjl69psd.json#L668
       //
-      map.addLayer({
+      map.current.addLayer({
         id: "index-contour",
         type: "line",
         source: "mapbox-terrain",
@@ -91,7 +95,7 @@ const MapOne = () => {
           "line-cap": "round",
         },
         paint: {
-          "line-color": "#ff3503",
+          "line-color": "#0DFF7F",
           "line-width": 2,
         },
       });
@@ -101,7 +105,7 @@ const MapOne = () => {
       // Add a new source from our GeoJSON data and
       // set the 'cluster' option to true. GL-JS adds
       // the point_count property to the source data.
-      map
+      map.current
         .addSource("mountains", {
           type: "geojson",
           // GeoJSON data: Ski resorts and their mountains
@@ -114,6 +118,7 @@ const MapOne = () => {
             palisades: ["any", ["==", ["get", "resort"], "Palisades"]],
             homewood: ["any", ["==", ["get", "interest"], "generative"]],
             kirkwood: ["any", ["==", ["get", "interest"], "kirkwood"]],
+            heavenly: ["any", ["==", ["get", "interest"], "heavenly"]],
           },
         })
         .addLayer({
@@ -127,21 +132,25 @@ const MapOne = () => {
               [">", ["get", "point_count"], 9],
               "#0381ff",
               ["get", "sugarBowl"],
-              "#1FF2E3",
+              "#F21FD2",
               ["get", "palisades"],
-              "#13F265",
+              "#13F267",
               ["get", "homewood"],
-              "#F21D13",
+              "#F5FF2E",
+              ["get", "kirkwood"],
+              "#0DFDFF",
+              ["get", "heavenly"],
+              "#FF1D4D",
               "#51bbd6",
             ],
             "circle-radius": [
               "step",
               ["get", "point_count"],
-              150,
-              5,
-              150,
-              20,
+              140,
               40,
+              140,
+              60,
+              80,
             ],
             "circle-stroke-width": 55,
             "circle-stroke-color": "#fff",
@@ -157,6 +166,17 @@ const MapOne = () => {
           layout: {
             "text-field": [
               "case",
+              [">", ["get", "point_count"], 9],
+              [
+                "format",
+                "wut i done did",
+                "\n",
+                "stuff",
+                {
+                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
+                  "font-scale": 0.8,
+                },
+              ],
               ["get", "sugarBowl"],
               [
                 "format",
@@ -201,12 +221,12 @@ const MapOne = () => {
                   "font-scale": 0.8,
                 },
               ],
-              [">", ["get", "point_count"], 9],
+              ["get", "heavenly"],
               [
                 "format",
-                "wut i done did",
+                "Photograhy",
                 "\n",
-                "stuff",
+                "Heavenly",
                 {
                   "text-font": ["literal", ["DIN Offc Pro Italic"]],
                   "font-scale": 0.8,
@@ -226,13 +246,17 @@ const MapOne = () => {
           paint: {
             "circle-color": [
               "match",
-              ["get", "interest"],
-              "design",
-              "#1FF2E3",
-              "photo",
-              "#13F265",
-              "generative",
-              "#F21D13",
+              ["get", "resort"],
+              "Sugar Bowl",
+              "#F21FD2",
+              "Palisades",
+              "#13F267",
+              "Homewood",
+              "#F5FF2E",
+              "Kirkwood",
+              "#0DFDFF",
+              "Heavenly",
+              "#FF1D4D",
               "#51bbd6",
             ],
             "circle-radius": 100,
@@ -263,11 +287,11 @@ const MapOne = () => {
   });
 
   return (
-    <main className="map-one" onClick={() => wheelie()} onWheel={() => wheelie()} onTouchStart={() => wheelie()}>
+    <main className="map-one" onClick={() => triggerOverlay()} onWheel={() => triggerOverlay()} onTouchStart={() => triggerOverlay()}>
       <div className={isVisible ? "overlay" : "overlay overlay--hidden"}>
         {/* https://pierrerougemont.tumblr.com/post/135589893117 */}
         <img src="/images/mousewheel-giphy-one.gif" />
-        <h2>Mousewheel | Click | Drag</h2>
+        <h2>Mousewheel &ndash; Pinch &ndash; Click &ndash; Drag</h2>
       </div>
       <div ref={mapContainer} className="map-container" />
     </main>
