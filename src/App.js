@@ -1,4 +1,4 @@
-import MapOne from './components/MapOne/MapOne'
+import MapOne from './views/MapOne/MapOne'
 
 function App() {
   return (
