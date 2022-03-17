@@ -34,7 +34,7 @@ const MapOne = () => {
   //   const [lat, setLat] = useState(37.573297);
 
   // Emerald Bay
-  const [lng, setLng] = useState(-120.10383846533709);
+  const [lng, setLng] = useState(-120.15983846533709);
   const [lat, setLat] = useState(38.95397959307656);
 
   const [zoom, setZoom] = useState(6);
