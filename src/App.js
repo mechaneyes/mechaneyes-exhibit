@@ -1,13 +1,23 @@
-import MapOne from './views/MapOne/MapOne'
-import MapMobile from './views/MapMobile/MapMobile'
+import MapOne from "./views/MapOne/MapOne";
+import MapMobile from "./views/MapMobile/MapMobile";
+import useWindowDimensions from "./utils/windowDimensions";
 
 function App() {
-  return (
-    <div className="App">
-      {/* <MapOne /> */}
-      <MapMobile />
-    </div>
-  );
+  const { height, width } = useWindowDimensions();
+
+  if (width < 768) {
+    return (
+      <div className="App">
+        <MapMobile />
+      </div>
+    );
+  } else {
+    return (
+      <div className="App">
+        <MapOne />
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -28,7 +28,7 @@ const MapMobile = () => {
   const [lng, setLng] = useState(-120.32891722957555);
   const [lat, setLat] = useState(38.49896894136924);
 
-//   const [zoom, setZoom] = useState(6);
+  //   const [zoom, setZoom] = useState(6);
   const [zoom, setZoom] = useState(15);
 
   // ————————————————————————————————————o————————————————————————————————————o FLY -->
@@ -76,6 +76,8 @@ const MapMobile = () => {
         url: "mapbox://mapbox.mapbox-terrain-v2",
       });
 
+      // ————————————————————————————————————o————————————————————————————————————o CONTOUR LINES -->
+      // ———————————————————————————————————— CONTOUR LINES —>
       map.current.addLayer({
         id: "terrain-data",
         type: "line",
@@ -91,6 +93,7 @@ const MapMobile = () => {
         },
       });
 
+      // ———————————————————————————————————— MO CONTOUR LINES —>
       map.current.addLayer({
         id: "index-contour",
         type: "line",
@@ -106,6 +109,196 @@ const MapMobile = () => {
           "line-width": 2,
         },
       });
+
+      // ————————————————————————————————————o————————————————————————————————————o CLUSTERS -->
+      // ———————————————————————————————————— CLUSTERS —>
+      map.current
+        .addSource("mountains", {
+          type: "geojson",
+          // GeoJSON data: Ski resorts and their mountains
+          data: "/data/mountains.geojson",
+          cluster: true,
+          clusterMaxZoom: 17, // Max zoom to cluster points on
+          clusterRadius: 100,
+          clusterProperties: {
+            sugarBowl: ["any", ["==", ["get", "interest"], "design"]],
+            palisades: ["any", ["==", ["get", "resort"], "Palisades"]],
+            homewood: ["any", ["==", ["get", "interest"], "generative"]],
+            kirkwood: ["any", ["==", ["get", "interest"], "kirkwood"]],
+            heavenly: ["any", ["==", ["get", "interest"], "heavenly"]],
+          },
+        })
+        .addLayer({
+          id: "clusters",
+          type: "circle",
+          source: "mountains",
+          filter: ["has", "point_count"],
+          paint: {
+            "circle-color": [
+              "case",
+              [">", ["get", "point_count"], 9],
+              "#0381ff",
+              ["get", "sugarBowl"],
+              "#F21FD2",
+              ["get", "palisades"],
+              "#13F267",
+              ["get", "homewood"],
+              "#F5FF2E",
+              ["get", "kirkwood"],
+              "#0DFDFF",
+              ["get", "heavenly"],
+              "#FF1D4D",
+              "#51bbd6",
+            ],
+            "circle-radius": [
+              "step",
+              ["get", "point_count"],
+              140,
+              40,
+              140,
+              60,
+              80,
+            ],
+            "circle-stroke-width": 55,
+            "circle-stroke-color": "#fff",
+          },
+        })
+
+        // ————————————————————————————————————o————————————————————————————————————o CLUSTER COPY -->
+        // ———————————————————————————————————— CLUSTER COPY —>
+        .addLayer({
+          id: "cluster-count",
+          type: "symbol",
+          source: "mountains",
+          filter: ["has", "point_count"],
+          // Formatting headlines and sub headlines
+          // https://blog.mapbox.com/create-a-clear-context-with-rich-text-labels-3f54a36c716b
+          layout: {
+            "text-field": [
+              "case",
+              [">", ["get", "point_count"], 9],
+              [
+                "format",
+                "wut i done did",
+                "\n",
+                "stuff",
+                {
+                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
+                  "font-scale": 0.8,
+                },
+              ],
+              ["get", "sugarBowl"],
+              [
+                "format",
+                "Design",
+                "\n",
+                "Sugar Bowl",
+                {
+                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
+                  "font-scale": 0.8,
+                },
+              ],
+              ["get", "palisades"],
+              [
+                "format",
+                "Photograhy",
+                "\n",
+                "Palisades",
+                {
+                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
+                  "font-scale": 0.8,
+                },
+              ],
+              ["get", "homewood"],
+              [
+                "format",
+                "Photograhy",
+                "\n",
+                "Homewood",
+                {
+                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
+                  "font-scale": 0.8,
+                },
+              ],
+              ["get", "kirkwood"],
+              [
+                "format",
+                "Photograhy",
+                "\n",
+                "Kirkwood",
+                {
+                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
+                  "font-scale": 0.8,
+                },
+              ],
+              ["get", "heavenly"],
+              [
+                "format",
+                "Photograhy",
+                "\n",
+                "Heavenly",
+                {
+                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
+                  "font-scale": 0.8,
+                },
+              ],
+              "#51bbd6",
+            ],
+            "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+            "text-size": 28,
+          },
+        })
+
+        // ————————————————————————————————————o————————————————————————————————————o UNCLUSTERED COLORS -->
+        // ———————————————————————————————————— UNCLUSTERED COLORS —>
+        .addLayer({
+          id: "unclustered-point",
+          type: "circle",
+          source: "mountains",
+          filter: ["!", ["has", "point_count"]],
+          paint: {
+            "circle-color": [
+              "match",
+              ["get", "resort"],
+              "Sugar Bowl",
+              "#F21FD2",
+              "Palisades",
+              "#13F267",
+              "Homewood",
+              "#F5FF2E",
+              "Kirkwood",
+              "#0DFDFF",
+              "Heavenly",
+              "#FF1D4D",
+              "rgba(0, 0, 0, 0)",
+            ],
+            "circle-radius": 100,
+            "circle-stroke-width": ["match", ["get", "hide"], "hide", 0, 5],
+            "circle-stroke-color": "#fff",
+          },
+        })
+
+        // ————————————————————————————————————o————————————————————————————————————o UNCLUSTERED LABELS -->
+        // ———————————————————————————————————— UNCLUSTERED LABELS —>
+        .addLayer({
+          id: "unclustered-label",
+          type: "symbol",
+          source: "mountains",
+          layout: {
+            "text-field": [
+              "format",
+              ["get", "title"],
+              "\n",
+              ["get", "description"],
+              {
+                "text-font": ["literal", ["DIN Offc Pro Italic"]],
+                "font-scale": 0.8,
+              },
+            ],
+            "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+            "text-size": 24,
+          },
+        });
     });
   });
 
@@ -121,45 +314,36 @@ const MapMobile = () => {
         <img src="/images/mousewheel-giphy-one.gif" />
         <h2>Mousewheel &middot; Pinch &middot; Click &middot; Drag</h2>
       </div>
-      <button id="fly" onClick={() => fly(2)}>
-        Sugar Bowl
-      </button>
-      <button id="fly" onClick={() => fly(4)}>
-        Palisades
-      </button>
-      <button id="fly" onClick={() => fly(11)}>
-        Homewood
-      </button>
-      <button id="fly" onClick={() => fly(15)}>
-        Kirkwood
-      </button>
-      <button id="fly" onClick={() => fly(19)}>
-        Heavenly
-      </button>
       <img className="logo-mechaneyes" src="/images/logo-mechaneyes.png" />
       <div ref={mapContainer} className="map-container" />
       <div className="gradient-overlay" />
       <section className="hp-nav">
-          <a className="hp-nav__item">
-              <img src="/images/icon-photography.png" />
-              <h2 className="nav-headline nav-headline--phototograpy">Photography</h2>
-          </a>
-          <a className="hp-nav__item">
-              <img src="/images/icon-programming.png" />
-              <h2 className="nav-headline nav-headline--programming">Programming</h2>
-          </a>
-          <a className="hp-nav__item">
-              <img src="/images/icon-installation.png" />
-              <h2 className="nav-headline nav-headline--installation">Installation</h2>
-          </a>
-          <a className="hp-nav__item">
-              <img src="/images/icon-generative.png" />
-              <h2 className="nav-headline nav-headline--generative">Generative</h2>
-          </a>
-          <a className="hp-nav__item">
-              <img src="/images/icon-design.png" />
-              <h2 className="nav-headline nav-headline--design">Design</h2>
-          </a>
+        <a className="hp-nav__item" onClick={() => fly(2)}>
+          <img src="/images/icon-photography.png" />
+          <h2 className="nav-headline nav-headline--phototograpy">
+            Photography
+          </h2>
+        </a>
+        <a className="hp-nav__item" onClick={() => fly(4)}>
+          <img src="/images/icon-programming.png" />
+          <h2 className="nav-headline nav-headline--programming">
+            Programming
+          </h2>
+        </a>
+        <a className="hp-nav__item" onClick={() => fly(11)}>
+          <img src="/images/icon-installation.png" />
+          <h2 className="nav-headline nav-headline--installation">
+            Installation
+          </h2>
+        </a>
+        <a className="hp-nav__item" onClick={() => fly(15)}>
+          <img src="/images/icon-generative.png" />
+          <h2 className="nav-headline nav-headline--generative">Generative</h2>
+        </a>
+        <a className="hp-nav__item" onClick={() => fly(19)}>
+          <img src="/images/icon-design.png" />
+          <h2 className="nav-headline nav-headline--design">Design</h2>
+        </a>
       </section>
     </main>
   );

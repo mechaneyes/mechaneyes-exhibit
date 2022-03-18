@@ -67,12 +67,12 @@ body {
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
-  bottom: 12%;
+  top: 35vh;
   left: 50%;
   transform: translateX(-50%);
-  height: 51vh;
+  height: 440px;
   z-index: 1;
-  // border: 1px solid pink;
+//   border: 1px solid pink;
 
   &__item {
     display: grid;
