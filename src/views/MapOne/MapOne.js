@@ -313,6 +313,20 @@ const MapOne = () => {
             "text-size": 24,
           },
         });
+
+      map.current.on("mousemove", (e) => {
+        document.getElementById("info").innerHTML =
+          // `e.point` is the x, y coordinates of the `mousemove` event
+          // relative to the top-left corner of the map.
+          JSON.stringify(e.point) +
+          "<br />" +
+          // `e.lngLat` is the longitude, latitude geographical position of the event.
+          JSON.stringify(e.lngLat.wrap());
+      });
+
+      map.current.on("click", (e) => {
+        console.log(JSON.stringify(e.lngLat.wrap()));
+      });
     });
   });
 
@@ -343,6 +357,7 @@ const MapOne = () => {
       <button id="fly" onClick={() => fly(19)}>
         Heavenly
       </button>
+      <pre id="info"></pre>
       <div ref={mapContainer} className="map-container" />
     </main>
   );
