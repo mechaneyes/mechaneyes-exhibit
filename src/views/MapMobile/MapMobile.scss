@@ -55,13 +55,74 @@ body {
 }
 
 .logo-mechaneyes {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
+  position: absolute;
+  top: 11%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
+.hp-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 51vh;
+  z-index: 1;
+  // border: 1px solid pink;
+
+  &__item {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .nav-headline {
+    margin: 0;
+    padding-bottom: 5px;
+    font-size: 40px;
+    line-height: 1;
+
+    &--phototograpy {
+      color: #ff1d4d;
+    }
+
+    &--programming {
+      color: #14f267;
+    }
+
+    &--installation {
+      color: #10fdff;
+    }
+
+    &--generative {
+      color: #f21fd2;
+    }
+
+    &--design {
+      color: #f6ff2e;
+    }
+  }
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 18, 37);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 18, 37, 0.4) 38%,
+    rgba(0, 18, 37, 0.4) 60%,
+    rgba(0, 18, 37, 0) 100%
+  );
+}
 
 #info {
   display: table;
@@ -76,4 +137,4 @@ body {
   text-align: center;
   color: #222;
   background: #fff;
-  }
+}

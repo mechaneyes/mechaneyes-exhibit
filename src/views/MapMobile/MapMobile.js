@@ -71,10 +71,6 @@ const MapMobile = () => {
     map.current.on("load", () => {
       map.current.addSource("mapbox-terrain", {
         type: "vector",
-        // Use any Mapbox-hosted tileset using its tileset id.
-        // Learn more about where to find a tileset id:
-        // https://docs.mapbox.com/help/glossary/tileset-id/
-        //
         // Mapbox Terrain v2
         // https://docs.mapbox.com/data/tilesets/reference/mapbox-terrain-v2/
         url: "mapbox://mapbox.mapbox-terrain-v2",
@@ -110,20 +106,6 @@ const MapMobile = () => {
           "line-width": 2,
         },
       });
-
-    //   map.current.on("mousemove", (e) => {
-    //     document.getElementById("info").innerHTML =
-    //       // `e.point` is the x, y coordinates of the `mousemove` event
-    //       // relative to the top-left corner of the map.
-    //       JSON.stringify(e.point) +
-    //       "<br />" +
-    //       // `e.lngLat` is the longitude, latitude geographical position of the event.
-    //       JSON.stringify(e.lngLat.wrap());
-    //   });
-
-    //   map.current.on("click", (e) => {
-    //     console.log(JSON.stringify(e.lngLat.wrap()));
-    //   });
     });
   });
 
@@ -154,9 +136,31 @@ const MapMobile = () => {
       <button id="fly" onClick={() => fly(19)}>
         Heavenly
       </button>
-      {/* <pre id="info"></pre> */}
       <img className="logo-mechaneyes" src="/images/logo-mechaneyes.png" />
       <div ref={mapContainer} className="map-container" />
+      <div className="gradient-overlay" />
+      <section className="hp-nav">
+          <a className="hp-nav__item">
+              <img src="/images/icon-photography.png" />
+              <h2 className="nav-headline nav-headline--phototograpy">Photography</h2>
+          </a>
+          <a className="hp-nav__item">
+              <img src="/images/icon-programming.png" />
+              <h2 className="nav-headline nav-headline--programming">Programming</h2>
+          </a>
+          <a className="hp-nav__item">
+              <img src="/images/icon-installation.png" />
+              <h2 className="nav-headline nav-headline--installation">Installation</h2>
+          </a>
+          <a className="hp-nav__item">
+              <img src="/images/icon-generative.png" />
+              <h2 className="nav-headline nav-headline--generative">Generative</h2>
+          </a>
+          <a className="hp-nav__item">
+              <img src="/images/icon-design.png" />
+              <h2 className="nav-headline nav-headline--design">Design</h2>
+          </a>
+      </section>
     </main>
   );
 };
