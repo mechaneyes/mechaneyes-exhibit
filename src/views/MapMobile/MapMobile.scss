@@ -60,6 +60,9 @@ body {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
+  width: 80%;
+  filter: invert(68%) sepia(98%) saturate(1478%) hue-rotate(95deg)
+    brightness(103%) contrast(108%);
 }
 
 .hp-nav {
@@ -72,7 +75,7 @@ body {
   transform: translateX(-50%);
   height: 440px;
   z-index: 1;
-//   border: 1px solid pink;
+  //   border: 1px solid pink;
 
   &__item {
     display: grid;

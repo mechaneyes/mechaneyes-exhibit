@@ -1,12 +1,16 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import useWindowDimensions from "../../../../utils/windowDimensions";
 
 import "./HamburgerMenu.scss";
 
 let HamburgerMenu = (props) => {
   const map = props.map;
-  console.log("map", map);
   const { height, width } = useWindowDimensions();
+
+  const [isVisible, setVisible] = useState(false);
+  const toggleHamb = () => {
+    setVisible(!isVisible)
+  }
 
   // ————————————————————————————————————o————————————————————————————————————o FLY -->
   // ———————————————————————————————————— FLY —>
@@ -21,8 +25,11 @@ let HamburgerMenu = (props) => {
         // console.log("mountainsLoc", mountainsLoc[0].geometry.coordinates);
       });
 
+    console.log('map', map.current)
+
     fly = (resortLoc) => {
-      map.flyTo({
+      toggleHamb()
+      map.current.flyTo({
         center: [
           mountainsLoc[resortLoc].geometry.coordinates[0],
           mountainsLoc[resortLoc].geometry.coordinates[1],
@@ -37,8 +44,8 @@ let HamburgerMenu = (props) => {
 
   return (
     <>
-      <img className="hamburger-trigger" src="/images/icon-photography.png" />
-      <nav className="hamburger">
+      <img className="hamburger-trigger" onClick={toggleHamb} src="/images/hamburger-trigger.svg" />
+      <nav className={isVisible ? "hamburger" : "hamburger hamburger--hidden"}>
         <a className="hamburger__item" onClick={() => fly(2)}>
           <img src="/images/icon-photography.png" />
           <h2 className="hamburger-headline hamburger-headline--phototograpy">

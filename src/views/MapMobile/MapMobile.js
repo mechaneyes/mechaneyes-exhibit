@@ -304,7 +304,7 @@ const MapMobile = () => {
 
   return (
       <>
-      <HamburgerMenu map={map.current} />
+      <HamburgerMenu map={map} />
     <main
       className="map-one"
       onClick={() => triggerOverlay()}
@@ -316,10 +316,10 @@ const MapMobile = () => {
         <img src="/images/mousewheel-giphy-one.gif" />
         <h2>Mousewheel &middot; Pinch &middot; Click &middot; Drag</h2>
       </div>
-      <img className="logo-mechaneyes" src="/images/logo-mechaneyes.png" />
+      <img className="logo-mechaneyes" src="/images/logo-mechaneyes.svg" />
       <div ref={mapContainer} className="map-container" />
-      {/* <div className="gradient-overlay" /> */}
-      {/* <section className="hp-nav">
+      <div className="gradient-overlay" />
+      <section className="hp-nav">
         <a className="hp-nav__item" onClick={() => fly(2)}>
           <img src="/images/icon-photography.png" />
           <h2 className="nav-headline nav-headline--phototograpy">
@@ -346,7 +346,7 @@ const MapMobile = () => {
           <img src="/images/icon-design.png" />
           <h2 className="nav-headline nav-headline--design">Design</h2>
         </a>
-      </section> */}
+      </section>
     </main>
     </>
   );
