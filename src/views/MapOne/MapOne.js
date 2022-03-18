@@ -62,7 +62,7 @@ const MapOne = () => {
           mountainsLoc[resortLoc].geometry.coordinates[0],
           mountainsLoc[resortLoc].geometry.coordinates[1],
         ],
-        zoom: 13,
+        zoom: 14,
         speed: 0.7,
         curve: 1.6, // zoom speed
         essential: true, // this animation is considered essential with respect to prefers-reduced-motion
@@ -287,10 +287,10 @@ const MapOne = () => {
               "#0DFDFF",
               "Heavenly",
               "#FF1D4D",
-              "#51bbd6",
+              "rgba(0, 0, 0, 0)",
             ],
             "circle-radius": 100,
-            "circle-stroke-width": 5,
+            "circle-stroke-width": ["match", ["get", "hide"], "hide", 0, 5],
             "circle-stroke-color": "#fff",
           },
         })
@@ -331,16 +331,16 @@ const MapOne = () => {
       <button id="fly" onClick={() => fly(2)}>
         Sugar Bowl
       </button>
-      <button id="fly" onClick={() => fly(5)}>
+      <button id="fly" onClick={() => fly(4)}>
         Palisades
       </button>
-      <button id="fly" onClick={() => fly(10)}>
+      <button id="fly" onClick={() => fly(11)}>
         Homewood
       </button>
-      <button id="fly" onClick={() => fly(14)}>
+      <button id="fly" onClick={() => fly(15)}>
         Kirkwood
       </button>
-      <button id="fly" onClick={() => fly(18)}>
+      <button id="fly" onClick={() => fly(19)}>
         Heavenly
       </button>
       <div ref={mapContainer} className="map-container" />

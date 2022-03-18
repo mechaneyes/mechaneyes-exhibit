@@ -60,6 +60,16 @@
     {
       "geometry": {
         "type": "Point",
+        "coordinates": [-120.25035578554863, 39.166309222715306]
+      },
+      "type": "Feature",
+      "properties": {
+        "hide": "hide"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
         "coordinates": [-120.287064, 39.198239]
       },
       "type": "Feature",
