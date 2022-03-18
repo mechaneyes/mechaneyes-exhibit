@@ -7,6 +7,7 @@ import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
 import useWindowDimensions from "../../utils/windowDimensions";
+import HamburgerMenu from "../../components/layout/navigation/HamburgerMenu/HamburgerMenu";
 
 import "./MapMobile.scss";
 
@@ -27,7 +28,6 @@ const MapMobile = () => {
   // Emerald Bay
   const [lng, setLng] = useState(-120.32891722957555);
   const [lat, setLat] = useState(38.49896894136924);
-
   //   const [zoom, setZoom] = useState(6);
   const [zoom, setZoom] = useState(15);
 
@@ -303,6 +303,8 @@ const MapMobile = () => {
   });
 
   return (
+      <>
+      <HamburgerMenu map={map.current} />
     <main
       className="map-one"
       onClick={() => triggerOverlay()}
@@ -316,8 +318,8 @@ const MapMobile = () => {
       </div>
       <img className="logo-mechaneyes" src="/images/logo-mechaneyes.png" />
       <div ref={mapContainer} className="map-container" />
-      <div className="gradient-overlay" />
-      <section className="hp-nav">
+      {/* <div className="gradient-overlay" /> */}
+      {/* <section className="hp-nav">
         <a className="hp-nav__item" onClick={() => fly(2)}>
           <img src="/images/icon-photography.png" />
           <h2 className="nav-headline nav-headline--phototograpy">
@@ -344,8 +346,9 @@ const MapMobile = () => {
           <img src="/images/icon-design.png" />
           <h2 className="nav-headline nav-headline--design">Design</h2>
         </a>
-      </section>
+      </section> */}
     </main>
+    </>
   );
 };
 
