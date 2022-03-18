@@ -6,7 +6,8 @@ import { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
-import useWindowDimensions from '../../utils/windowDimensions'
+import useWindowDimensions from "../../utils/windowDimensions";
+
 import "./MapOne.scss";
 
 mapboxgl.accessToken =
@@ -14,33 +15,60 @@ mapboxgl.accessToken =
 
 const MapOne = () => {
   const { height, width } = useWindowDimensions();
-
   const [isVisible, setVisible] = useState(true);
+
   const mapContainer = useRef(null);
   const map = useRef(null);
-  
+
   let triggerOverlay = () => {
     setVisible(false);
   };
 
   // Fitz Roy
-  //   const [lng, setLng] = useState(-73.0508902);
-  //   const [lat, setLat] = useState(-49.2740535);
+  // const [lng, setLng] = useState(-73.0508902);
+  // const [lat, setLat] = useState(-49.2740535);
 
   // Monument Valley
   //   const [lng, setLng] = useState(-110.3193009);
   //   const [lat, setLat] = useState(36.9852564);
 
   // Bryce
-  //   const [lng, setLng] = useState(-112.3183959);
-  //   const [lat, setLat] = useState(37.573297);
+  // const [lng, setLng] = useState(-112.3183959);
+  // const [lat, setLat] = useState(37.573297);
 
   // Emerald Bay
   const [lng, setLng] = useState(-120.15983846533709);
   const [lat, setLat] = useState(38.95397959307656);
 
   const [zoom, setZoom] = useState(6);
-  // const [zoom, setZoom] = useState(10);
+  // const [zoom, setZoom] = useState(11);
+
+  // ————————————————————————————————————o————————————————————————————————————o FLY -->
+  // ———————————————————————————————————— FLY —>
+  let mountainsLoc;
+  let fly;
+
+  useEffect(() => {
+    fetch("/data/mountains.geojson")
+      .then((res) => res.json())
+      .then((result) => {
+        mountainsLoc = result.features;
+        // console.log("mountainsLoc", mountainsLoc[0].geometry.coordinates);
+      });
+
+    fly = (resortLoc) => {
+      map.current.flyTo({
+        center: [
+          mountainsLoc[resortLoc].geometry.coordinates[0],
+          mountainsLoc[resortLoc].geometry.coordinates[1],
+        ],
+        zoom: 13,
+        speed: 0.7,
+        curve: 1.6, // zoom speed
+        essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+      });
+    };
+  });
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
@@ -289,12 +317,32 @@ const MapOne = () => {
   });
 
   return (
-    <main className="map-one" onClick={() => triggerOverlay()} onWheel={() => triggerOverlay()} onTouchStart={() => triggerOverlay()}>
+    <main
+      className="map-one"
+      onClick={() => triggerOverlay()}
+      onWheel={() => triggerOverlay()}
+      onTouchStart={() => triggerOverlay()}
+    >
       <div className={isVisible ? "overlay" : "overlay overlay--hidden"}>
         {/* https://pierrerougemont.tumblr.com/post/135589893117 */}
         <img src="/images/mousewheel-giphy-one.gif" />
-        <h2>Mousewheel &ndash; Pinch &ndash; Click &ndash; Drag</h2>
+        <h2>Mousewheel &middot; Pinch &middot; Click &middot; Drag</h2>
       </div>
+      <button id="fly" onClick={() => fly(2)}>
+        Sugar Bowl
+      </button>
+      <button id="fly" onClick={() => fly(5)}>
+        Palisades
+      </button>
+      <button id="fly" onClick={() => fly(10)}>
+        Homewood
+      </button>
+      <button id="fly" onClick={() => fly(14)}>
+        Kirkwood
+      </button>
+      <button id="fly" onClick={() => fly(18)}>
+        Heavenly
+      </button>
       <div ref={mapContainer} className="map-container" />
     </main>
   );
