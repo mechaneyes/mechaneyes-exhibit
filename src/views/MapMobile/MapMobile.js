@@ -34,6 +34,7 @@ const MapMobile = () => {
   // ————————————————————————————————————o————————————————————————————————————o Full Screen -->
   // ———————————————————————————————————— Full Screen —>
   // https://pqina.nl/blog/how-to-prevent-scrolling-the-page-on-ios-safari/
+  // https://css-tricks.com/updating-a-css-variable-with-javascript/
   //
   let root = document.documentElement;
   root.style.setProperty("--height", `${window.innerHeight}px`);
