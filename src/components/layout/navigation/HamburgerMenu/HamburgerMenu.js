@@ -25,7 +25,7 @@ let HamburgerMenu = (props) => {
         // console.log("mountainsLoc", mountainsLoc[0].geometry.coordinates);
       });
 
-    console.log('map', map.current)
+    // console.log('map', map.current)
 
     fly = (resortLoc) => {
       toggleHamb()
