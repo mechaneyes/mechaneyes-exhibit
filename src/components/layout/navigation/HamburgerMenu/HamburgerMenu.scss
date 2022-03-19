@@ -10,34 +10,18 @@
 }
 
 .hamburger {
+  display: flex;
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   padding-top: 80px;
-  padding-left: 45px;
-  z-index: 2;
   background-color: rgba(0, 18, 37, 0.85);
+  z-index: 2;
 
   &--hidden {
     display: none;
-  }
-
-  &__item {
-    display: grid;
-    grid-template-columns: 55px 1fr;
-    gap: 15px;
-    align-items: center;
-    margin-bottom: 20px;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  h2 {
-      margin: 0;
   }
 
   &-headline {
@@ -63,5 +47,9 @@
     &--design {
       color: #f6ff2e;
     }
+  }
+
+  .nav-headline--about {
+    color: #FF5A29;
   }
 }
