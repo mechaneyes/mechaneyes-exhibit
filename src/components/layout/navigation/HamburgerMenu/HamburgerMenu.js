@@ -18,7 +18,7 @@ let HamburgerMenu = (props) => {
   let fly;
 
   useEffect(() => {
-    fetch("/data/mountains.geojson")
+    fetch("/data/mobile.geojson")
       .then((res) => res.json())
       .then((result) => {
         mountainsLoc = result.features;
@@ -51,7 +51,7 @@ let HamburgerMenu = (props) => {
       />
       <nav className={isVisible ? "hamburger" : "hamburger hamburger--hidden"}>
         <section className="hp-nav">
-          <a className="hp-nav__item" onClick={() => fly(2)}>
+          <a className="hp-nav__item" onClick={() => fly(1)}>
             <img src="/images/icon-photography.png" />
             <h2 className="nav-headline nav-headline--phototograpy">
               Photography

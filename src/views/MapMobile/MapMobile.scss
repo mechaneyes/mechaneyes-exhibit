@@ -89,6 +89,7 @@ body {
   transform: translateX(-50%);
   width: 80vw;
   z-index: 1;
+  // display: none;
 
   &__item {
     display: grid;

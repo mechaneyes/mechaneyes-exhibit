@@ -29,8 +29,8 @@ const MapOne = () => {
   // const [lat, setLat] = useState(-49.2740535);
 
   // Monument Valley
-  //   const [lng, setLng] = useState(-110.3193009);
-  //   const [lat, setLat] = useState(36.9852564);
+  // const [lng, setLng] = useState(-110.3193009);
+  // const [lat, setLat] = useState(36.9852564);
 
   // Bryce
   // const [lng, setLng] = useState(-112.3183959);
@@ -70,6 +70,8 @@ const MapOne = () => {
     };
   });
 
+  // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
+  // ———————————————————————————————————— MAPPIN —>
   useEffect(() => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
@@ -92,6 +94,8 @@ const MapOne = () => {
         url: "mapbox://mapbox.mapbox-terrain-v2",
       });
 
+      // ————————————————————————————————————o————————————————————————————————————o CONTOUR LINES -->
+      // ———————————————————————————————————— CONTOUR LINES —>
       map.current.addLayer({
         id: "terrain-data",
         type: "line",
@@ -130,6 +134,9 @@ const MapOne = () => {
         },
       });
 
+      // ————————————————————————————————————o————————————————————————————————————o CLUSTERS -->
+      // ———————————————————————————————————— CLUSTERS —>
+      // 
       // Create and style CLUSTERS
       // https://docs.mapbox.com/mapbox-gl-js/example/cluster/
       // Add a new source from our GeoJSON data and
@@ -268,6 +275,9 @@ const MapOne = () => {
             "text-size": 28,
           },
         })
+
+        // ————————————————————————————————————o————————————————————————————————————o UNCLUSTERED -->
+        // ———————————————————————————————————— UNCLUSTERED —>
         .addLayer({
           id: "unclustered-point",
           type: "circle",
@@ -294,6 +304,7 @@ const MapOne = () => {
             "circle-stroke-color": "#fff",
           },
         })
+        // ———————————————————————————————————— UNCLUSTERED LABELS —>
         .addLayer({
           id: "unclustered-label",
           type: "symbol",
@@ -314,6 +325,8 @@ const MapOne = () => {
           },
         });
 
+      // ————————————————————————————————————o————————————————————————————————————o LAT+LONG OF MOUSE POSITIONS -->
+      // ———————————————————————————————————— LAT+LONG OF MOUSE POSITIONS —>
       map.current.on("mousemove", (e) => {
         document.getElementById("info").innerHTML =
           // `e.point` is the x, y coordinates of the `mousemove` event

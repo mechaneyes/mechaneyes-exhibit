@@ -25,14 +25,11 @@ const MapMobile = () => {
     setVisible(false);
   };
 
-  // Emerald Bay
-  const [lng, setLng] = useState(-120.32891722957555);
-  const [lat, setLat] = useState(38.49896894136924);
-  //   const [zoom, setZoom] = useState(6);
-  const [zoom, setZoom] = useState(15);
-
   // ————————————————————————————————————o————————————————————————————————————o Full Screen -->
   // ———————————————————————————————————— Full Screen —>
+  // Kill scrolling on iOS Safari ... in turns kills hide/reveal
+  // of location bar which would destroy the layout
+  //
   // https://pqina.nl/blog/how-to-prevent-scrolling-the-page-on-ios-safari/
   // https://css-tricks.com/updating-a-css-variable-with-javascript/
   //
@@ -51,7 +48,7 @@ const MapMobile = () => {
   let mountainsLoc;
   let fly;
   useEffect(() => {
-    fetch("/data/mountains.geojson")
+    fetch("/data/mobile.geojson")
       .then((res) => res.json())
       .then((result) => {
         mountainsLoc = result.features;
@@ -64,13 +61,24 @@ const MapMobile = () => {
           mountainsLoc[resortLoc].geometry.coordinates[0],
           mountainsLoc[resortLoc].geometry.coordinates[1],
         ],
-        zoom: 14,
+        zoom: 15,
         speed: 0.7,
         curve: 1.6, // zoom speed
         essential: true, // this animation is considered essential with respect to prefers-reduced-motion
       });
     };
   });
+
+  // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
+  // ———————————————————————————————————— MAPPIN —>
+
+  const [lng, setLng] = useState(-119.85973831205467);
+  const [lat, setLat] = useState(37.54733615641251);
+
+  // const [lng, setLng] = useState(-119.78446057448917);
+  // const [lat, setLat] = useState(37.58532636803403);
+
+  const [zoom, setZoom] = useState(15);
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
@@ -80,6 +88,10 @@ const MapMobile = () => {
       center: [lng, lat],
       pitch: 60,
       zoom: zoom,
+    });
+
+    map.current.on("touchstart", (e) => {
+      console.log(JSON.stringify(e.lngLat.wrap()));
     });
 
     map.current.on("load", () => {
@@ -130,7 +142,7 @@ const MapMobile = () => {
         .addSource("mountains", {
           type: "geojson",
           // GeoJSON data: Ski resorts and their mountains
-          data: "/data/mountains.geojson",
+          data: "/data/mobile.geojson",
           cluster: true,
           clusterMaxZoom: 17, // Max zoom to cluster points on
           clusterRadius: 100,
@@ -338,7 +350,7 @@ const MapMobile = () => {
         <div className="gradient-overlay" />
 
         <section className="hp-nav">
-          <a className="hp-nav__item" onClick={() => fly(2)}>
+          <a className="hp-nav__item" onClick={() => fly(1)}>
             <img src="/images/icon-photography.png" />
             <h2 className="nav-headline nav-headline--phototograpy">
               Photography
