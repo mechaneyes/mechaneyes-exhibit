@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Nav from '../Nav/Nav';
 import useWindowDimensions from "../../../../utils/windowDimensions";
 
 import "./HamburgerMenu.scss";
@@ -49,44 +50,9 @@ let HamburgerMenu = (props) => {
         onClick={toggleHamb}
         src="/images/hamburger-trigger.svg"
       />
-      <nav className={isVisible ? "hamburger" : "hamburger hamburger--hidden"}>
-        <section className="hp-nav">
-          <a className="hp-nav__item" onClick={() => fly(1)}>
-            <img src="/images/icon-photography.png" />
-            <h2 className="nav-headline nav-headline--phototograpy">
-              Photography
-            </h2>
-          </a>
-          <a className="hp-nav__item" onClick={() => fly(4)}>
-            <img src="/images/icon-programming.png" />
-            <h2 className="nav-headline nav-headline--programming">
-              Programming
-            </h2>
-          </a>
-          <a className="hp-nav__item" onClick={() => fly(11)}>
-            <img src="/images/icon-installation.png" />
-            <h2 className="nav-headline nav-headline--installation">
-              Installation
-            </h2>
-          </a>
-          <a className="hp-nav__item" onClick={() => fly(15)}>
-            <img src="/images/icon-generative.png" />
-            <h2 className="nav-headline nav-headline--generative">
-              Generative
-            </h2>
-          </a>
-          <a className="hp-nav__item" onClick={() => fly(19)}>
-            <img src="/images/icon-design.png" />
-            <h2 className="nav-headline nav-headline--design">Design</h2>
-          </a>
-          <a className="hp-nav__item" onClick={() => fly(4)}>
-            <img src="/images/icon-about.png" />
-            <h2 className="nav-headline nav-headline--about">
-              About
-            </h2>
-          </a>
-        </section>
-      </nav>
+      <section className={isVisible ? "hamburger" : "hamburger hamburger--hidden"}>
+        <Nav map={map} />
+      </section>
     </>
   );
 };

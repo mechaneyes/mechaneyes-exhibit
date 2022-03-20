@@ -7,6 +7,7 @@ import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
 import useWindowDimensions from "../../utils/windowDimensions";
+import Nav from "../../components/layout/navigation/Nav/Nav";
 import HamburgerMenu from "../../components/layout/navigation/HamburgerMenu/HamburgerMenu";
 
 import "./MapMobile.scss";
@@ -344,41 +345,9 @@ const MapMobile = () => {
         </div>
 
         <img className="logo-mechaneyes" src="/images/logo-mechaneyes.png" />
-
         <div ref={mapContainer} className="map-container" />
-
         <div className="gradient-overlay" />
-
-        <section className="hp-nav">
-          <a className="hp-nav__item" onClick={() => fly(1)}>
-            <img src="/images/icon-photography.png" />
-            <h2 className="nav-headline nav-headline--phototograpy">
-              Photography
-            </h2>
-          </a>
-          <a className="hp-nav__item" onClick={() => fly(4)}>
-            <img src="/images/icon-programming.png" />
-            <h2 className="nav-headline nav-headline--programming">
-              Programming
-            </h2>
-          </a>
-          <a className="hp-nav__item" onClick={() => fly(11)}>
-            <img src="/images/icon-installation.png" />
-            <h2 className="nav-headline nav-headline--installation">
-              Installation
-            </h2>
-          </a>
-          <a className="hp-nav__item" onClick={() => fly(15)}>
-            <img src="/images/icon-generative.png" />
-            <h2 className="nav-headline nav-headline--generative">
-              Generative
-            </h2>
-          </a>
-          <a className="hp-nav__item" onClick={() => fly(19)}>
-            <img src="/images/icon-design.png" />
-            <h2 className="nav-headline nav-headline--design">Design</h2>
-          </a>
-        </section>
+        <Nav map={map} />
       </main>
     </>
   );

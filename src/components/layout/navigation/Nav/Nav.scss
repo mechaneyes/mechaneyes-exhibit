@@ -1,0 +1,87 @@
+.mecha-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  z-index: 1;
+  // display: none;
+  // border: 1px solid tomato;
+
+  &--hidden {
+    display: none;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 17% 1fr;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .nav-headline {
+    margin: 0;
+    padding-bottom: 5px;
+    font-size: 40px;
+    line-height: 1;
+
+    &--phototograpy {
+      color: #ff1d4d;
+    }
+
+    &--programming {
+      color: #14f267;
+    }
+
+    &--installation {
+      color: #10fdff;
+    }
+
+    &--generative {
+      color: #f21fd2;
+    }
+
+    &--design {
+      color: #f6ff2e;
+    }
+
+    &--about {
+      color: #ff5a29;
+    }
+  }
+}
+
+.hamburger-trigger {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+  width: 40px;
+  height: auto;
+  filter: invert(73%) sepia(50%) saturate(995%) hue-rotate(90deg)
+    brightness(98%) contrast(105%);
+}
+
+.hamburger {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 80px;
+  background-color: rgba(0, 18, 37, 0.85);
+  z-index: 2;
+
+  &--hidden {
+    display: none;
+  }
+}

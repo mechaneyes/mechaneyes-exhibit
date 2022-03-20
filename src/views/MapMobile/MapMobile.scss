@@ -23,6 +23,10 @@ body {
 .map-one {
   width: 100vw;
   height: 100vh;
+
+  .mecha-nav {
+    top: 52%;
+  }
 }
 
 .map-container {
@@ -77,58 +81,6 @@ body {
   transform: translateX(-50%);
   z-index: 1;
   width: 70%;
-}
-
-.hp-nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  position: absolute;
-  top: 29vh;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80vw;
-  z-index: 1;
-  // display: none;
-
-  &__item {
-    display: grid;
-    grid-template-columns: 17% 1fr;
-    gap: 15px;
-    align-items: center;
-    margin-bottom: 15px;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .nav-headline {
-    margin: 0;
-    padding-bottom: 5px;
-    font-size: 40px;
-    line-height: 1;
-
-    &--phototograpy {
-      color: #ff1d4d;
-    }
-
-    &--programming {
-      color: #14f267;
-    }
-
-    &--installation {
-      color: #10fdff;
-    }
-
-    &--generative {
-      color: #f21fd2;
-    }
-
-    &--design {
-      color: #f6ff2e;
-    }
-  }
 }
 
 .gradient-overlay {
