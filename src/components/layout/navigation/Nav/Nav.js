@@ -4,6 +4,7 @@ import "./Nav.scss";
 
 let Nav = (props) => {
   const map = props.map;
+  const [isNavVisible, setNavVisible] = useState(true);
 
   // ————————————————————————————————————o————————————————————————————————————o FLY -->
   // ———————————————————————————————————— FLY —>

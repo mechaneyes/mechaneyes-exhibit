@@ -17,9 +17,10 @@ mapboxgl.accessToken =
 
 const MapMobile = () => {
   const { height, width } = useWindowDimensions();
-  const [isMausVisible, setMausVisible] = useState(true);
   const [isNavVisible, setNavVisible] = useState(true);
   const [isGradientVisible, setGradientVisible] = useState(true);
+  const [isLogoVisible, setLogoVisible] = useState(true);
+  const [isTitleVisible, setTitleVisible] = useState(false);
 
   const mapContainer = useRef(null);
   const map = useRef(null);
@@ -330,19 +331,24 @@ const MapMobile = () => {
   return (
     <>
       <HamburgerMenu map={map} />
-      <main
-        className="map-one"
-        onClick={() => setMausVisible(false)}
-        onWheel={() => setMausVisible(false)}
-        onTouchStart={() => setMausVisible(false)}
-      >
-        <div className={isMausVisible ? "overlay" : "overlay overlay--hidden"}>
-          {/* https://pierrerougemont.tumblr.com/post/135589893117 */}
-          <img src="/images/mousewheel-giphy-one.gif" />
-          <h2>Mousewheel &middot; Pinch &middot; Click &middot; Drag</h2>
-        </div>
-
-        <img className="logo-mechaneyes" src="/images/logo-mechaneyes.png" />
+      <main className="map-one">
+        <h1
+          className={
+            isTitleVisible
+              ? "title-mechaneyes"
+              : "title-mechaneyes title-mechaneyes--hidden"
+          }
+        >
+          Mechaneyes
+        </h1>
+        <img
+          className={
+            isLogoVisible
+              ? "logo-mechaneyes"
+              : "logo-mechaneyes logo-mechaneyes--hidden"
+          }
+          src="/images/logo-mechaneyes.png"
+        />
         <div ref={mapContainer} className="map-container" />
         <div
           className={
@@ -357,8 +363,9 @@ const MapMobile = () => {
           }
           onClick={() => {
             setNavVisible(false);
-            setGradientVisible(false)
-            setMausVisible(false);
+            setGradientVisible(false);
+            setLogoVisible(false);
+            setTitleVisible(true);
           }}
         >
           <Nav map={map} />

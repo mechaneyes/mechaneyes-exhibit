@@ -25,7 +25,7 @@ body {
   height: 100vh;
 
   .mecha-nav {
-    top: 52%;
+    top: 60%;
   }
 }
 
@@ -43,7 +43,67 @@ body {
   }
 }
 
-.overlay {
+.title-mechaneyes {
+  display: block;
+  position: absolute;
+  top: 27px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-size: 40px;
+  color: #14f267;
+  opacity: 1;
+  z-index: 1;
+  transition: opacity 1s;
+
+  &--hidden {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+}
+
+.logo-mechaneyes {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 70%;
+  opacity: 1;
+  transition: opacity 0.5s;
+
+  &--hidden {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+}
+
+.gradient-overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // height: 100%;
+  height: var(--height);
+  background: rgba(0, 18, 37, 0.2);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 18, 37, 0.1) 38%,
+    rgba(0, 18, 37, 0.1) 60%,
+    rgba(0, 18, 37, 0) 100%
+  );
+  opacity: 1;
+  transition: opacity 0.4s;
+  pointer-events: none;
+
+  &--hidden {
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+}
+
+.mausOverlay {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,40 +139,6 @@ body {
     color: white;
     font-weight: 400;
     letter-spacing: 1px;
-  }
-}
-
-.logo-mechaneyes {
-  position: absolute;
-  top: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  width: 70%;
-}
-
-.gradient-overlay {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  // height: 100%;
-  height: var(--height);
-  background: rgb(0, 18, 37);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 18, 37, 0.1) 38%,
-    rgba(0, 18, 37, 0.1) 60%,
-    rgba(0, 18, 37, 0) 100%
-  );
-  opacity: 1;
-  transition: opacity 0.4s;
-  pointer-events: none;
-
-  &--hidden {
-    opacity: 0;
-    transition: opacity 0.4s;
   }
 }
 
