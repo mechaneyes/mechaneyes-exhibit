@@ -46,7 +46,7 @@ body {
 .title-mechaneyes {
   display: block;
   position: absolute;
-  top: 27px;
+  top: 29px;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
@@ -76,6 +76,37 @@ body {
     opacity: 0;
     transition: opacity 0.5s;
   }
+}
+
+.hamburger {
+  display: flex;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.hamburger-holder,
+.hamburger-holder.enter {
+  opacity: 0;
+}
+
+.hamburger-holder.enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.hamburger-holder.enter-done {
+  opacity: 1;
+}
+
+.hamburger-holder-exit {
+  opacity: 1;
+}
+
+.hamburger-holder-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
 }
 
 .gradient-overlay {

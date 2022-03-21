@@ -5,6 +5,7 @@
 import { useRef, useEffect, useLayoutEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
+import { CSSTransition } from "react-transition-group";
 
 import useWindowDimensions from "../../utils/windowDimensions";
 import Nav from "../../components/layout/navigation/Nav/Nav";
@@ -21,6 +22,7 @@ const MapMobile = () => {
   const [isGradientVisible, setGradientVisible] = useState(true);
   const [isLogoVisible, setLogoVisible] = useState(true);
   const [isTitleVisible, setTitleVisible] = useState(false);
+  const [isHamburgerVisible, setHamburgerVisible] = useState(false);
 
   const mapContainer = useRef(null);
   const map = useRef(null);
@@ -71,7 +73,6 @@ const MapMobile = () => {
 
   // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
   // ———————————————————————————————————— MAPPIN —>
-
   const [lng, setLng] = useState(-119.85973831205467);
   const [lat, setLat] = useState(37.54733615641251);
 
@@ -328,9 +329,26 @@ const MapMobile = () => {
     });
   });
 
+  //   const renderHamburger = () => {
+  //     if (isHamburgerVisible) {
+  //       return <HamburgerMenu map={map} />;
+  //     } else {
+  //       return;
+  //     }
+  //   };
+
   return (
     <>
-      <HamburgerMenu map={map} />
+      <CSSTransition
+        in={isHamburgerVisible}
+        transitionName="hamburger-show-hide"
+        timeout={200}
+      >
+        <div className="hamburger-holder">
+          <HamburgerMenu map={map} />
+        </div>
+      </CSSTransition>
+
       <main className="map-one">
         <h1
           className={
@@ -366,6 +384,7 @@ const MapMobile = () => {
             setGradientVisible(false);
             setLogoVisible(false);
             setTitleVisible(true);
+            setHamburgerVisible(true);
           }}
         >
           <Nav map={map} />
