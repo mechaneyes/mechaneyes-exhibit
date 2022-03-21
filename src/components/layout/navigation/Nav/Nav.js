@@ -11,26 +11,27 @@ let Nav = (props) => {
   let fly;
 
   useEffect(() => {
-    fetch("/data/mobile.geojson")
-      .then((res) => res.json())
-      .then((result) => {
-        mountainsLoc = result.features;
-        // console.log("mountainsLoc", mountainsLoc[0].geometry.coordinates);
-      });
-
     // console.log('map', map.current)
 
     fly = (resortLoc) => {
-      map.current.flyTo({
-        center: [
-          mountainsLoc[resortLoc].geometry.coordinates[0],
-          mountainsLoc[resortLoc].geometry.coordinates[1],
-        ],
-        zoom: 15,
-        speed: 0.7,
-        curve: 1.6, // zoom speed
-        essential: true, // this animation is considered essential with respect to prefers-reduced-motion
-      });
+      fetch("/data/mobile.geojson")
+        .then((res) => res.json())
+        .then((result) => {
+          mountainsLoc = result.features;
+          // console.log("mountainsLoc", mountainsLoc[0].geometry.coordinates);
+        })
+        .then(() => {
+          map.current.flyTo({
+            center: [
+              mountainsLoc[resortLoc].geometry.coordinates[0],
+              mountainsLoc[resortLoc].geometry.coordinates[1],
+            ],
+            zoom: 15,
+            speed: 0.7,
+            curve: 1.6, // zoom speed
+            essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+          });
+        });
     };
   });
 

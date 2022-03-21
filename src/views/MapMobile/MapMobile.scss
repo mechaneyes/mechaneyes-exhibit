@@ -35,6 +35,14 @@ body {
   height: var(--height);
 }
 
+.nav-visible {
+  visibility: visible;
+
+  &--hidden {
+    visibility: hidden;
+  }
+}
+
 .overlay {
   display: flex;
   flex-direction: column;
@@ -84,6 +92,7 @@ body {
 }
 
 .gradient-overlay {
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
@@ -93,11 +102,18 @@ body {
   background: rgb(0, 18, 37);
   background: linear-gradient(
     0deg,
-    rgba(0, 18, 37, 0.4) 38%,
-    rgba(0, 18, 37, 0.4) 60%,
+    rgba(0, 18, 37, 0.1) 38%,
+    rgba(0, 18, 37, 0.1) 60%,
     rgba(0, 18, 37, 0) 100%
   );
+  opacity: 1;
+  transition: opacity 0.4s;
   pointer-events: none;
+
+  &--hidden {
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
 }
 
 #info {

@@ -17,14 +17,12 @@ mapboxgl.accessToken =
 
 const MapMobile = () => {
   const { height, width } = useWindowDimensions();
-  const [isVisible, setVisible] = useState(true);
+  const [isMausVisible, setMausVisible] = useState(true);
+  const [isNavVisible, setNavVisible] = useState(true);
+  const [isGradientVisible, setGradientVisible] = useState(true);
 
   const mapContainer = useRef(null);
   const map = useRef(null);
-
-  let triggerOverlay = () => {
-    setVisible(false);
-  };
 
   // ————————————————————————————————————o————————————————————————————————————o Full Screen -->
   // ———————————————————————————————————— Full Screen —>
@@ -334,11 +332,11 @@ const MapMobile = () => {
       <HamburgerMenu map={map} />
       <main
         className="map-one"
-        onClick={() => triggerOverlay()}
-        onWheel={() => triggerOverlay()}
-        onTouchStart={() => triggerOverlay()}
+        onClick={() => setMausVisible(false)}
+        onWheel={() => setMausVisible(false)}
+        onTouchStart={() => setMausVisible(false)}
       >
-        <div className={isVisible ? "overlay" : "overlay overlay--hidden"}>
+        <div className={isMausVisible ? "overlay" : "overlay overlay--hidden"}>
           {/* https://pierrerougemont.tumblr.com/post/135589893117 */}
           <img src="/images/mousewheel-giphy-one.gif" />
           <h2>Mousewheel &middot; Pinch &middot; Click &middot; Drag</h2>
@@ -346,8 +344,25 @@ const MapMobile = () => {
 
         <img className="logo-mechaneyes" src="/images/logo-mechaneyes.png" />
         <div ref={mapContainer} className="map-container" />
-        <div className="gradient-overlay" />
-        <Nav map={map} />
+        <div
+          className={
+            isGradientVisible
+              ? "gradient-overlay"
+              : "gradient-overlay gradient-overlay--hidden"
+          }
+        />
+        <div
+          className={
+            isNavVisible ? "nav-visible" : "nav-visible nav-visible--hidden"
+          }
+          onClick={() => {
+            setNavVisible(false);
+            setGradientVisible(false)
+            setMausVisible(false);
+          }}
+        >
+          <Nav map={map} />
+        </div>
       </main>
     </>
   );
