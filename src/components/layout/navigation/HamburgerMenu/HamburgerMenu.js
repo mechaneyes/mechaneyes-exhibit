@@ -19,7 +19,7 @@ let HamburgerMenu = (props) => {
       <img
         className="hamburger-trigger"
         onClick={toggleHamb}
-        src="/images/hamburger-trigger.svg"
+        src="/images/hamburger-trigger.png"
       />
       <section className={isVisible ? "hamburger" : "hamburger hamburger--hidden"} onClick={() => setVisible(!isVisible)}>
         <Nav map={map} />

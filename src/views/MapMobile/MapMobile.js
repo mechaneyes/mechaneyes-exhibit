@@ -26,6 +26,7 @@ const MapMobile = () => {
 
   const mapContainer = useRef(null);
   const map = useRef(null);
+  const hamburgerRef = useRef(null)
 
   // ————————————————————————————————————o————————————————————————————————————o Full Screen -->
   // ———————————————————————————————————— Full Screen —>
@@ -329,22 +330,16 @@ const MapMobile = () => {
     });
   });
 
-  //   const renderHamburger = () => {
-  //     if (isHamburgerVisible) {
-  //       return <HamburgerMenu map={map} />;
-  //     } else {
-  //       return;
-  //     }
-  //   };
-
   return (
     <>
       <CSSTransition
+
         in={isHamburgerVisible}
-        transitionName="hamburger-show-hide"
+        transitionname="hamburger-show-hide"
         timeout={200}
+        nodeRef={hamburgerRef}
       >
-        <div className="hamburger-holder">
+        <div ref={hamburgerRef} className="hamburger-holder">
           <HamburgerMenu map={map} />
         </div>
       </CSSTransition>
