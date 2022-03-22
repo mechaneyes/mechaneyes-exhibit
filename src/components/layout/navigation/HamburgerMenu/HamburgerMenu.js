@@ -1,16 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import Nav from '../Nav/Nav';
-import useWindowDimensions from "../../../../utils/windowDimensions";
+import AboutContext from "../../../../store/transition/transition.about.js";
 
 import "./HamburgerMenu.scss";
 
 let HamburgerMenu = (props) => {
   const map = props.map;
-  const { height, width } = useWindowDimensions();
 
   const [isVisible, setVisible] = useState(false);
+  const { setAboutVisible } = useContext(AboutContext);
+  
   const toggleHamb = () => {
     setVisible(!isVisible);
+    setAboutVisible(false);
   };
 
 

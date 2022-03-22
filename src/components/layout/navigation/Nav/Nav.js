@@ -1,10 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
+import AboutContext from "../../../../store/transition/transition.about.js";
 import "./Nav.scss";
 
 let Nav = (props) => {
   const map = props.map;
-  const [isNavVisible, setNavVisible] = useState(true);
+
+  const { isAboutVisible, setAboutVisible } = useContext(AboutContext);
+  let updateAbout
+  useEffect(() => {
+    updateAbout = () => {
+      setAboutVisible(!isAboutVisible);
+      console.log("isAboutVisible", isAboutVisible);
+    };
+  });
 
   // ————————————————————————————————————o————————————————————————————————————o FLY -->
   // ———————————————————————————————————— FLY —>
@@ -14,7 +23,7 @@ let Nav = (props) => {
   useEffect(() => {
     // console.log('map', map.current)
 
-    fly = (resortLoc) => {
+    fly = (resortLoc, angle = 60) => {
       fetch("/data/mobile.geojson")
         .then((res) => res.json())
         .then((result) => {
@@ -28,6 +37,7 @@ let Nav = (props) => {
               mountainsLoc[resortLoc].geometry.coordinates[1],
             ],
             zoom: 15,
+            pitch: angle,
             speed: 0.7,
             curve: 1.6, // zoom speed
             essential: true, // this animation is considered essential with respect to prefers-reduced-motion
@@ -65,7 +75,7 @@ let Nav = (props) => {
           <h2 className="nav-headline nav-headline--generative">
             Generative
             {/* Heavenly */}
-            </h2>
+          </h2>
         </a>
         <a className="mecha-nav__item" onClick={() => fly(22)}>
           <img src="/images/icon-design.png" />
@@ -74,11 +84,9 @@ let Nav = (props) => {
             {/* Homewood */}
           </h2>
         </a>
-        <a className="mecha-nav__item" onClick={() => fly(4)}>
+        <a className="mecha-nav__item" onClick={() => updateAbout()}>
           <img src="/images/icon-about.png" />
-          <h2 className="nav-headline nav-headline--about">
-            About
-          </h2>
+          <h2 className="nav-headline nav-headline--about">About</h2>
         </a>
       </nav>
     </>

@@ -1,0 +1,51 @@
+.about-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 18, 37, 0.85);
+  z-index: 2;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.about-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+
+  &.enter {
+    opacity: 0;
+  }
+
+  &.enter-active {
+    opacity: 0;
+    transition: opacity 800ms;
+  }
+
+  &.enter-done {
+    opacity: 1;
+    transition: opacity 800ms;
+  }
+
+  &.exit {
+    opacity: 1;
+    transition: opacity 800ms;
+  }
+
+  &.exit-active {
+    opacity: 1;
+    transition: opacity 800ms;
+  }
+
+  &.exit-done {
+    opacity: 1;
+    transition: opacity 800ms;
+  }
+}

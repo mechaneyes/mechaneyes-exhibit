@@ -2,7 +2,14 @@
 // Use Mapbox GL JS in a React app
 //
 
-import { useRef, useEffect, useLayoutEffect, useState } from "react";
+import {
+  useRef,
+  useEffect,
+  useLayoutEffect,
+  useState,
+  createContext,
+  useContext,
+} from "react";
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 import { CSSTransition } from "react-transition-group";
@@ -10,11 +17,15 @@ import { CSSTransition } from "react-transition-group";
 import useWindowDimensions from "../../utils/windowDimensions";
 import Nav from "../../components/layout/navigation/Nav/Nav";
 import HamburgerMenu from "../../components/layout/navigation/HamburgerMenu/HamburgerMenu";
+import AboutContext from "../../store/transition/transition.about.js";
+import About from "../About/About";
 
 import "./MapMobile.scss";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWVjaGFuZXllcyIsImEiOiJ6V2F6bmFNIn0.mauWWMuRub6GkCxkc49sTg";
+
+export const UmbrellaAboutContext = createContext();
 
 const MapMobile = () => {
   const { height, width } = useWindowDimensions();
@@ -24,12 +35,20 @@ const MapMobile = () => {
   const [isLogoVisible, setLogoVisible] = useState(true);
   const [isTitleVisible, setTitleVisible] = useState(false);
   const [isHamburgerVisible, setHamburgerVisible] = useState(false);
+  const [isAboutTriggered, setAboutTriggered] = useState(false);
+  
 
   const mapContainer = useRef(null);
   const map = useRef(null);
   const hamburgerRef = useRef(null);
   const logoRef = useRef(null);
+  const aboutRef = useRef(null);
 
+  const aboutValue = useContext(AboutContext);
+  const [isAboutVisible, setAboutVisible] = useState(false);
+
+  // ———————————————————————————————————— Hide Logo onClick —>
+  //
   const logoDisplayNone = () => {
     setTimeout(() => {
       setLogoVisible(false);
@@ -225,67 +244,79 @@ const MapMobile = () => {
 
   return (
     <>
-      <CSSTransition
-        in={isHamburgerVisible}
-        transitionname="hamburger-show-hide"
-        timeout={200}
-        nodeRef={hamburgerRef}
-      >
-        <div ref={hamburgerRef} className="hamburger-holder">
-          <HamburgerMenu map={map} />
-        </div>
-      </CSSTransition>
-
-      <main className="map-one">
-        <h1
-          className={
-            isTitleVisible
-              ? "title-mechaneyes"
-              : "title-mechaneyes title-mechaneyes--hidden"
-          }
-        >
-          Mechaneyes
-        </h1>
+      <AboutContext.Provider value={{ isAboutVisible, setAboutVisible }}>
         <CSSTransition
-          in={isLogoTriggered}
-          transitionname="logo-show-hide"
+          in={isHamburgerVisible}
+          transitionname="hamburger-show-hide"
           timeout={200}
-          nodeRef={logoRef}
+          nodeRef={hamburgerRef}
         >
-          <img
-            ref={logoRef}
-            className={
-              isLogoVisible
-                ? "logo-mechaneyes"
-                : "logo-mechaneyes logo-mechaneyes--hidden"
-            }
-            src="/images/logo-mechaneyes.png"
-          />
+          <div ref={hamburgerRef} className="hamburger-holder">
+            <HamburgerMenu map={map} />
+          </div>
         </CSSTransition>
-        <div ref={mapContainer} className="map-container" />
         <div
           className={
-            isGradientVisible
-              ? "gradient-overlay"
-              : "gradient-overlay gradient-overlay--hidden"
+            isAboutVisible
+              ? "about-overlay"
+              : "about-overlay about-overlay--hidden"
           }
-        />
-        <div
-          className={
-            isNavVisible ? "nav-visible" : "nav-visible nav-visible--hidden"
-          }
-          onClick={() => {
-            setNavVisible(false);
-            setGradientVisible(false);
-            setLogoTriggered(true);
-            logoDisplayNone();
-            setTitleVisible(true);
-            setHamburgerVisible(true);
-          }}
         >
-          <Nav map={map} />
+          <About />
         </div>
-      </main>
+
+        <main className="map-one">
+          <h1
+            className={
+              isTitleVisible
+                ? "title-mechaneyes"
+                : "title-mechaneyes title-mechaneyes--hidden"
+            }
+          >
+            Mechaneyes
+          </h1>
+          <CSSTransition
+            in={isLogoTriggered}
+            transitionname="logo-show-hide"
+            timeout={200}
+            nodeRef={logoRef}
+          >
+            <img
+              ref={logoRef}
+              className={
+                isLogoVisible
+                  ? "logo-mechaneyes"
+                  : "logo-mechaneyes logo-mechaneyes--hidden"
+              }
+              src="/images/logo-mechaneyes.png"
+            />
+          </CSSTransition>
+          <div ref={mapContainer} className="map-container" />
+          <div
+            className={
+              isGradientVisible
+                ? "gradient-overlay"
+                : "gradient-overlay gradient-overlay--hidden"
+            }
+          />
+          <div
+            className={
+              isNavVisible ? "nav-visible" : "nav-visible nav-visible--hidden"
+            }
+            onClick={() => {
+              setNavVisible(false);
+              setGradientVisible(false);
+              setLogoTriggered(true);
+              logoDisplayNone();
+              setTitleVisible(true);
+              setHamburgerVisible(true);
+              setAboutTriggered(true);
+            }}
+          >
+            <Nav map={map} />
+          </div>
+        </main>
+      </AboutContext.Provider>
     </>
   );
 };

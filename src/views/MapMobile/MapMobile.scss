@@ -199,6 +199,14 @@ body {
   }
 }
 
+.about-overlay {
+  display: block;
+
+  &--hidden {
+    display: none;
+  }
+}
+
 #info {
   display: table;
   position: relative;

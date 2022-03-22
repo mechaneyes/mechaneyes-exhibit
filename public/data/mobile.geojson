@@ -320,6 +320,43 @@
         "title": "Stereoh",
         "description": "Night Jaguars"
       }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.68597443307317, 37.67003900270261]
+      },
+      "properties": {
+        "hide": "hide",
+        "Palisades": "About About About About About About About About About",
+        "Palisade2": "About About About About About About About About About",
+        "DESIGN": "DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN",
+        "26": "26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.68499011597328, 37.66688903777322]
+      },
+      "type": "Feature",
+      "properties": {
+        "medium": "about",
+        "title": "Ray Weitzenberg",
+        "description": "Night Jaguars"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.6882936745169, 37.672637837190734]
+      },
+      "type": "Feature",
+      "properties": {
+        "medium": "about",
+        "title": "Ray Weitzenberg",
+        "description": "Night Jaguars"
+      }
     }
   ]
 }
