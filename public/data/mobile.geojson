@@ -10,7 +10,7 @@
         "hide": "hide",
         "Palisades": "Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl",
         "Palisade2": "Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl",
-        "design": "design"
+        "design": "PHOTOGRAPHY PHOTOGRAPHY PHOTOGRAPHY PHOTOGRAPHY PHOTOGRAPHY"
       }
     },
     {
@@ -20,9 +20,9 @@
       },
       "type": "Feature",
       "properties": {
-        "medium": "design",
+        "medium": "photography",
         "resort": "Sugar Bowl",
-        "title": "Sound Noir",
+        "title": "Gossamer",
         "description": "Mount Judah"
       }
     },
@@ -33,9 +33,9 @@
       },
       "type": "Feature",
       "properties": {
-        "medium": "design",
+        "medium": "photography",
         "resort": "Sugar Bowl",
-        "title": "Stereoh",
+        "title": "Loops",
         "description": "Mt Lincoln"
       }
     },
@@ -46,9 +46,9 @@
       },
       "type": "Feature",
       "properties": {
-        "medium": "design",
+        "medium": "photography",
         "resort": "Sugar Bowl",
-        "title": "pAAger",
+        "title": "Objects May Appear",
         "description": "Mount Disney"
       }
     },
@@ -59,34 +59,33 @@
       },
       "type": "Feature",
       "properties": {
-        "medium": "design",
+        "medium": "photography",
         "resort": "Sugar Bowl",
-        "title": "pAAger",
+        "title": "Formalism",
         "description": "Crows Nest"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.75984097597188, 37.51409562397963]
+        "coordinates": [-119.7597377313981, 37.512328287717054]
       },
       "properties": {
         "hide": "hide",
         "Palisades": "Palisades Palisades Palisades Palisades Palisades",
         "Palisade2": "Palisades Palisades Palisades Palisades Palisades",
         "5": "5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
-        "dev": "dev"
+        "programming": "PROGRAMMING PROGRAMMING PROGRAMMING PROGRAMMING"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.76085404145539, 37.508677940534895]
+        "coordinates": [-119.76084226382494, 37.506955757325926]
       },
       "type": "Feature",
       "properties": {
-        "medium": "dev",
-        "resort": "Palisades",
+        "medium": "programming",
         "title": "Better Breaks",
         "description": "Granite Chief"
       }
@@ -94,12 +93,11 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.76207699376403, 37.51301893649833]
+        "coordinates": [-119.76074305396344, 37.5111442049664]
       },
       "type": "Feature",
       "properties": {
-        "medium": "dev",
-        "resort": "Palisades",
+        "medium": "programming",
         "title": "So I Do",
         "description": "Squaw Peak"
       }
@@ -107,12 +105,11 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.75871526930939, 37.51204647792386]
+        "coordinates": [-119.75821833587037, 37.509848516764094]
       },
       "type": "Feature",
       "properties": {
-        "medium": "dev",
-        "resort": "Palisades",
+        "medium": "programming",
         "title": "UNIQLO",
         "description": "Scott Peak"
       }
@@ -124,8 +121,7 @@
       },
       "type": "Feature",
       "properties": {
-        "medium": "dev",
-        "resort": "Palisades",
+        "medium": "programming",
         "title": "Pager",
         "description": "Emigrant Peak"
       }
@@ -133,12 +129,11 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.76106928516276, 37.517855115068784]
+        "coordinates": [-119.76268124113062, 37.517117520462264]
       },
       "type": "Feature",
       "properties": {
-        "medium": "dev",
-        "resort": "Palisades",
+        "medium": "programming",
         "title": "Stereoh",
         "description": "Ward Peak"
       }
@@ -150,64 +145,9 @@
       },
       "type": "Feature",
       "properties": {
-        "medium": "dev",
-        "resort": "Palisades",
+        "medium": "programming",
         "title": "Monolyth",
         "description": "KT-22"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-119.7457189026739, 37.625468406103494]
-      },
-      "properties": {
-        "hide": "hide",
-        "Palisades": "Homewood Homewood Homewood Homewood Homewood Homewood",
-        "Palisade2": "Homewood Homewood Homewood Homewood Homewood Homewood",
-        "12": "12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-119.74743161359788, 37.623147933290014]
-      },
-      "type": "Feature",
-      "properties": {
-        "medium": "generative",
-        "resort": "Homewood",
-        "title": "Generative",
-        "description": "Ellis Peak",
-        "elevation": "8744 ft / 2665 m"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-119.7467379848668, 37.63031168173859]
-      },
-      "type": "Feature",
-      "properties": {
-        "medium": "generative",
-        "resort": "Homewood",
-        "title": "Generative",
-        "description": "Ellis Lifthouse",
-        "elevation": "8744 ft / 2665 m"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-119.74412624010847, 37.62452295048767]
-      },
-      "type": "Feature",
-      "properties": {
-        "medium": "generative",
-        "resort": "Homewood",
-        "title": "Night Jaguars",
-        "description": "Night Jaguars",
-        "elevation": "8744 ft / 2665 m"
       }
     },
     {
@@ -219,6 +159,7 @@
         "hide": "hide",
         "Palisades": "Kirkwood Kirkwood Kirkwood Kirkwood Kirkwood Kirkwood",
         "Palisade2": "Kirkwood Kirkwood Kirkwood Kirkwood Kirkwood Kirkwood",
+        "INSTALLATION": "INSTALLATION INSTALLATION INSTALLATION INSTALLATION",
         "16": "16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16"
       }
     },
@@ -230,10 +171,8 @@
       "type": "Feature",
       "properties": {
         "medium": "installation",
-        "resort": "Kirkwood",
         "title": "Generative",
-        "description": "Thimble Peak",
-        "elevation": "9809 ft / 2990 m"
+        "description": "Thimble Peak"
       }
     },
     {
@@ -244,10 +183,8 @@
       "type": "Feature",
       "properties": {
         "medium": "installation",
-        "resort": "Kirkwood",
         "title": "Generative",
-        "description": "Covered Wagon",
-        "elevation": "9570 ft / 2916 m"
+        "description": "Covered Wagon"
       }
     },
     {
@@ -258,7 +195,6 @@
       "type": "Feature",
       "properties": {
         "medium": "installation",
-        "resort": "Kirkwood",
         "title": "Generativeoo",
         "description": "The Sisters"
       }
@@ -271,7 +207,6 @@
       "type": "Feature",
       "properties": {
         "medium": "installation",
-        "resort": "Kirkwood",
         "title": "Generative",
         "description": "Martin Point"
       }
@@ -284,7 +219,6 @@
       "type": "Feature",
       "properties": {
         "medium": "installation",
-        "resort": "Kirkwood",
         "title": "Generative",
         "description": "Glove Rock"
       }
@@ -292,43 +226,99 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.861371, 38.858165]
+        "coordinates": [-119.92651843904918, 37.66011250036587]
       },
-      "type": "Feature",
       "properties": {
-        "medium": "heavenly",
-        "resort": "Heavenly",
-        "title": "Generative",
-        "description": "Jobs Peak",
-        "elevation": "10,638 ft / 3242 m"
+        "hide": "hide",
+        "Palisades": "Heavenly Heavenly Heavenly Heavenly Heavenly Heavenly",
+        "Palisade2": "Heavenly Heavenly Heavenly Heavenly Heavenly Heavenly",
+        "GENERATIVE": "GENERATIVE GENERATIVE GENERATIVE GENERATIVE GENERATIVE",
+        "18": "18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.884589, 38.86231]
+        "coordinates": [-119.92780722106136, 37.65638287672712]
       },
       "type": "Feature",
       "properties": {
-        "medium": "heavenly",
-        "resort": "Heavenly",
+        "medium": "generative",
         "title": "Generative",
-        "description": "Jobs Sister",
-        "elevation": "10,828 ft / 3300 m"
+        "description": "Jobs Peak"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.900095, 38.857499]
+        "coordinates": [-119.92480651547646, 37.65984672757418]
       },
       "type": "Feature",
       "properties": {
-        "medium": "heavenly",
-        "resort": "Heavenly",
+        "medium": "generative",
         "title": "Generative",
-        "description": "Freel Peak",
-        "elevation": "10,886 ft / 3319 m"
+        "description": "Jobs Sister"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.9292821798233, 37.667092888110275]
+      },
+      "type": "Feature",
+      "properties": {
+        "medium": "generative",
+        "title": "Generative",
+        "description": "Freel Peak"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.7457189026739, 37.625468406103494]
+      },
+      "properties": {
+        "hide": "hide",
+        "Palisades": "Homewood Homewood Homewood Homewood Homewood Homewood",
+        "Palisade2": "Homewood Homewood Homewood Homewood Homewood Homewood",
+        "DESIGN": "DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN",
+        "22": "22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.74743161359788, 37.623147933290014]
+      },
+      "type": "Feature",
+      "properties": {
+        "medium": "design",
+        "title": "design",
+        "description": "Ellis Peak"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.7467379848668, 37.63031168173859]
+      },
+      "type": "Feature",
+      "properties": {
+        "medium": "design",
+        "title": "design",
+        "description": "Ellis Lifthouse"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.74412624010847, 37.62452295048767]
+      },
+      "type": "Feature",
+      "properties": {
+        "medium": "design",
+        "title": "Night Jaguars",
+        "description": "Night Jaguars"
       }
     }
   ]

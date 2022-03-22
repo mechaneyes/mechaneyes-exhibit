@@ -43,31 +43,42 @@ let Nav = (props) => {
           <img src="/images/icon-photography.png" />
           <h2 className="nav-headline nav-headline--phototograpy">
             Photography
+            {/* Sugar Bowl */}
           </h2>
         </a>
         <a className="mecha-nav__item" onClick={() => fly(5)}>
           <img src="/images/icon-programming.png" />
           <h2 className="nav-headline nav-headline--programming">
             Programming
+            {/* Palisades */}
           </h2>
         </a>
         <a className="mecha-nav__item" onClick={() => fly(12)}>
           <img src="/images/icon-installation.png" />
           <h2 className="nav-headline nav-headline--installation">
             Installation
+            {/* Kirkwood */}
           </h2>
         </a>
-        <a className="mecha-nav__item" onClick={() => fly(16)}>
+        <a className="mecha-nav__item" onClick={() => fly(18)}>
           <img src="/images/icon-generative.png" />
-          <h2 className="nav-headline nav-headline--generative">Generative</h2>
+          <h2 className="nav-headline nav-headline--generative">
+            Generative
+            {/* Heavenly */}
+            </h2>
         </a>
-        <a className="mecha-nav__item" onClick={() => fly(19)}>
+        <a className="mecha-nav__item" onClick={() => fly(22)}>
           <img src="/images/icon-design.png" />
-          <h2 className="nav-headline nav-headline--design">Design</h2>
+          <h2 className="nav-headline nav-headline--design">
+            Design
+            {/* Homewood */}
+          </h2>
         </a>
         <a className="mecha-nav__item" onClick={() => fly(4)}>
           <img src="/images/icon-about.png" />
-          <h2 className="nav-headline nav-headline--about">About</h2>
+          <h2 className="nav-headline nav-headline--about">
+            About
+          </h2>
         </a>
       </nav>
     </>

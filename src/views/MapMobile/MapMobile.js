@@ -146,6 +146,8 @@ const MapMobile = () => {
           },
           paint: {
             "text-color": "#ffffff",
+            "text-halo-color": "#000000",
+            "text-halo-width": 3,
           },
         });
     });
@@ -163,21 +165,29 @@ const MapMobile = () => {
           const el = document.createElement("div");
 
           switch (feature.properties.medium) {
-            case "design":
-              el.className = "marker marker--design";
-              el.style.backgroundImage = `url('/images/icon-design.png')`;
+            case "photography":
+              el.className = "marker marker--photography";
+              el.style.backgroundImage = `url('/images/icon-photography.png')`;
               break;
-            case "dev":
-              el.className = "marker marker--dev";
+            case "programming":
+              el.className = "marker marker--programming";
               el.style.backgroundImage = `url('/images/icon-programming.png')`;
+              break;
+            case "installation":
+              el.className = "marker marker--installation";
+              el.style.backgroundImage = `url('/images/icon-installation.png')`;
               break;
             case "generative":
               el.className = "marker marker--generative";
               el.style.backgroundImage = `url('/images/icon-generative.png')`;
               break;
-            case "installation":
-              el.className = "marker marker--installation";
-              el.style.backgroundImage = `url('/images/icon-installation.png')`;
+            case "design":
+              el.className = "marker marker--design";
+              el.style.backgroundImage = `url('/images/icon-design.png')`;
+              break;
+            case "about":
+              el.className = "marker marker--about";
+              el.style.backgroundImage = `url('/images/icon-about.png')`;
               break;
           }
 
