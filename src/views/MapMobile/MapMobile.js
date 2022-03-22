@@ -20,6 +20,7 @@ const MapMobile = () => {
   const { height, width } = useWindowDimensions();
   const [isNavVisible, setNavVisible] = useState(true);
   const [isGradientVisible, setGradientVisible] = useState(true);
+  const [isLogoTriggered, setLogoTriggered] = useState(false);
   const [isLogoVisible, setLogoVisible] = useState(true);
   const [isTitleVisible, setTitleVisible] = useState(false);
   const [isHamburgerVisible, setHamburgerVisible] = useState(false);
@@ -27,6 +28,13 @@ const MapMobile = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
   const hamburgerRef = useRef(null);
+  const logoRef = useRef(null);
+
+  const logoDisplayNone = () => {
+    setTimeout(() => {
+      setLogoVisible(false);
+    }, 1000);
+  };
 
   // ————————————————————————————————————o————————————————————————————————————o Full Screen -->
   // ———————————————————————————————————— Full Screen —>
@@ -154,7 +162,7 @@ const MapMobile = () => {
   });
 
   // ————————————————————————————————————o————————————————————————————————————o MARKERS -->
-  // ———————————————————————————————————— CUSTOM MARKERS —>
+  // ———————————————————————————————————— MARKERS —>
   // https://docs.mapbox.com/help/tutorials/custom-markers-gl-js/
   //
   useEffect(() => {
@@ -238,14 +246,22 @@ const MapMobile = () => {
         >
           Mechaneyes
         </h1>
-        <img
-          className={
-            isLogoVisible
-              ? "logo-mechaneyes"
-              : "logo-mechaneyes logo-mechaneyes--hidden"
-          }
-          src="/images/logo-mechaneyes.png"
-        />
+        <CSSTransition
+          in={isLogoTriggered}
+          transitionname="logo-show-hide"
+          timeout={200}
+          nodeRef={logoRef}
+        >
+          <img
+            ref={logoRef}
+            className={
+              isLogoVisible
+                ? "logo-mechaneyes"
+                : "logo-mechaneyes logo-mechaneyes--hidden"
+            }
+            src="/images/logo-mechaneyes.png"
+          />
+        </CSSTransition>
         <div ref={mapContainer} className="map-container" />
         <div
           className={
@@ -261,7 +277,8 @@ const MapMobile = () => {
           onClick={() => {
             setNavVisible(false);
             setGradientVisible(false);
-            setLogoVisible(false);
+            setLogoTriggered(true);
+            logoDisplayNone();
             setTitleVisible(true);
             setHamburgerVisible(true);
           }}

@@ -71,8 +71,36 @@ body {
   transition: opacity 0.5s;
 
   &--hidden {
+    // opacity: 0;
+    // transition: opacity 0.5s;
+    display: none;
+  }
+
+  &.enter {
+    opacity: 1;
+  }
+  
+  &.enter-active {
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+  
+  &.enter-done {
     opacity: 0;
-    transition: opacity 0.5s;
+  }
+  
+  &.exit {
+    opacity: 0;
+  }
+  
+  &.exit-active {
+    opacity: 0;
+    transition: opacity 500ms;
+  }
+  
+  &.exit-done {
+    opacity: 0;
+    transition: opacity 500ms;
   }
 }
 
