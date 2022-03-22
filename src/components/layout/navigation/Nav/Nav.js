@@ -57,7 +57,7 @@ let Nav = (props) => {
             Installation
           </h2>
         </a>
-        <a className="mecha-nav__item" onClick={() => fly(12)}>
+        <a className="mecha-nav__item" onClick={() => fly(16)}>
           <img src="/images/icon-generative.png" />
           <h2 className="nav-headline nav-headline--generative">Generative</h2>
         </a>

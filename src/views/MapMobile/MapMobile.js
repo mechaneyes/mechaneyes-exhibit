@@ -151,7 +151,8 @@ const MapMobile = () => {
     });
   });
 
-  // ———————————————————————————————————— BASIC MARKERS —>
+  // ————————————————————————————————————o————————————————————————————————————o MARKERS -->
+  // ———————————————————————————————————— CUSTOM MARKERS —>
   // https://docs.mapbox.com/help/tutorials/custom-markers-gl-js/
   //
   useEffect(() => {
@@ -159,9 +160,26 @@ const MapMobile = () => {
       .then((res) => res.json())
       .then((result) => {
         for (const feature of result.features) {
-          // create a HTML element for each feature
           const el = document.createElement("div");
-          el.className = "marker";
+
+          switch (feature.properties.medium) {
+            case "design":
+              el.className = "marker marker--design";
+              el.style.backgroundImage = `url('/images/icon-design.png')`;
+              break;
+            case "dev":
+              el.className = "marker marker--dev";
+              el.style.backgroundImage = `url('/images/icon-programming.png')`;
+              break;
+            case "generative":
+              el.className = "marker marker--generative";
+              el.style.backgroundImage = `url('/images/icon-generative.png')`;
+              break;
+            case "installation":
+              el.className = "marker marker--installation";
+              el.style.backgroundImage = `url('/images/icon-installation.png')`;
+              break;
+          }
 
           if (feature.properties.hide != "hide") {
             new mapboxgl.Marker(el)
