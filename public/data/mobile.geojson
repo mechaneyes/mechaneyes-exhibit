@@ -16,7 +16,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.78493288189543, 37.588131114462485]
+        "coordinates": [-119.78538309594398, 37.58868030436351]
       },
       "type": "Feature",
       "properties": {
@@ -42,7 +42,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.78978825137392, 37.60193817514134]
+        "coordinates": [-119.78845379252857, 37.59969360855871]
       },
       "type": "Feature",
       "properties": {
@@ -81,7 +81,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.24912509898678, 39.157208876484304]
+        "coordinates": [-119.76085404145539, 37.508677940534895]
       },
       "type": "Feature",
       "properties": {
@@ -94,7 +94,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.24868989484469, 39.16404861527329]
+        "coordinates": [-119.76207699376403, 37.51301893649833]
       },
       "type": "Feature",
       "properties": {
@@ -107,7 +107,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.25388699715916, 39.16323211826693]
+        "coordinates": [-119.75871526930939, 37.51204647792386]
       },
       "type": "Feature",
       "properties": {
@@ -120,7 +120,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.2526416630077, 39.155480581567474]
+        "coordinates": [-119.75713133262059, 37.515408466095934]
       },
       "type": "Feature",
       "properties": {
@@ -133,7 +133,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.25154749251783, 39.17101368988554]
+        "coordinates": [-119.76106928516276, 37.517855115068784]
       },
       "type": "Feature",
       "properties": {
@@ -146,7 +146,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.251336275766, 39.15941962840816]
+        "coordinates": [-119.7584018056142, 37.525235694411776]
       },
       "type": "Feature",
       "properties": {
@@ -159,7 +159,19 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.77499775009682, 37.60623645189632]
+        "coordinates": [-119.74574039029238, 37.62801501522591]
+      },
+      "properties": {
+        "hide": "hide",
+        "Palisades": "Homewood Homewood Homewood Homewood Homewood Homewood",
+        "Palisade2": "Homewood Homewood Homewood Homewood Homewood Homewood",
+        "12": "12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.74743161359788, 37.623147933290014]
       },
       "type": "Feature",
       "properties": {
@@ -173,7 +185,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.18402925362022, 39.07543510314162]
+        "coordinates": [-119.74404263736437, 37.63461106180857]
       },
       "type": "Feature",
       "properties": {
@@ -187,7 +199,21 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.060661, 38.662497]
+        "coordinates": [-119.74437474098102, 37.62443588985559]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "generative",
+        "resort": "Homewood",
+        "title": "Night Jaguars",
+        "description": "Night Jaguars",
+        "elevation": "8744 ft / 2665 m"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.69744073673371, 37.5086186983101]
       },
       "type": "Feature",
       "properties": {

@@ -36,43 +36,18 @@ const MapMobile = () => {
   // https://pqina.nl/blog/how-to-prevent-scrolling-the-page-on-ios-safari/
   // https://css-tricks.com/updating-a-css-variable-with-javascript/
   //
-  let root = document.documentElement;
-  root.style.setProperty("--height", `${window.innerHeight}px`);
-
   useLayoutEffect(() => {
+    let root = document.documentElement;
+    root.style.setProperty("--height", `${window.innerHeight}px`);
+
     window.addEventListener("resize", () => {
       root.style.setProperty("--height", `${window.innerHeight}px`);
       console.log("root.style", root.style);
     });
   }, []);
 
-  // ———————————————————————————————————— BASIC MARKERS —>
-  // https://docs.mapbox.com/help/tutorials/custom-markers-gl-js/
-  //
-  useEffect(() => {
-    fetch("/data/mobile.geojson")
-      .then((res) => res.json())
-      .then((result) => {
-        for (const feature of result.features) {
-          // create a HTML element for each feature
-          const el = document.createElement("div");
-          el.className = "marker";
-
-          if (feature.properties.hide != "hide") {
-            new mapboxgl.Marker(el)
-              .setLngLat(feature.geometry.coordinates)
-              .addTo(map.current)
-              .setOffset([0, 57]);
-          }
-        }
-      });
-  });
-
   // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
   // ———————————————————————————————————— MAPPIN —>
-  //   const [lng, setLng] = useState(-119.85973831205467);
-  //   const [lat, setLat] = useState(37.54733615641251);
-
   const [lng, setLng] = useState(-119.76616356151555);
   const [lat, setLat] = useState(37.522955765043974);
 
@@ -174,6 +149,28 @@ const MapMobile = () => {
           },
         });
     });
+  });
+
+  // ———————————————————————————————————— BASIC MARKERS —>
+  // https://docs.mapbox.com/help/tutorials/custom-markers-gl-js/
+  //
+  useEffect(() => {
+    fetch("/data/mobile.geojson")
+      .then((res) => res.json())
+      .then((result) => {
+        for (const feature of result.features) {
+          // create a HTML element for each feature
+          const el = document.createElement("div");
+          el.className = "marker";
+
+          if (feature.properties.hide != "hide") {
+            new mapboxgl.Marker(el)
+              .setLngLat(feature.geometry.coordinates)
+              .addTo(map.current)
+              .setOffset([0, 57]);
+          }
+        }
+      });
   });
 
   return (

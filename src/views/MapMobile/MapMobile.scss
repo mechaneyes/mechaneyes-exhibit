@@ -31,7 +31,6 @@ body {
 
 .map-container {
   width: 100vw;
-  // height: 100vh;
   height: var(--height);
 }
 
@@ -46,9 +45,8 @@ body {
 .title-mechaneyes {
   display: block;
   position: absolute;
-  top: 29px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 9px;
+  left: 60px;
   margin: 0;
   font-size: 40px;
   color: #14f267;
@@ -64,11 +62,11 @@ body {
 
 .logo-mechaneyes {
   position: absolute;
-  top: 8%;
+  top: 7%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  width: 70%;
+  width: 65%;
   opacity: 1;
   transition: opacity 0.5s;
 
@@ -117,13 +115,13 @@ body {
   width: 100%;
   // height: 100%;
   height: var(--height);
-  background: rgba(0, 18, 37, 0.2);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 18, 37, 0.1) 38%,
-    rgba(0, 18, 37, 0.1) 60%,
-    rgba(0, 18, 37, 0) 100%
-  );
+  background: rgba(0, 18, 37, 0.3);
+  // background: linear-gradient(
+  //   0deg,
+  //   rgba(0, 18, 37, 0.4) 8%,
+  //   rgba(0, 18, 37, 0.2) 70%,
+  //   rgba(0, 18, 37, 0.1) 100%
+  // );
   opacity: 1;
   transition: opacity 0.4s;
   pointer-events: none;
