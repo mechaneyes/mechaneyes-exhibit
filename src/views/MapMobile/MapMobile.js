@@ -127,7 +127,7 @@ const MapMobile = () => {
         })
 
         .addLayer({
-          id: "unclustered-label",
+          id: "label",
           type: "symbol",
           source: "mountains",
           layout: {
@@ -182,13 +182,27 @@ const MapMobile = () => {
           }
 
           if (feature.properties.hide != "hide") {
-            new mapboxgl.Marker(el)
+            const marker = new mapboxgl.Marker(el)
               .setLngLat(feature.geometry.coordinates)
               .addTo(map.current)
               .setOffset([0, 57]);
+
+            // ———————————————————————————————————— CENTER MARKER ON CLICK —>
+            marker.getElement().addEventListener("click", () => {
+              map.current.flyTo({
+                center: feature.geometry.coordinates,
+              });
+            });
           }
         }
       });
+
+    // ———————————————————————————————————— MO CENTER MARKER ON CLICK —>
+    map.current.on("click", "label", (e) => {
+      map.current.flyTo({
+        center: e.features[0].geometry.coordinates,
+      });
+    });
   });
 
   return (
