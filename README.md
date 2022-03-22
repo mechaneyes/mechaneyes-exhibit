@@ -176,8 +176,9 @@ The first time I saw this vibration effect was at [Max Fish](https://maxfishbar.
 
 ## Notes
 
-  
+[How To Share State Across React Components with Context](https://www.digitalocean.com/community/tutorials/how-to-share-state-across-react-components-with-context#step-2-providing-data-from-a-root-component)
 
-  
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

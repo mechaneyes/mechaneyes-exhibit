@@ -266,7 +266,7 @@ const MapMobile = () => {
         </div>
 
         <main className="map-one">
-          <h1
+          <h2
             className={
               isTitleVisible
                 ? "title-mechaneyes"
@@ -274,7 +274,7 @@ const MapMobile = () => {
             }
           >
             Mechaneyes
-          </h1>
+          </h2>
           <CSSTransition
             in={isLogoTriggered}
             transitionname="logo-show-hide"
