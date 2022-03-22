@@ -39,13 +39,13 @@ let Nav = (props) => {
   return (
     <>
       <nav className="mecha-nav">
-        <a className="mecha-nav__item" onClick={() => fly(1)}>
+        <a className="mecha-nav__item" onClick={() => fly(0)}>
           <img src="/images/icon-photography.png" />
           <h2 className="nav-headline nav-headline--phototograpy">
             Photography
           </h2>
         </a>
-        <a className="mecha-nav__item" onClick={() => fly(4)}>
+        <a className="mecha-nav__item" onClick={() => fly(5)}>
           <img src="/images/icon-programming.png" />
           <h2 className="nav-headline nav-headline--programming">
             Programming

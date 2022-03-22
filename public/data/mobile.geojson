@@ -4,29 +4,39 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.78432194642289, 37.587899906396544]
+        "coordinates": [-119.78624404570002, 37.59329892321364]
+      },
+      "properties": {
+        "hide": "hide",
+        "Palisades": "Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl",
+        "Palisade2": "Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl",
+        "design": "design"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.78493288189543, 37.588131114462485]
       },
       "type": "Feature",
       "properties": {
         "interest": "design",
         "resort": "Sugar Bowl",
         "title": "Sound Noir",
-        "description": "Mount Judah",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=23416"
+        "description": "Mount Judah"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.78630113090543, 37.59276523046431]
+        "coordinates": [-119.78767884437639, 37.5912678360396]
       },
       "type": "Feature",
       "properties": {
         "interest": "design",
         "resort": "Sugar Bowl",
         "title": "Stereoh",
-        "description": "Mt Lincoln",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=23389"
+        "description": "Mt Lincoln"
       }
     },
     {
@@ -39,122 +49,117 @@
         "interest": "design",
         "resort": "Sugar Bowl",
         "title": "pAAger",
-        "description": "Mount Disney",
-        "url": "http"
+        "description": "Mount Disney"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.78202927942397, 37.607804061945515]
+        "coordinates": [-119.7838305993231, 37.596967897091375]
       },
       "type": "Feature",
       "properties": {
         "interest": "design",
         "resort": "Sugar Bowl",
         "title": "pAAger",
-        "description": "Crows Nest",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=2557"
+        "description": "Crows Nest"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.25035578554863, 39.166309222715306]
+        "coordinates": [-119.75984097597188, 37.51409562397963]
       },
-      "type": "Feature",
       "properties": {
-        "hide": "hide"
+        "hide": "hide",
+        "Palisades": "Palisades Palisades Palisades Palisades Palisades",
+        "Palisade2": "Palisades Palisades Palisades Palisades Palisades",
+        "5": "5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "Dev": "Dev"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.287064, 39.198239]
+        "coordinates": [-120.24912509898678, 39.157208876484304]
       },
       "type": "Feature",
       "properties": {
         "interest": "Dev",
         "resort": "Palisades",
         "title": "Better Breaks",
-        "description": "Granite Chief",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=2562"
+        "description": "Granite Chief"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.269674, 39.180667]
+        "coordinates": [-120.24868989484469, 39.16404861527329]
       },
       "type": "Feature",
       "properties": {
         "interest": "Dev",
         "resort": "Palisades",
         "title": "So I Do",
-        "description": "Squaw Peak",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=2563"
+        "description": "Squaw Peak"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.223217, 39.157976]
+        "coordinates": [-120.25388699715916, 39.16323211826693]
       },
       "type": "Feature",
       "properties": {
         "interest": "Dev",
         "resort": "Palisades",
         "title": "UNIQLO",
-        "description": "Scott Peak",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=24126"
+        "description": "Scott Peak"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.277183, 39.189108]
+        "coordinates": [-120.2526416630077, 39.155480581567474]
       },
       "type": "Feature",
       "properties": {
         "interest": "Dev",
         "resort": "Palisades",
         "title": "Pager",
-        "description": "Emigrant Peak",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=30655"
+        "description": "Emigrant Peak"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.245917, 39.147966]
+        "coordinates": [-120.25154749251783, 39.17101368988554]
       },
       "type": "Feature",
       "properties": {
         "interest": "Dev",
         "resort": "Palisades",
         "title": "Stereoh",
-        "description": "Ward Peak",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=24125"
+        "description": "Ward Peak"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.241808, 39.18302]
+        "coordinates": [-120.251336275766, 39.15941962840816]
       },
       "type": "Feature",
       "properties": {
         "interest": "Dev",
         "resort": "Palisades",
         "title": "Monolyth",
-        "description": "KT-22",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=18860"
+        "description": "KT-22"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.198218, 39.068502]
+        "coordinates": [-119.77499775009682, 37.60623645189632]
       },
       "type": "Feature",
       "properties": {
@@ -162,8 +167,7 @@
         "resort": "Homewood",
         "title": "Generative",
         "description": "Ellis Peak",
-        "elevation": "8744 ft / 2665 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=26156"
+        "elevation": "8744 ft / 2665 m"
       }
     },
     {
@@ -177,8 +181,7 @@
         "resort": "Homewood",
         "title": "Generative",
         "description": "Ellis Lifthouse",
-        "elevation": "8744 ft / 2665 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=26156"
+        "elevation": "8744 ft / 2665 m"
       }
     },
     {
@@ -192,8 +195,7 @@
         "resort": "Kirkwood",
         "title": "Generative",
         "description": "Thimble Peak",
-        "elevation": "9809 ft / 2990 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=24495"
+        "elevation": "9809 ft / 2990 m"
       }
     },
     {
@@ -207,8 +209,7 @@
         "resort": "Kirkwood",
         "title": "Generative",
         "description": "Covered Wagon Peak",
-        "elevation": "9570 ft / 2916 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=32751"
+        "elevation": "9570 ft / 2916 m"
       }
     },
     {
@@ -261,8 +262,7 @@
         "resort": "Heavenly",
         "title": "Generative",
         "description": "Jobs Peak",
-        "elevation": "10,638 ft / 3242 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=24111"
+        "elevation": "10,638 ft / 3242 m"
       }
     },
     {
@@ -276,8 +276,7 @@
         "resort": "Heavenly",
         "title": "Generative",
         "description": "Jobs Sister",
-        "elevation": "10,828 ft / 3300 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=24110"
+        "elevation": "10,828 ft / 3300 m"
       }
     },
     {
@@ -291,8 +290,7 @@
         "resort": "Heavenly",
         "title": "Generative",
         "description": "Freel Peak",
-        "elevation": "10,886 ft / 3319 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=2574"
+        "elevation": "10,886 ft / 3319 m"
       }
     }
   ]
