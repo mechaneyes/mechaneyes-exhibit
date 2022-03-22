@@ -119,7 +119,7 @@ body {
 
 .hamburger-holder.enter-active {
   opacity: 1;
-  transition: opacity 200ms;
+  transition: opacity 500ms;
 }
 
 .hamburger-holder.enter-done {
@@ -132,7 +132,7 @@ body {
 
 .hamburger-holder-exit-active {
   opacity: 0;
-  transition: opacity 200ms;
+  transition: opacity 500ms;
 }
 
 .gradient-overlay {

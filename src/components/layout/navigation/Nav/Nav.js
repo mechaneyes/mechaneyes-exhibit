@@ -56,7 +56,7 @@ let Nav = (props) => {
         <a className="mecha-nav__item" onClick={() => fly(12)}>
           <img src="/images/icon-installation.png" />
           <h2 className="nav-headline nav-headline--installation">
-            Installation
+            Installations
             {/* Kirkwood */}
           </h2>
         </a>

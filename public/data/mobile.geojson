@@ -171,7 +171,7 @@
       "type": "Feature",
       "properties": {
         "medium": "installation",
-        "title": "Generative",
+        "title": "Sound Noir",
         "description": "Thimble Peak"
       }
     },
@@ -183,7 +183,7 @@
       "type": "Feature",
       "properties": {
         "medium": "installation",
-        "title": "Generative",
+        "title": "Stereoh",
         "description": "Covered Wagon"
       }
     },
@@ -195,7 +195,7 @@
       "type": "Feature",
       "properties": {
         "medium": "installation",
-        "title": "Generativeoo",
+        "title": "Sevdah Body",
         "description": "The Sisters"
       }
     },
@@ -207,7 +207,7 @@
       "type": "Feature",
       "properties": {
         "medium": "installation",
-        "title": "Generative",
+        "title": "Monolyth",
         "description": "Martin Point"
       }
     },
@@ -219,7 +219,7 @@
       "type": "Feature",
       "properties": {
         "medium": "installation",
-        "title": "Generative",
+        "title": "So I Do",
         "description": "Glove Rock"
       }
     },
@@ -244,7 +244,7 @@
       "type": "Feature",
       "properties": {
         "medium": "generative",
-        "title": "Generative",
+        "title": "Whirligrid",
         "description": "Jobs Peak"
       }
     },
@@ -256,7 +256,7 @@
       "type": "Feature",
       "properties": {
         "medium": "generative",
-        "title": "Generative",
+        "title": "Munari Curtain",
         "description": "Jobs Sister"
       }
     },
@@ -268,7 +268,7 @@
       "type": "Feature",
       "properties": {
         "medium": "generative",
-        "title": "Generative",
+        "title": "Stereoh",
         "description": "Freel Peak"
       }
     },
@@ -293,7 +293,7 @@
       "type": "Feature",
       "properties": {
         "medium": "design",
-        "title": "design",
+        "title": "Sound Noir",
         "description": "Ellis Peak"
       }
     },
@@ -305,7 +305,7 @@
       "type": "Feature",
       "properties": {
         "medium": "design",
-        "title": "design",
+        "title": "Pager",
         "description": "Ellis Lifthouse"
       }
     },
@@ -317,7 +317,7 @@
       "type": "Feature",
       "properties": {
         "medium": "design",
-        "title": "Night Jaguars",
+        "title": "Stereoh",
         "description": "Night Jaguars"
       }
     }
