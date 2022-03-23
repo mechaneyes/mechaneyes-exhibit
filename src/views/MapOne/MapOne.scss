@@ -2,12 +2,13 @@
 
 body {
   color: white;
-  background-color: black;
+  background-color: #010f1e;
 }
 
 .map-one {
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 50px);
+  margin-top: 50px;
 
   button {
     display: none;

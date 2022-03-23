@@ -8,6 +8,7 @@ import mapboxgl from "!mapbox-gl";
 
 import NavPC from "../../components/layout/navigation/NavPC/NavPC";
 import Intro from "../Intro/Intro";
+import About from "../About/About";
 import AboutContext from "../../store/transition/transition.about.js";
 // import useWindowDimensions from "../../utils/windowDimensions";
 
@@ -27,7 +28,7 @@ const MapOne = () => {
   const aboutRef = useRef(null);
 
   const aboutValue = useContext(AboutContext);
-  const [isAboutVisible, setAboutVisible] = useState(true);
+  const [isAboutVisible, setAboutVisible] = useState(false);
 
   let triggerOverlay = () => {
     setVisible(false);
@@ -329,18 +330,28 @@ const MapOne = () => {
   return (
     <main className="map-one">
       <AboutContext.Provider value={{ isAboutVisible, setAboutVisible }}>
+        {/* <div className="nav-wrapper"onClick={() => {setAboutVisible(false)}}> */}
         <div className="nav-wrapper">
           <NavPC map={map} />
         </div>
         <div ref={mapContainer} className="map-container" />
-        <div
+        {/* <div
           className={
             isAboutVisible
               ? "intro-wrapper"
               : "intro-wrapper intro-wrapper--hidden"
           }
         >
-          <Intro />
+          <About />
+        </div> */}
+        <div
+          className={
+            isAboutVisible
+              ? "about-wrapper"
+              : "about-wrapper about-wrapper--hidden"
+          }
+        >
+          <About />
         </div>
       </AboutContext.Provider>
     </main>

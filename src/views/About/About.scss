@@ -1,3 +1,26 @@
+@import "../../utils/breakpoints.scss";
+
+.about-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 200ms linear;
+
+  &--hidden {
+    visibility: hidden;  
+    opacity: 0;
+    transition: visibility 0s, 200ms linear;
+  }
+}
+
 .about-overlay {
   width: 100vw;
   height: 90vh;
@@ -13,6 +36,11 @@
   width: 100vw;
   height: 60px;
   background-color: #000e1e;
+
+  @include bp(md) {
+    height: 100%;
+    background-color: rgba(1, 15, 30, 0.5);
+  }
 }
 
 .about-page {
@@ -25,6 +53,42 @@
 
   &--hidden {
     display: none;
+  }
+
+  @include bp(md) {
+    h1 {
+      font-size: 46px;
+    }
+
+    h3 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 29px;
+    }
+  }
+
+  &__inner {
+    @include bp(md) {
+      width: 70vw;
+      padding: 30px;
+      border: 2px solid #02ff87;
+      background-color: rgba(0, 22, 51, 0.9);
+      pointer-events: auto;
+    }
+  }
+
+  &__social {
+    font-family: cholla-wide, sans-serif;
+    font-weight: 500;
+
+    a {
+      font-size: 26px;
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid white;
+    }
   }
 }
 

@@ -11,6 +11,10 @@ let Intro = (props) => {
     <>
       <section className="mecha-intro mecha-intro--pc">
         <div className="mecha-intro__inner">
+            <img
+              className="logo-mechaneyes"
+              src="/images/logo-mechaneyes.png"
+            />
         <h1>Ray Weitzenberg</h1>
         <h3>Artist and technologist inducing delight online and off</h3>
         <p>
