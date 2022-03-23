@@ -10,7 +10,7 @@ let About = (props) => {
       <section className="about-masking"></section>
       <section className="about-page">
         <h1>Ray Weitzenberg</h1>
-        <h3>Artist and Technologist inducing delight online and off</h3>
+        <h3>Artist and technologist inducing delight online and off</h3>
         <p>
           I'm a visual artist and technologist based in Brooklyn. In 1994, via
           the mechanism of photography, I discovered a profound appreciation for

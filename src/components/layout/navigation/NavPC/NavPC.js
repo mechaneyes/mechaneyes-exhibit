@@ -7,10 +7,10 @@ let Nav = (props) => {
   const map = props.map;
 
   const { isAboutVisible, setAboutVisible } = useContext(AboutContext);
-  let updateAbout
+  let updateAbout;
   useEffect(() => {
     updateAbout = () => {
-      setAboutVisible(!isAboutVisible);
+      setAboutVisible(true);
       console.log("isAboutVisible", isAboutVisible);
     };
   });
@@ -50,41 +50,39 @@ let Nav = (props) => {
     <>
       <nav className="mecha-nav mecha-nav--pc">
         <div className="mecha-nav__item">
-          <h2 className="nav-headline nav-headline--title">
-            Mechaneyes
-          </h2>
+          <h2 className="nav-headline nav-headline--title">Mechaneyes</h2>
         </div>
-        <a className="mecha-nav__item" onClick={() => fly(0)}>
-          <img src="/images/icon-photography.png" />
-          <h2 className="nav-headline nav-headline--phototograpy">
-            Photography
-          </h2>
-        </a>
-        <a className="mecha-nav__item" onClick={() => fly(5)}>
-          <img src="/images/icon-programming.png" />
-          <h2 className="nav-headline nav-headline--programming">
-            Programming
-          </h2>
-        </a>
-        <a className="mecha-nav__item" onClick={() => fly(12)}>
-          <img src="/images/icon-installation.png" />
-          <h2 className="nav-headline nav-headline--installation">
-            Installations
-          </h2>
-        </a>
-        <a className="mecha-nav__item" onClick={() => fly(14)}>
-          <img src="/images/icon-generative.png" />
-          <h2 className="nav-headline nav-headline--generative">
-            Generative
-          </h2>
-        </a>
-        <a className="mecha-nav__item" onClick={() => fly(20)}>
-          <img src="/images/icon-design.png" />
-          <h2 className="nav-headline nav-headline--design">
-            Design
-          </h2>
-        </a>
-        <a className="mecha-nav__item" onClick={() => updateAbout()}>
+        <div className="mecha-nav__not-about" onClick={() => setAboutVisible(false)}>
+          <a className="mecha-nav__item" onClick={() => fly(0)}>
+            <img src="/images/icon-photography.png" />
+            <h2 className="nav-headline nav-headline--phototograpy">
+              Photography
+            </h2>
+          </a>
+          <a className="mecha-nav__item" onClick={() => fly(5)}>
+            <img src="/images/icon-programming.png" />
+            <h2 className="nav-headline nav-headline--programming">
+              Programming
+            </h2>
+          </a>
+          <a className="mecha-nav__item" onClick={() => fly(12)}>
+            <img src="/images/icon-installation.png" />
+            <h2 className="nav-headline nav-headline--installation">
+              Installations
+            </h2>
+          </a>
+          <a className="mecha-nav__item" onClick={() => fly(14)}>
+            <img src="/images/icon-generative.png" />
+            <h2 className="nav-headline nav-headline--generative">
+              Generative
+            </h2>
+          </a>
+          <a className="mecha-nav__item" onClick={() => fly(20)}>
+            <img src="/images/icon-design.png" />
+            <h2 className="nav-headline nav-headline--design">Design</h2>
+          </a>
+        </div>
+        <a className="mecha-nav__item--about" onClick={() => updateAbout()}>
           <img src="/images/icon-about.png" />
           <h2 className="nav-headline nav-headline--about">About</h2>
         </a>

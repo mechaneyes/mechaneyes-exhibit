@@ -7,19 +7,13 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 0;
+    top: 0px;
     left: 0;
     width: 100vw;
     height: 100vh;
     z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
     pointer-events: none;
-
-    &__inner {
-        width: 52%;
-        padding: 30px;
-        border: 2px solid #02ff87;
-        background-color: rgba(0, 22, 51, 0.9);
-    }
 
     h1 {
         font-size: 46px;
@@ -31,5 +25,29 @@
 
     p {
         font-size: 29px;
+    }
+
+    &__inner {
+        width: 70%;
+        padding: 30px;
+        border: 2px solid #02ff87;
+        background-color: rgba(0, 22, 51, 0.9);
+        pointer-events: auto;
+    }
+
+    &__social {
+        font-family: cholla-wide, sans-serif;
+        font-weight: 500;
+
+        a {
+            font-size: 26px;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid white;
+        }
+    }
+
+    p.mecha-intro__social {
+        // font-size: 26px;
     }
 }

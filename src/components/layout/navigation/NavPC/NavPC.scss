@@ -5,16 +5,30 @@
     top: 10px !important;
     left: 10px;
     transform: none;
+    z-index: 3;
+
+    .mecha-nav__not-about {
+      display: flex;
+    }
 
     .mecha-nav__item {
       margin: 0;
-
+      cursor: pointer;
+      
       img {
         display: none;
       }
+
+      &--about {
+        margin: 0;
+        
+        img {
+          display: none;
+        }
+      }
     }
 
-    a.mecha-nav__item {
+    a.mecha-nav__item--about {
         cursor: pointer;
     }
 

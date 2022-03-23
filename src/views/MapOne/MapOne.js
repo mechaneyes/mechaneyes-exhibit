@@ -2,12 +2,13 @@
 // Use Mapbox GL JS in a React app
 //
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, createContext, useContext } from "react";
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
 import NavPC from "../../components/layout/navigation/NavPC/NavPC";
 import Intro from "../Intro/Intro";
+import AboutContext from "../../store/transition/transition.about.js";
 // import useWindowDimensions from "../../utils/windowDimensions";
 
 import "./MapOne.scss";
@@ -15,12 +16,18 @@ import "./MapOne.scss";
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWVjaGFuZXllcyIsImEiOiJ6V2F6bmFNIn0.mauWWMuRub6GkCxkc49sTg";
 
+export const UmbrellaAboutContext = createContext();
+
 const MapOne = () => {
   // const { height, width } = useWindowDimensions();
   const [isVisible, setVisible] = useState(true);
 
   const mapContainer = useRef(null);
   const map = useRef(null);
+  const aboutRef = useRef(null);
+
+  const aboutValue = useContext(AboutContext);
+  const [isAboutVisible, setAboutVisible] = useState(true);
 
   let triggerOverlay = () => {
     setVisible(false);
@@ -47,7 +54,6 @@ const MapOne = () => {
   const [lat, setLat] = useState(38.738060959397785);
 
   const [zoom, setZoom] = useState(15);
-  // const [zoom, setZoom] = useState(11);
 
   // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
   // ———————————————————————————————————— MAPPIN —>
@@ -196,7 +202,7 @@ const MapOne = () => {
               ["get", "sugarBowl"],
               [
                 "format",
-                "Design",
+                "Photography",
                 "\n",
                 "Sugar Bowl",
                 {
@@ -207,7 +213,7 @@ const MapOne = () => {
               ["get", "palisades"],
               [
                 "format",
-                "Photograhy",
+                "Programming",
                 "\n",
                 "Palisades",
                 {
@@ -218,7 +224,7 @@ const MapOne = () => {
               ["get", "homewood"],
               [
                 "format",
-                "Photograhy",
+                "Installations",
                 "\n",
                 "Homewood",
                 {
@@ -229,7 +235,7 @@ const MapOne = () => {
               ["get", "kirkwood"],
               [
                 "format",
-                "Photograhy",
+                "Generative",
                 "\n",
                 "Kirkwood",
                 {
@@ -240,7 +246,7 @@ const MapOne = () => {
               ["get", "heavenly"],
               [
                 "format",
-                "Photograhy",
+                "Design",
                 "\n",
                 "Heavenly",
                 {
@@ -321,12 +327,22 @@ const MapOne = () => {
   });
 
   return (
-    <main className="map-one" onClick={() => setVisible(false)}>
-      <NavPC map={map} />
-      <div ref={mapContainer} className="map-container" />
-      <div className={isVisible ? "intro-wrapper" : "intro-wrapper intro-wrapper--hidden"}>
-        <Intro />
-      </div>
+    <main className="map-one">
+      <AboutContext.Provider value={{ isAboutVisible, setAboutVisible }}>
+        <div className="nav-wrapper">
+          <NavPC map={map} />
+        </div>
+        <div ref={mapContainer} className="map-container" />
+        <div
+          className={
+            isAboutVisible
+              ? "intro-wrapper"
+              : "intro-wrapper intro-wrapper--hidden"
+          }
+        >
+          <Intro />
+        </div>
+      </AboutContext.Provider>
     </main>
   );
 };
