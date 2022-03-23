@@ -6,12 +6,30 @@ import "./NavPC.scss";
 let Nav = (props) => {
   const map = props.map;
 
+  const { isIntroVisible, setIntroVisible } = useContext(AboutContext);
   const { isAboutVisible, setAboutVisible } = useContext(AboutContext);
-  let updateAbout;
+
+  let navElements;
+  let showIntro
+  let clickAbout
+  let clickOtherNav
   useEffect(() => {
-    updateAbout = () => {
+    showIntro = () => {
+      setIntroVisible(true);
+      setAboutVisible(false)
+      // console.log("isIntroVisible", isIntroVisible);
+    };
+
+    clickAbout = () => {
+      setIntroVisible(false);
       setAboutVisible(true);
-      console.log("isAboutVisible", isAboutVisible);
+      // console.log("isAboutVisible", isAboutVisible);
+    };
+
+    clickOtherNav = () => {
+      setIntroVisible(false);
+      setAboutVisible(false);
+      // console.log("isAboutVisible", isAboutVisible);
     };
   });
 
@@ -49,10 +67,13 @@ let Nav = (props) => {
   return (
     <>
       <nav className="mecha-nav mecha-nav--pc">
-        <div className="mecha-nav__item">
+        <div className="mecha-nav__item" onClick={() => showIntro()}>
           <h2 className="nav-headline nav-headline--title">Mechaneyes</h2>
         </div>
-        <div className="mecha-nav__not-about" onClick={() => setAboutVisible(false)}>
+        <div
+          className="mecha-nav__not-about"
+          onClick={() => clickOtherNav()}
+        >
           <a className="mecha-nav__item" onClick={() => fly(0)}>
             <img src="/images/icon-photography.png" />
             <h2 className="nav-headline nav-headline--phototograpy">
@@ -82,7 +103,7 @@ let Nav = (props) => {
             <h2 className="nav-headline nav-headline--design">Design</h2>
           </a>
         </div>
-        <a className="mecha-nav__item--about" onClick={() => updateAbout()}>
+        <a className="mecha-nav__item--about" onClick={() => clickAbout()}>
           <img src="/images/icon-about.png" />
           <h2 className="nav-headline nav-headline--about">About</h2>
         </a>

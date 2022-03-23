@@ -2,7 +2,14 @@
 // Use Mapbox GL JS in a React app
 //
 
-import { useRef, useEffect, useState, createContext, useContext } from "react";
+import {
+  useRef,
+  useEffect,
+  useState,
+  createContext,
+  useContext,
+  useMemo,
+} from "react";
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
@@ -21,18 +28,22 @@ export const UmbrellaAboutContext = createContext();
 
 const MapOne = () => {
   // const { height, width } = useWindowDimensions();
-  const [isVisible, setVisible] = useState(true);
 
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const aboutRef = useRef(null);
 
-  const aboutValue = useContext(AboutContext);
+  const [isIntroVisible, setIntroVisible] = useState(true);
   const [isAboutVisible, setAboutVisible] = useState(false);
 
-  let triggerOverlay = () => {
-    setVisible(false);
-  };
+  const providerValue = useMemo(
+    () => ({
+      isIntroVisible,
+      setIntroVisible,
+      isAboutVisible,
+      setAboutVisible,
+    }),
+    [isIntroVisible, isAboutVisible]
+  );
 
   // Fitz Roy
   // const [lng, setLng] = useState(-73.0508902);
@@ -329,21 +340,20 @@ const MapOne = () => {
 
   return (
     <main className="map-one">
-      <AboutContext.Provider value={{ isAboutVisible, setAboutVisible }}>
-        {/* <div className="nav-wrapper"onClick={() => {setAboutVisible(false)}}> */}
+      <AboutContext.Provider value={providerValue}>
         <div className="nav-wrapper">
           <NavPC map={map} />
         </div>
         <div ref={mapContainer} className="map-container" />
-        {/* <div
+        <div
           className={
-            isAboutVisible
+            isIntroVisible
               ? "intro-wrapper"
               : "intro-wrapper intro-wrapper--hidden"
           }
         >
-          <About />
-        </div> */}
+          <Intro />
+        </div>
         <div
           className={
             isAboutVisible

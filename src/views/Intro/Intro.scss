@@ -1,53 +1,75 @@
-.intro-wrapper--hidden {
-    display: none;
+.intro-wrapper {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 200ms linear;
+
+  &--hidden {
+    visibility: hidden;  
+    opacity: 0;
+    transition: visibility 0s, 200ms linear;
+  }
 }
 
-.mecha-intro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0px;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 2;
-    // background-color: rgba(0, 0, 0, 0.4);
-    pointer-events: none;
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  z-index: 2;
+  // background-color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
 
-    h1 {
-        font-size: 46px;
+  h1 {
+    margin: 20px auto;
+    font-size: 56px;
+  }
+
+  h3 {
+    margin-bottom: 30px;
+
+    font-size: 30px;
+  }
+
+  p {
+    // padding: 0 20px;
+    font-size: 29px;
+  }
+
+  &__inner {
+    width: 70%;
+    max-width: 1000px;
+    padding: 30px;
+    border: 2px solid #02ff87;
+    background-color: rgba(0, 22, 51, 0.9);
+    pointer-events: auto;
+  }
+
+  .logo-mechaneyes {
+    position: relative;
+    width: 385px;
+    margin: auto;
+    left: auto;
+    transform: none;
+  }
+
+  &__social {
+    font-family: cholla-wide, sans-serif;
+    font-weight: 500;
+
+    a {
+      font-size: 26px;
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid white;
     }
+  }
 
-    h3 {
-        font-size: 30px;
-    }
-
-    p {
-        font-size: 29px;
-    }
-
-    &__inner {
-        width: 70%;
-        padding: 30px;
-        border: 2px solid #02ff87;
-        background-color: rgba(0, 22, 51, 0.9);
-        pointer-events: auto;
-    }
-
-    &__social {
-        font-family: cholla-wide, sans-serif;
-        font-weight: 500;
-
-        a {
-            font-size: 26px;
-            color: white;
-            text-decoration: none;
-            border-bottom: 1px solid white;
-        }
-    }
-
-    p.mecha-intro__social {
-        // font-size: 26px;
-    }
+  p.mecha-intro__social {
+    // font-size: 26px;
+  }
 }
