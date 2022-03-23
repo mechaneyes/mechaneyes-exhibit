@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import Nav from '../Nav/Nav';
+import Nav from '../NavMobile/NavMobile';
 import AboutContext from "../../../../store/transition/transition.about.js";
 
 import "./HamburgerMenu.scss";

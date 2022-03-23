@@ -8,6 +8,10 @@ body {
 .map-one {
   width: 100vw;
   height: 100vh;
+
+  button {
+    display: none;
+  }
 }
 
 .map-container {
@@ -54,7 +58,6 @@ body {
   }
 }
 
-
 #info {
   display: table;
   position: relative;
@@ -68,4 +71,4 @@ body {
   text-align: center;
   color: #222;
   background: #fff;
-  }
+}

@@ -6,7 +6,9 @@ import { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
-import useWindowDimensions from "../../utils/windowDimensions";
+import NavPC from "../../components/layout/navigation/NavPC/NavPC";
+import Intro from "../Intro/Intro";
+// import useWindowDimensions from "../../utils/windowDimensions";
 
 import "./MapOne.scss";
 
@@ -14,7 +16,7 @@ mapboxgl.accessToken =
   "pk.eyJ1IjoibWVjaGFuZXllcyIsImEiOiJ6V2F6bmFNIn0.mauWWMuRub6GkCxkc49sTg";
 
 const MapOne = () => {
-  const { height, width } = useWindowDimensions();
+  // const { height, width } = useWindowDimensions();
   const [isVisible, setVisible] = useState(true);
 
   const mapContainer = useRef(null);
@@ -37,38 +39,15 @@ const MapOne = () => {
   // const [lat, setLat] = useState(37.573297);
 
   // Emerald Bay
-  const [lng, setLng] = useState(-120.15983846533709);
-  const [lat, setLat] = useState(38.95397959307656);
+  // const [lng, setLng] = useState(-120.15983846533709);
+  // const [lat, setLat] = useState(38.95397959307656);
 
-  const [zoom, setZoom] = useState(6);
+  // Desktop Start
+  const [lng, setLng] = useState(-120.46122859325533);
+  const [lat, setLat] = useState(38.738060959397785);
+
+  const [zoom, setZoom] = useState(15);
   // const [zoom, setZoom] = useState(11);
-
-  // ————————————————————————————————————o————————————————————————————————————o FLY -->
-  // ———————————————————————————————————— FLY —>
-  let mountainsLoc;
-  let fly;
-
-  useEffect(() => {
-    fetch("/data/mountains.geojson")
-      .then((res) => res.json())
-      .then((result) => {
-        mountainsLoc = result.features;
-        // console.log("mountainsLoc", mountainsLoc[0].geometry.coordinates);
-      });
-
-    fly = (resortLoc) => {
-      map.current.flyTo({
-        center: [
-          mountainsLoc[resortLoc].geometry.coordinates[0],
-          mountainsLoc[resortLoc].geometry.coordinates[1],
-        ],
-        zoom: 14,
-        speed: 0.7,
-        curve: 1.6, // zoom speed
-        essential: true, // this animation is considered essential with respect to prefers-reduced-motion
-      });
-    };
-  });
 
   // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
   // ———————————————————————————————————— MAPPIN —>
@@ -136,7 +115,7 @@ const MapOne = () => {
 
       // ————————————————————————————————————o————————————————————————————————————o CLUSTERS -->
       // ———————————————————————————————————— CLUSTERS —>
-      // 
+      //
       // Create and style CLUSTERS
       // https://docs.mapbox.com/mapbox-gl-js/example/cluster/
       // Add a new source from our GeoJSON data and
@@ -169,15 +148,15 @@ const MapOne = () => {
               [">", ["get", "point_count"], 9],
               "#0381ff",
               ["get", "sugarBowl"],
-              "#F21FD2",
+              "#ff1d4d",
               ["get", "palisades"],
               "#13F267",
               ["get", "homewood"],
-              "#F5FF2E",
+              "#10fdff",
               ["get", "kirkwood"],
-              "#0DFDFF",
+              "#f21fd2",
               ["get", "heavenly"],
-              "#FF1D4D",
+              "#f6ff2e",
               "#51bbd6",
             ],
             "circle-radius": [
@@ -288,15 +267,15 @@ const MapOne = () => {
               "match",
               ["get", "resort"],
               "Sugar Bowl",
-              "#F21FD2",
+              "#ff1d4d",
               "Palisades",
               "#13F267",
               "Homewood",
-              "#F5FF2E",
+              "#10fdff",
               "Kirkwood",
-              "#0DFDFF",
+              "#f21fd2",
               "Heavenly",
-              "#FF1D4D",
+              "#f6ff2e",
               "rgba(0, 0, 0, 0)",
             ],
             "circle-radius": 100,
@@ -325,53 +304,29 @@ const MapOne = () => {
           },
         });
 
-      // ————————————————————————————————————o————————————————————————————————————o LAT+LONG OF MOUSE POSITIONS -->
-      // ———————————————————————————————————— LAT+LONG OF MOUSE POSITIONS —>
-      map.current.on("mousemove", (e) => {
-        document.getElementById("info").innerHTML =
-          // `e.point` is the x, y coordinates of the `mousemove` event
-          // relative to the top-left corner of the map.
-          JSON.stringify(e.point) +
-          "<br />" +
-          // `e.lngLat` is the longitude, latitude geographical position of the event.
-          JSON.stringify(e.lngLat.wrap());
-      });
-
+      // ———————————————————————————————————— LAT+LONG OF MOUSE —>
+      // output lat+long of mouse position to console
+      //
       map.current.on("click", (e) => {
-        console.log(JSON.stringify(e.lngLat.wrap()));
+        let latlong =
+          '"coordinates": ' +
+          JSON.stringify(e.lngLat.wrap())
+            .replace('"lng":', "")
+            .replace('"lat":', " ")
+            .replace("{", "[")
+            .replace("}", "]");
+        console.log(latlong);
       });
     });
   });
 
   return (
-    <main
-      className="map-one"
-      onClick={() => triggerOverlay()}
-      onWheel={() => triggerOverlay()}
-      onTouchStart={() => triggerOverlay()}
-    >
-      <div className={isVisible ? "overlay" : "overlay overlay--hidden"}>
-        {/* https://pierrerougemont.tumblr.com/post/135589893117 */}
-        <img src="/images/mousewheel-giphy-one.gif" />
-        <h2>Mousewheel &middot; Pinch &middot; Click &middot; Drag</h2>
-      </div>
-      <button id="fly" onClick={() => fly(2)}>
-        Sugar Bowl
-      </button>
-      <button id="fly" onClick={() => fly(4)}>
-        Palisades
-      </button>
-      <button id="fly" onClick={() => fly(11)}>
-        Homewood
-      </button>
-      <button id="fly" onClick={() => fly(15)}>
-        Kirkwood
-      </button>
-      <button id="fly" onClick={() => fly(19)}>
-        Heavenly
-      </button>
-      <pre id="info"></pre>
+    <main className="map-one" onClick={() => setVisible(false)}>
+      <NavPC map={map} />
       <div ref={mapContainer} className="map-container" />
+      <div className={isVisible ? "intro-wrapper" : "intro-wrapper intro-wrapper--hidden"}>
+        <Intro />
+      </div>
     </main>
   );
 };

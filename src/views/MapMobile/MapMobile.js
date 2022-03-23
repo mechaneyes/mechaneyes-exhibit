@@ -15,7 +15,7 @@ import mapboxgl from "!mapbox-gl";
 import { CSSTransition } from "react-transition-group";
 
 import useWindowDimensions from "../../utils/windowDimensions";
-import Nav from "../../components/layout/navigation/Nav/Nav";
+import Nav from "../../components/layout/navigation/NavMobile/NavMobile";
 import HamburgerMenu from "../../components/layout/navigation/HamburgerMenu/HamburgerMenu";
 import AboutContext from "../../store/transition/transition.about.js";
 import About from "../About/About";

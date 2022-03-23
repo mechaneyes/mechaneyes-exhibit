@@ -4,6 +4,18 @@
     {
       "geometry": {
         "type": "Point",
+        "coordinates": [-120.33180949729956, 39.29363963482851]
+      },
+      "properties": {
+        "hide": "hide",
+        "Palisades": "Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl",
+        "Palisade2": "Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl",
+        "design": "PHOTOGRAPHY PHOTOGRAPHY PHOTOGRAPHY PHOTOGRAPHY PHOTOGRAPHY"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
         "coordinates": [-120.315747, 39.298561]
       },
       "type": "Feature",

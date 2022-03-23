@@ -1,0 +1,35 @@
+.intro-wrapper--hidden {
+    display: none;
+}
+
+.mecha-intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    pointer-events: none;
+
+    &__inner {
+        width: 52%;
+        padding: 30px;
+        border: 2px solid #02ff87;
+        background-color: rgba(0, 22, 51, 0.9);
+    }
+
+    h1 {
+        font-size: 46px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 29px;
+    }
+}

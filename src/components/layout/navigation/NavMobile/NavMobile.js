@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 
 import AboutContext from "../../../../store/transition/transition.about.js";
-import "./Nav.scss";
+import "./NavMobile.scss";
 
 let Nav = (props) => {
   const map = props.map;
