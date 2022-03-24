@@ -176,6 +176,11 @@ The first time I saw this vibration effect was at [Max Fish](https://maxfishbar.
 
 ## Notes
 
+[Passing multiple value and setter pairs to Context.Provider in React](https://stackoverflow.com/a/57840598/4811066)
+
+
+
+
 [How To Share State Across React Components with Context](https://www.digitalocean.com/community/tutorials/how-to-share-state-across-react-components-with-context#step-2-providing-data-from-a-root-component)
 
 

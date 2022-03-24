@@ -25,17 +25,20 @@ let About = (props) => {
             intersect that monkeys start to dance.
           </p>
           <p>
-            Under active development is a storytelling platform spanning
-            simultaneous digital and physical means of interaction. Other recent
-            work is actualized in AR/VR experiences, both mobile and immersive.
+            As a Senior Frontend Developer at UNIQLO I take projects from
+            conceptualization, through prototyping and development and on into
+            production. Nights and weekends are spoken for as well. Under active
+            development is a storytelling platform spanning simultaneous digital
+            and physical means of interaction. Other recent work is actualized
+            in AR/VR experiences, both mobile and immersive.
           </p>
-          <p>
-            Elements of these are often crafted with bespoke apps, sometimes
-            operating outside my control ... in a black box system. The systems
-            take input — which can come from any one or more sources — then
-            processes it via loosely coupled constraints, resulting in imagery
-            composed somewhat randomly, bordering on autonomy.
-          </p>
+          {/* <p>
+            Projects are crafted as or with bespoke apps, operating in a black
+            box system often operating outside my control. The systems take
+            input — which can come from any one or more sources — then processes
+            it via loosely coupled constraints, resulting in imagery composed
+            somewhat randomly, bordering on autonomy.
+          </p> */}
           <p className="about-page__social">
             <a href="//www.instagram.com/mechaneyes">Instagram</a> &middot;{" "}
             <a href="//twitter.com/mechaneyes">Twitter</a> &middot;{" "}

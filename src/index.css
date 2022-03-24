@@ -35,9 +35,10 @@ h3 {
 }
 
 p {
-  margin-top: 0;
+  margin: 0 0 15px;
   font-family: cholla-sans, sans-serif;
   font-weight: 300;
   font-style: normal;
   font-size: 24px;
+  line-height: 35px;
 }
