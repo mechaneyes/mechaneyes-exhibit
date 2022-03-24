@@ -86,19 +86,19 @@ let Nav = (props) => {
               Programming
             </h2>
           </a>
-          <a className="mecha-nav__item" onClick={() => fly(12)}>
+          <a className="mecha-nav__item" onClick={() => fly(16)}>
             <img src="/images/icon-installation.png" />
             <h2 className="nav-headline nav-headline--installation">
-              Installations
+              Installation
             </h2>
           </a>
-          <a className="mecha-nav__item" onClick={() => fly(14)}>
+          <a className="mecha-nav__item" onClick={() => fly(22)}>
             <img src="/images/icon-generative.png" />
             <h2 className="nav-headline nav-headline--generative">
               Generative
             </h2>
           </a>
-          <a className="mecha-nav__item" onClick={() => fly(20)}>
+          <a className="mecha-nav__item" onClick={() => fly(12)}>
             <img src="/images/icon-design.png" />
             <h2 className="nav-headline nav-headline--design">Design</h2>
           </a>

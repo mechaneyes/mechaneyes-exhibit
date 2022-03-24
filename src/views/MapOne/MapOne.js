@@ -146,13 +146,13 @@ const MapOne = () => {
           data: "/data/mountains.geojson",
           cluster: true,
           clusterMaxZoom: 17, // Max zoom to cluster points on
-          clusterRadius: 100,
+          clusterRadius: 10,
           clusterProperties: {
-            sugarBowl: ["any", ["==", ["get", "interest"], "design"]],
-            palisades: ["any", ["==", ["get", "resort"], "Palisades"]],
-            homewood: ["any", ["==", ["get", "interest"], "generative"]],
-            kirkwood: ["any", ["==", ["get", "interest"], "kirkwood"]],
-            heavenly: ["any", ["==", ["get", "interest"], "heavenly"]],
+            photography: ["any", ["==", ["get", "interest"], "photography"]],
+            programming: ["any", ["==", ["get", "interest"], "programming"]],
+            installation: ["any", ["==", ["get", "interest"], "installation"]],
+            generative: ["any", ["==", ["get", "interest"], "generative"]],
+            design: ["any", ["==", ["get", "interest"], "design"]],
           },
         })
         .addLayer({
@@ -165,15 +165,15 @@ const MapOne = () => {
               "case",
               [">", ["get", "point_count"], 9],
               "#0381ff",
-              ["get", "sugarBowl"],
+              ["get", "photography"],
               "#ff1d4d",
-              ["get", "palisades"],
+              ["get", "programming"],
               "#13F267",
-              ["get", "homewood"],
+              ["get", "installation"],
               "#10fdff",
-              ["get", "kirkwood"],
+              ["get", "generative"],
               "#f21fd2",
-              ["get", "heavenly"],
+              ["get", "design"],
               "#f6ff2e",
               "#51bbd6",
             ],
@@ -211,7 +211,7 @@ const MapOne = () => {
                   "font-scale": 0.8,
                 },
               ],
-              ["get", "sugarBowl"],
+              ["get", "photography"],
               [
                 "format",
                 "Photography",
@@ -222,7 +222,7 @@ const MapOne = () => {
                   "font-scale": 0.8,
                 },
               ],
-              ["get", "palisades"],
+              ["get", "programming"],
               [
                 "format",
                 "Programming",
@@ -233,10 +233,10 @@ const MapOne = () => {
                   "font-scale": 0.8,
                 },
               ],
-              ["get", "homewood"],
+              ["get", "design"],
               [
                 "format",
-                "Installations",
+                "Design",
                 "\n",
                 "Homewood",
                 {
@@ -244,10 +244,10 @@ const MapOne = () => {
                   "font-scale": 0.8,
                 },
               ],
-              ["get", "kirkwood"],
+              ["get", "installation"],
               [
                 "format",
-                "Generative",
+                "Installation",
                 "\n",
                 "Kirkwood",
                 {
@@ -255,10 +255,10 @@ const MapOne = () => {
                   "font-scale": 0.8,
                 },
               ],
-              ["get", "heavenly"],
+              ["get", "generative"],
               [
                 "format",
-                "Design",
+                "Generative",
                 "\n",
                 "Heavenly",
                 {
@@ -289,11 +289,11 @@ const MapOne = () => {
               "Palisades",
               "#13F267",
               "Homewood",
-              "#10fdff",
-              "Kirkwood",
-              "#f21fd2",
-              "Heavenly",
               "#f6ff2e",
+              "Kirkwood",
+              "#10fdff",
+              "Heavenly",
+              "#f21fd2",
               "rgba(0, 0, 0, 0)",
             ],
             "circle-radius": 100,
@@ -321,6 +321,27 @@ const MapOne = () => {
             "text-size": 24,
           },
         });
+
+      // When a click event occurs on a feature in the places layer, open a popup at the
+      // location of the feature, with description HTML from its properties.
+      map.current.on("click", "unclustered-point", function (e) {
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var description = e.features[0].properties.description;
+
+        // Ensure that if the map is zoomed out such that multiple
+        // copies of the feature are visible, the popup appears
+        // over the copy being pointed to.
+        // while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        //   coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        // }
+
+        console.log('coordinates', coordinates, ' : description', description)
+
+        new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map.current);
+      });
 
       // ———————————————————————————————————— LAT+LONG OF MOUSE —>
       // output lat+long of mouse position to console

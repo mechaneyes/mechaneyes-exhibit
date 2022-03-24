@@ -20,9 +20,9 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "design",
+        "interest": "photography",
         "resort": "Sugar Bowl",
-        "title": "Sound Noir",
+        "title": "Gossamer",
         "description": "Mount Judah",
         "url": "https://www.peakbagger.com/peak.aspx?pid=23416"
       }
@@ -34,9 +34,9 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "design",
+        "interest": "photography",
         "resort": "Sugar Bowl",
-        "title": "Stereoh",
+        "title": "Loops",
         "description": "Mt Lincoln",
         "url": "https://www.peakbagger.com/peak.aspx?pid=23389"
       }
@@ -48,9 +48,9 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "design",
+        "interest": "photography",
         "resort": "Sugar Bowl",
-        "title": "pAAger",
+        "title": "Objects May Appear",
         "description": "Mount Disney",
         "url": "http"
       }
@@ -62,9 +62,9 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "design",
+        "interest": "photography",
         "resort": "Sugar Bowl",
-        "title": "pAAger",
+        "title": "Formalism",
         "description": "Crows Nest",
         "url": "https://www.peakbagger.com/peak.aspx?pid=2557"
       }
@@ -72,11 +72,14 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.25035578554863, 39.166309222715306]
+        "coordinates": [-120.24813511345349, 39.164177343269756]
       },
-      "type": "Feature",
       "properties": {
-        "hide": "hide"
+        "hide": "hide",
+        "Palisades": "Palisades Palisades Palisades Palisades Palisades",
+        "Palisade2": "Palisades Palisades Palisades Palisades Palisades",
+        "5": "5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "programming": "PROGRAMMING PROGRAMMING PROGRAMMING PROGRAMMING"
       }
     },
     {
@@ -86,7 +89,7 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "Dev",
+        "interest": "programming",
         "resort": "Palisades",
         "title": "Better Breaks",
         "description": "Granite Chief",
@@ -100,7 +103,7 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "Dev",
+        "interest": "programming",
         "resort": "Palisades",
         "title": "So I Do",
         "description": "Squaw Peak",
@@ -114,7 +117,7 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "Dev",
+        "interest": "programming",
         "resort": "Palisades",
         "title": "UNIQLO",
         "description": "Scott Peak",
@@ -128,7 +131,7 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "Dev",
+        "interest": "programming",
         "resort": "Palisades",
         "title": "Pager",
         "description": "Emigrant Peak",
@@ -142,7 +145,7 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "Dev",
+        "interest": "programming",
         "resort": "Palisades",
         "title": "Stereoh",
         "description": "Ward Peak",
@@ -156,7 +159,7 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "Dev",
+        "interest": "programming",
         "resort": "Palisades",
         "title": "Monolyth",
         "description": "KT-22",
@@ -166,13 +169,26 @@
     {
       "geometry": {
         "type": "Point",
+        "coordinates": [-120.18562744401612, 39.06477900914143]
+      },
+      "properties": {
+        "hide": "hide",
+        "Palisades": "Homewood Homewood Homewood Homewood Homewood Homewood",
+        "Palisade2": "Homewood Homewood Homewood Homewood Homewood Homewood",
+        "DESIGN": "DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN",
+        "12": "12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
         "coordinates": [-120.198218, 39.068502]
       },
       "type": "Feature",
       "properties": {
-        "interest": "generative",
+        "interest": "design",
         "resort": "Homewood",
-        "title": "Generative",
+        "title": "Sound Noir",
         "description": "Ellis Peak",
         "elevation": "8744 ft / 2665 m",
         "url": "https://www.peakbagger.com/peak.aspx?pid=26156"
@@ -185,12 +201,40 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "generative",
+        "interest": "design",
         "resort": "Homewood",
-        "title": "Generative",
+        "title": "Pager",
         "description": "Ellis Lifthouse",
         "elevation": "8744 ft / 2665 m",
         "url": "https://www.peakbagger.com/peak.aspx?pid=26156"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.1712303749797, 39.05184324201085]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "design",
+        "resort": "Homewood",
+        "title": "Stereoh",
+        "description": "Ellis Lifthouse",
+        "elevation": "8744 ft / 2665 m",
+        "url": "https://www.peakbagger.com/peak.aspx?pid=26156"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.06531400600784, 38.67040209400324]
+      },
+      "properties": {
+        "hide": "hide",
+        "Palisades": "Kirkwood Kirkwood Kirkwood Kirkwood Kirkwood Kirkwood",
+        "Palisade2": "Kirkwood Kirkwood Kirkwood Kirkwood Kirkwood Kirkwood",
+        "INSTALLATION": "INSTALLATION INSTALLATION INSTALLATION INSTALLATION",
+        "16": "16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16"
       }
     },
     {
@@ -200,9 +244,9 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "kirkwood",
+        "interest": "installation",
         "resort": "Kirkwood",
-        "title": "Generative",
+        "title": "Sound Noir",
         "description": "Thimble Peak",
         "elevation": "9809 ft / 2990 m",
         "url": "https://www.peakbagger.com/peak.aspx?pid=24495"
@@ -215,9 +259,9 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "kirkwood",
+        "interest": "installation",
         "resort": "Kirkwood",
-        "title": "Generative",
+        "title": "Stereoh",
         "description": "Covered Wagon Peak",
         "elevation": "9570 ft / 2916 m",
         "url": "https://www.peakbagger.com/peak.aspx?pid=32751"
@@ -230,9 +274,9 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "kirkwood",
+        "interest": "installation",
         "resort": "Kirkwood",
-        "title": "Generative",
+        "title": "Sevdah Body",
         "description": "The Sisters"
       }
     },
@@ -243,9 +287,9 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "kirkwood",
+        "interest": "installation",
         "resort": "Kirkwood",
-        "title": "Generative",
+        "title": "Monolyth",
         "description": "Martin Point"
       }
     },
@@ -256,10 +300,23 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "kirkwood",
+        "interest": "installation",
         "resort": "Kirkwood",
-        "title": "Generative",
+        "title": "So I Do",
         "description": "Glove Rock"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.88108451000505, 38.85775458444101]
+      },
+      "properties": {
+        "hide": "hide",
+        "Palisades": "Heavenly Heavenly Heavenly Heavenly Heavenly Heavenly",
+        "Palisade2": "Heavenly Heavenly Heavenly Heavenly Heavenly Heavenly",
+        "GENERATIVE": "GENERATIVE GENERATIVE GENERATIVE GENERATIVE GENERATIVE",
+        "22": "22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22"
       }
     },
     {
@@ -269,9 +326,9 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "heavenly",
+        "interest": "generative",
         "resort": "Heavenly",
-        "title": "Generative",
+        "title": "Whirligrid",
         "description": "Jobs Peak",
         "elevation": "10,638 ft / 3242 m",
         "url": "https://www.peakbagger.com/peak.aspx?pid=24111"
@@ -284,9 +341,9 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "heavenly",
+        "interest": "generative",
         "resort": "Heavenly",
-        "title": "Generative",
+        "title": "Munari Curtain",
         "description": "Jobs Sister",
         "elevation": "10,828 ft / 3300 m",
         "url": "https://www.peakbagger.com/peak.aspx?pid=24110"
@@ -299,9 +356,9 @@
       },
       "type": "Feature",
       "properties": {
-        "interest": "heavenly",
+        "interest": "generative",
         "resort": "Heavenly",
-        "title": "Generative",
+        "title": "Stereoh",
         "description": "Freel Peak",
         "elevation": "10,886 ft / 3319 m",
         "url": "https://www.peakbagger.com/peak.aspx?pid=2574"
