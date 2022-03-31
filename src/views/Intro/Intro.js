@@ -14,13 +14,13 @@ let Intro = () => {
             digital. It's when the two passions intersect that monkeys start to
             dance.
           </p>
-          <p>
+          {/* <p>
             Inside is a glimpse of what I see and what I create for others to
             see.
-          </p>
-          <p className="intro-how">
-            Use the Nav or think in Google Maps terms <br />
-            Click &middot; Tap &middot; Pinch &middot; Drag
+          </p> */}
+          <p>
+            Use the nav up top or interact as you would Google Maps<br />
+            <span className="intro-how">Click &middot; Tap &middot; Pinch &middot; Drag</span>
           </p>
         </div>
       </section>

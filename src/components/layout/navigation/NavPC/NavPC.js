@@ -92,13 +92,13 @@ let Nav = (props) => {
               Installation
             </h2>
           </a>
-          <a className="mecha-nav__item" onClick={() => fly(22)}>
+          <a className="mecha-nav__item" onClick={() => fly(21)}>
             <img src="/images/icon-generative.png" />
             <h2 className="nav-headline nav-headline--generative">
               Generative
             </h2>
           </a>
-          <a className="mecha-nav__item" onClick={() => fly(12)}>
+          <a className="mecha-nav__item" onClick={() => fly(11)}>
             <img src="/images/icon-design.png" />
             <h2 className="nav-headline nav-headline--design">Design</h2>
           </a>

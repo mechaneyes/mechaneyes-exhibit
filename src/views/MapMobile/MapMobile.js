@@ -69,7 +69,7 @@ const MapMobile = () => {
 
     window.addEventListener("resize", () => {
       root.style.setProperty("--height", `${window.innerHeight}px`);
-      console.log("root.style", root.style);
+      // console.log("root.style", root.style);
     });
   }, []);
 
@@ -86,7 +86,7 @@ const MapMobile = () => {
       container: mapContainer.current,
       style: "mapbox://styles/mechaneyes/ckb6f9oyu2j4l1ilayacdz8yy",
       center: [lng, lat],
-      pitch: 60,
+      // pitch: 60,
       zoom: zoom,
     });
 

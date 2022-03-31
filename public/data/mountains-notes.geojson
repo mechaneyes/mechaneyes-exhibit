@@ -13,3 +13,38 @@
     "url": "https://www.peakbagger.com/peak.aspx?pid=2573"
   }
 }
+
+
+
+{
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-119.861371, 38.858165]
+  },
+  "type": "Feature",
+  "properties": {
+    "interest": "generative",
+    "resort": "Heavenly",
+    "title": "Whirligrid",
+    "description": "Jobs Peak",
+    "elevation": "10,638 ft / 3242 m",
+    "url": "https://www.peakbagger.com/peak.aspx?pid=24111"
+  }
+}
+
+
+
+{
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-120.287064, 39.198239]
+  },
+  "type": "Feature",
+  "properties": {
+    "interest": "programming",
+    "resort": "Palisades",
+    "title": "So I Do",
+    "description": "Granite Chief",
+    "url": "https://www.peakbagger.com/peak.aspx?pid=2563"
+  }
+}

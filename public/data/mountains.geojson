@@ -22,9 +22,9 @@
       "properties": {
         "interest": "photography",
         "resort": "Sugar Bowl",
-        "title": "Gossamer",
+        "title": "Objects May Appear",
         "description": "Mount Judah",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=23416"
+        "url": "http://localhost:3001/projects/objects.html"
       }
     },
     {
@@ -36,9 +36,9 @@
       "properties": {
         "interest": "photography",
         "resort": "Sugar Bowl",
-        "title": "Loops",
+        "title": "Formalism",
         "description": "Mt Lincoln",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=23389"
+        "url": "http://localhost:3001/projects/loops.html"
       }
     },
     {
@@ -50,9 +50,9 @@
       "properties": {
         "interest": "photography",
         "resort": "Sugar Bowl",
-        "title": "Objects May Appear",
+        "title": "Loops",
         "description": "Mount Disney",
-        "url": "http"
+        "url": "http://localhost:3001/projects/loops.html"
       }
     },
     {
@@ -64,7 +64,7 @@
       "properties": {
         "interest": "photography",
         "resort": "Sugar Bowl",
-        "title": "Formalism",
+        "title": "Gossamer",
         "description": "Crows Nest",
         "url": "https://www.peakbagger.com/peak.aspx?pid=2557"
       }
@@ -72,7 +72,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.24813511345349, 39.164177343269756]
+        "coordinates": [-120.24298782140062, 39.16445540736447]
       },
       "properties": {
         "hide": "hide",
@@ -85,29 +85,15 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.287064, 39.198239]
-      },
-      "type": "Feature",
-      "properties": {
-        "interest": "programming",
-        "resort": "Palisades",
-        "title": "Better Breaks",
-        "description": "Granite Chief",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=2562"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
         "coordinates": [-120.269674, 39.180667]
       },
       "type": "Feature",
       "properties": {
         "interest": "programming",
         "resort": "Palisades",
-        "title": "So I Do",
+        "title": "Better Breaks",
         "description": "Squaw Peak",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=2563"
+        "url": "http://localhost:3001/projects/better-breaks.html"
       }
     },
     {
@@ -149,7 +135,7 @@
         "resort": "Palisades",
         "title": "Stereoh",
         "description": "Ward Peak",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=24125"
+        "url": "http://localhost:3001/projects/stereoh.html"
       }
     },
     {
@@ -163,13 +149,13 @@
         "resort": "Palisades",
         "title": "Monolyth",
         "description": "KT-22",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=18860"
+        "url": "http://localhost:3001/projects/monolyth.html"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.18562744401612, 39.06477900914143]
+        "coordinates": [-120.18277896829937, 39.06006788938322]
       },
       "properties": {
         "hide": "hide",
@@ -191,7 +177,7 @@
         "title": "Sound Noir",
         "description": "Ellis Peak",
         "elevation": "8744 ft / 2665 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=26156"
+        "url": "http://localhost:3001/projects/sound-noir.html"
       }
     },
     {
@@ -221,7 +207,7 @@
         "title": "Stereoh",
         "description": "Ellis Lifthouse",
         "elevation": "8744 ft / 2665 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=26156"
+        "url": "http://localhost:3001/projects/stereoh.html"
       }
     },
     {
@@ -246,10 +232,10 @@
       "properties": {
         "interest": "installation",
         "resort": "Kirkwood",
-        "title": "Sound Noir",
+        "title": "Monolyth",
         "description": "Thimble Peak",
         "elevation": "9809 ft / 2990 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=24495"
+        "url": "http://localhost:3001/projects/monolyth.html"
       }
     },
     {
@@ -264,7 +250,7 @@
         "title": "Stereoh",
         "description": "Covered Wagon Peak",
         "elevation": "9570 ft / 2916 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=32751"
+        "url": "http://localhost:3001/projects/stereoh.html"
       }
     },
     {
@@ -277,7 +263,8 @@
         "interest": "installation",
         "resort": "Kirkwood",
         "title": "Sevdah Body",
-        "description": "The Sisters"
+        "description": "The Sisters",
+        "url": "http://localhost:3001/projects/monolyth.html"
       }
     },
     {
@@ -289,7 +276,7 @@
       "properties": {
         "interest": "installation",
         "resort": "Kirkwood",
-        "title": "Monolyth",
+        "title": "Sound Noir",
         "description": "Martin Point"
       }
     },
@@ -309,7 +296,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.88108451000505, 38.85775458444101]
+        "coordinates": [-119.8805525106286, 38.8612004190058]
       },
       "properties": {
         "hide": "hide",
@@ -331,7 +318,7 @@
         "title": "Whirligrid",
         "description": "Jobs Peak",
         "elevation": "10,638 ft / 3242 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=24111"
+        "url": "http://localhost:3001/projects/whirligrid.html"
       }
     },
     {
@@ -343,10 +330,10 @@
       "properties": {
         "interest": "generative",
         "resort": "Heavenly",
-        "title": "Munari Curtain",
+        "title": "Munari Veil",
         "description": "Jobs Sister",
         "elevation": "10,828 ft / 3300 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=24110"
+        "url": "http://localhost:3001/projects/munari-veil.html"
       }
     },
     {
@@ -361,7 +348,7 @@
         "title": "Stereoh",
         "description": "Freel Peak",
         "elevation": "10,886 ft / 3319 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=2574"
+        "url": "http://localhost:3001/projects/stereoh.html"
       }
     }
   ]

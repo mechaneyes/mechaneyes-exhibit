@@ -65,6 +65,10 @@ const MapOne = () => {
   const [lng, setLng] = useState(-120.46122859325533);
   const [lat, setLat] = useState(38.738060959397785);
 
+  // Test Locations
+  // const [lng, setLng] = useState(-119.87548174563602);
+  // const [lat, setLat] = useState(38.85986921131126);
+
   const [zoom, setZoom] = useState(15);
 
   // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
@@ -325,8 +329,9 @@ const MapOne = () => {
       // When a click event occurs on a feature in the places layer, open a popup at the
       // location of the feature, with description HTML from its properties.
       map.current.on("click", "unclustered-point", function (e) {
-        var coordinates = e.features[0].geometry.coordinates.slice();
-        var description = e.features[0].properties.description;
+        let coordinates = e.features[0].geometry.coordinates.slice();
+        let description = e.features[0].properties.description;
+        let url = e.features[0].properties.url;
 
         // Ensure that if the map is zoomed out such that multiple
         // copies of the feature are visible, the popup appears
@@ -335,11 +340,12 @@ const MapOne = () => {
         //   coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         // }
 
-        console.log('coordinates', coordinates, ' : description', description)
+        console.log('url', url, ' : description', description)
 
         new mapboxgl.Popup()
             .setLngLat(coordinates)
-            .setHTML(description)
+            // .setHTML(description)
+            .setHTML(`<iframe class="project-iframe" src=${url} />`)
             .addTo(map.current);
       });
 
