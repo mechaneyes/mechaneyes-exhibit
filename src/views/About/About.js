@@ -1,15 +1,26 @@
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useContext } from "react";
+import AboutContext from "../../store/transition/transition.about.js";
 
 import "./About.scss";
 
 let About = (props) => {
-  useEffect(() => {});
+
+  const { isAboutVisible, setAboutVisible } = useContext(AboutContext);
+
+  let hideAbout
+  useEffect(() => {
+    hideAbout = () => {
+      setAboutVisible(false)
+    };
+  });
 
   return (
     <>
       <section className="about-masking"></section>
       <section className="about-page">
         <div className="about-page__inner">
+        <div className="close-icon" onClick={() => hideAbout()}>&#10005;</div>
+
           <h1>Ray Weitzenberg</h1>
           <h3>Artist and technologist inducing delight online and off</h3>
           <p>

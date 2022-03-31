@@ -76,6 +76,7 @@
   }
 
   &__inner {
+    position: relative;
     width: 100vw;
     height: calc(100vh - 40px);
     // max-width: 1000px;
@@ -94,6 +95,15 @@
       background-color: rgba(0, 22, 51, 0.9);
       pointer-events: auto;
     }
+  }
+
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    color: #02ff87;
+    cursor: pointer;
   }
 }
 
