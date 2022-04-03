@@ -24,7 +24,7 @@
         "resort": "Sugar Bowl",
         "title": "Objects May Appear",
         "description": "Mount Judah",
-        "url": "http://localhost:3001/projects/objects.html"
+        "url": "https://eyesee.digital/objects/"
       }
     },
     {
@@ -38,7 +38,7 @@
         "resort": "Sugar Bowl",
         "title": "Formalism",
         "description": "Mt Lincoln",
-        "url": "http://localhost:3001/projects/loops.html"
+        "url": "https://eyesee.digital/loops/"
       }
     },
     {
@@ -52,7 +52,7 @@
         "resort": "Sugar Bowl",
         "title": "Loops",
         "description": "Mount Disney",
-        "url": "http://localhost:3001/projects/loops.html"
+        "url": "https://eyesee.digital/loops/"
       }
     },
     {
@@ -93,7 +93,7 @@
         "resort": "Palisades",
         "title": "Better Breaks",
         "description": "Squaw Peak",
-        "url": "http://localhost:3001/projects/better-breaks.html"
+        "url": "https://eyesee.digital/better-breaks/"
       }
     },
     {
@@ -135,7 +135,7 @@
         "resort": "Palisades",
         "title": "Stereoh",
         "description": "Ward Peak",
-        "url": "http://localhost:3001/projects/stereoh.html"
+        "url": "https://eyesee.digital/stereoh/"
       }
     },
     {
@@ -149,7 +149,7 @@
         "resort": "Palisades",
         "title": "Monolyth",
         "description": "KT-22",
-        "url": "http://localhost:3001/projects/monolyth.html"
+        "url": "https://eyesee.digital/monolyth/"
       }
     },
     {
@@ -177,7 +177,7 @@
         "title": "Sound Noir",
         "description": "Ellis Peak",
         "elevation": "8744 ft / 2665 m",
-        "url": "http://localhost:3001/projects/sound-noir.html"
+        "url": "https://eyesee.digital/sound-noir/"
       }
     },
     {
@@ -207,7 +207,7 @@
         "title": "Stereoh",
         "description": "Ellis Lifthouse",
         "elevation": "8744 ft / 2665 m",
-        "url": "http://localhost:3001/projects/stereoh.html"
+        "url": "https://eyesee.digital/stereoh/"
       }
     },
     {
@@ -235,7 +235,7 @@
         "title": "Monolyth",
         "description": "Thimble Peak",
         "elevation": "9809 ft / 2990 m",
-        "url": "http://localhost:3001/projects/monolyth.html"
+        "url": "https://eyesee.digital/monolyth/"
       }
     },
     {
@@ -250,7 +250,7 @@
         "title": "Stereoh",
         "description": "Covered Wagon Peak",
         "elevation": "9570 ft / 2916 m",
-        "url": "http://localhost:3001/projects/stereoh.html"
+        "url": "https://eyesee.digital/stereoh/"
       }
     },
     {
@@ -264,7 +264,7 @@
         "resort": "Kirkwood",
         "title": "Sevdah Body",
         "description": "The Sisters",
-        "url": "http://localhost:3001/projects/monolyth.html"
+        "url": "https://eyesee.digital/monolyth/"
       }
     },
     {
@@ -318,7 +318,7 @@
         "title": "Whirligrid",
         "description": "Jobs Peak",
         "elevation": "10,638 ft / 3242 m",
-        "url": "http://localhost:3001/projects/whirligrid.html"
+        "url": "https://eyesee.digital/whirligrid/"
       }
     },
     {
@@ -333,7 +333,7 @@
         "title": "Munari Veil",
         "description": "Jobs Sister",
         "elevation": "10,828 ft / 3300 m",
-        "url": "http://localhost:3001/projects/munari-veil.html"
+        "url": "https://eyesee.digital/munari-veil/"
       }
     },
     {
@@ -348,7 +348,7 @@
         "title": "Stereoh",
         "description": "Freel Peak",
         "elevation": "10,886 ft / 3319 m",
-        "url": "http://localhost:3001/projects/stereoh.html"
+        "url": "https://eyesee.digital/stereoh/"
       }
     }
   ]
