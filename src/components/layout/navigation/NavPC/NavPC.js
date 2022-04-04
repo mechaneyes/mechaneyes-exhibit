@@ -41,7 +41,7 @@ let Nav = (props) => {
   useEffect(() => {
     // console.log('map', map.current)
 
-    fly = (resortLoc, angle = 60) => {
+    fly = (resortLoc, angle = 60, zoomLevel = 14) => {
       fetch("/data/mountains.geojson")
         .then((res) => res.json())
         .then((result) => {
@@ -54,7 +54,7 @@ let Nav = (props) => {
               mountainsLoc[resortLoc].geometry.coordinates[0],
               mountainsLoc[resortLoc].geometry.coordinates[1],
             ],
-            zoom: 14,
+            zoom: zoomLevel,
             pitch: angle,
             speed: 0.7,
             curve: 1.6, // zoom speed
@@ -78,7 +78,7 @@ let Nav = (props) => {
           <h2 className="nav-headline nav-headline--title">Mechaneyes</h2>
         </div>
         <div className="mecha-nav__not-about" onClick={() => clickOtherNav()}>
-          <a className="mecha-nav__item" onClick={() => fly(0)}>
+          <a className="mecha-nav__item" onClick={() => fly(0, 60, 14.3)}>
             <img src="/images/icon-photography.png" />
             <h2 className="nav-headline nav-headline--phototograpy">
               Photography
@@ -102,7 +102,7 @@ let Nav = (props) => {
               Generative
             </h2>
           </a>
-          <a className="mecha-nav__item" onClick={() => fly(11)}>
+          <a className="mecha-nav__item" onClick={() => fly(11, 60, 14.3)}>
             <img src="/images/icon-design.png" />
             <h2 className="nav-headline nav-headline--design">Design</h2>
           </a>

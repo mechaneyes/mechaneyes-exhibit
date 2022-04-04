@@ -4,13 +4,12 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.33191455391943, 39.28847081261932]
+        "coordinates": [-120.33235696832531, 39.29241303526277]
       },
       "properties": {
         "hide": "hide",
-        "Palisades": "Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl",
-        "Palisade2": "Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl",
-        "design": "PHOTOGRAPHY PHOTOGRAPHY PHOTOGRAPHY PHOTOGRAPHY PHOTOGRAPHY"
+        "theResort": "// ———————————————————————————————————— Sugar Bowl —>",
+        "theFocuss": "// ———————————————————————————————————— Photography —>"
       }
     },
     {
@@ -76,10 +75,9 @@
       },
       "properties": {
         "hide": "hide",
-        "Palisades": "Palisades Palisades Palisades Palisades Palisades",
-        "Palisade2": "Palisades Palisades Palisades Palisades Palisades",
-        "5": "5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
-        "programming": "PROGRAMMING PROGRAMMING PROGRAMMING PROGRAMMING"
+        "theResort": "// ———————————————————————————————————— Palisades —>",
+        "theFocuss": "// ———————————————————————————————————— Programming —>",
+        "theArray#": "// ———————————————————————————————————— 5 —>"
       }
     },
     {
@@ -155,14 +153,13 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.18277896829937, 39.06006788938322]
+        "coordinates": [-120.18326623877806, 39.07208185047156]
       },
       "properties": {
         "hide": "hide",
-        "Palisades": "Homewood Homewood Homewood Homewood Homewood Homewood",
-        "Palisade2": "Homewood Homewood Homewood Homewood Homewood Homewood",
-        "DESIGN": "DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN",
-        "12": "12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12"
+        "theResort": "// ———————————————————————————————————— Homewood —>",
+        "theFocuss": "// ———————————————————————————————————— Design —>",
+        "theArray#": "// ———————————————————————————————————— 12 —>"
       }
     },
     {
@@ -198,14 +195,14 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.1712303749797, 39.05184324201085]
+        "coordinates": [-120.16611799763686, 39.07378649826773]
       },
       "type": "Feature",
       "properties": {
         "interest": "design",
         "resort": "Homewood",
         "title": "Stereoh",
-        "description": "Ellis Lifthouse",
+        "description": "Quail Lifthouse",
         "elevation": "8744 ft / 2665 m",
         "url": "https://eyesee.digital/stereoh/"
       }
@@ -217,10 +214,9 @@
       },
       "properties": {
         "hide": "hide",
-        "Palisades": "Kirkwood Kirkwood Kirkwood Kirkwood Kirkwood Kirkwood",
-        "Palisade2": "Kirkwood Kirkwood Kirkwood Kirkwood Kirkwood Kirkwood",
-        "INSTALLATION": "INSTALLATION INSTALLATION INSTALLATION INSTALLATION",
-        "16": "16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16"
+        "theResort": "// ———————————————————————————————————— Kirkwood —>",
+        "theFocuss": "// ———————————————————————————————————— Installation —>",
+        "theArray#": "// ———————————————————————————————————— 15 —>"
       }
     },
     {
@@ -287,10 +283,9 @@
       },
       "properties": {
         "hide": "hide",
-        "Palisades": "Heavenly Heavenly Heavenly Heavenly Heavenly Heavenly",
-        "Palisade2": "Heavenly Heavenly Heavenly Heavenly Heavenly Heavenly",
-        "GENERATIVE": "GENERATIVE GENERATIVE GENERATIVE GENERATIVE GENERATIVE",
-        "22": "22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22"
+        "theResort": "// ———————————————————————————————————— Heavenly —>",
+        "theFocuss": "// ———————————————————————————————————— Generative —>",
+        "theArray#": "// ———————————————————————————————————— 20 —>"
       }
     },
     {
