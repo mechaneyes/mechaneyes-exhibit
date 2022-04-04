@@ -32,29 +32,36 @@
     padding-bottom: 5px;
     font-size: 40px;
     line-height: 1;
+    color: #10fdff;
+    color: #00fe70;
 
-    &--phototograpy {
-      color: #ff1d4d;
+    &--title {
+      color: white;
     }
 
-    &--programming {
-      color: #14f267;
-    }
+    // &--phototograpy {
+    //   color: #ff1d4d;
+    // }
 
-    &--installation {
-      color: #10fdff;
-    }
+    // &--programming {
+    //   color: #14f267;
+    // }
 
-    &--generative {
-      color: #f21fd2;
-    }
+    // &--installation {
+    //   color: #10fdff;
+    // }
 
-    &--design {
-      color: #f6ff2e;
-    }
+    // &--generative {
+    //   color: #f21fd2;
+    // }
 
-    &--about {
-      color: #ff5a29;
-    }
+    // &--design {
+    //   color: #f6ff2e;
+    // }
+
+    // &--about {
+    //   color: #ff5a29;
+    //   color: white;
+    // }
   }
 }

@@ -145,7 +145,7 @@ const MapOne = () => {
               "\n",
               ["get", "description"],
               {
-                "text-font": ["literal", ["DIN Offc Pro Italic"]],
+                "text-font": ["literal", ["DIN Offc Pro Medium"]],
                 "font-scale": 0.8,
               },
             ],
@@ -154,7 +154,8 @@ const MapOne = () => {
             "text-offset": [0, -4],
           },
           paint: {
-            "text-color": "#FF622E",
+            // "text-color": "#FF622E",
+            "text-color": "#FFF",
           },
         });
 
