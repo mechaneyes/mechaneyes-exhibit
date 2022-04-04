@@ -4,13 +4,12 @@ import AboutContext from "../../store/transition/transition.about.js";
 import "./About.scss";
 
 let About = (props) => {
-
   const { isAboutVisible, setAboutVisible } = useContext(AboutContext);
 
-  let hideAbout
+  let hideAbout;
   useEffect(() => {
     hideAbout = () => {
-      setAboutVisible(false)
+      setAboutVisible(false);
     };
   });
 
@@ -19,29 +18,32 @@ let About = (props) => {
       <section className="about-masking"></section>
       <section className="about-page">
         <div className="about-page__inner">
-        <div className="close-icon" onClick={() => hideAbout()}>&#10005;</div>
+          <div className="close-icon" onClick={() => hideAbout()}>
+            &#10005;
+          </div>
 
           <h1>Ray Weitzenberg</h1>
           <h3>Artist and technologist inducing delight online and off</h3>
           <p>
             I'm a visual artist and technologist based in Brooklyn. In 1994, via
             the mechanism of photography, I discovered a profound appreciation
-            for light. I've spent the last 24 years collecting and projecting
+            for light. I've spent the last 28 years collecting and projecting
             that light, in part having shaped that sensibility via the lens of
             Parsons School of Design.
           </p>
           <p>
             As much as I am enamored with art, I focus my attention equally on
-            the digital side of the equation. It's when the two passions
-            intersect that monkeys start to dance.
+            digital. It's when the two passions intersect that monkeys begin to
+            dance.
           </p>
           <p>
             As a Senior Frontend Developer at UNIQLO I take projects from
             conceptualization, through prototyping and development and on into
-            production. Nights and weekends are spoken for as well. Under active
-            development is a storytelling platform spanning simultaneous digital
-            and physical means of interaction. Other recent work is actualized
-            in AR/VR experiences, both mobile and immersive.
+            production. Nights and weekends I spend immersed in personal
+            projects. Under active development is Monolyth, a storytelling
+            platform spanning simultaneous digital and physical means of
+            interaction. Other recent work is actualized in AR/VR experiences,
+            both mobile and immersive.
           </p>
           {/* <p>
             Projects are crafted as or with bespoke apps, operating in a black

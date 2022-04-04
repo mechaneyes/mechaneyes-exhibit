@@ -72,7 +72,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.24298782140062, 39.16445540736447]
+        "coordinates": [-120.24202219419851, 39.160690302651886]
       },
       "properties": {
         "hide": "hide",
@@ -213,7 +213,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.06531400600784, 38.67040209400324]
+        "coordinates": [-120.0606428837524, 38.669796828625664]
       },
       "properties": {
         "hide": "hide",

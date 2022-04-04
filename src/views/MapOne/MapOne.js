@@ -207,7 +207,7 @@ const MapOne = () => {
             marker.getElement().addEventListener("click", () => {
               let coordinates = feature.geometry.coordinates.slice();
               let url = feature.properties.url;
-              console.log("coordinates", coordinates);
+              // console.log("coordinates", coordinates);
 
               popup
                 .setLngLat(coordinates)

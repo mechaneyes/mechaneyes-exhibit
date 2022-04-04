@@ -10,13 +10,13 @@ let Nav = (props) => {
   const { isAboutVisible, setAboutVisible } = useContext(AboutContext);
 
   let navElements;
-  let showIntro
-  let clickAbout
-  let clickOtherNav
+  let showIntro;
+  let clickAbout;
+  let clickOtherNav;
   useEffect(() => {
     showIntro = () => {
       setIntroVisible(true);
-      setAboutVisible(false)
+      setAboutVisible(false);
       // console.log("isIntroVisible", isIntroVisible);
     };
 
@@ -61,6 +61,13 @@ let Nav = (props) => {
             essential: true, // this animation is considered essential with respect to prefers-reduced-motion
           });
         });
+
+      // If a project popup is visible remove it on nav click
+      // 
+      const popup = document.getElementsByClassName("mapboxgl-popup");
+      if (popup.length) {
+        popup[0].remove();
+      }
     };
   });
 
@@ -70,10 +77,7 @@ let Nav = (props) => {
         <div className="mecha-nav__item" onClick={() => showIntro()}>
           <h2 className="nav-headline nav-headline--title">Mechaneyes</h2>
         </div>
-        <div
-          className="mecha-nav__not-about"
-          onClick={() => clickOtherNav()}
-        >
+        <div className="mecha-nav__not-about" onClick={() => clickOtherNav()}>
           <a className="mecha-nav__item" onClick={() => fly(0)}>
             <img src="/images/icon-photography.png" />
             <h2 className="nav-headline nav-headline--phototograpy">
@@ -86,7 +90,7 @@ let Nav = (props) => {
               Programming
             </h2>
           </a>
-          <a className="mecha-nav__item" onClick={() => fly(16)}>
+          <a className="mecha-nav__item" onClick={() => fly(15)}>
             <img src="/images/icon-installation.png" />
             <h2 className="nav-headline nav-headline--installation">
               Installation
