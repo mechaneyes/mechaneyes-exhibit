@@ -48,3 +48,20 @@
     "url": "https://www.peakbagger.com/peak.aspx?pid=2563"
   }
 }
+
+
+
+
+{
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-120.08663407971336, 38.68409173400719]
+  },
+  "type": "Feature",
+  "properties": {
+    "interest": "installation",
+    "resort": "Kirkwood",
+    "title": "So I Do",
+    "description": "Glove Rock"
+  }
+},

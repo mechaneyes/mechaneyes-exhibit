@@ -247,7 +247,7 @@
       "properties": {
         "interest": "installation",
         "resort": "Kirkwood",
-        "title": "Stereoh",
+        "title": "So I Do",
         "description": "Covered Wagon Peak",
         "elevation": "9570 ft / 2916 m",
         "url": "https://eyesee.digital/stereoh/"
@@ -283,20 +283,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.08663407971336, 38.68409173400719]
-      },
-      "type": "Feature",
-      "properties": {
-        "interest": "installation",
-        "resort": "Kirkwood",
-        "title": "So I Do",
-        "description": "Glove Rock"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-119.8810939275873, 38.85538915444758]
+        "coordinates": [-119.88067886083712, 38.86137751723689]
       },
       "properties": {
         "hide": "hide",

@@ -158,21 +158,6 @@ const MapOne = () => {
             "text-color": "#FFF",
           },
         });
-
-      // ————————————————————————————————————o————————————————————————————————————o Tools -->
-      // ———————————————————————————————————— Lat+Long of Mouse —>
-      // output lat+long of mouse click position to console
-      //
-      // map.current.on("click", (e) => {
-      //   let latlong =
-      //     '"coordinates": ' +
-      //     JSON.stringify(e.lngLat.wrap())
-      //       .replace('"lng":', "")
-      //       .replace('"lat":', " ")
-      //       .replace("{", "[")
-      //       .replace("}", "]");
-      //   console.log(latlong);
-      // });
     });
   });
 
@@ -217,6 +202,23 @@ const MapOne = () => {
           }
         }
       });
+  });
+
+  // ————————————————————————————————————o————————————————————————————————————o Tools -->
+  // ———————————————————————————————————— Lat+Long of Mouse —>
+  // output lat+long of mouse click position to console
+  //
+  useEffect(() => {
+    map.current.on("click", (e) => {
+      let latlong =
+        '"coordinates": ' +
+        JSON.stringify(e.lngLat.wrap())
+          .replace('"lng":', "")
+          .replace('"lat":', " ")
+          .replace("{", "[")
+          .replace("}", "]");
+      console.log(latlong);
+    });
   });
 
   return (

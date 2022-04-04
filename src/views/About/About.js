@@ -55,7 +55,8 @@ let About = (props) => {
           <p className="about-page__social">
             <a href="//www.instagram.com/mechaneyes">Instagram</a> &middot;{" "}
             <a href="//twitter.com/mechaneyes">Twitter</a> &middot;{" "}
-            <a href="//github.com/rayweitzenberg">GitHub</a>
+            <a href="//github.com/rayweitzenberg">GitHub</a> &middot;{" "}
+            <a href="//www.linkedin.com/in/rayweitzenberg/">LinkedIn</a>
           </p>
         </div>
       </section>
