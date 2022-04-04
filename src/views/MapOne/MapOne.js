@@ -83,29 +83,6 @@ const MapOne = () => {
       zoom: zoom,
     });
 
-    // ————————————————————————————————————o————————————————————————————————————o Markers -->
-    // ———————————————————————————————————— Markers —>
-    // Run this with the idle event just below
-    //
-    const placeMarkers = () => {
-      const features = map.current.querySourceFeatures("mountains");
-
-      for (const marker of features) {
-        const el = document.createElement("div");
-        el.className = "marker";
-        el.style.backgroundImage = `url(/images/map-marker-1.0.0.svg)`;
-
-        // Add markers
-        new mapboxgl.Marker(el)
-          .setLngLat(marker.geometry.coordinates)
-          .addTo(map.current);
-      }
-    };
-
-    map.current.on("idle", function () {
-      placeMarkers();
-    });
-
     map.current.on("load", () => {
       map.current.addSource("mapbox-terrain", {
         type: "vector",
@@ -201,6 +178,38 @@ const MapOne = () => {
         console.log(latlong);
       });
     });
+  });
+
+  // ————————————————————————————————————o————————————————————————————————————o MARKERS -->
+  // ———————————————————————————————————— MARKERS —>
+  // https://docs.mapbox.com/help/tutorials/custom-markers-gl-js/
+  //
+  useEffect(() => {
+    fetch("/data/mountains.geojson")
+      .then((res) => res.json())
+      .then((result) => {
+        for (const feature of result.features) {
+          const el = document.createElement("div");
+          console.log('feature.properties.interest', feature.properties.interest)
+
+          el.className = "marker";
+          el.style.backgroundImage = `url(/images/map-marker-1.0.0.svg)`;
+
+          if (feature.properties.hide != "hide") {
+            const marker = new mapboxgl.Marker(el)
+              .setLngLat(feature.geometry.coordinates)
+              .addTo(map.current)
+              .setOffset([0, 4]);
+
+            // ———————————————————————————————————— CENTER MARKER ON CLICK —>
+            // marker.getElement().addEventListener("click", () => {
+            //   map.current.flyTo({
+            //     center: feature.geometry.coordinates,
+            //   });
+            // });
+          }
+        }
+      });
   });
 
   return (

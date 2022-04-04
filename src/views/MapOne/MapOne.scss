@@ -103,6 +103,11 @@ body {
   }
 }
 
+.marker.marker--generative {
+  width: 60px;
+  height: 60px;
+}
+
 .mapboxgl-marker.marker {
   top: -31px;
   width: 42px;
@@ -111,7 +116,7 @@ body {
   // https://codepen.io/sosuke/pen/Pjoqqp
   filter: invert(57%) sepia(54%) saturate(4794%) hue-rotate(340deg)
     brightness(101%) contrast(104%);
-  background-image: url("../../assets/images/map-marker-0.1.0.svg");
+  // background-image: url("../../assets/images/map-marker-0.1.0.svg");
   background-size: cover;
   cursor: pointer;
 }
