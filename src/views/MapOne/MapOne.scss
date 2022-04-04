@@ -49,7 +49,7 @@ body {
   .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip {
     display: none;
   }
-  
+
   .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
     display: none;
   }
@@ -101,6 +101,19 @@ body {
     font-weight: 400;
     letter-spacing: 1px;
   }
+}
+
+.mapboxgl-marker.marker {
+  top: -31px;
+  width: 42px;
+  height: 60px;
+  // CSS filter generator to convert from black to target hex color
+  // https://codepen.io/sosuke/pen/Pjoqqp
+  filter: invert(57%) sepia(54%) saturate(4794%) hue-rotate(340deg)
+    brightness(101%) contrast(104%);
+  background-image: url("../../assets/images/map-marker-0.1.0.svg");
+  background-size: cover;
+  cursor: pointer;
 }
 
 #info {

@@ -62,12 +62,12 @@ const MapOne = () => {
   // const [lat, setLat] = useState(38.95397959307656);
 
   // Desktop Start
-  const [lng, setLng] = useState(-120.46122859325533);
-  const [lat, setLat] = useState(38.738060959397785);
+  // const [lng, setLng] = useState(-120.46122859325533);
+  // const [lat, setLat] = useState(38.738060959397785);
 
   // Test Locations
-  // const [lng, setLng] = useState(-119.87548174563602);
-  // const [lat, setLat] = useState(38.85986921131126);
+  const [lng, setLng] = useState(-119.87548174563602);
+  const [lat, setLat] = useState(38.85986921131126);
 
   const [zoom, setZoom] = useState(15);
 
@@ -83,13 +83,33 @@ const MapOne = () => {
       zoom: zoom,
     });
 
+    // ————————————————————————————————————o————————————————————————————————————o Markers -->
+    // ———————————————————————————————————— Markers —>
+    // Run this with the idle event just below
+    //
+    const placeMarkers = () => {
+      const features = map.current.querySourceFeatures("mountains");
+
+      for (const marker of features) {
+        const el = document.createElement("div");
+        el.className = "marker";
+        el.style.backgroundImage = `url(/images/map-marker-1.0.0.svg)`;
+
+        // Add markers
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map.current);
+      }
+    };
+
+    map.current.on("idle", function () {
+      placeMarkers();
+    });
+
     map.current.on("load", () => {
       map.current.addSource("mapbox-terrain", {
         type: "vector",
-        // Use any Mapbox-hosted tileset using its tileset id.
-        // Learn more about where to find a tileset id:
-        // https://docs.mapbox.com/help/glossary/tileset-id/
-        //
+
         // Mapbox Terrain v2
         // https://docs.mapbox.com/data/tilesets/reference/mapbox-terrain-v2/
         url: "mapbox://mapbox.mapbox-terrain-v2",
@@ -112,9 +132,8 @@ const MapOne = () => {
         },
       });
 
-      // Mapbox Terrain includes elevation contour lines from
-      // zoom level 9 and higher. You can use the index field
-      // to highlight or label every 2nd, 5th, or 10th line.
+      // Elevation contour lines
+      // Highlighting every 5th and 10th line.
       //
       // https://blog.mapbox.com/designing-the-swiss-ski-style-in-mapbox-studio-d6d25d1a2aa0#:~:text=Mapbox%20Terrain%20includes%20elevation%20contour%20lines%20from%20zoom%20level%209%20and%20higher.%20You%20can%20use%20the%20index%20field%20to%20highlight%20or%20label%20every%202nd%2C%205th%2C%20or%2010th%20line.
       // https://github.com/mapbox/mapbox-gl-swiss-ski-style/blob/master/cij1zoclj002y8rkkdjl69psd.json#L668
@@ -135,177 +154,14 @@ const MapOne = () => {
         },
       });
 
-      // ————————————————————————————————————o————————————————————————————————————o CLUSTERS -->
-      // ———————————————————————————————————— CLUSTERS —>
+      // ————————————————————————————————————o————————————————————————————————————o Labels -->
+      // ———————————————————————————————————— Labels —>
       //
-      // Create and style CLUSTERS
-      // https://docs.mapbox.com/mapbox-gl-js/example/cluster/
-      // Add a new source from our GeoJSON data and
-      // set the 'cluster' option to true. GL-JS adds
-      // the point_count property to the source data.
       map.current
         .addSource("mountains", {
           type: "geojson",
-          // GeoJSON data: Ski resorts and their mountains
           data: "/data/mountains.geojson",
-          cluster: true,
-          clusterMaxZoom: 17, // Max zoom to cluster points on
-          clusterRadius: 10,
-          clusterProperties: {
-            photography: ["any", ["==", ["get", "interest"], "photography"]],
-            programming: ["any", ["==", ["get", "interest"], "programming"]],
-            installation: ["any", ["==", ["get", "interest"], "installation"]],
-            generative: ["any", ["==", ["get", "interest"], "generative"]],
-            design: ["any", ["==", ["get", "interest"], "design"]],
-          },
         })
-        .addLayer({
-          id: "clusters",
-          type: "circle",
-          source: "mountains",
-          filter: ["has", "point_count"],
-          paint: {
-            "circle-color": [
-              "case",
-              [">", ["get", "point_count"], 9],
-              "#0381ff",
-              ["get", "photography"],
-              "#ff1d4d",
-              ["get", "programming"],
-              "#13F267",
-              ["get", "installation"],
-              "#10fdff",
-              ["get", "generative"],
-              "#f21fd2",
-              ["get", "design"],
-              "#f6ff2e",
-              "#51bbd6",
-            ],
-            "circle-radius": [
-              "step",
-              ["get", "point_count"],
-              140,
-              40,
-              140,
-              60,
-              80,
-            ],
-            "circle-stroke-width": 55,
-            "circle-stroke-color": "#fff",
-          },
-        })
-        .addLayer({
-          id: "cluster-count",
-          type: "symbol",
-          source: "mountains",
-          filter: ["has", "point_count"],
-          // Formatting headlines and sub headlines
-          // https://blog.mapbox.com/create-a-clear-context-with-rich-text-labels-3f54a36c716b
-          layout: {
-            "text-field": [
-              "case",
-              [">", ["get", "point_count"], 9],
-              [
-                "format",
-                "wut i done did",
-                "\n",
-                "stuff",
-                {
-                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
-                  "font-scale": 0.8,
-                },
-              ],
-              ["get", "photography"],
-              [
-                "format",
-                "Photography",
-                "\n",
-                "Sugar Bowl",
-                {
-                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
-                  "font-scale": 0.8,
-                },
-              ],
-              ["get", "programming"],
-              [
-                "format",
-                "Programming",
-                "\n",
-                "Palisades",
-                {
-                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
-                  "font-scale": 0.8,
-                },
-              ],
-              ["get", "design"],
-              [
-                "format",
-                "Design",
-                "\n",
-                "Homewood",
-                {
-                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
-                  "font-scale": 0.8,
-                },
-              ],
-              ["get", "installation"],
-              [
-                "format",
-                "Installation",
-                "\n",
-                "Kirkwood",
-                {
-                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
-                  "font-scale": 0.8,
-                },
-              ],
-              ["get", "generative"],
-              [
-                "format",
-                "Generative",
-                "\n",
-                "Heavenly",
-                {
-                  "text-font": ["literal", ["DIN Offc Pro Italic"]],
-                  "font-scale": 0.8,
-                },
-              ],
-              "#51bbd6",
-            ],
-            "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-            "text-size": 28,
-          },
-        })
-
-        // ————————————————————————————————————o————————————————————————————————————o UNCLUSTERED -->
-        // ———————————————————————————————————— UNCLUSTERED —>
-        .addLayer({
-          id: "unclustered-point",
-          type: "circle",
-          source: "mountains",
-          filter: ["!", ["has", "point_count"]],
-          paint: {
-            "circle-color": [
-              "match",
-              ["get", "resort"],
-              "Sugar Bowl",
-              "#ff1d4d",
-              "Palisades",
-              "#13F267",
-              "Homewood",
-              "#f6ff2e",
-              "Kirkwood",
-              "#10fdff",
-              "Heavenly",
-              "#f21fd2",
-              "rgba(0, 0, 0, 0)",
-            ],
-            "circle-radius": 100,
-            "circle-stroke-width": ["match", ["get", "hide"], "hide", 0, 5],
-            "circle-stroke-color": "#fff",
-          },
-        })
-        // ———————————————————————————————————— UNCLUSTERED LABELS —>
         .addLayer({
           id: "unclustered-label",
           type: "symbol",
@@ -323,32 +179,14 @@ const MapOne = () => {
             ],
             "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
             "text-size": 24,
+            "text-offset": [0, -4],
+          },
+          paint: {
+            "text-color": "#FF622E",
           },
         });
 
-      // When a click event occurs on a feature in the places layer, open a popup at the
-      // location of the feature, with description HTML from its properties.
-      map.current.on("click", "unclustered-point", function (e) {
-        let coordinates = e.features[0].geometry.coordinates.slice();
-        let description = e.features[0].properties.description;
-        let url = e.features[0].properties.url;
-
-        // Ensure that if the map is zoomed out such that multiple
-        // copies of the feature are visible, the popup appears
-        // over the copy being pointed to.
-        // while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-        //   coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-        // }
-
-        console.log('url', url, ' : description', description)
-
-        new mapboxgl.Popup()
-            .setLngLat(coordinates)
-            // .setHTML(description)
-            .setHTML(`<iframe class="project-iframe" src=${url} />`)
-            .addTo(map.current);
-      });
-
+      // ————————————————————————————————————o————————————————————————————————————o Tools -->
       // ———————————————————————————————————— LAT+LONG OF MOUSE —>
       // output lat+long of mouse position to console
       //
