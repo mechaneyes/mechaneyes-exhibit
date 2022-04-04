@@ -15,7 +15,7 @@ body {
   }
 
   button {
-    display: none;
+    // display: none;
   }
 
   .mapboxgl-popup {
@@ -53,6 +53,11 @@ body {
   .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
     display: none;
   }
+}
+
+.mapboxgl-popup-close-button {
+  font-size: 35px;
+  color: #02ff87;
 }
 
 .map-container {
@@ -101,11 +106,6 @@ body {
     font-weight: 400;
     letter-spacing: 1px;
   }
-}
-
-.marker.marker--generative {
-  width: 60px;
-  height: 60px;
 }
 
 .mapboxgl-marker.marker {

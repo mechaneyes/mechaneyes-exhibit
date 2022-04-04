@@ -49,10 +49,6 @@ const MapOne = () => {
   // const [lng, setLng] = useState(-73.0508902);
   // const [lat, setLat] = useState(-49.2740535);
 
-  // Monument Valley
-  // const [lng, setLng] = useState(-110.3193009);
-  // const [lat, setLat] = useState(36.9852564);
-
   // Bryce
   // const [lng, setLng] = useState(-112.3183959);
   // const [lat, setLat] = useState(37.573297);
@@ -62,12 +58,12 @@ const MapOne = () => {
   // const [lat, setLat] = useState(38.95397959307656);
 
   // Desktop Start
-  // const [lng, setLng] = useState(-120.46122859325533);
-  // const [lat, setLat] = useState(38.738060959397785);
+  const [lng, setLng] = useState(-120.46122859325533);
+  const [lat, setLat] = useState(38.738060959397785);
 
   // Test Locations
-  const [lng, setLng] = useState(-119.87548174563602);
-  const [lat, setLat] = useState(38.85986921131126);
+  // const [lng, setLng] = useState(-119.87548174563602);
+  // const [lat, setLat] = useState(38.85986921131126);
 
   const [zoom, setZoom] = useState(15);
 
@@ -92,8 +88,8 @@ const MapOne = () => {
         url: "mapbox://mapbox.mapbox-terrain-v2",
       });
 
-      // ————————————————————————————————————o————————————————————————————————————o CONTOUR LINES -->
-      // ———————————————————————————————————— CONTOUR LINES —>
+      // ————————————————————————————————————o————————————————————————————————————o Elevation Contour Lines -->
+      // ———————————————————————————————————— Elevation Contour Lines —>
       map.current.addLayer({
         id: "terrain-data",
         type: "line",
@@ -109,8 +105,7 @@ const MapOne = () => {
         },
       });
 
-      // Elevation contour lines
-      // Highlighting every 5th and 10th line.
+      // ———————————————————————————————————— Highlighting every 5th and 10th line —>
       //
       // https://blog.mapbox.com/designing-the-swiss-ski-style-in-mapbox-studio-d6d25d1a2aa0#:~:text=Mapbox%20Terrain%20includes%20elevation%20contour%20lines%20from%20zoom%20level%209%20and%20higher.%20You%20can%20use%20the%20index%20field%20to%20highlight%20or%20label%20every%202nd%2C%205th%2C%20or%2010th%20line.
       // https://github.com/mapbox/mapbox-gl-swiss-ski-style/blob/master/cij1zoclj002y8rkkdjl69psd.json#L668
@@ -164,34 +159,39 @@ const MapOne = () => {
         });
 
       // ————————————————————————————————————o————————————————————————————————————o Tools -->
-      // ———————————————————————————————————— LAT+LONG OF MOUSE —>
-      // output lat+long of mouse position to console
+      // ———————————————————————————————————— Lat+Long of Mouse —>
+      // output lat+long of mouse click position to console
       //
-      map.current.on("click", (e) => {
-        let latlong =
-          '"coordinates": ' +
-          JSON.stringify(e.lngLat.wrap())
-            .replace('"lng":', "")
-            .replace('"lat":', " ")
-            .replace("{", "[")
-            .replace("}", "]");
-        console.log(latlong);
-      });
+      // map.current.on("click", (e) => {
+      //   let latlong =
+      //     '"coordinates": ' +
+      //     JSON.stringify(e.lngLat.wrap())
+      //       .replace('"lng":', "")
+      //       .replace('"lat":', " ")
+      //       .replace("{", "[")
+      //       .replace("}", "]");
+      //   console.log(latlong);
+      // });
     });
   });
 
-  // ————————————————————————————————————o————————————————————————————————————o MARKERS -->
-  // ———————————————————————————————————— MARKERS —>
-  // https://docs.mapbox.com/help/tutorials/custom-markers-gl-js/
+  // ————————————————————————————————————o————————————————————————————————————o Markers + Popups -->
+  // ———————————————————————————————————— Markers + Popups —>
   //
   useEffect(() => {
+    // Create popup, but don't add to map yet
+    const popup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: false,
+    });
+
     fetch("/data/mountains.geojson")
       .then((res) => res.json())
       .then((result) => {
+        // ———————————————————————————————————— Markers —>
+        //
         for (const feature of result.features) {
           const el = document.createElement("div");
-          console.log('feature.properties.interest', feature.properties.interest)
-
           el.className = "marker";
           el.style.backgroundImage = `url(/images/map-marker-1.0.0.svg)`;
 
@@ -201,12 +201,18 @@ const MapOne = () => {
               .addTo(map.current)
               .setOffset([0, 4]);
 
-            // ———————————————————————————————————— CENTER MARKER ON CLICK —>
-            // marker.getElement().addEventListener("click", () => {
-            //   map.current.flyTo({
-            //     center: feature.geometry.coordinates,
-            //   });
-            // });
+            // ———————————————————————————————————— Popup on Marker Click —>
+            //
+            marker.getElement().addEventListener("click", () => {
+              let coordinates = feature.geometry.coordinates.slice();
+              let url = feature.properties.url;
+              console.log("coordinates", coordinates);
+
+              popup
+                .setLngLat(coordinates)
+                .setHTML(`<iframe class="project-iframe" src=${url} />`)
+                .addTo(map.current);
+            });
           }
         }
       });
