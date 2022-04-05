@@ -7,7 +7,6 @@ import {
   useEffect,
   useState,
   createContext,
-  useContext,
   useMemo,
 } from "react";
 import mapboxgl from "!mapbox-gl";
@@ -126,8 +125,8 @@ const MapOne = () => {
         },
       });
 
-      // ————————————————————————————————————o————————————————————————————————————o Labels -->
-      // ———————————————————————————————————— Labels —>
+      // ————————————————————————————————————o————————————————————————————————————o Text Labels -->
+      // ———————————————————————————————————— Text Labels —>
       //
       map.current
         .addSource("mountains", {
@@ -158,6 +157,25 @@ const MapOne = () => {
             "text-color": "#FFF",
           },
         });
+
+      // ———————————————————————————————————— Popup on Label Click —>
+      //
+      // Create popup, but don't add to map yet
+      const popup = new mapboxgl.Popup({
+        closeButton: true,
+        closeOnClick: false,
+      });
+
+      map.current.on("click", "unclustered-label", (e) => {
+        let coordinates = e.features[0].geometry.coordinates.slice();
+        const url = e.features[0].properties.url;
+        // console.log("url", url, "coordinates", coordinates);
+
+        popup
+          .setLngLat(coordinates)
+          .setHTML(`<iframe class="project-iframe" src=${url} />`)
+          .addTo(map.current);
+      });
     });
   });
 
