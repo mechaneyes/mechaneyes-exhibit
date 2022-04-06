@@ -23,7 +23,7 @@ let Intro = () => {
           <h1>Ray Weitzenberg</h1>
           <h3>Artist and technologist inducing delight online and off</h3>
           <p>
-            My mediums of choice are light itself and equally, digitally mediated
+            My mediums of choice are light itself, and equally, digitally mediated
             experiences. It's when the two passions intersect that monkeys begin
             to dance.
           </p>
@@ -31,10 +31,6 @@ let Intro = () => {
             Inside is a glimpse of what I see and what I create for others to
             see.
           </p>
-          {/* <p>
-            Use the nav up top or interact as you would Google Maps<br />
-            <span className="intro-how">Click &middot; Tap &middot; Pinch &middot; Drag</span>
-          </p> */}
         </div>
       </section>
     </>

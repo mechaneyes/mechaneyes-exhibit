@@ -61,8 +61,8 @@ const MapOne = () => {
   const [lat, setLat] = useState(38.738060959397785);
 
   // Test Locations
-  // const [lng, setLng] = useState(-119.87548174563602);
-  // const [lat, setLat] = useState(38.85986921131126);
+  // const [lng, setLng] = useState(-120.24202219419851);
+  // const [lat, setLat] = useState(39.160690302651886);
 
   const [zoom, setZoom] = useState(15);
 
