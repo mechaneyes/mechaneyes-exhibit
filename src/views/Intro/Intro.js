@@ -23,14 +23,11 @@ let Intro = () => {
           <h1>Ray Weitzenberg</h1>
           <h3>Artist and technologist inducing delight online and off</h3>
           <p>
-            My mediums of choice are light itself, and equally, digitally mediated
-            experiences. It's when the two passions intersect that monkeys begin
-            to dance.
+            My mediums of choice are light itself, and equally, digitally
+            mediated experiences. It's when the two passions intersect that
+            monkeys begin to dance.
           </p>
-          <p>
-            Inside is a glimpse of what I see and what I create for others to
-            see.
-          </p>
+          <p>Inside is a glimpse of what I see and create for others to see.</p>
         </div>
       </section>
     </>

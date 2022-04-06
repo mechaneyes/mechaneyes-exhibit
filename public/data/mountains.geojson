@@ -4,54 +4,12 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.33235696832531, 39.29241303526277]
+        "coordinates": [-120.33365696832531, 39.29241303526277]
       },
       "properties": {
         "hide": "hide",
         "theResort": "// ———————————————————————————————————— Sugar Bowl —>",
         "theFocuss": "// ———————————————————————————————————— Photography —>"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-120.315747, 39.298561]
-      },
-      "type": "Feature",
-      "properties": {
-        "interest": "photography",
-        "resort": "Sugar Bowl",
-        "title": "Objects May Appear",
-        "description": "Mount Judah",
-        "url": "//eyesee.digital/projects/objects/"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-120.328394, 39.287903]
-      },
-      "type": "Feature",
-      "properties": {
-        "interest": "photography",
-        "resort": "Sugar Bowl",
-        "title": "Formalism",
-        "description": "Mt Lincoln",
-        "url": "//eyesee.digital/projects/formalism/"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-120.3413373, 39.2947416]
-      },
-      "type": "Feature",
-      "properties": {
-        "interest": "photography",
-        "resort": "Sugar Bowl",
-        "title": "Loops",
-        "description": "Mount Disney",
-        "url": "//eyesee.digital/projects/loops/"
       }
     },
     {
@@ -63,15 +21,57 @@
       "properties": {
         "interest": "photography",
         "resort": "Sugar Bowl",
-        "title": "Gossamer",
+        "title": "Objects May Appear",
         "description": "Crows Nest",
+        "url": "//eyesee.digital/projects/objects/"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.3413373, 39.2947416]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "photography",
+        "resort": "Sugar Bowl",
+        "title": "Formalism",
+        "description": "Mount Disney",
+        "url": "//eyesee.digital/projects/formalism/"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.328394, 39.287903]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "photography",
+        "resort": "Sugar Bowl",
+        "title": "Loops",
+        "description": "Mt Lincoln",
+        "url": "//eyesee.digital/projects/loops/"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.315747, 39.298561]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "photography",
+        "resort": "Sugar Bowl",
+        "title": "Gossamer",
+        "description": "Mount Judah",
         "url": "//eyesee.digital/projects/gossamer/"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.25164298959056, 39.16192560651684]
+        "coordinates": [-120.25394298959056, 39.16192560651684]
       },
       "properties": {
         "hide": "hide",
@@ -83,56 +83,28 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.269674, 39.180667]
-      },
-      "type": "Feature",
-      "properties": {
-        "interest": "programming",
-        "resort": "Palisades",
-        "title": "Better Breaks",
-        "description": "Squaw Peak",
-        "url": "//eyesee.digital/projects/better-breaks/"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-120.223217, 39.157976]
-      },
-      "type": "Feature",
-      "properties": {
-        "interest": "programming",
-        "resort": "Palisades",
-        "title": "UNIQLO",
-        "description": "Scott Peak",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=24126"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
         "coordinates": [-120.277183, 39.189108]
       },
       "type": "Feature",
       "properties": {
         "interest": "programming",
         "resort": "Palisades",
-        "title": "Pager",
+        "title": "Monolyth",
         "description": "Emigrant Peak",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=30655"
+        "url": "//eyesee.digital/projects/monolyth/"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.245917, 39.147966]
+        "coordinates": [-120.269674, 39.180667]
       },
       "type": "Feature",
       "properties": {
         "interest": "programming",
         "resort": "Palisades",
         "title": "Stereoh",
-        "description": "Ward Peak",
+        "description": "Squaw Peak",
         "url": "//eyesee.digital/projects/stereoh/"
       }
     },
@@ -145,15 +117,43 @@
       "properties": {
         "interest": "programming",
         "resort": "Palisades",
-        "title": "Monolyth",
+        "title": "Better Breaks",
         "description": "KT-22",
-        "url": "//eyesee.digital/projects/monolyth/"
+        "url": "//eyesee.digital/projects/better-breaks/"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.18326623877806, 39.07008185047156]
+        "coordinates": [-120.245917, 39.147966]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "programming",
+        "resort": "Palisades",
+        "title": "UNIQLO",
+        "description": "Ward Peak",
+        "url": "https://www.peakbagger.com/peak.aspx?pid=30655"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.223217, 39.157976]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "programming",
+        "resort": "Palisades",
+        "title": "Pager",
+        "description": "Scott Peak",
+        "url": "https://www.peakbagger.com/peak.aspx?pid=24126"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.18256623877806, 39.07008185047156]
       },
       "properties": {
         "hide": "hide",
@@ -171,10 +171,10 @@
       "properties": {
         "interest": "design",
         "resort": "Homewood",
-        "title": "Sound Noir",
+        "title": "Stereoh",
         "description": "Ellis Peak",
         "elevation": "8744 ft / 2665 m",
-        "url": "//eyesee.digital/projects/sound-noir/"
+        "url": "//eyesee.digital/projects/stereoh/"
       }
     },
     {
@@ -186,10 +186,10 @@
       "properties": {
         "interest": "design",
         "resort": "Homewood",
-        "title": "Pager",
+        "title": "Sound Noir",
         "description": "Ellis Lifthouse",
         "elevation": "8744 ft / 2665 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=26156"
+        "url": "//eyesee.digital/projects/sound-noir/"
       }
     },
     {
@@ -201,10 +201,10 @@
       "properties": {
         "interest": "design",
         "resort": "Homewood",
-        "title": "Stereoh",
+        "title": "Pager",
         "description": "Quail Lifthouse",
         "elevation": "8744 ft / 2665 m",
-        "url": "//eyesee.digital/projects/stereoh/"
+        "url": "https://www.peakbagger.com/peak.aspx?pid=26156"
       }
     },
     {
@@ -217,6 +217,34 @@
         "theResort": "// ———————————————————————————————————— Kirkwood —>",
         "theFocuss": "// ———————————————————————————————————— Installation —>",
         "theArray#": "// ———————————————————————————————————— 15 —>"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.08500931523972, 38.68841624323919]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "installation",
+        "resort": "Kirkwood",
+        "title": "Sound Noir",
+        "description": "Martin Point",
+        "url": "//eyesee.digital/projects/sound-noir/"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.07066658390274, 38.66873640392365]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "installation",
+        "resort": "Kirkwood",
+        "title": "Sevdah Body",
+        "description": "The Sisters",
+        "url": "//eyesee.digital/projects/monolyth/"
       }
     },
     {
@@ -252,35 +280,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.07066658390274, 38.66873640392365]
-      },
-      "type": "Feature",
-      "properties": {
-        "interest": "installation",
-        "resort": "Kirkwood",
-        "title": "Sevdah Body",
-        "description": "The Sisters",
-        "url": "//eyesee.digital/projects/monolyth/"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-120.09200931523972, 38.68841624323919]
-      },
-      "type": "Feature",
-      "properties": {
-        "interest": "installation",
-        "resort": "Kirkwood",
-        "title": "Sound Noir",
-        "description": "Martin Point",
-        "url": "//eyesee.digital/projects/sound-noir/"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-119.88140880596688, 38.858561021396336]
+        "coordinates": [-119.88080880596688, 38.858561021396336]
       },
       "properties": {
         "hide": "hide",
@@ -292,15 +292,15 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.861371, 38.858165]
+        "coordinates": [-119.900095, 38.857499]
       },
       "type": "Feature",
       "properties": {
         "interest": "generative",
         "resort": "Heavenly",
         "title": "Whirligrid",
-        "description": "Jobs Peak",
-        "elevation": "10,638 ft / 3242 m",
+        "description": "Freel Peak",
+        "elevation": "10,886 ft / 3319 m",
         "url": "//eyesee.digital/projects/whirligrid/"
       }
     },
@@ -322,15 +322,15 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.900095, 38.857499]
+        "coordinates": [-119.861371, 38.858165]
       },
       "type": "Feature",
       "properties": {
         "interest": "generative",
         "resort": "Heavenly",
         "title": "Stereoh",
-        "description": "Freel Peak",
-        "elevation": "10,886 ft / 3319 m",
+        "description": "Jobs Peak",
+        "elevation": "10,638 ft / 3242 m",
         "url": "//eyesee.digital/projects/stereoh/"
       }
     }

@@ -6,7 +6,7 @@ import "./NavPC.scss";
 
 let Nav = (props) => {
   const { height, width } = useWindowDimensions();
-  // console.log('width', width)
+  console.log('width', width)
 
   const map = props.map;
 
@@ -45,9 +45,14 @@ let Nav = (props) => {
   useEffect(() => {
     // console.log('map', map.current)
 
-    fly = (resortLoc, pitch = 60, zoom = 14, bearing = 0) => {
+    fly = (resortLoc, pitch = 60, zoom = 14, bearing = 0, isProgramming = false) => {
       if (width > 1700) {
         zoom += 0.4
+      }
+
+      if (isProgramming && width > 1700) {
+        zoom += 0.5
+        // console.log('isProgramming', isProgramming)
       }
       fetch("/data/mountains.geojson")
         .then((res) => res.json())
@@ -92,7 +97,7 @@ let Nav = (props) => {
               Photography
             </h2>
           </a>
-          <a className="mecha-nav__item" onClick={() => fly(5, 60, 13.8, 20)}>
+          <a className="mecha-nav__item" onClick={() => fly(5, 60, 13.5, 20, true)}>
             <img src="/images/icon-programming.png" />
             <h2 className="nav-headline nav-headline--programming">
               Programming
