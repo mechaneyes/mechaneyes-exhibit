@@ -52,7 +52,7 @@ let Nav = (props) => {
 
       if (isProgramming && width > 1700) {
         zoom += 0.5
-        // console.log('isProgramming', isProgramming)
+        // console.log('isProgramming', isProgramming)``
       }
       fetch("/data/mountains.geojson")
         .then((res) => res.json())
