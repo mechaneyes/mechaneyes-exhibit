@@ -228,7 +228,7 @@ const MapOne = () => {
   // ————————————————————————————————————o————————————————————————————————————o Project Info Cards -->
   // ———————————————————————————————————— Project Info Cards —>
   // Added as markers glued in place via mountains.geojson
-  // 
+  //
   useEffect(() => {
     fetch("/data/mountains.geojson")
       .then((res) => res.json())
@@ -236,9 +236,8 @@ const MapOne = () => {
         for (const feature of result.features) {
           let infoFile = feature.properties.infoFile;
           const el = document.createElement("div");
-          el.className = `info-card ${infoFile}`;
-          el.innerHTML = 
-            `<object class="info-card__object" type="text/html" data="/info/${infoFile}.html"></object>`
+          el.className = `info-card info-card--hidden ${infoFile}`;
+          el.innerHTML = `<object class="info-card__object" type="text/html" data="/info/${infoFile}.html"></object>`;
 
           if (feature.properties.info == true) {
             new mapboxgl.Marker(el)
@@ -247,6 +246,22 @@ const MapOne = () => {
           }
         }
       });
+
+    let infoCards = document.querySelectorAll(".info-card");
+
+    map.current.on("movestart", () => {
+      for (const card of infoCards) {
+        card.classList.add("info-card--hidden");
+      }
+    });
+
+    map.current.on("moveend", () => {
+      setTimeout(() => {
+        for (const card of infoCards) {
+          card.classList.remove("info-card--hidden");
+        }
+      }, 100);
+    });
   });
 
   // ————————————————————————————————————o————————————————————————————————————o Tools -->

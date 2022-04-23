@@ -11,6 +11,11 @@ let Nav = (props) => {
 
   const { isIntroVisible, setIntroVisible } = useContext(AboutContext);
   const { isAboutVisible, setAboutVisible } = useContext(AboutContext);
+  const [activeNav, setActiveNav] = useState("zero");
+
+  useEffect(() => {
+    console.log("activeNav", activeNav);
+  });
 
   let navElements;
   let showIntro;
@@ -51,7 +56,7 @@ let Nav = (props) => {
       isProgramming = false
     ) => {
       if (width > 1700) {
-        zoom += 0.4;
+        zoom += 0;
       }
 
       if (isProgramming && width > 1700) {
@@ -91,39 +96,114 @@ let Nav = (props) => {
   return (
     <>
       <nav className="mecha-nav mecha-nav--pc">
-        <div className="mecha-nav__item mecha-nav__item--title" onClick={() => showIntro()}>
-          <h2 className="nav-headline nav-headline--title">Mechaneyes</h2>
+        <div
+          className="mecha-nav__item mecha-nav__item--title"
+          onClick={() => {
+            showIntro();
+            setActiveNav("title");
+          }}
+        >
+          <h2
+            className={
+              activeNav == "title"
+                ? "nav-headline nav-headline--title nav-headline--active"
+                : "nav-headline nav-headline--title"
+            }
+          >
+            Mechaneyes
+          </h2>
         </div>
 
         <div className="mecha-nav__not-about" onClick={() => clickOtherNav()}>
-          <a className="mecha-nav__item" onClick={() => fly(0, 0, 14)}>
-            <h2 className="nav-headline nav-headline--phototograpy">
+          <a
+            className="mecha-nav__item"
+            onClick={() => {
+              fly(0, 0, 14, 180);
+              setActiveNav("photography");
+            }}
+          >
+            <h2
+              className={
+                activeNav == "photography"
+                  ? "nav-headline nav-headline--photography nav-headline--active"
+                  : "nav-headline nav-headline--photography"
+              }
+            >
               Photography
             </h2>
           </a>
 
           <a
             className="mecha-nav__item"
-            onClick={() => fly(5, 20, 13, 25, true)}
+            onClick={() => {
+              fly(5, 20, 13.16, 25, true);
+              setActiveNav("programming");
+            }}
           >
-            <h2 className="nav-headline nav-headline--programming">
+            <h2
+              className={
+                activeNav == "programming"
+                  ? "nav-headline nav-headline--programming nav-headline--active"
+                  : "nav-headline nav-headline--programming"
+              }
+            >
               Programming
             </h2>
           </a>
 
-          <a className="mecha-nav__item" onClick={() => fly(15, 30, 13.2, 10)}>
-            <h2 className="nav-headline nav-headline--generative">
+          <a
+            className="mecha-nav__item"
+            onClick={() => {
+              fly(16, 40, 13.3, 200);
+              setActiveNav("generative");
+            }}
+          >
+            <h2
+              className={
+                activeNav == "generative"
+                  ? "nav-headline nav-headline--generative nav-headline--active"
+                  : "nav-headline nav-headline--generative"
+              }
+            >
               Generative
             </h2>
           </a>
 
-          <a className="mecha-nav__item" onClick={() => fly(11, 0, 14.1)}>
-            <h2 className="nav-headline nav-headline--design">Design</h2>
+          <a
+            className="mecha-nav__item"
+            onClick={() => {
+              fly(12, 0, 14.1);
+              setActiveNav("design");
+            }}
+          >
+            <h2
+              className={
+                activeNav == "design"
+                  ? "nav-headline nav-headline--design nav-headline--active"
+                  : "nav-headline nav-headline--design"
+              }
+            >
+              Design
+            </h2>
           </a>
         </div>
 
-        <a className="mecha-nav__item mecha-nav__item--about" onClick={() => clickAbout()}>
-          <h2 className="nav-headline nav-headline--about">About</h2>
+        <a
+          className="mecha-nav__item mecha-nav__item--about"
+          onClick={() => {
+            clickAbout();
+            setActiveNav("about");
+          }}
+        >
+          <h2
+            className={
+              activeNav == "about"
+                ? "nav-headline nav-headline--about nav-headline--active"
+                : "nav-headline nav-headline--about"
+            }
+          >
+            About
+          </h2>
         </a>
       </nav>
     </>

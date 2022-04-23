@@ -106,13 +106,24 @@ body {
   cursor: pointer;
 }
 
-.info-card {
-  // display: none;
+.mapboxgl-marker {
+  // transition: none !important;
+}
+
+.mapboxgl-marker.info-card {
+  display: block;
   width: 45vw;
   height: 30vh;
   padding: 20px;
-  background-color: rgba(0, 22, 51, 0.65);
-  // background-color: white;
+  background-color: rgba(0, 22, 51, 0.8);
+  opacity: 1;
+  transition: opacity .4s;
+  
+  &--hidden {
+    // display: none;
+    opacity: 0;
+    transition: opacity .3s;
+  }
 
   &__object {
     width: 100%;
@@ -120,7 +131,8 @@ body {
   }
 
   &--programming {
-    height: 35vh;
+    width: 460px;
+    height: 270px;
   }
 }
 

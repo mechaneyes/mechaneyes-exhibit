@@ -46,6 +46,14 @@
       font-size: 1.3rem;
     }
 
+    &:hover {
+      color: white;
+    }
+
+    &--active {
+      color: white;
+    }
+
     &--title {
       color: white;
     }
