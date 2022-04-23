@@ -23,7 +23,8 @@
         "resort": "Sugar Bowl",
         "title": "Objects May Appear",
         "description": "Crows Nest",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/objects/"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/objects/",
+        "htmlFile": "objects"
       }
     },
     {
@@ -37,7 +38,8 @@
         "resort": "Sugar Bowl",
         "title": "Formalism",
         "description": "Mount Disney",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/formalism/"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/formalism/",
+        "htmlFile": "formalism"
       }
     },
     {
@@ -51,7 +53,8 @@
         "resort": "Sugar Bowl",
         "title": "Loops",
         "description": "Mt Lincoln",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/loops/"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/loops/",
+        "htmlFile": "loops"
       }
     },
     {
@@ -65,13 +68,14 @@
         "resort": "Sugar Bowl",
         "title": "Gossamer",
         "description": "Mount Judah",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/gossamer/"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/gossamer/",
+        "htmlFile": "gossamer"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.25394298959056, 39.16192560651684]
+        "coordinates": [-120.25362969464481, 39.1689807577018]
       },
       "properties": {
         "hide": "hide",
@@ -91,7 +95,8 @@
         "resort": "Palisades",
         "title": "Monolyth",
         "description": "Emigrant Peak",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/monolyth/"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/monolyth/",
+        "htmlFile": "monolyth"
       }
     },
     {
@@ -105,7 +110,8 @@
         "resort": "Palisades",
         "title": "Stereoh",
         "description": "Squaw Peak",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/",
+        "htmlFile": "stereoh"
       }
     },
     {
@@ -119,7 +125,8 @@
         "resort": "Palisades",
         "title": "Better Breaks",
         "description": "KT-22",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/breaks/"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/breaks/",
+        "htmlFile": "breaks"
       }
     },
     {
@@ -133,7 +140,8 @@
         "resort": "Palisades",
         "title": "UNIQLO",
         "description": "Ward Peak",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=30655"
+        "url": "https://www.peakbagger.com/peak.aspx?pid=30655",
+        "htmlFile": "monolyth"
       }
     },
     {
@@ -147,7 +155,8 @@
         "resort": "Palisades",
         "title": "Pager",
         "description": "Scott Peak",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=24126"
+        "url": "https://www.peakbagger.com/peak.aspx?pid=24126",
+        "htmlFile": "monolyth"
       }
     },
     {
@@ -174,7 +183,8 @@
         "title": "Stereoh",
         "description": "Ellis Peak",
         "elevation": "8744 ft / 2665 m",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/",
+        "htmlFile": "stereoh"
       }
     },
     {
@@ -189,7 +199,8 @@
         "title": "Sound Noir",
         "description": "Ellis Lifthouse",
         "elevation": "8744 ft / 2665 m",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/soundnoir/"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/soundnoir/",
+        "htmlFile": "soundnoir"
       }
     },
     {
@@ -204,7 +215,8 @@
         "title": "Pager",
         "description": "Quail Lifthouse",
         "elevation": "8744 ft / 2665 m",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=26156"
+        "url": "https://www.peakbagger.com/peak.aspx?pid=26156",
+        "htmlFile": "monolyth"
       }
     },
     {
@@ -215,8 +227,24 @@
       "properties": {
         "hide": "hide",
         "theResort": "// ———————————————————————————————————— Kirkwood —>",
-        "theFocuss": "// ———————————————————————————————————— Installation —>",
+        "theFocuss": "// ———————————————————————————————————— Generative —>",
         "theArray#": "// ———————————————————————————————————— 15 —>"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.27176852769912, 39.150254310459815]
+      },
+      "type": "Feature",
+      "properties": {
+        "hide": "hide",
+        "info": true,
+        "interest": "installation",
+        "resort": "Kirkwood",
+        "title": "Info Info",
+        "description": "Info Info",
+        "htmlFile": "breaks"
       }
     },
     {
@@ -228,9 +256,9 @@
       "properties": {
         "interest": "installation",
         "resort": "Kirkwood",
-        "title": "Sound Noir",
+        "title": "Monolyth",
         "description": "Martin Point",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/soundnoir/"
+        "htmlFile": "monolyth"
       }
     },
     {
@@ -242,9 +270,10 @@
       "properties": {
         "interest": "installation",
         "resort": "Kirkwood",
-        "title": "Sevdah Body",
+        "title": "Whirligrid",
         "description": "The Sisters",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/monolyth/"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/whirligrid/",
+        "htmlFile": "whirligrid"
       }
     },
     {
@@ -256,10 +285,11 @@
       "properties": {
         "interest": "installation",
         "resort": "Kirkwood",
-        "title": "Monolyth",
+        "title": "Munari Veil",
         "description": "Thimble Peak",
         "elevation": "9809 ft / 2990 m",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/monolyth/"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/munari/",
+        "htmlFile": "munari"
       }
     },
     {
@@ -274,7 +304,8 @@
         "title": "So I Do",
         "description": "Covered Wagon Peak",
         "elevation": "9570 ft / 2916 m",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/soido/",
+        "htmlFile": "soido"
       }
     },
     {
@@ -285,7 +316,7 @@
       "properties": {
         "hide": "hide",
         "theResort": "// ———————————————————————————————————— Heavenly —>",
-        "theFocuss": "// ———————————————————————————————————— Generative —>",
+        "theFocuss": "// ———————————————————————————————————— DEPRECATED —>",
         "theArray#": "// ———————————————————————————————————— 20 —>"
       }
     },
@@ -296,12 +327,14 @@
       },
       "type": "Feature",
       "properties": {
+        "hide": "hide",
         "interest": "generative",
         "resort": "Heavenly",
         "title": "Whirligrid",
         "description": "Freel Peak",
         "elevation": "10,886 ft / 3319 m",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/whirligrid/"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/whirligrid/",
+        "htmlFile": "whirligrid"
       }
     },
     {
@@ -311,12 +344,14 @@
       },
       "type": "Feature",
       "properties": {
+        "hide": "hide",
         "interest": "generative",
         "resort": "Heavenly",
         "title": "Munari Veil",
         "description": "Jobs Sister",
         "elevation": "10,828 ft / 3300 m",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/munari/"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/munari/",
+        "htmlFile": "munari"
       }
     },
     {
@@ -326,12 +361,14 @@
       },
       "type": "Feature",
       "properties": {
+        "hide": "hide",
         "interest": "generative",
         "resort": "Heavenly",
         "title": "Stereoh",
         "description": "Jobs Peak",
         "elevation": "10,638 ft / 3242 m",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/",
+        "htmlFile": "stereoh"
       }
     }
   ]

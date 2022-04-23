@@ -6,7 +6,6 @@ import "./NavPC.scss";
 
 let Nav = (props) => {
   const { height, width } = useWindowDimensions();
-  console.log('width', width)
 
   const map = props.map;
 
@@ -45,13 +44,20 @@ let Nav = (props) => {
   useEffect(() => {
     // console.log('map', map.current)
 
-    fly = (resortLoc, pitch = 60, zoom = 14, bearing = 0, isProgramming = false) => {
+    fly = (
+      resortLoc,
+      // pitch = 60,
+      pitch = 0,
+      zoom = 14,
+      bearing = 0,
+      isProgramming = false
+    ) => {
       if (width > 1700) {
-        zoom += 0.4
+        zoom += 0.4;
       }
 
       if (isProgramming && width > 1700) {
-        zoom += 0.5
+        zoom += 0.5;
         // console.log('isProgramming', isProgramming)``
       }
       fetch("/data/mountains.geojson")
@@ -76,7 +82,7 @@ let Nav = (props) => {
         });
 
       // If a project popup is visible remove it on nav click
-      // 
+      //
       const popup = document.getElementsByClassName("mapboxgl-popup");
       if (popup.length) {
         popup[0].remove();
@@ -91,35 +97,48 @@ let Nav = (props) => {
           <h2 className="nav-headline nav-headline--title">Mechaneyes</h2>
         </div>
         <div className="mecha-nav__not-about" onClick={() => clickOtherNav()}>
-          <a className="mecha-nav__item" onClick={() => fly(0, 60, 14.3)}>
+          <a className="mecha-nav__item" onClick={() => fly(0, 0, 14.3)}>
             <img src="/images/icon-photography.png" />
             <h2 className="nav-headline nav-headline--phototograpy">
               Photography
             </h2>
           </a>
-          <a className="mecha-nav__item" onClick={() => fly(5, 60, 13.5, 20, true)}>
+
+          <a
+            className="mecha-nav__item"
+            onClick={() => fly(5, 20, 13, 25, true)}
+          >
             <img src="/images/icon-programming.png" />
             <h2 className="nav-headline nav-headline--programming">
               Programming
             </h2>
           </a>
+
           <a className="mecha-nav__item" onClick={() => fly(15)}>
-            <img src="/images/icon-installation.png" />
+            {/* <img src="/images/icon-installation.png" />
             <h2 className="nav-headline nav-headline--installation">
               Installation
-            </h2>
-          </a>
-          <a className="mecha-nav__item" onClick={() => fly(20)}>
+            </h2> */}
+
             <img src="/images/icon-generative.png" />
             <h2 className="nav-headline nav-headline--generative">
               Generative
             </h2>
           </a>
-          <a className="mecha-nav__item" onClick={() => fly(11, 60, 14.3)}>
+
+          {/* <a className="mecha-nav__item" onClick={() => fly(20)}>
+            <img src="/images/icon-generative.png" />
+            <h2 className="nav-headline nav-headline--generative">
+              Generative
+            </h2>
+          </a> */}
+
+          <a className="mecha-nav__item" onClick={() => fly(11, 0, 14.3)}>
             <img src="/images/icon-design.png" />
             <h2 className="nav-headline nav-headline--design">Design</h2>
           </a>
         </div>
+
         <a className="mecha-nav__item--about" onClick={() => clickAbout()}>
           <img src="/images/icon-about.png" />
           <h2 className="nav-headline nav-headline--about">About</h2>

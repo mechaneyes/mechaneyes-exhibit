@@ -44,6 +44,11 @@ body {
       border: 2px solid #0876fc;
       border: none;
     }
+
+    object {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip {

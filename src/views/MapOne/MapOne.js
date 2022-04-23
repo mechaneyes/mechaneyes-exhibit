@@ -2,13 +2,7 @@
 // Use Mapbox GL JS in a React app
 //
 
-import {
-  useRef,
-  useEffect,
-  useState,
-  createContext,
-  useMemo,
-} from "react";
+import { useRef, useEffect, useState, createContext, useMemo } from "react";
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
@@ -169,11 +163,16 @@ const MapOne = () => {
       map.current.on("click", "unclustered-label", (e) => {
         let coordinates = e.features[0].geometry.coordinates.slice();
         const url = e.features[0].properties.url;
+        let htmlFile = e.features[0].properties.htmlFile;
         // console.log("url", url, "coordinates", coordinates);
 
         popup
           .setLngLat(coordinates)
-          .setHTML(`<iframe class="project-iframe" src=${url} />`)
+          // .setHTML(`<iframe class="project-iframe" src=${url} />`)
+          .setHTML(
+            `<object type="text/html" data="/projects/projects/${htmlFile}/index.html"></object>
+                `
+          )
           .addTo(map.current);
       });
     });
@@ -210,11 +209,65 @@ const MapOne = () => {
             marker.getElement().addEventListener("click", () => {
               let coordinates = feature.geometry.coordinates.slice();
               let url = feature.properties.url;
-              // console.log("coordinates", coordinates);
+              let htmlFile = feature.properties.htmlFile;
+              console.log("htmlFile", htmlFile);
 
               popup
                 .setLngLat(coordinates)
-                .setHTML(`<iframe class="project-iframe" src=${url} />`)
+                // .setHTML(`<iframe class="project-iframe" src=${url} />`)
+                .setHTML(
+                  `<object type="text/html" data="/projects/projects/${htmlFile}/index.html"></object>
+                `
+                )
+                .addTo(map.current);
+            });
+          }
+        }
+      });
+  });
+
+  // ————————————————————————————————————o————————————————————————————————————o Markers + Popups -->
+  // ———————————————————————————————————— Markers + Popups —>
+  // ————————————————————————————————————o————————————————————————————————————o Markers + Popups -->
+  // ———————————————————————————————————— Markers + Popups —>
+  //
+  useEffect(() => {
+    // Create popup, but don't add to map yet
+    const popup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: false,
+    });
+
+    fetch("/data/mountains.geojson")
+      .then((res) => res.json())
+      .then((result) => {
+        // ———————————————————————————————————— Markers —>
+        //
+        for (const feature of result.features) {
+          const el = document.createElement("div");
+          el.className = "marker";
+          el.style.backgroundImage = `url(/images/map-marker-0.1.0.svg)`;
+
+          if (feature.properties.info == true) {
+            const marker = new mapboxgl.Marker(el)
+              .setLngLat(feature.geometry.coordinates)
+              .addTo(map.current)
+              .setOffset([0, 4]);
+
+            // ———————————————————————————————————— Popup on Marker Click —>
+            //
+            marker.getElement().addEventListener("click", () => {
+              let coordinates = feature.geometry.coordinates.slice();
+              let url = feature.properties.url;
+              let htmlFile = feature.properties.htmlFile;
+              console.log("htmlFile", htmlFile);
+
+              popup
+                .setLngLat(coordinates)
+                .setHTML(
+                  `<object type="text/html" data="/projects/projects/${htmlFile}/index.html"></object>
+                `
+                )
                 .addTo(map.current);
             });
           }
