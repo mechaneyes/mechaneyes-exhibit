@@ -93,12 +93,12 @@ let Nav = (props) => {
   return (
     <>
       <nav className="mecha-nav mecha-nav--pc">
-        <div className="mecha-nav__item" onClick={() => showIntro()}>
+        <div className="mecha-nav__item mecha-nav__item--title" onClick={() => showIntro()}>
           <h2 className="nav-headline nav-headline--title">Mechaneyes</h2>
         </div>
+
         <div className="mecha-nav__not-about" onClick={() => clickOtherNav()}>
           <a className="mecha-nav__item" onClick={() => fly(0, 0, 14.3)}>
-            <img src="/images/icon-photography.png" />
             <h2 className="nav-headline nav-headline--phototograpy">
               Photography
             </h2>
@@ -108,39 +108,23 @@ let Nav = (props) => {
             className="mecha-nav__item"
             onClick={() => fly(5, 20, 13, 25, true)}
           >
-            <img src="/images/icon-programming.png" />
             <h2 className="nav-headline nav-headline--programming">
               Programming
             </h2>
           </a>
 
           <a className="mecha-nav__item" onClick={() => fly(15)}>
-            {/* <img src="/images/icon-installation.png" />
-            <h2 className="nav-headline nav-headline--installation">
-              Installation
-            </h2> */}
-
-            <img src="/images/icon-generative.png" />
             <h2 className="nav-headline nav-headline--generative">
               Generative
             </h2>
           </a>
 
-          {/* <a className="mecha-nav__item" onClick={() => fly(20)}>
-            <img src="/images/icon-generative.png" />
-            <h2 className="nav-headline nav-headline--generative">
-              Generative
-            </h2>
-          </a> */}
-
           <a className="mecha-nav__item" onClick={() => fly(11, 0, 14.3)}>
-            <img src="/images/icon-design.png" />
             <h2 className="nav-headline nav-headline--design">Design</h2>
           </a>
         </div>
 
-        <a className="mecha-nav__item--about" onClick={() => clickAbout()}>
-          <img src="/images/icon-about.png" />
+        <a className="mecha-nav__item mecha-nav__item--about" onClick={() => clickAbout()}>
           <h2 className="nav-headline nav-headline--about">About</h2>
         </a>
       </nav>

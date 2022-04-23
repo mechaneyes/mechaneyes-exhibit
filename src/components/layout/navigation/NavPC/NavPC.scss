@@ -1,58 +1,53 @@
 @import "../../../../utils/breakpoints.scss";
 
 .mecha-nav {
-  &.mecha-nav--pc {
-    flex-direction: row;
-    position: absolute;
-    top: 10px !important;
-    left: 10px;
-    transform: none;
-    z-index: 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: absolute;
+  top: 10px !important;
+  left: 10px;
+  z-index: 1;
+  transform: none;
 
-    .mecha-nav__not-about {
-      display: flex;
+  &__not-about {
+    display: flex;
+  }
+
+  .mecha-nav__item {
+    display: flex;
+    justify-content: center;
+    margin: 0 5px 0;
+    padding: 5px 12px;
+    cursor: pointer;
+    border: 1.5px solid #00fd70;
+    border-radius: 32px;
+    background: #001633;
+
+    &--title {
+      // border-color: white;
     }
 
-    .mecha-nav__item {
+    &--about {
       margin: 0;
-      cursor: pointer;
-      
-      img {
-        display: none;
-      }
+    }
+  }
 
-      &--about {
-        margin: 0;
-        
-        img {
-          display: none;
-        }
-      }
+  a.mecha-nav__item--about {
+    cursor: pointer;
+  }
+
+  .nav-headline {
+    margin: 0;
+    font-size: 1.6rem;
+    color: #00fe70;
+
+    @include bp(md) {
+      font-size: 1.3rem;
     }
 
-    a.mecha-nav__item--about {
-        cursor: pointer;
-    }
-
-    .nav-headline {
-      font-size: 1.6rem;
-
-      @include bp(md) {
-        font-size: 30px;
-        font-size: 1.8rem;
-      }
-
-      &--installation {
-        // color: #10fdff;
-      }
-  
-      &--generative {
-        // color: #f21fd2;
-      }
-  
-      &--design {
-        // color: #f6ff2e;
-      }
+    &--title {
+      color: white;
     }
   }
 }

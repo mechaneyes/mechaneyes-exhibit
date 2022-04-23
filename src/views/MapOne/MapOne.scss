@@ -6,12 +6,16 @@ body {
   background-color: #010f1e;
 }
 
+.mapboxgl-ctrl-bottom-right {
+  display: none;
+}
+
 .map-one {
   width: 100vw;
   height: calc(100vh - 50px);
 
   @include bp(md) {
-    margin-top: 50px;
+    // margin-top: 50px;
   }
 
   button {
@@ -68,7 +72,7 @@ body {
 
 .map-container {
   width: 100%;
-  margin-top: 45px;
+  // margin-top: 45px;
 
   @include bp(md) {
     margin-top: 0;

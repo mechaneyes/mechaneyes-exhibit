@@ -55,7 +55,6 @@
   }
 
   @include bp(md) {
-    margin-bottom: 80px;
     h1 {
       font-size: 56px;
     }
@@ -88,7 +87,7 @@
 
     @include bp(md) {
       width: 80vw;
-      height: 70vh;
+      height: auto;
       max-width: 1000px;
       padding: 30px;
       border: 2px solid #02ff87;

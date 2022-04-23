@@ -1,13 +1,13 @@
 .mecha-nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80vw;
-  z-index: 1;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-start;
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  // width: 80vw;
+  // z-index: 1;
   // display: none;
   // border: 1px solid tomato;
 
@@ -15,53 +15,25 @@
     display: none;
   }
 
-  &__item {
-    display: grid;
-    grid-template-columns: 17% 1fr;
-    gap: 15px;
-    align-items: center;
-    margin-bottom: 15px;
+  // &__item {
+  //   display: grid;
+  //   grid-template-columns: 17% 1fr;
+  //   gap: 15px;
+  //   align-items: center;
+  //   margin-bottom: 15px;
 
-    img {
-      width: 100%;
-    }
-  }
+  //   img {
+  //     width: 100%;
+  //   }
+  // }
 
-  .nav-headline {
-    margin: 0;
-    padding-bottom: 5px;
-    font-size: 40px;
-    line-height: 1;
-    color: #10fdff;
-    color: #00fe70;
+  // .nav-headline {
+  //   margin: 0;
+  //   // padding-bottom: 5px;
+  //   // color: #00fe70;
 
-    &--title {
-      color: white;
-    }
-
-    // &--phototograpy {
-    //   color: #ff1d4d;
-    // }
-
-    // &--programming {
-    //   color: #14f267;
-    // }
-
-    // &--installation {
-    //   color: #10fdff;
-    // }
-
-    // &--generative {
-    //   color: #f21fd2;
-    // }
-
-    // &--design {
-    //   color: #f6ff2e;
-    // }
-
-    // &--about {
-    //   color: #ff5a29;
-    //   color: white;
-    // }
-  }
+  //   &--title {
+  //     color: white;
+  //   }
+  // }
 }
