@@ -4,7 +4,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.33365696832531, 39.29241303526277]
+        "coordinates": [-120.3339982540318, 39.29408664826935]
       },
       "properties": {
         "hide": "hide",
@@ -75,13 +75,25 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.25362969464481, 39.1689807577018]
+        "coordinates": [-120.25262969464481, 39.1716807577018]
       },
       "properties": {
         "hide": "hide",
         "theResort": "// ———————————————————————————————————— Palisades —>",
         "theFocuss": "// ———————————————————————————————————— Programming —>",
         "theArray#": "// ———————————————————————————————————— 5 —>"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.27189034295895, 39.16744551679323]
+      },
+      "type": "Feature",
+      "properties": {
+        "hide": "hide",
+        "info": true,
+        "infoFile": "info-card--programming"
       }
     },
     {
@@ -162,7 +174,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.18256623877806, 39.07008185047156]
+        "coordinates": [-120.18156623877806, 39.07108185047156]
       },
       "properties": {
         "hide": "hide",
@@ -222,29 +234,13 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.0622428837524, 38.665796828625664]
+        "coordinates": [-120.06094382582774, 38.67686079803539]
       },
       "properties": {
         "hide": "hide",
         "theResort": "// ———————————————————————————————————— Kirkwood —>",
         "theFocuss": "// ———————————————————————————————————— Generative —>",
         "theArray#": "// ———————————————————————————————————— 15 —>"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-120.27176852769912, 39.150254310459815]
-      },
-      "type": "Feature",
-      "properties": {
-        "hide": "hide",
-        "info": true,
-        "interest": "installation",
-        "resort": "Kirkwood",
-        "title": "Info Info",
-        "description": "Info Info",
-        "htmlFile": "breaks"
       }
     },
     {

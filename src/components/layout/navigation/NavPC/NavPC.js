@@ -42,8 +42,6 @@ let Nav = (props) => {
   let fly;
 
   useEffect(() => {
-    // console.log('map', map.current)
-
     fly = (
       resortLoc,
       // pitch = 60,
@@ -98,7 +96,7 @@ let Nav = (props) => {
         </div>
 
         <div className="mecha-nav__not-about" onClick={() => clickOtherNav()}>
-          <a className="mecha-nav__item" onClick={() => fly(0, 0, 14.3)}>
+          <a className="mecha-nav__item" onClick={() => fly(0, 0, 14)}>
             <h2 className="nav-headline nav-headline--phototograpy">
               Photography
             </h2>
@@ -113,13 +111,13 @@ let Nav = (props) => {
             </h2>
           </a>
 
-          <a className="mecha-nav__item" onClick={() => fly(15)}>
+          <a className="mecha-nav__item" onClick={() => fly(15, 30, 13.2, 10)}>
             <h2 className="nav-headline nav-headline--generative">
               Generative
             </h2>
           </a>
 
-          <a className="mecha-nav__item" onClick={() => fly(11, 0, 14.3)}>
+          <a className="mecha-nav__item" onClick={() => fly(11, 0, 14.1)}>
             <h2 className="nav-headline nav-headline--design">Design</h2>
           </a>
         </div>

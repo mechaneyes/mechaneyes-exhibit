@@ -178,8 +178,8 @@ const MapOne = () => {
     });
   });
 
-  // ————————————————————————————————————o————————————————————————————————————o Markers + Popups -->
-  // ———————————————————————————————————— Markers + Popups —>
+  // ————————————————————————————————————o————————————————————————————————————o Project Markers + Popups -->
+  // ———————————————————————————————————— Project Markers + Popups —>
   //
   useEffect(() => {
     // Create popup, but don't add to map yet
@@ -214,9 +214,8 @@ const MapOne = () => {
 
               popup
                 .setLngLat(coordinates)
-                // .setHTML(`<iframe class="project-iframe" src=${url} />`)
                 .setHTML(
-                  `<object type="text/html" data="/projects/projects/${htmlFile}/index.html"></object>
+                  `<object class="project-modal" type="text/html" data="/projects/projects/${htmlFile}/index.html"></object>
                 `
                 )
                 .addTo(map.current);
@@ -226,50 +225,25 @@ const MapOne = () => {
       });
   });
 
-  // ————————————————————————————————————o————————————————————————————————————o Markers + Popups -->
-  // ———————————————————————————————————— Markers + Popups —>
-  // ————————————————————————————————————o————————————————————————————————————o Markers + Popups -->
-  // ———————————————————————————————————— Markers + Popups —>
-  //
+  // ————————————————————————————————————o————————————————————————————————————o Project Info Cards -->
+  // ———————————————————————————————————— Project Info Cards —>
+  // Added as markers glued in place via mountains.geojson
+  // 
   useEffect(() => {
-    // Create popup, but don't add to map yet
-    const popup = new mapboxgl.Popup({
-      closeButton: true,
-      closeOnClick: false,
-    });
-
     fetch("/data/mountains.geojson")
       .then((res) => res.json())
       .then((result) => {
-        // ———————————————————————————————————— Markers —>
-        //
         for (const feature of result.features) {
+          let infoFile = feature.properties.infoFile;
           const el = document.createElement("div");
-          el.className = "marker";
-          el.style.backgroundImage = `url(/images/map-marker-0.1.0.svg)`;
+          el.className = `info-card ${infoFile}`;
+          el.innerHTML = 
+            `<object class="info-card__object" type="text/html" data="/info/${infoFile}.html"></object>`
 
           if (feature.properties.info == true) {
-            const marker = new mapboxgl.Marker(el)
+            new mapboxgl.Marker(el)
               .setLngLat(feature.geometry.coordinates)
-              .addTo(map.current)
-              .setOffset([0, 4]);
-
-            // ———————————————————————————————————— Popup on Marker Click —>
-            //
-            marker.getElement().addEventListener("click", () => {
-              let coordinates = feature.geometry.coordinates.slice();
-              let url = feature.properties.url;
-              let htmlFile = feature.properties.htmlFile;
-              console.log("htmlFile", htmlFile);
-
-              popup
-                .setLngLat(coordinates)
-                .setHTML(
-                  `<object type="text/html" data="/projects/projects/${htmlFile}/index.html"></object>
-                `
-                )
-                .addTo(map.current);
-            });
+              .addTo(map.current);
           }
         }
       });

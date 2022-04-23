@@ -30,12 +30,21 @@ body {
   }
 
   .mapboxgl-popup-content {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+  }
+
+  // .mapboxgl-popup-content {
+  .project-modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -53%);
+    transform: translate(-50%, -50%);
     width: 90vw;
     height: 90vh;
+    margin-top: 20px;
     padding: 0;
     color: white;
     border: 2px solid #02ff87;
@@ -62,12 +71,14 @@ body {
   .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
     display: none;
   }
-}
 
-.mapboxgl-popup-close-button {
-  font-size: 35px;
-  color: #02ff87;
-  outline: 0;
+  .mapboxgl-popup-close-button {
+    top: calc(5vh + 10px);
+    right: 5vw;
+    font-size: 35px;
+    color: #02ff87;
+    outline: 0;
+  }
 }
 
 .map-container {
@@ -76,6 +87,40 @@ body {
 
   @include bp(md) {
     margin-top: 0;
+  }
+}
+
+.mapboxgl-marker.marker {
+  top: -31px;
+  width: 42px;
+  height: 60px;
+  // CSS filter generator to convert from black to target hex color
+  // https://codepen.io/sosuke/pen/Pjoqqp
+  // Orange
+  filter: invert(57%) sepia(54%) saturate(4794%) hue-rotate(340deg)
+    brightness(101%) contrast(104%);
+  // White
+  filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(213deg)
+    brightness(105%) contrast(101%);
+  background-size: cover;
+  cursor: pointer;
+}
+
+.info-card {
+  // display: none;
+  width: 45vw;
+  height: 30vh;
+  padding: 20px;
+  background-color: rgba(0, 22, 51, 0.65);
+  // background-color: white;
+
+  &__object {
+    width: 100%;
+    height: 100%;
+  }
+
+  &--programming {
+    height: 35vh;
   }
 }
 
@@ -116,23 +161,6 @@ body {
     font-weight: 400;
     letter-spacing: 1px;
   }
-}
-
-.mapboxgl-marker.marker {
-  top: -31px;
-  width: 42px;
-  height: 60px;
-  // CSS filter generator to convert from black to target hex color
-  // https://codepen.io/sosuke/pen/Pjoqqp
-  // Orange
-  filter: invert(57%) sepia(54%) saturate(4794%) hue-rotate(340deg)
-    brightness(101%) contrast(104%);
-  // White
-  filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(213deg)
-    brightness(105%) contrast(101%);
-  // background-image: url("../../assets/images/map-marker-0.1.0.svg");
-  background-size: cover;
-  cursor: pointer;
 }
 
 #info {
