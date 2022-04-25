@@ -15,6 +15,18 @@
     {
       "geometry": {
         "type": "Point",
+        "coordinates": [-120.33482126599131, 39.30088060840566]
+      },
+      "type": "Feature",
+      "properties": {
+        "hide": "hide",
+        "info": true,
+        "infoFile": "info-card--programming"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
         "coordinates": [-120.350158, 39.297067]
       },
       "type": "Feature",
@@ -75,19 +87,19 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.25062969464481, 39.1716807577018]
+        "coordinates": [-120.2515199102143, 39.17063074730808]
       },
       "properties": {
         "hide": "hide",
         "theResort": "// ———————————————————————————————————— Palisades —>",
         "theFocuss": "// ———————————————————————————————————— Programming —>",
-        "theArray#": "// ———————————————————————————————————— 5 —>"
+        "theArray#": "// ———————————————————————————————————— 6 —>"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.26689034295895, 39.16744551679323]
+        "coordinates": [-120.26689034295895, 39.16684551679323]
       },
       "type": "Feature",
       "properties": {
@@ -174,13 +186,25 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.18156623877806, 39.07108185047156]
+        "coordinates": [-120.18007801916589, 39.06829149085106]
       },
       "properties": {
         "hide": "hide",
         "theResort": "// ———————————————————————————————————— Homewood —>",
         "theFocuss": "// ———————————————————————————————————— Design —>",
         "theArray#": "// ———————————————————————————————————— 13 —>"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.17349206608555, 39.06194107325264]
+      },
+      "type": "Feature",
+      "properties": {
+        "hide": "hide",
+        "info": true,
+        "infoFile": "info-card--programming"
       }
     },
     {
@@ -234,13 +258,25 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.06925324596887, 38.67137959460334]
+        "coordinates": [-120.06525324596887, 38.67537959460334]
       },
       "properties": {
         "hide": "hide",
         "theResort": "// ———————————————————————————————————— Kirkwood —>",
         "theFocuss": "// ———————————————————————————————————— Generative —>",
-        "theArray#": "// ———————————————————————————————————— 15 —>"
+        "theArray#": "// ———————————————————————————————————— 18 —>"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.0519982587125, 38.68053087522418]
+      },
+      "type": "Feature",
+      "properties": {
+        "hide": "hide",
+        "info": true,
+        "infoFile": "info-card--programming"
       }
     },
     {
@@ -313,7 +349,7 @@
         "hide": "hide",
         "theResort": "// ———————————————————————————————————— Heavenly —>",
         "theFocuss": "// ———————————————————————————————————— DEPRECATED —>",
-        "theArray#": "// ———————————————————————————————————— 20 —>"
+        "theArray#": "// ———————————————————————————————————— 24 —>"
       }
     },
     {
@@ -365,6 +401,34 @@
         "elevation": "10,638 ft / 3242 m",
         "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/",
         "htmlFile": "stereoh"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.37764069625877, 39.126354852592584]
+      },
+      "properties": {
+        "static": true,
+        "hide": "hide",
+        "theResort": "// ———————————————————————————————————— Mechaneyes —>",
+        "theFocuss": "// ———————————————————————————————————— Mechaneyes —>",
+        "theArray#": "// ———————————————————————————————————— 29 —>",
+        "staticFile": "static-card--mechaneyes"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.37764069625877, 39.126354852592584]
+      },
+      "properties": {
+        "static": true,
+        "hide": "hide",
+        "theResort": "// ———————————————————————————————————— About —>",
+        "theFocuss": "// ———————————————————————————————————— About —>",
+        "theArray#": "// ———————————————————————————————————— 30 —>",
+        "staticFile": "static-card--about"
       }
     }
   ]

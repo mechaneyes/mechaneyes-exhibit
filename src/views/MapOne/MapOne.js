@@ -225,11 +225,52 @@ const MapOne = () => {
       });
   });
 
+  // ————————————————————————————————————o————————————————————————————————————o Mechaneyes + About Cards -->
+  // ———————————————————————————————————— Mechaneyes + About Cards —>
+  // Added as cards glued in place via mountains.geojson
+  //
+  useEffect(() => {
+    let staticCards;
+    fetch("/data/mountains.geojson")
+      .then((res) => res.json())
+      .then((result) => {
+        for (const feature of result.features) {
+          if (feature.properties.static) {
+            let staticFile = feature.properties.staticFile;
+            const el = document.createElement("div");
+            el.className = `static-card static-card--hidden ${staticFile}`;
+            el.innerHTML = `<object class="static-card__object" type="text/html" data="/projects/projects/about/index.html"></object>`;
+
+            new mapboxgl.Marker(el)
+              .setLngLat(feature.geometry.coordinates)
+              .addTo(map.current);
+          }
+        }
+      })
+      .then(() => {
+        staticCards = document.querySelectorAll(".static-card");
+
+        map.current.on("movestart", () => {
+          for (const card of staticCards) {
+            card.classList.add("static-card--hidden");
+          }
+        });
+
+        map.current.on("moveend", () => {
+          for (const card of staticCards) {
+            console.log("card", card);
+            card.classList.remove("static-card--hidden");
+          }
+        });
+      });
+  });
+
   // ————————————————————————————————————o————————————————————————————————————o Project Info Cards -->
   // ———————————————————————————————————— Project Info Cards —>
   // Added as markers glued in place via mountains.geojson
   //
   useEffect(() => {
+    let infoCards;
     fetch("/data/mountains.geojson")
       .then((res) => res.json())
       .then((result) => {
@@ -245,23 +286,23 @@ const MapOne = () => {
               .addTo(map.current);
           }
         }
+      })
+      .then(() => {
+        infoCards = document.querySelectorAll(".info-card");
+
+        map.current.on("movestart", () => {
+          for (const card of infoCards) {
+            card.classList.add("info-card--hidden");
+          }
+        });
+
+        map.current.on("moveend", () => {
+          for (const card of infoCards) {
+            console.log("card", card);
+            card.classList.remove("info-card--hidden");
+          }
+        });
       });
-
-    let infoCards = document.querySelectorAll(".info-card");
-
-    map.current.on("movestart", () => {
-      for (const card of infoCards) {
-        card.classList.add("info-card--hidden");
-      }
-    });
-
-    map.current.on("moveend", () => {
-      setTimeout(() => {
-        for (const card of infoCards) {
-          card.classList.remove("info-card--hidden");
-        }
-      }, 100);
-    });
   });
 
   // ————————————————————————————————————o————————————————————————————————————o Tools -->
@@ -295,7 +336,7 @@ const MapOne = () => {
               : "intro-wrapper intro-wrapper--hidden"
           }
         >
-          <Intro />
+          {/* <Intro /> */}
         </div>
         <div
           className={
@@ -304,7 +345,7 @@ const MapOne = () => {
               : "about-wrapper about-wrapper--hidden"
           }
         >
-          <About />
+          {/* <About /> */}
         </div>
       </AboutContext.Provider>
     </main>

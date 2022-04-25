@@ -49,14 +49,13 @@ let Nav = (props) => {
   useEffect(() => {
     fly = (
       resortLoc,
-      // pitch = 60,
       pitch = 0,
       zoom = 14,
       bearing = 0,
       isProgramming = false
     ) => {
       if (width > 1700) {
-        zoom += 0;
+        zoom += 0.2;
       }
 
       if (isProgramming && width > 1700) {
@@ -118,7 +117,7 @@ let Nav = (props) => {
           <a
             className="mecha-nav__item"
             onClick={() => {
-              fly(0, 0, 14, 180);
+              fly(0, 0, 13.9, 198);
               setActiveNav("photography");
             }}
           >
@@ -136,7 +135,7 @@ let Nav = (props) => {
           <a
             className="mecha-nav__item"
             onClick={() => {
-              fly(5, 20, 13.16, 25, true);
+              fly(6, 20, 13.16, 25, true);
               setActiveNav("programming");
             }}
           >
@@ -154,7 +153,7 @@ let Nav = (props) => {
           <a
             className="mecha-nav__item"
             onClick={() => {
-              fly(16, 40, 13.3, 200);
+              fly(18, 40, 13.3, 200);
               setActiveNav("generative");
             }}
           >
@@ -172,7 +171,7 @@ let Nav = (props) => {
           <a
             className="mecha-nav__item"
             onClick={() => {
-              fly(12, 0, 14.1);
+              fly(13, 0, 14, 210);
               setActiveNav("design");
             }}
           >
@@ -191,7 +190,8 @@ let Nav = (props) => {
         <a
           className="mecha-nav__item mecha-nav__item--about"
           onClick={() => {
-            clickAbout();
+            // clickAbout();
+            fly(29, 0, 15, 10);
             setActiveNav("about");
           }}
         >
