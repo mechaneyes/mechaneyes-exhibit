@@ -164,7 +164,6 @@ const MapOne = () => {
         let coordinates = e.features[0].geometry.coordinates.slice();
         const url = e.features[0].properties.url;
         let htmlFile = e.features[0].properties.htmlFile;
-        // console.log("url", url, "coordinates", coordinates);
 
         popup
           .setLngLat(coordinates)
@@ -178,8 +177,8 @@ const MapOne = () => {
     });
   });
 
-  // ————————————————————————————————————o————————————————————————————————————o Project Markers + Popups -->
-  // ———————————————————————————————————— Project Markers + Popups —>
+  // ————————————————————————————————————o————————————————————————————————————o Project Markers + Modals -->
+  // ———————————————————————————————————— Project Markers + Modals —>
   //
   useEffect(() => {
     // Create popup, but don't add to map yet
@@ -210,7 +209,6 @@ const MapOne = () => {
               let coordinates = feature.geometry.coordinates.slice();
               let url = feature.properties.url;
               let htmlFile = feature.properties.htmlFile;
-              console.log("htmlFile", htmlFile);
 
               popup
                 .setLngLat(coordinates)
@@ -221,12 +219,24 @@ const MapOne = () => {
                 .addTo(map.current);
             });
           }
+
+          // ———————————————————————————————————— Popup Close on Click —>
+          // Close popup when clicking on background outside popup itself
+          //
+          popup.on("open", () => {
+            const popupClose = document.querySelector(
+              ".mapboxgl-popup-content"
+            );
+            popupClose.addEventListener("click", () => {
+              popup.remove();
+            });
+          });
         }
       });
   });
 
-  // ————————————————————————————————————o————————————————————————————————————o Mechaneyes + About Cards -->
-  // ———————————————————————————————————— Mechaneyes + About Cards —>
+  // ————————————————————————————————————o————————————————————————————————————o Mechaneyes + About Modals -->
+  // ———————————————————————————————————— Mechaneyes + About Modals —>
   // Added as cards glued in place via mountains.geojson
   //
   useEffect(() => {
@@ -258,15 +268,14 @@ const MapOne = () => {
 
         map.current.on("moveend", () => {
           for (const card of staticCards) {
-            console.log("card", card);
             card.classList.remove("static-card--hidden");
           }
         });
       });
   });
 
-  // ————————————————————————————————————o————————————————————————————————————o Project Info Cards -->
-  // ———————————————————————————————————— Project Info Cards —>
+  // ————————————————————————————————————o————————————————————————————————————o Project Info Modals -->
+  // ———————————————————————————————————— Project Info Modals —>
   // Added as markers glued in place via mountains.geojson
   //
   useEffect(() => {
@@ -298,7 +307,6 @@ const MapOne = () => {
 
         map.current.on("moveend", () => {
           for (const card of infoCards) {
-            console.log("card", card);
             card.classList.remove("info-card--hidden");
           }
         });
