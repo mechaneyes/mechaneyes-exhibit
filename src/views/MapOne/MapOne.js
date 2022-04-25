@@ -162,17 +162,26 @@ const MapOne = () => {
 
       map.current.on("click", "unclustered-label", (e) => {
         let coordinates = e.features[0].geometry.coordinates.slice();
-        const url = e.features[0].properties.url;
         let htmlFile = e.features[0].properties.htmlFile;
 
         popup
           .setLngLat(coordinates)
-          // .setHTML(`<iframe class="project-iframe" src=${url} />`)
           .setHTML(
-            `<object type="text/html" data="/projects/${htmlFile}.html"></object>
-                `
+            `<object class="project-modal" type="text/html" data="/projects/${htmlFile}.html"></object>`
           )
           .addTo(map.current);
+      });
+
+      // ———————————————————————————————————— Popup Close on Click —>
+      // Close popup when clicking on background outside popup itself
+      //
+      popup.on("open", () => {
+        const popupClose = document.querySelector(
+          ".mapboxgl-popup-content"
+        );
+        popupClose.addEventListener("click", () => {
+          popup.remove();
+        });
       });
     });
   });
@@ -207,14 +216,12 @@ const MapOne = () => {
             //
             marker.getElement().addEventListener("click", () => {
               let coordinates = feature.geometry.coordinates.slice();
-              let url = feature.properties.url;
               let htmlFile = feature.properties.htmlFile;
 
               popup
                 .setLngLat(coordinates)
                 .setHTML(
-                  `<object class="project-modal" type="text/html" data="/projects/${htmlFile}.html"></object>
-                `
+                  `<object class="project-modal" type="text/html" data="/projects/${htmlFile}.html"></object>`
                 )
                 .addTo(map.current);
             });

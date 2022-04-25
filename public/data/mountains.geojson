@@ -132,7 +132,7 @@
       "properties": {
         "interest": "programming",
         "resort": "Palisades",
-        "title": "Stereoh",
+        "title": "UNIQLO",
         "description": "Squaw Peak",
         "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/",
         "htmlFile": "stereoh"
@@ -147,9 +147,9 @@
       "properties": {
         "interest": "programming",
         "resort": "Palisades",
-        "title": "Better Breaks",
+        "title": "Mechaneyes",
         "description": "KT-22",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/breaks/",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/",
         "htmlFile": "breaks"
       }
     },
@@ -162,10 +162,10 @@
       "properties": {
         "interest": "programming",
         "resort": "Palisades",
-        "title": "UNIQLO",
+        "title": "Stereoh",
         "description": "Ward Peak",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=30655",
-        "htmlFile": "monolyth"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/breaks/",
+        "htmlFile": "stereoh"
       }
     },
     {
@@ -177,10 +177,10 @@
       "properties": {
         "interest": "programming",
         "resort": "Palisades",
-        "title": "Pager",
+        "title": "Better Breaks",
         "description": "Scott Peak",
-        "url": "https://www.peakbagger.com/peak.aspx?pid=24126",
-        "htmlFile": "monolyth"
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/breaks/",
+        "htmlFile": "breaks"
       }
     },
     {
@@ -258,7 +258,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.06525324596887, 38.67537959460334]
+        "coordinates": [-120.05792793636186, 38.676518564074324]
       },
       "properties": {
         "hide": "hide",
@@ -270,27 +270,13 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.0519982587125, 38.68053087522418]
+        "coordinates": [-120.0519982587125, 38.68553087522418]
       },
       "type": "Feature",
       "properties": {
         "hide": "hide",
         "info": true,
         "infoFile": "info-card--programming"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-120.08500931523972, 38.68841624323919]
-      },
-      "type": "Feature",
-      "properties": {
-        "interest": "installation",
-        "resort": "Kirkwood",
-        "title": "Monolyth",
-        "description": "Martin Point",
-        "htmlFile": "monolyth"
       }
     },
     {
