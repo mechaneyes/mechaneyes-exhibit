@@ -170,7 +170,7 @@ const MapOne = () => {
           .setLngLat(coordinates)
           // .setHTML(`<iframe class="project-iframe" src=${url} />`)
           .setHTML(
-            `<object type="text/html" data="/projects/projects/${htmlFile}/index.html"></object>
+            `<object type="text/html" data="/projects/${htmlFile}.html"></object>
                 `
           )
           .addTo(map.current);
@@ -215,7 +215,7 @@ const MapOne = () => {
               popup
                 .setLngLat(coordinates)
                 .setHTML(
-                  `<object class="project-modal" type="text/html" data="/projects/projects/${htmlFile}/index.html"></object>
+                  `<object class="project-modal" type="text/html" data="/projects/${htmlFile}.html"></object>
                 `
                 )
                 .addTo(map.current);
@@ -239,7 +239,7 @@ const MapOne = () => {
             let staticFile = feature.properties.staticFile;
             const el = document.createElement("div");
             el.className = `static-card static-card--hidden ${staticFile}`;
-            el.innerHTML = `<object class="static-card__object" type="text/html" data="/projects/projects/about/index.html"></object>`;
+            el.innerHTML = `<object class="static-card__object" type="text/html" data="/projects/about.html"></object>`;
 
             new mapboxgl.Marker(el)
               .setLngLat(feature.geometry.coordinates)
