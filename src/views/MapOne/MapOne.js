@@ -10,6 +10,10 @@ import NavPC from "../../components/layout/navigation/NavPC/NavPC";
 import AboutContext from "../../store/transition/transition.about.js";
 // import useWindowDimensions from "../../utils/windowDimensions";
 
+import { setupMap } from "./setupMap";
+import { markersModals } from "./markersModals";
+import { modals } from "./modals";
+
 import "./MapOne.scss";
 
 mapboxgl.accessToken =
@@ -59,7 +63,7 @@ const MapOne = () => {
   const [zoom, setZoom] = useState(15);
 
   // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
-  // ———————————————————————————————————— MAPPIN —>
+  // ————————————————————————————————————o MAPPIN —>
   useEffect(() => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
@@ -73,254 +77,19 @@ const MapOne = () => {
     map.current.scrollZoom.disable(); // Prevent scrolling w mouse wheel
 
     map.current.on("load", () => {
-      map.current.addSource("mapbox-terrain", {
-        type: "vector",
-
-        // Mapbox Terrain v2
-        // https://docs.mapbox.com/data/tilesets/reference/mapbox-terrain-v2/
-        url: "mapbox://mapbox.mapbox-terrain-v2",
-      });
-
-      // ————————————————————————————————————o————————————————————————————————————o Elevation Contour Lines -->
-      // ———————————————————————————————————— Elevation Contour Lines —>
-      map.current.addLayer({
-        id: "terrain-data",
-        type: "line",
-        source: "mapbox-terrain",
-        "source-layer": "contour",
-        layout: {
-          "line-join": "round",
-          "line-cap": "round",
-        },
-        paint: {
-          "line-color": "#0D77FF",
-          "line-width": 2,
-        },
-      });
-
-      // ———————————————————————————————————— Highlighting every 5th and 10th line —>
+      // ————————————————————————————————————o Setup the Map + Terrain —>
       //
-      // https://blog.mapbox.com/designing-the-swiss-ski-style-in-mapbox-studio-d6d25d1a2aa0#:~:text=Mapbox%20Terrain%20includes%20elevation%20contour%20lines%20from%20zoom%20level%209%20and%20higher.%20You%20can%20use%20the%20index%20field%20to%20highlight%20or%20label%20every%202nd%2C%205th%2C%20or%2010th%20line.
-      // https://github.com/mapbox/mapbox-gl-swiss-ski-style/blob/master/cij1zoclj002y8rkkdjl69psd.json#L668
+      setupMap(map.current);
+
+      // ————————————————————————————————————o Project Markers + Modals —>
       //
-      map.current.addLayer({
-        id: "index-contour",
-        type: "line",
-        source: "mapbox-terrain",
-        "source-layer": "contour",
-        filter: ["in", "index", 5, 10],
-        layout: {
-          "line-join": "round",
-          "line-cap": "round",
-        },
-        paint: {
-          "line-color": "#0DFF7F",
-          "line-width": 2,
-        },
-      });
-
-      // ————————————————————————————————————o————————————————————————————————————o Text Labels -->
-      // ———————————————————————————————————— Text Labels —>
-      //
-      map.current
-        .addSource("mountains", {
-          type: "geojson",
-          data: "/data/mountains.geojson",
-        })
-        .addLayer({
-          id: "unclustered-label",
-          type: "symbol",
-          source: "mountains",
-          layout: {
-            "text-field": [
-              "format",
-              ["get", "title"],
-              "\n",
-              ["get", "description"],
-              {
-                "text-font": ["literal", ["DIN Offc Pro Medium"]],
-                "font-scale": 0.8,
-              },
-            ],
-            "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-            "text-size": 24,
-            "text-offset": [0, -4],
-          },
-          paint: {
-            // "text-color": "#FF622E",
-            "text-color": "#FFF",
-          },
-        });
-
-      // ———————————————————————————————————— Popup on Label Click —>
-      //
-      // Create popup, but don't add to map yet
-      const popup = new mapboxgl.Popup({
-        closeButton: true,
-        closeOnClick: false,
-      });
-
-      map.current.on("click", "unclustered-label", (e) => {
-        let coordinates = e.features[0].geometry.coordinates.slice();
-        let htmlFile = e.features[0].properties.htmlFile;
-
-        popup
-          .setLngLat(coordinates)
-          .setHTML(
-            `<object class="project-modal" type="text/html" data="/projects/${htmlFile}.html"></object>`
-          )
-          .addTo(map.current);
-      });
-
-      // ———————————————————————————————————— Popup Close on Click —>
-      // Close popup when clicking on background outside popup itself
-      //
-      popup.on("open", () => {
-        const popupClose = document.querySelector(".mapboxgl-popup-content");
-        popupClose.addEventListener("click", () => {
-          popup.remove();
-        });
-      });
+      markersModals(map.current);
+      modals(map.current);
     });
-  });
-
-  // ————————————————————————————————————o————————————————————————————————————o Project Markers + Modals -->
-  // ———————————————————————————————————— Project Markers + Modals —>
-  //
-  useEffect(() => {
-    // Create popup, but don't add to map yet
-    const popup = new mapboxgl.Popup({
-      closeButton: true,
-      closeOnClick: false,
-    });
-
-    fetch("/data/mountains.geojson")
-      .then((res) => res.json())
-      .then((result) => {
-        // ———————————————————————————————————— Markers —>
-        //
-        for (const feature of result.features) {
-          const el = document.createElement("div");
-          el.className = "marker";
-          el.style.backgroundImage = `url(/images/map-marker-1.0.0.svg)`;
-
-          if (feature.properties.hide != "hide") {
-            const marker = new mapboxgl.Marker(el)
-              .setLngLat(feature.geometry.coordinates)
-              .addTo(map.current)
-              .setOffset([0, 4]);
-
-            // ———————————————————————————————————— Popup on Marker Click —>
-            //
-            marker.getElement().addEventListener("click", () => {
-              let coordinates = feature.geometry.coordinates.slice();
-              let htmlFile = feature.properties.htmlFile;
-
-              popup
-                .setLngLat(coordinates)
-                .setHTML(
-                  `<object class="project-modal" type="text/html" data="/projects/projects/${htmlFile}.html"></object>`
-                )
-                .addTo(map.current);
-            });
-          }
-
-          // ———————————————————————————————————— Popup Close on Click —>
-          // Close popup when clicking on background outside popup itself
-          //
-          popup.on("open", () => {
-            const popupClose = document.querySelector(
-              ".mapboxgl-popup-content"
-            );
-            popupClose.addEventListener("click", () => {
-              popup.remove();
-            });
-          });
-        }
-      });
-  });
-
-  // ————————————————————————————————————o————————————————————————————————————o Mechaneyes + About Modals -->
-  // ———————————————————————————————————— Mechaneyes + About Modals —>
-  // Added as cards glued in place via mountains.geojson
-  //
-  useEffect(() => {
-    let staticCards;
-    fetch("/data/mountains.geojson")
-      .then((res) => res.json())
-      .then((result) => {
-        for (const feature of result.features) {
-          if (feature.properties.static) {
-            let htmlFile = feature.properties.htmlFile;
-            let staticClass = feature.properties.staticClass;
-            const el = document.createElement("div");
-            el.className = `static-card static-card ${staticClass}`;
-            el.innerHTML = `<object class="static-card__object" type="text/html" data="/projects/projects/${htmlFile}.html"></object>`;
-
-            new mapboxgl.Marker(el)
-              .setLngLat(feature.geometry.coordinates)
-              .addTo(map.current);
-          }
-        }
-      })
-      .then(() => {
-        staticCards = document.querySelectorAll(".static-card");
-
-        map.current.on("movestart", () => {
-          for (const card of staticCards) {
-            card.classList.add("static-card--hidden");
-          }
-        });
-
-        map.current.on("moveend", () => {
-          for (const card of staticCards) {
-            card.classList.remove("static-card--hidden");
-          }
-        });
-      });
-  });
-
-  // ————————————————————————————————————o————————————————————————————————————o Project Info Modals -->
-  // ———————————————————————————————————— Project Info Modals —>
-  // Added as markers glued in place via mountains.geojson
-  //
-  useEffect(() => {
-    let infoCards;
-    fetch("/data/mountains.geojson")
-      .then((res) => res.json())
-      .then((result) => {
-        for (const feature of result.features) {
-          let infoFile = feature.properties.infoFile;
-          const el = document.createElement("div");
-          el.className = `info-card info-card--hidden ${infoFile}`;
-          el.innerHTML = `<object class="info-card__object" type="text/html" data="/info/${infoFile}.html"></object>`;
-
-          if (feature.properties.info == true) {
-            new mapboxgl.Marker(el)
-              .setLngLat(feature.geometry.coordinates)
-              .addTo(map.current);
-          }
-        }
-      })
-      .then(() => {
-        infoCards = document.querySelectorAll(".info-card");
-
-        map.current.on("movestart", () => {
-          for (const card of infoCards) {
-            card.classList.add("info-card--hidden");
-          }
-        });
-
-        map.current.on("moveend", () => {
-          for (const card of infoCards) {
-            card.classList.remove("info-card--hidden");
-          }
-        });
-      });
   });
 
   // ————————————————————————————————————o————————————————————————————————————o Tools -->
-  // ———————————————————————————————————— Lat+Long of Mouse —>
+  // ————————————————————————————————————o Lat+Long of Mouse —>
   // output lat+long of mouse click position to console
   //
   useEffect(() => {
@@ -350,7 +119,6 @@ const MapOne = () => {
               : "intro-wrapper intro-wrapper--hidden"
           }
         >
-          {/* <Intro /> */}
         </div>
         <div
           className={
@@ -359,7 +127,6 @@ const MapOne = () => {
               : "about-wrapper about-wrapper--hidden"
           }
         >
-          {/* <About /> */}
         </div>
       </AboutContext.Provider>
     </main>

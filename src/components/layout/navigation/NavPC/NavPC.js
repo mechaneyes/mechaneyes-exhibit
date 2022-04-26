@@ -14,8 +14,6 @@ let Nav = (props) => {
   const [activeNav, setActiveNav] = useState("mechaneyes");
 
   useEffect(() => {
-    console.log("activeNav", activeNav);
-
     if (activeNav === "mechaneyes") {
       // map.current.scrollZoom.disable(); // Prevent scrolling w mouse wheel
     }
