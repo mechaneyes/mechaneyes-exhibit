@@ -2,12 +2,11 @@
 // Use Mapbox GL JS in a React app
 //
 
-import { useRef, useEffect, useState, createContext, useMemo } from "react";
+import { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
 import NavPC from "../../components/layout/navigation/NavPC/NavPC";
-import AboutContext from "../../store/transition/transition.about.js";
 // import useWindowDimensions from "../../utils/windowDimensions";
 
 import { setupMap } from "./setupMap";
@@ -19,26 +18,11 @@ import "./MapOne.scss";
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWVjaGFuZXllcyIsImEiOiJ6V2F6bmFNIn0.mauWWMuRub6GkCxkc49sTg";
 
-export const UmbrellaAboutContext = createContext();
-
 const MapOne = () => {
   // const { height, width } = useWindowDimensions();
 
   const mapContainer = useRef(null);
   const map = useRef(null);
-
-  const [isIntroVisible, setIntroVisible] = useState(true);
-  const [isAboutVisible, setAboutVisible] = useState(false);
-
-  const providerValue = useMemo(
-    () => ({
-      isIntroVisible,
-      setIntroVisible,
-      isAboutVisible,
-      setAboutVisible,
-    }),
-    [isIntroVisible, isAboutVisible]
-  );
 
   // Fitz Roy
   // const [lng, setLng] = useState(-73.0508902);
@@ -74,7 +58,9 @@ const MapOne = () => {
       zoom: zoom,
     });
 
-    map.current.scrollZoom.disable(); // Prevent scrolling w mouse wheel
+    // Prevent scrolling w mouse wheel
+    //
+    map.current.scrollZoom.disable();
 
     map.current.on("load", () => {
       // ————————————————————————————————————o Setup the Map + Terrain —>
@@ -107,28 +93,10 @@ const MapOne = () => {
 
   return (
     <main className="map-one">
-      <AboutContext.Provider value={providerValue}>
-        <div className="nav-wrapper">
-          <NavPC map={map} />
-        </div>
-        <div ref={mapContainer} className="map-container" />
-        <div
-          className={
-            isIntroVisible
-              ? "intro-wrapper"
-              : "intro-wrapper intro-wrapper--hidden"
-          }
-        >
-        </div>
-        <div
-          className={
-            isAboutVisible
-              ? "about-wrapper"
-              : "about-wrapper about-wrapper--hidden"
-          }
-        >
-        </div>
-      </AboutContext.Provider>
+      <div className="nav-wrapper">
+        <NavPC map={map} />
+      </div>
+      <div ref={mapContainer} className="map-container" />
     </main>
   );
 };
