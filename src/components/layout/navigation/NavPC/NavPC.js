@@ -11,10 +11,14 @@ let Nav = (props) => {
 
   const { isIntroVisible, setIntroVisible } = useContext(AboutContext);
   const { isAboutVisible, setAboutVisible } = useContext(AboutContext);
-  const [activeNav, setActiveNav] = useState("zero");
+  const [activeNav, setActiveNav] = useState("mechaneyes");
 
   useEffect(() => {
     console.log("activeNav", activeNav);
+
+    if (activeNav === "mechaneyes") {
+      // map.current.scrollZoom.disable(); // Prevent scrolling w mouse wheel
+    }
   });
 
   let navElements;
@@ -95,23 +99,17 @@ let Nav = (props) => {
   return (
     <>
       <nav className="mecha-nav mecha-nav--pc">
-        <div
+        <a
           className="mecha-nav__item mecha-nav__item--title"
           onClick={() => {
-            showIntro();
-            setActiveNav("title");
+            fly(27, 0, 15, 10);
+            setActiveNav("mechaneyes");
           }}
         >
-          <h2
-            className={
-              activeNav == "title"
-                ? "nav-headline nav-headline--title nav-headline--active"
-                : "nav-headline nav-headline--title"
-            }
-          >
+          <h2 className="nav-headline nav-headline--mechaneyes nav-headline--active">
             Mechaneyes
           </h2>
-        </div>
+        </a>
 
         <a
           className="mecha-nav__item"
@@ -188,7 +186,7 @@ let Nav = (props) => {
         <a
           className="mecha-nav__item"
           onClick={() => {
-            fly(27, 0, 15, 10);
+            fly(28, 0, 15, 10);
             setActiveNav("about");
           }}
         >

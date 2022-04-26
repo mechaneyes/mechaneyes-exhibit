@@ -7,8 +7,6 @@ import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
 import NavPC from "../../components/layout/navigation/NavPC/NavPC";
-import Intro from "../Intro/Intro";
-import About from "../About/About";
 import AboutContext from "../../store/transition/transition.about.js";
 // import useWindowDimensions from "../../utils/windowDimensions";
 
@@ -71,6 +69,8 @@ const MapOne = () => {
       // pitch: 50,
       zoom: zoom,
     });
+
+    map.current.scrollZoom.disable(); // Prevent scrolling w mouse wheel
 
     map.current.on("load", () => {
       map.current.addSource("mapbox-terrain", {
@@ -176,9 +176,7 @@ const MapOne = () => {
       // Close popup when clicking on background outside popup itself
       //
       popup.on("open", () => {
-        const popupClose = document.querySelector(
-          ".mapboxgl-popup-content"
-        );
+        const popupClose = document.querySelector(".mapboxgl-popup-content");
         popupClose.addEventListener("click", () => {
           popup.remove();
         });
@@ -221,7 +219,7 @@ const MapOne = () => {
               popup
                 .setLngLat(coordinates)
                 .setHTML(
-                  `<object class="project-modal" type="text/html" data="/projects/${htmlFile}.html"></object>`
+                  `<object class="project-modal" type="text/html" data="/projects/projects/${htmlFile}.html"></object>`
                 )
                 .addTo(map.current);
             });
@@ -253,10 +251,11 @@ const MapOne = () => {
       .then((result) => {
         for (const feature of result.features) {
           if (feature.properties.static) {
-            let staticFile = feature.properties.staticFile;
+            let htmlFile = feature.properties.htmlFile;
+            let staticClass = feature.properties.staticClass;
             const el = document.createElement("div");
-            el.className = `static-card static-card--hidden ${staticFile}`;
-            el.innerHTML = `<object class="static-card__object" type="text/html" data="/projects/about.html"></object>`;
+            el.className = `static-card static-card ${staticClass}`;
+            el.innerHTML = `<object class="static-card__object" type="text/html" data="/projects/projects/${htmlFile}.html"></object>`;
 
             new mapboxgl.Marker(el)
               .setLngLat(feature.geometry.coordinates)

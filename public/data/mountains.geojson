@@ -21,7 +21,7 @@
       "properties": {
         "hide": "hide",
         "info": true,
-        "infoFile": "info-card--programming"
+        "infoFile": "info-card--photography"
       }
     },
     {
@@ -392,15 +392,16 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.37764069625877, 39.126354852592584]
+        "coordinates": [-120.46122859325533, 38.738060959397785]
       },
       "properties": {
         "static": true,
         "hide": "hide",
         "theResort": "// ———————————————————————————————————— Mechaneyes —>",
         "theFocuss": "// ———————————————————————————————————— Mechaneyes —>",
-        "theArray#": "// ———————————————————————————————————— 29 —>",
-        "staticFile": "static-card--mechaneyes"
+        "theArray#": "// ———————————————————————————————————— 27 —>",
+        "htmlFile": "mechaneyes",
+        "staticClass": "static-card--mechaneyes"
       }
     },
     {
@@ -413,8 +414,9 @@
         "hide": "hide",
         "theResort": "// ———————————————————————————————————— About —>",
         "theFocuss": "// ———————————————————————————————————— About —>",
-        "theArray#": "// ———————————————————————————————————— 30 —>",
-        "staticFile": "static-card--about"
+        "theArray#": "// ———————————————————————————————————— 28 —>",
+        "htmlFile": "about",
+        "staticClass": "static-card--about"
       }
     }
   ]

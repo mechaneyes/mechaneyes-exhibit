@@ -36,7 +36,8 @@ body {
     background-color: transparent;
   }
 
-  // .mapboxgl-popup-content {
+  // ————————————————————————————————————o————————————————————————————————————o Project Modals -->
+  // ———————————————————————————————————— Project Modals —>
   .project-modal {
     position: absolute;
     top: 50%;
@@ -96,62 +97,59 @@ body {
   height: 60px;
   // CSS filter generator to convert from black to target hex color
   // https://codepen.io/sosuke/pen/Pjoqqp
-  // Orange
-  filter: invert(57%) sepia(54%) saturate(4794%) hue-rotate(340deg)
-    brightness(101%) contrast(104%);
-  // White
   filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(213deg)
     brightness(105%) contrast(101%);
   background-size: cover;
   cursor: pointer;
 }
 
-.mapboxgl-marker {
-  // transition: none !important;
+// ————————————————————————————————————o————————————————————————————————————o Info Cards -->
+// ———————————————————————————————————— Info Cards —>
+.map-container {
+  .info-card {
+    display: block;
+    width: 500px;
+    height: 30vh;
+    padding: 20px;
+    border: 1px solid #02ff87;
+    background-color: rgba(0, 22, 51, 0.8);
+    opacity: 1;
+    transition: opacity 0.8s;
+
+    &--hidden {
+      // display: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    &__object {
+      width: 100%;
+      height: 100%;
+    }
+
+    &--programming {
+      // width: 460px;
+      height: 270px;
+    }
+  }
 }
 
-.mapboxgl-marker.info-card {
-  display: block;
-  width: 45vw;
-  height: 30vh;
-  padding: 20px;
-  border: 0.5px solid #02ff87;
-  background-color: rgba(0, 22, 51, 0.8);
-  opacity: 1;
-  transition: opacity .2s;
-  
-  &--hidden {
-    // display: none;
-    opacity: 0;
-    transition: opacity .2s;
-  }
-
-  &__object {
-    width: 100%;
-    height: 100%;
-  }
-
-  &--programming {
-    width: 460px;
-    height: 270px;
-  }
-}
-
+// ————————————————————————————————————o————————————————————————————————————o Static Cards -->
+// ———————————————————————————————————— Static Cards —>
 .mapboxgl-marker.static-card {
   display: block;
   width: 95vw;
-  height: 90vh;
-  max-width: 930px;
+  height: 80vh;
+  max-width: 1010px;
   max-height: 690px;
   padding: 20px;
   background-color: rgba(0, 22, 51, 0.8);
   opacity: 1;
-  transition: opacity .2s;
-  
+  transition: opacity 0.8s;
+
   &--hidden {
-    // display: none;
     opacity: 0;
-    transition: opacity .2s;
+    transition: opacity 0.2s;
   }
 
   &__object {
@@ -159,15 +157,19 @@ body {
     height: 100%;
   }
 
-  &--about {
-    border: 0.5px solid #02ff87;
-    background-color: rgba(0, 22, 51, 0.4);
+  .static-card__object {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(2, 255, 135, 0.6);
+  }
 
-    .static-card__object {
-      width: 100%;
-      height: 100%;
-      border: 0.5px solid #02ff87;
-    }
+  &--about {
+    border: 1px solid #02ff87;
+    background-color: rgba(0, 22, 51, 0.4);
+  }
+
+  &--mechaneyes {
+    border: 1px solid #02ff87;
   }
 }
 
@@ -208,19 +210,4 @@ body {
     font-weight: 400;
     letter-spacing: 1px;
   }
-}
-
-#info {
-  display: table;
-  position: relative;
-  margin: 0px auto;
-  word-wrap: anywhere;
-  white-space: pre-wrap;
-  padding: 10px;
-  border: none;
-  border-radius: 3px;
-  font-size: 12px;
-  text-align: center;
-  color: #222;
-  background: #fff;
 }
