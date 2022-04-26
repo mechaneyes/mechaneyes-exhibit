@@ -34,8 +34,16 @@ export const modals = (map) => {
       });
 
       map.on("moveend", () => {
+        let zoomLevel = map.getZoom();
+        console.log("zoomLevel", zoomLevel);
+
         for (const card of staticCards) {
-          card.classList.remove("static-card--hidden");
+          if (zoomLevel >= 13.4) {
+            card.style.display = 'block';
+            card.classList.remove("static-card--hidden");
+          } else {
+            card.style.display = 'none';
+          }
         }
       });
     });
@@ -71,8 +79,16 @@ export const modals = (map) => {
       });
 
       map.on("moveend", () => {
+        let zoomLevel = map.getZoom();
+        console.log("zoomLevel", zoomLevel);
+
         for (const card of infoCards) {
-          card.classList.remove("info-card--hidden");
+          if (zoomLevel >= 13.4) {
+            card.style.display = 'block';
+            card.classList.remove("info-card--hidden");
+          } else {
+            card.style.display = 'none';
+          }
         }
       });
     });

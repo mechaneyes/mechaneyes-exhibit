@@ -6,41 +6,19 @@ import "./NavPC.scss";
 
 let Nav = (props) => {
   const { height, width } = useWindowDimensions();
-
   const map = props.map;
 
-  const { isIntroVisible, setIntroVisible } = useContext(AboutContext);
-  const { isAboutVisible, setAboutVisible } = useContext(AboutContext);
   const [activeNav, setActiveNav] = useState("mechaneyes");
 
   useEffect(() => {
-    if (activeNav === "mechaneyes") {
-      // map.current.scrollZoom.disable(); // Prevent scrolling w mouse wheel
-    }
-  });
-
-  let navElements;
-  let showIntro;
-  let clickAbout;
-  let clickOtherNav;
-  useEffect(() => {
-    showIntro = () => {
-      setIntroVisible(true);
-      setAboutVisible(false);
-      // console.log("isIntroVisible", isIntroVisible);
-    };
-
-    clickAbout = () => {
-      setIntroVisible(false);
-      setAboutVisible(true);
-      // console.log("isAboutVisible", isAboutVisible);
-    };
-
-    clickOtherNav = () => {
-      setIntroVisible(false);
-      setAboutVisible(false);
-      // console.log("isAboutVisible", isAboutVisible);
-    };
+    fetch("/data/mountains.geojson").then(() => {
+      if (activeNav === "mechaneyes") {
+        console.log("map.current", map.current);
+        map.current.scrollZoom.disable(); // Prevent scrolling w mouse wheel
+      } else {
+        map.current.scrollZoom.enable();
+      }
+    });
   });
 
   // ————————————————————————————————————o————————————————————————————————————o FLY -->
@@ -61,7 +39,7 @@ let Nav = (props) => {
       }
 
       if (isProgramming && width > 1700) {
-        zoom += 0.5;
+        zoom += 0.4;
         // console.log('isProgramming', isProgramming)``
       }
       fetch("/data/mountains.geojson")
@@ -130,7 +108,7 @@ let Nav = (props) => {
         <a
           className="mecha-nav__item"
           onClick={() => {
-            fly(6, 20, 13.16, 25, true);
+            fly(6, 30, 13.16, 25, true);
             setActiveNav("programming");
           }}
         >

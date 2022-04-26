@@ -1,9 +1,21 @@
+body {
+  margin: 0;
+}
+
 .info-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
   color: white;
 }
 
+.info-modal__inner {
+}
+
 h3 {
-  margin-bottom: 0;
+  margin: 0;
   font-family: cholla-unicase, sans-serif;
   font-weight: 400;
   font-size: 2.3rem;
@@ -15,4 +27,8 @@ p {
   font-weight: 300;
   font-size: 1.4rem;
   line-height: 1.3;
+}
+
+p:last-child {
+  margin-bottom: 0;
 }

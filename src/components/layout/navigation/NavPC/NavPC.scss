@@ -57,5 +57,11 @@
     &--title {
       color: white;
     }
+
+    &--mechaneyes {
+      &:hover {
+        color: #00fe70;
+      }
+    }
   }
 }

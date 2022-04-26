@@ -87,7 +87,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.2515199102143, 39.17063074730808]
+        "coordinates": [-120.2515199102143, 39.16793074730808]
       },
       "properties": {
         "hide": "hide",
@@ -99,7 +99,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.26689034295895, 39.16684551679323]
+        "coordinates": [-120.25914334473828, 39.167006223093836]
       },
       "type": "Feature",
       "properties": {
@@ -204,7 +204,7 @@
       "properties": {
         "hide": "hide",
         "info": true,
-        "infoFile": "info-card--programming"
+        "infoFile": "info-card--design"
       }
     },
     {
@@ -276,7 +276,7 @@
       "properties": {
         "hide": "hide",
         "info": true,
-        "infoFile": "info-card--programming"
+        "infoFile": "info-card--generative"
       }
     },
     {

@@ -58,10 +58,6 @@ const MapOne = () => {
       zoom: zoom,
     });
 
-    // Prevent scrolling w mouse wheel
-    //
-    map.current.scrollZoom.disable();
-
     map.current.on("load", () => {
       // ————————————————————————————————————o Setup the Map + Terrain —>
       //
