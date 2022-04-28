@@ -1,7 +1,6 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 
 import useWindowDimensions from "../../../../utils/windowDimensions";
-import AboutContext from "../../../../store/transition/transition.about.js";
 import "./NavPC.scss";
 
 let Nav = (props) => {
@@ -10,11 +9,18 @@ let Nav = (props) => {
 
   const [activeNav, setActiveNav] = useState("mechaneyes");
 
+
+  // ————————————————————————————————————o————————————————————————————————————o scrollZoom -->
+  // ———————————————————————————————————— scrollZoom —>
+  // 
+  // Killed scrollZoom when sitting on 'mechaneyes' landing page.
+  // Re-enabled when on other pages. Would have been too jarring
+  // to start the experience completely lost
+  // 
   useEffect(() => {
     fetch("/data/mountains.geojson").then(() => {
       if (activeNav === "mechaneyes") {
-        console.log("map.current", map.current);
-        map.current.scrollZoom.disable(); // Prevent scrolling w mouse wheel
+        map.current.scrollZoom.disable();
       } else {
         map.current.scrollZoom.enable();
       }
