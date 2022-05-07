@@ -8,7 +8,7 @@ import mapboxgl from "!mapbox-gl";
 
 import HamburgerMenu from "../../components/layout/navigation/HamburgerMenu/HamburgerMenu";
 import NavPC from "../../components/layout/navigation/NavPC/NavPC";
-// import useWindowDimensions from "../../utils/windowDimensions";
+import useWindowDimensions from "../../utils/windowDimensions";
 
 import { setupMap } from "./setupMap";
 import { markersModals } from "./markersModals";
@@ -38,14 +38,26 @@ const MapOne = () => {
   // const [lat, setLat] = useState(38.95397959307656);
 
   // Desktop Start
-  const [lng, setLng] = useState(-120.46122859325533);
-  const [lat, setLat] = useState(38.738060959397785);
+  // const [lng, setLng] = useState(-120.46122859325533);
+  // const [lat, setLat] = useState(38.738060959397785);
 
   // Test Locations
-  // const [lng, setLng] = useState(-120.24202219419851);
-  // const [lat, setLat] = useState(39.160690302651886);
+  const [lng, setLng] = useState(-120.3339982540318);
+  const [lat, setLat] = useState(39.29408664826935);
 
   const [zoom, setZoom] = useState(15);
+
+  let geoFile;
+  const { height, width } = useWindowDimensions();
+  useEffect(() => {
+    if (width < 600) {
+      geoFile = "/data/mobile.geojson";
+    } else {
+      geoFile = "/data/mountains.geojson";
+    }
+
+    // console.log('geoFile', geoFile)
+  });
 
   // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
   // ————————————————————————————————————o MAPPIN —>
@@ -61,11 +73,11 @@ const MapOne = () => {
     map.current.on("load", () => {
       // ————————————————————————————————————o Setup the Map + Terrain —>
       //
-      setupMap(map.current);
+      setupMap(map.current, geoFile);
 
       // ————————————————————————————————————o Project Markers + Modals —>
       //
-      markersModals(map.current);
+      markersModals(map.current, geoFile);
       modals(map.current);
     });
   });

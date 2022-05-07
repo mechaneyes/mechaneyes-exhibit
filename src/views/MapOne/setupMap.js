@@ -1,7 +1,7 @@
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
-export const setupMap = (map) => {
+export const setupMap = (map, geoFile) => {
   map.addSource("mapbox-terrain", {
     type: "vector",
 
@@ -54,7 +54,7 @@ export const setupMap = (map) => {
   map
     .addSource("mountains", {
       type: "geojson",
-      data: "/data/mountains.geojson",
+      data: geoFile,
       cluster: true,
       clusterMaxZoom: 11, // Max zoom to cluster points on
       clusterMinPoints: 3,

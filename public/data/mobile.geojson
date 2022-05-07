@@ -4,7 +4,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.32644425275191, 39.2936424077495]
+        "coordinates": [-120.3319982540318, 39.29408664826935]
       },
       "properties": {
         "hide": "hide",
@@ -27,16 +27,29 @@
     {
       "geometry": {
         "type": "Point",
+        "coordinates": [-120.328394, 39.287903]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "photography",
+        "resort": "Sugar Bowl",
+        "title": "Formalism",
+        "description": "Mount Disney",
+        "htmlFile": "formalism"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
         "coordinates": [-120.350158, 39.297067]
       },
       "type": "Feature",
       "properties": {
         "interest": "photography",
         "resort": "Sugar Bowl",
-        "title": "Objects May Appear",
-        "description": "Crows Nest",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/objects/",
-        "htmlFile": "objects"
+        "title": "Gossamer",
+        "description": "Mount Judah",
+        "htmlFile": "gossamer"
       }
     },
     {
@@ -48,24 +61,8 @@
       "properties": {
         "interest": "photography",
         "resort": "Sugar Bowl",
-        "title": "Formalism",
-        "description": "Mount Disney",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/formalism/",
-        "htmlFile": "formalism"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-120.328394, 39.287903]
-      },
-      "type": "Feature",
-      "properties": {
-        "interest": "photography",
-        "resort": "Sugar Bowl",
         "title": "Loops",
         "description": "Mt Lincoln",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/loops/",
         "htmlFile": "loops"
       }
     },
@@ -78,10 +75,9 @@
       "properties": {
         "interest": "photography",
         "resort": "Sugar Bowl",
-        "title": "Gossamer",
-        "description": "Mount Judah",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/gossamer/",
-        "htmlFile": "gossamer"
+        "title": "Objects May Appear",
+        "description": "Crows Nest",
+        "htmlFile": "objects"
       }
     },
     {

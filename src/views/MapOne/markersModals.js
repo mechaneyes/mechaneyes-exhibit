@@ -1,7 +1,7 @@
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
-export const markersModals = (map) => {
+export const markersModals = (map, geoFile) => {
   // ————————————————————————————————————o————————————————————————————————————o Project Markers + Modals -->
   // ———————————————————————————————————— Project Markers + Modals —>
   //
@@ -12,9 +12,9 @@ export const markersModals = (map) => {
   });
 
   let zoomLevel = map.getZoom();
-  console.log('zoomLevelzoomLevel', zoomLevel)
+  // console.log('zoomLevelzoomLevel', zoomLevel)
 
-  fetch("/data/mountains.geojson")
+  fetch(geoFile)
     .then((res) => res.json())
     .then((result) => {
       // ———————————————————————————————————— Markers —>

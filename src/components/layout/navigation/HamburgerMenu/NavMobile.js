@@ -95,7 +95,7 @@ let Nav = (props) => {
         <a
           className="mecha-nav__item"
           onClick={() => {
-            fly(0, 0, 13.3, 98);
+            fly(0, 35, 13.3, 88);
             setActiveNav("photography");
           }}
         >
