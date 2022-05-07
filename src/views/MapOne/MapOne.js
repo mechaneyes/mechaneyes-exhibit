@@ -54,7 +54,6 @@ const MapOne = () => {
       container: mapContainer.current,
       style: "mapbox://styles/mechaneyes/ckb6f9oyu2j4l1ilayacdz8yy",
       center: [lng, lat],
-      // pitch: 50,
       zoom: zoom,
     });
 

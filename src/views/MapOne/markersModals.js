@@ -11,6 +11,9 @@ export const markersModals = (map) => {
     closeOnClick: false,
   });
 
+  let zoomLevel = map.getZoom();
+  console.log('zoomLevelzoomLevel', zoomLevel)
+
   fetch("/data/mountains.geojson")
     .then((res) => res.json())
     .then((result) => {

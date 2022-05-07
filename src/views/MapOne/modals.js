@@ -35,7 +35,7 @@ export const modals = (map) => {
 
       map.on("moveend", () => {
         let zoomLevel = map.getZoom();
-        console.log("zoomLevel", zoomLevel);
+        // console.log("zoomLevel", zoomLevel);
 
         for (const card of staticCards) {
           if (zoomLevel >= 13.4) {
