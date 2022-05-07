@@ -1,18 +1,19 @@
 import { useState, useContext } from "react";
-import Nav from '../NavMobile/NavMobile';
-import AboutContext from "../../../../store/transition/transition.about.js";
+import Nav from './NavMobile';
+import useWindowDimensions from "../../../../utils/windowDimensions";
 
 import "./HamburgerMenu.scss";
+import "./NavMobile.scss";
 
 let HamburgerMenu = (props) => {
+  const { height, width } = useWindowDimensions();
   const map = props.map;
 
   const [isVisible, setVisible] = useState(false);
-  const { setAboutVisible } = useContext(AboutContext);
   
   const toggleHamb = () => {
     setVisible(!isVisible);
-    setAboutVisible(false);
+    console.log(isVisible)
   };
 
 

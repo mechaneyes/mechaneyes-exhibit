@@ -1,0 +1,115 @@
+@import "../../../../utils/breakpoints.scss";
+
+@include bp(mob) {
+  .map-one {
+    .mecha-nav--pc {
+      display: none;
+    }
+  }
+}
+
+.hamburger-trigger {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+  width: 40px;
+  height: auto;
+}
+
+.hamburger {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 80px;
+  background-color: rgba(0, 18, 37, 0.85);
+  z-index: 2;
+
+  @include bp(mid) {
+    display: none;
+  }
+
+  // &--hidden {
+  //   display: none;
+  // }
+
+  &-headline {
+    padding-bottom: 5px;
+    font-size: 40px;
+  }
+}
+
+@include bp(mid) {
+  .hamburger-holder,
+  .hamburger-holder.enter {
+    opacity: 0;
+  }
+}
+
+.hamburger-holder.enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+.hamburger-holder.enter-done {
+  opacity: 1;
+}
+
+.hamburger-holder-exit {
+  opacity: 1;
+}
+
+.hamburger-holder-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+@include bp(mob) {
+  .hamburger {
+    &--hidden {
+      display: none;
+
+      h2 {
+        display: none;
+      }
+
+      .mecha-nav {
+        display: none;
+      }
+    }
+  }
+
+  .title-mechaneyes.title-mechaneyes--hidden {
+    display: none;
+  }
+
+  nav.mecha-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    top: 10px !important;
+    left: 50px;
+    z-index: 1;
+    transform: none;
+
+    .mecha-nav__item {
+      justify-content: flex-start;
+      border: 0;
+      background: none;
+    }
+
+    .nav-headline {
+      margin: 0;
+      font-size: 1.9rem;
+      color: #00fe70;
+
+      &--active {
+        color: white;
+      }
+    }
+  }
+}

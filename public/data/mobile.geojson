@@ -4,358 +4,419 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.78624404570002, 37.59329892321364]
+        "coordinates": [-120.32644425275191, 39.2936424077495]
       },
       "properties": {
         "hide": "hide",
-        "Palisades": "Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl",
-        "Palisade2": "Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl Sugar Bowl",
-        "design": "PHOTOGRAPHY PHOTOGRAPHY PHOTOGRAPHY PHOTOGRAPHY PHOTOGRAPHY"
+        "theResort": "// ———————————————————————————————————— Sugar Bowl —>",
+        "theFocuss": "// ———————————————————————————————————— Photography —>"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.78538309594398, 37.58868030436351]
+        "coordinates": [-120.33482126599131, 39.30088060840566]
       },
       "type": "Feature",
       "properties": {
-        "medium": "photography",
-        "resort": "Sugar Bowl",
-        "title": "Gossamer",
-        "description": "Mount Judah"
+        "hide": "hide",
+        "info": true,
+        "infoFile": "info-card--photography"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.78767884437639, 37.5912678360396]
+        "coordinates": [-120.350158, 39.297067]
       },
       "type": "Feature",
       "properties": {
-        "medium": "photography",
-        "resort": "Sugar Bowl",
-        "title": "Loops",
-        "description": "Mt Lincoln"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-119.78845379252857, 37.59969360855871]
-      },
-      "type": "Feature",
-      "properties": {
-        "medium": "photography",
+        "interest": "photography",
         "resort": "Sugar Bowl",
         "title": "Objects May Appear",
-        "description": "Mount Disney"
+        "description": "Crows Nest",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/objects/",
+        "htmlFile": "objects"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.7838305993231, 37.596967897091375]
+        "coordinates": [-120.3413373, 39.2947416]
       },
       "type": "Feature",
       "properties": {
-        "medium": "photography",
+        "interest": "photography",
         "resort": "Sugar Bowl",
         "title": "Formalism",
-        "description": "Crows Nest"
+        "description": "Mount Disney",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/formalism/",
+        "htmlFile": "formalism"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.7597377313981, 37.512328287717054]
+        "coordinates": [-120.328394, 39.287903]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "photography",
+        "resort": "Sugar Bowl",
+        "title": "Loops",
+        "description": "Mt Lincoln",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/loops/",
+        "htmlFile": "loops"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.315747, 39.298561]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "photography",
+        "resort": "Sugar Bowl",
+        "title": "Gossamer",
+        "description": "Mount Judah",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/gossamer/",
+        "htmlFile": "gossamer"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.2515199102143, 39.16793074730808]
       },
       "properties": {
         "hide": "hide",
-        "Palisades": "Palisades Palisades Palisades Palisades Palisades",
-        "Palisade2": "Palisades Palisades Palisades Palisades Palisades",
-        "5": "5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
-        "programming": "PROGRAMMING PROGRAMMING PROGRAMMING PROGRAMMING"
+        "theResort": "// ———————————————————————————————————— Palisades —>",
+        "theFocuss": "// ———————————————————————————————————— Programming —>",
+        "theArray#": "// ———————————————————————————————————— 6 —>"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.76084226382494, 37.506955757325926]
+        "coordinates": [-120.25914334473828, 39.167006223093836]
       },
       "type": "Feature",
       "properties": {
-        "medium": "programming",
-        "title": "Better Breaks",
-        "description": "Granite Chief"
+        "hide": "hide",
+        "info": true,
+        "infoFile": "info-card--programming"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.76074305396344, 37.5111442049664]
+        "coordinates": [-120.277183, 39.189108]
       },
       "type": "Feature",
       "properties": {
-        "medium": "programming",
-        "title": "So I Do",
-        "description": "Squaw Peak"
+        "interest": "programming",
+        "resort": "Palisades",
+        "title": "Monolyth",
+        "description": "Emigrant Peak",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/monolyth/",
+        "htmlFile": "monolyth"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.75821833587037, 37.509848516764094]
+        "coordinates": [-120.269674, 39.180667]
       },
       "type": "Feature",
       "properties": {
-        "medium": "programming",
+        "interest": "programming",
+        "resort": "Palisades",
         "title": "UNIQLO",
-        "description": "Scott Peak"
+        "description": "Squaw Peak",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/",
+        "htmlFile": "stereoh"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.75713133262059, 37.515408466095934]
+        "coordinates": [-120.241808, 39.18302]
       },
       "type": "Feature",
       "properties": {
-        "medium": "programming",
-        "title": "Pager",
-        "description": "Emigrant Peak"
+        "interest": "programming",
+        "resort": "Palisades",
+        "title": "Mechaneyes",
+        "description": "KT-22",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/",
+        "htmlFile": "breaks"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.76268124113062, 37.517117520462264]
+        "coordinates": [-120.245917, 39.147966]
       },
       "type": "Feature",
       "properties": {
-        "medium": "programming",
+        "interest": "programming",
+        "resort": "Palisades",
         "title": "Stereoh",
-        "description": "Ward Peak"
+        "description": "Ward Peak",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/breaks/",
+        "htmlFile": "stereoh"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.7584018056142, 37.525235694411776]
+        "coordinates": [-120.223217, 39.157976]
       },
       "type": "Feature",
       "properties": {
-        "medium": "programming",
-        "title": "Monolyth",
-        "description": "KT-22"
+        "interest": "programming",
+        "resort": "Palisades",
+        "title": "Better Breaks",
+        "description": "Scott Peak",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/breaks/",
+        "htmlFile": "breaks"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.86432080641771, 37.67542586196113]
+        "coordinates": [-120.18007801916589, 39.06829149085106]
       },
       "properties": {
         "hide": "hide",
-        "Palisades": "Kirkwood Kirkwood Kirkwood Kirkwood Kirkwood Kirkwood",
-        "Palisade2": "Kirkwood Kirkwood Kirkwood Kirkwood Kirkwood Kirkwood",
-        "INSTALLATION": "INSTALLATION INSTALLATION INSTALLATION INSTALLATION",
-        "16": "16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16"
+        "theResort": "// ———————————————————————————————————— Homewood —>",
+        "theFocuss": "// ———————————————————————————————————— Design —>",
+        "theArray#": "// ———————————————————————————————————— 13 —>"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.86639428351992, 37.67137566830249]
+        "coordinates": [-120.17349206608555, 39.06194107325264]
       },
       "type": "Feature",
       "properties": {
-        "medium": "installation",
+        "hide": "hide",
+        "info": true,
+        "infoFile": "info-card--design"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.198218, 39.068502]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "design",
+        "resort": "Homewood",
+        "title": "Stereoh",
+        "description": "Ellis Peak",
+        "elevation": "8744 ft / 2665 m",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/",
+        "htmlFile": "stereoh"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.18402925362022, 39.07543510314162]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "design",
+        "resort": "Homewood",
         "title": "Sound Noir",
-        "description": "Thimble Peak"
+        "description": "Ellis Lifthouse",
+        "elevation": "8744 ft / 2665 m",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/soundnoir/",
+        "htmlFile": "soundnoir"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.86271787380986, 37.673412315088925]
+        "coordinates": [-120.16611799763686, 39.07378649826773]
       },
       "type": "Feature",
       "properties": {
-        "medium": "installation",
-        "title": "Stereoh",
-        "description": "Covered Wagon"
+        "interest": "design",
+        "resort": "Homewood",
+        "title": "Pager",
+        "description": "Quail Lifthouse",
+        "elevation": "8744 ft / 2665 m",
+        "url": "https://www.peakbagger.com/peak.aspx?pid=26156",
+        "htmlFile": "monolyth"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.86593708881492, 37.67572333498154]
-      },
-      "type": "Feature",
-      "properties": {
-        "medium": "installation",
-        "title": "Sevdah Body",
-        "description": "The Sisters"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-119.86263877689373, 37.67758734456844]
-      },
-      "type": "Feature",
-      "properties": {
-        "medium": "installation",
-        "title": "Monolyth",
-        "description": "Martin Point"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-119.86479077944665, 37.683060679008975]
-      },
-      "type": "Feature",
-      "properties": {
-        "medium": "installation",
-        "title": "So I Do",
-        "description": "Glove Rock"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-119.92651843904918, 37.66011250036587]
+        "coordinates": [-120.05792793636186, 38.676518564074324]
       },
       "properties": {
         "hide": "hide",
-        "Palisades": "Heavenly Heavenly Heavenly Heavenly Heavenly Heavenly",
-        "Palisade2": "Heavenly Heavenly Heavenly Heavenly Heavenly Heavenly",
-        "GENERATIVE": "GENERATIVE GENERATIVE GENERATIVE GENERATIVE GENERATIVE",
-        "18": "18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18"
+        "theResort": "// ———————————————————————————————————— Kirkwood —>",
+        "theFocuss": "// ———————————————————————————————————— Generative —>",
+        "theArray#": "// ———————————————————————————————————— 18 —>"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.92780722106136, 37.65638287672712]
+        "coordinates": [-120.0519982587125, 38.68553087522418]
       },
       "type": "Feature",
       "properties": {
-        "medium": "generative",
+        "hide": "hide",
+        "info": true,
+        "infoFile": "info-card--generative"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.07066658390274, 38.66873640392365]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "installation",
+        "resort": "Kirkwood",
         "title": "Whirligrid",
-        "description": "Jobs Peak"
+        "description": "The Sisters",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/whirligrid/",
+        "htmlFile": "whirligrid"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.92480651547646, 37.65984672757418]
+        "coordinates": [-120.060661, 38.662497]
       },
       "type": "Feature",
       "properties": {
-        "medium": "generative",
-        "title": "Munari Curtain",
-        "description": "Jobs Sister"
+        "interest": "installation",
+        "resort": "Kirkwood",
+        "title": "Munari Veil",
+        "description": "Thimble Peak",
+        "elevation": "9809 ft / 2990 m",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/munari/",
+        "htmlFile": "munari"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.9292821798233, 37.667092888110275]
+        "coordinates": [-120.047479, 38.657164]
       },
       "type": "Feature",
       "properties": {
-        "medium": "generative",
-        "title": "Stereoh",
-        "description": "Freel Peak"
+        "interest": "installation",
+        "resort": "Kirkwood",
+        "title": "So I Do",
+        "description": "Covered Wagon Peak",
+        "elevation": "9570 ft / 2916 m",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/soido/",
+        "htmlFile": "soido"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.7457189026739, 37.625468406103494]
+        "coordinates": [-119.88080880596688, 38.858561021396336]
       },
       "properties": {
         "hide": "hide",
-        "Palisades": "Homewood Homewood Homewood Homewood Homewood Homewood",
-        "Palisade2": "Homewood Homewood Homewood Homewood Homewood Homewood",
-        "DESIGN": "DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN",
-        "22": "22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22"
+        "theResort": "// ———————————————————————————————————— Heavenly —>",
+        "theFocuss": "// ———————————————————————————————————— DEPRECATED —>",
+        "theArray#": "// ———————————————————————————————————— 24 —>"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.74743161359788, 37.623147933290014]
+        "coordinates": [-119.900095, 38.857499]
       },
       "type": "Feature",
-      "properties": {
-        "medium": "design",
-        "title": "Sound Noir",
-        "description": "Ellis Peak"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-119.7467379848668, 37.63031168173859]
-      },
-      "type": "Feature",
-      "properties": {
-        "medium": "design",
-        "title": "Pager",
-        "description": "Ellis Lifthouse"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-119.74412624010847, 37.62452295048767]
-      },
-      "type": "Feature",
-      "properties": {
-        "medium": "design",
-        "title": "Stereoh",
-        "description": "Night Jaguars"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-119.68597443307317, 37.67003900270261]
-      },
       "properties": {
         "hide": "hide",
-        "Palisades": "About About About About About About About About About",
-        "Palisade2": "About About About About About About About About About",
-        "DESIGN": "DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN DESIGN",
-        "26": "26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26"
+        "interest": "generative",
+        "resort": "Heavenly",
+        "title": "Whirligrid",
+        "description": "Freel Peak",
+        "elevation": "10,886 ft / 3319 m",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/whirligrid/",
+        "htmlFile": "whirligrid"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.68499011597328, 37.66688903777322]
+        "coordinates": [-119.884589, 38.86231]
       },
       "type": "Feature",
       "properties": {
-        "medium": "about",
-        "title": "Ray Weitzenberg",
-        "description": "Night Jaguars"
+        "hide": "hide",
+        "interest": "generative",
+        "resort": "Heavenly",
+        "title": "Munari Veil",
+        "description": "Jobs Sister",
+        "elevation": "10,828 ft / 3300 m",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/munari/",
+        "htmlFile": "munari"
       }
     },
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-119.6882936745169, 37.672637837190734]
+        "coordinates": [-119.861371, 38.858165]
       },
       "type": "Feature",
       "properties": {
-        "medium": "about",
-        "title": "Ray Weitzenberg",
-        "description": "Night Jaguars"
+        "hide": "hide",
+        "interest": "generative",
+        "resort": "Heavenly",
+        "title": "Stereoh",
+        "description": "Jobs Peak",
+        "elevation": "10,638 ft / 3242 m",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/",
+        "htmlFile": "stereoh"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.46122859325533, 38.738060959397785]
+      },
+      "properties": {
+        "static": true,
+        "hide": "hide",
+        "theResort": "// ———————————————————————————————————— Mechaneyes —>",
+        "theFocuss": "// ———————————————————————————————————— Mechaneyes —>",
+        "theArray#": "// ———————————————————————————————————— 27 —>",
+        "htmlFile": "mechaneyes",
+        "staticClass": "static-card--mechaneyes"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.37764069625877, 39.126354852592584]
+      },
+      "properties": {
+        "static": true,
+        "hide": "hide",
+        "theResort": "// ———————————————————————————————————— About —>",
+        "theFocuss": "// ———————————————————————————————————— About —>",
+        "theArray#": "// ———————————————————————————————————— 28 —>",
+        "htmlFile": "about",
+        "staticClass": "static-card--about"
       }
     }
   ]

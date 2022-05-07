@@ -8,7 +8,8 @@ function App() {
   if (width < 768) {
     return (
       <div className="App">
-        <MapMobile />
+        {/* <MapMobile /> */}
+        <MapOne />
       </div>
     );
   } else {

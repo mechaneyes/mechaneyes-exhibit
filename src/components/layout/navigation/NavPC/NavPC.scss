@@ -1,7 +1,7 @@
 @import "../../../../utils/breakpoints.scss";
 
 .mecha-nav {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: flex-start;
   position: absolute;
@@ -9,6 +9,14 @@
   left: 10px;
   z-index: 1;
   transform: none;
+
+  @include bp(mob) {
+    h2 {}
+  }
+
+  @include bp(mid) {
+    display: flex;
+  }
 
   &__not-about {
     display: flex;

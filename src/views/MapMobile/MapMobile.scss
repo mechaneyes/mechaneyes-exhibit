@@ -104,39 +104,9 @@ body {
   }
 }
 
-.hamburger {
-  display: flex;
-
-  &--hidden {
-    display: none;
-  }
-}
-
-.hamburger-holder,
-.hamburger-holder.enter {
-  opacity: 0;
-}
-
-.hamburger-holder.enter-active {
-  opacity: 1;
-  transition: opacity 500ms;
-}
-
-.hamburger-holder.enter-done {
-  opacity: 1;
-}
-
-.hamburger-holder-exit {
-  opacity: 1;
-}
-
-.hamburger-holder-exit-active {
-  opacity: 0;
-  transition: opacity 500ms;
-}
-
 .gradient-overlay {
   display: block;
+  display: none;
   position: absolute;
   top: 0;
   left: 0;

@@ -6,6 +6,7 @@ import { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
+import HamburgerMenu from "../../components/layout/navigation/HamburgerMenu/HamburgerMenu";
 import NavPC from "../../components/layout/navigation/NavPC/NavPC";
 // import useWindowDimensions from "../../utils/windowDimensions";
 
@@ -84,12 +85,24 @@ const MapOne = () => {
           .replace("}", "]");
       console.log(latlong);
     });
+
+    map.current.on("touchstart", (e) => {
+      let latlong =
+        '"coordinates": ' +
+        JSON.stringify(e.lngLat.wrap())
+          .replace('"lng":', "")
+          .replace('"lat":', " ")
+          .replace("{", "[")
+          .replace("}", "]");
+      console.log(latlong);
+    });
   });
 
   return (
     <main className="map-one">
       <div className="nav-wrapper">
         <NavPC map={map} />
+        <HamburgerMenu map={map} />
       </div>
       <div ref={mapContainer} className="map-container" />
     </main>
