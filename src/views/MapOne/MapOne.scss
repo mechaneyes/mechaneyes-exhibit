@@ -27,6 +27,10 @@ body {
     width: 100vw;
     height: 100vh;
     max-width: none !important;
+
+    @include bp(mob) {
+      z-index: 2;
+    }
   }
 
   .mapboxgl-popup-content {
@@ -34,6 +38,12 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: transparent;
+  }
+
+  @include bp(mob) {
+    .mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+      display: none;
+    }
   }
 
   // ————————————————————————————————————o————————————————————————————————————o Project Modals -->
@@ -52,8 +62,10 @@ body {
     background-color: rgba(0, 22, 51, 0.95);
 
     @include bp(mob) {
-      width: 97vw;
+      width: 100vw;
       height: 100vh;
+      margin: 0;
+      border: 0;
     }
 
     .project-iframe {
@@ -84,6 +96,15 @@ body {
     font-size: 35px;
     color: #02ff87;
     outline: 0;
+
+    @include bp(mob) {
+      height: 35px;
+      top: 12px;
+      right: 12px;
+      line-height: 0;
+      border: 1px solid #02ff87;
+      background-color: #001634;
+    }
   }
 }
 

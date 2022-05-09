@@ -12,9 +12,15 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  z-index: 3;
+  z-index: 1;
   width: 40px;
   height: auto;
+  border-radius: 50%;
+  background-color: #001634;
+
+  @include bp(mid) {
+    display: none;
+  }
 }
 
 .hamburger {
@@ -91,7 +97,7 @@
     flex-direction: column;
     justify-content: flex-start;
     position: absolute;
-    top: 10px !important;
+    top: 30vw !important;
     left: 50px;
     z-index: 1;
     transform: none;

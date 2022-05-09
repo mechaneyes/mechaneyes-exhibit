@@ -83,7 +83,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.2515199102143, 39.16793074730808]
+        "coordinates": [-120.25322341244357, 39.17319761796131]
       },
       "properties": {
         "hide": "hide",
@@ -107,21 +107,6 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.277183, 39.189108]
-      },
-      "type": "Feature",
-      "properties": {
-        "interest": "programming",
-        "resort": "Palisades",
-        "title": "Monolyth",
-        "description": "Emigrant Peak",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/monolyth/",
-        "htmlFile": "monolyth"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
         "coordinates": [-120.269674, 39.180667]
       },
       "type": "Feature",
@@ -132,6 +117,21 @@
         "description": "Squaw Peak",
         "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/",
         "htmlFile": "stereoh"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.277183, 39.189108]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "programming",
+        "resort": "Palisades",
+        "title": "Monolyth",
+        "description": "Emigrant Peak",
+        "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/monolyth/",
+        "htmlFile": "monolyth"
       }
     },
     {
@@ -182,7 +182,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.18007801916589, 39.06829149085106]
+        "coordinates": [-120.060661, 38.662497]
       },
       "properties": {
         "hide": "hide",
@@ -254,7 +254,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.05792793636186, 38.676518564074324]
+        "coordinates": [-120.060661, 38.662497]
       },
       "properties": {
         "hide": "hide",

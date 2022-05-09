@@ -113,7 +113,7 @@ let Nav = (props) => {
         <a
           className="mecha-nav__item"
           onClick={() => {
-            fly(6, 30, 13.16, 25, true);
+            fly(6, 10, 11.81, 310, true);
             setActiveNav("programming");
           }}
         >
@@ -149,7 +149,7 @@ let Nav = (props) => {
         <a
           className="mecha-nav__item"
           onClick={() => {
-            fly(13, 0, 14, 210);
+            fly(13, 0, 13.5, 275);
             setActiveNav("design");
           }}
         >

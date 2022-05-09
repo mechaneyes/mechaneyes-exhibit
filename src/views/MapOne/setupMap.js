@@ -81,6 +81,9 @@ export const setupMap = (map, geoFile) => {
       },
       paint: {
         "text-color": "#FFF",
+        "text-halo-color": "black",
+        "text-halo-width": 1,
+        "text-halo-blur": 1,
       },
     });
 

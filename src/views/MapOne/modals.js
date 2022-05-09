@@ -17,6 +17,7 @@ export const modals = (map) => {
           const el = document.createElement("div");
           el.className = `static-card static-card ${staticClass}`;
           el.innerHTML = `<object class="static-card__object" type="text/html" data="/projects/projects/${htmlFile}.html"></object>`;
+          // el.innerHTML = `<div>"/projects/projects/marker-test.html"</div>`
 
           new mapboxgl.Marker(el)
             .setLngLat(feature.geometry.coordinates)
