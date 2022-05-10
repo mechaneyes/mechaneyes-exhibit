@@ -33,6 +33,10 @@ body {
   }
 }
 
+*:focus {
+  outline: none;
+}
+
 img {
   display: block;
   width: 100%;
@@ -266,6 +270,10 @@ img {
     margin-bottom: 70px;
     padding: 0 20px;
 
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+
     @include bp(mob) {
       margin-bottom: 0px;
     }
@@ -446,7 +454,7 @@ img {
       height: 100%;
       text-align: center;
       z-index: 2;
-      // background-color: rgba(0, 0, 0, 0.4);
+      // background-color: rgba(0, 22, 51, 0.5);
       pointer-events: none;
 
       h1 {
