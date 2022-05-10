@@ -1,0 +1,67 @@
+@import url(https://use.typekit.net/dbx2czm.css);
+
+// Cholla Sans
+@mixin cholla-sans() {
+    font-family: cholla-sans, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+// Cholla Unicase
+@mixin cholla-unicase() {
+    font-family: cholla-unicase, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+// Cholla Wide Regular
+@mixin cholla-unicase-reg() {
+    font-family: cholla-wide, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+// Cholla Wide Regular
+@mixin cholla-unicase-reg-it() {
+    font-family: cholla-wide, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+@mixin cholla-wide() {
+  font-family: cholla-wide, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+// Cholla Wide Bold
+@mixin cholla-wide-bold() {
+    font-family: cholla-wide, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+h1 {
+  @include cholla-unicase;
+  font-size: 3.5rem;
+}
+
+h2 {
+  @include cholla-unicase;
+  font-size: 2.4rem;
+}
+
+h3 {
+  @include cholla-wide;
+  font-size: 2.4rem;
+}
+
+p {
+    @include cholla-unicase-reg;
+    font-size: 1.3rem;
+    line-height: 1.3;
+
+    &.ital {
+        @include cholla-unicase-reg-it;
+    }
+}

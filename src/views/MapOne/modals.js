@@ -16,8 +16,17 @@ export const modals = (map) => {
           let staticClass = feature.properties.staticClass;
           const el = document.createElement("div");
           el.className = `static-card static-card ${staticClass}`;
-          el.innerHTML = `<object class="static-card__object" type="text/html" data="/projects/projects/${htmlFile}.html"></object>`;
-          // el.innerHTML = `<div>"/projects/projects/marker-test.html"</div>`
+
+          // ———————————————————————————————————— Fetch Project HTML —>
+          fetch(`/projects/projects/${htmlFile}.html`)
+          .then((response) => response.text())
+          .then((html) => {
+            console.log(html);
+            el.innerHTML = html;
+          })
+          .catch((err) => {
+            console.log("not so fetchy");
+          });
 
           new mapboxgl.Marker(el)
             .setLngLat(feature.geometry.coordinates)
@@ -40,14 +49,28 @@ export const modals = (map) => {
 
         for (const card of staticCards) {
           if (zoomLevel >= 13.4) {
-            card.style.display = 'block';
+            card.style.display = "block";
             card.classList.remove("static-card--hidden");
           } else {
-            card.style.display = 'none';
+            card.style.display = "none";
           }
         }
       });
     });
+
+  // ————————————————————————————————————o————————————————————————————————————o Fetch Test -->
+  // ———————————————————————————————————— Fetch Test —>
+  // fetch("/projects/projects/intro.html")
+  //   .then((response) => response.text())
+  //   .then((html) => {
+  //     console.log(html);
+  //     document.querySelector(
+  //       ".mapboxgl-marker.static-card--intro"
+  //     ).innerHTML = html;
+  //   })
+  //   .catch((err) => {
+  //     console.log("not so fetchy");
+  //   });
 
   // ————————————————————————————————————o————————————————————————————————————o Project Info Modals -->
   // ———————————————————————————————————— Project Info Modals —>
@@ -85,10 +108,10 @@ export const modals = (map) => {
 
         for (const card of infoCards) {
           if (zoomLevel >= 13.4) {
-            card.style.display = 'block';
+            card.style.display = "block";
             card.classList.remove("info-card--hidden");
           } else {
-            card.style.display = 'none';
+            card.style.display = "none";
           }
         }
       });

@@ -397,11 +397,11 @@
       "properties": {
         "static": true,
         "hide": "hide",
-        "theResort": "// ———————————————————————————————————— Mechaneyes —>",
-        "theFocuss": "// ———————————————————————————————————— Mechaneyes —>",
+        "theResort": "// ———————————————————————————————————— Intro —>",
+        "theFocuss": "// ———————————————————————————————————— Intro —>",
         "theArray#": "// ———————————————————————————————————— 27 —>",
-        "htmlFile": "mechaneyes",
-        "staticClass": "static-card--mechaneyes"
+        "htmlFile": "intro",
+        "staticClass": "static-card--intro"
       }
     },
     {
