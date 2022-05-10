@@ -17,11 +17,11 @@ export const modals = (map) => {
           const el = document.createElement("div");
           el.className = `static-card static-card ${staticClass}`;
 
-          // ———————————————————————————————————— Fetch Project HTML —>
+          // ———————————————————————————————————— Fetch Mech/About HTML —>
           fetch(`/projects/projects/${htmlFile}.html`)
           .then((response) => response.text())
           .then((html) => {
-            console.log(html);
+            // console.log(html);
             el.innerHTML = html;
           })
           .catch((err) => {

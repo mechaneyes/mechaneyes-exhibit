@@ -36,12 +36,19 @@ export const markersModals = (map, geoFile) => {
             let coordinates = feature.geometry.coordinates.slice();
             let htmlFile = feature.properties.htmlFile;
 
-            popup
-              .setLngLat(coordinates)
-              .setHTML(
-                `<object class="project-modal" type="text/html" data="/projects/projects/${htmlFile}.html"></object>`
-              )
-              .addTo(map);
+            // ———————————————————————————————————— Fetch Project HTML —>
+            fetch(`/projects/projects/${htmlFile}.html`)
+              .then((response) => response.text())
+              .then((html) => {
+                // console.log(html);
+                popup
+                  .setLngLat(coordinates)
+                  .setHTML(`<div class="project-modal">${html}</div>`)
+                  .addTo(map);
+              })
+              .catch((err) => {
+                console.log("not so fetchy");
+              });
           });
         }
 
