@@ -58,7 +58,8 @@ export const markersModals = (map, geoFile) => {
         popup.on("open", () => {
           const popupClose = document.querySelector(".mapboxgl-popup-content");
           popupClose.addEventListener("click", () => {
-            popup.remove();
+            // popup.remove();
+            console.log('popup remove')
           });
         });
       }

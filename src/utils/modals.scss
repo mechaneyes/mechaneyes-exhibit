@@ -66,6 +66,7 @@ img {
 }
 
 .project-video {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -554,7 +555,6 @@ img {
   // ————————————————————————————————————o————————————————————————————————————o Monolyth -->
   // ———————————————————————————————————— Monolyth —>
   &--monolyth {
-    overflow: hidden;
     margin-bottom: 50px;
 
     #hero--bloom {
