@@ -11,6 +11,11 @@ body {
   display: none;
 }
 
+.map-container.mapboxgl-map {
+  position: absolute;
+  top: 0;
+}
+
 .map-one {
   width: 100vw;
   height: calc(100vh - 50px);
@@ -47,42 +52,6 @@ body {
     }
   }
 
-  // ————————————————————————————————————o————————————————————————————————————o Project Modals -->
-  // ———————————————————————————————————— Project Modals —>
-  .project-modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90vw;
-    height: 90vh;
-    margin-top: 20px;
-    padding: 0;
-    color: white;
-    border: 1px solid #02ff87;
-    background-color: rgba(0, 22, 51, 0.95);
-
-    @include bp(mob) {
-      width: 100vw;
-      height: 100vh;
-      margin: 0;
-      border: 0;
-    }
-
-    .project-iframe {
-      width: 100%;
-      height: 100%;
-      padding: 0;
-      border: 2px solid #0876fc;
-      border: none;
-    }
-
-    object {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
   .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip {
     display: none;
   }
@@ -92,19 +61,27 @@ body {
   }
 
   .mapboxgl-popup-close-button {
-    top: calc(5vh + 10px);
-    right: 5vw;
+    // top: calc(20px + 7.5vh);
+    right: 6vw;
+    height: 35px;
     font-size: 35px;
     color: #02ff87;
+    line-height: 0;
     outline: 0;
+    border: 1px solid #02ff87;
+    background-color: #001634;
+    transition: all 0.2s;
+
+    &:hover {
+      color: #001634;
+      background-color: #02ff87;
+      transition: all 0.2s;
+    }
 
     @include bp(mob) {
       height: 35px;
       top: 12px;
       right: 12px;
-      line-height: 0;
-      border: 1px solid #02ff87;
-      background-color: #001634;
     }
   }
 }

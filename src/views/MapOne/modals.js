@@ -9,14 +9,14 @@ export const modals = (map) => {
     .then((res) => res.json())
     .then((result) => {
       for (const feature of result.features) {
-
-        // ————————————————————————————————————o————————————————————————————————————o Intro + About Modals -->
-        // ———————————————————————————————————— Intro + About Modals —>
+        // ————————————————————————————————————o————————————————————————————————————o STATIC Intro + About Modals -->
+        // ———————————————————————————————————— STATIC Intro + About Modals —>
         // Added as cards glued in place via mountains.geojson
         //
         if (feature.properties.static) {
           let htmlFile = feature.properties.htmlFile;
           let staticClass = feature.properties.staticClass;
+
           const el = document.createElement("div");
           el.className = `static-card static-card ${staticClass}`;
 

@@ -10,28 +10,15 @@ html {
   font-size: 16px;
 }
 
-body {
-  margin: 0;
-  background-color: rgba(0, 22, 51, 0.95);
-  overflow-y: overlay;
+// body {
+//   margin: 0;
+//   background-color: rgba(0, 22, 51, 0.95);
+//   overflow-y: overlay;
 
-  * {
-    box-sizing: border-box;
-  }
-
-  &::-webkit-scrollbar {
-    width: 5px;
-    // background-color: rgba(0, 22, 51, 0.95);
-  }
-
-  &::-webkit-scrollbar-track {
-    // background-color: rgba(0, 22, 51, 0.95);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #02ff87;
-  }
-}
+//   * {
+//     box-sizing: border-box;
+//   }
+// }
 
 *:focus {
   outline: none;
@@ -78,7 +65,7 @@ img {
   width: 50%;
   max-width: fit-content;
   height: 100%;
-  max-height: 95vh;
+  max-height: 85vh;
   margin-bottom: 20px;
 
   @include bp(mob) {
@@ -97,6 +84,8 @@ img {
   }
 }
 
+// ————————————————————————————————————o————————————————————————————————————o Fifty 50 -->
+// ———————————————————————————————————— Fifty 50 —>
 .fifty-fifty {
   img {
     width: 100%;
@@ -116,6 +105,16 @@ img {
   &--flex {
     display: flex;
     gap: 20px;
+    height: 100%;
+    margin-bottom: 20px;
+
+    &:last-of-type {
+      margin-bottom: 50px;
+    }
+
+    .project-img {
+      justify-content: flex-start;
+    }
 
     @include bp(mob) {
       flex-direction: column;
@@ -170,11 +169,70 @@ img {
   border: 1px solid #02ff87;
 }
 
+// ————————————————————————————————————o————————————————————————————————————o Project Modals -->
+// ———————————————————————————————————— Project Modals —>
+.project-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 90vh;
+  margin-top: 20px;
+  padding: 0;
+  color: white;
+  border-top: 1px solid #02ff87;
+  border-bottom: 1px solid #02ff87;
+  background-color: rgba(0, 22, 51, 1);
+
+  @include bp(mob) {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    border: 0;
+  }
+
+  .project-iframe {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 2px solid #0876fc;
+    border: none;
+  }
+
+  object {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// ————————————————————————————————————o————————————————————————————————————o Project -->
+// ———————————————————————————————————— Project —>
 .project {
   overflow-y: scroll;
+  overflow-y: overlay;
   width: 100%;
   height: 100%;
+  margin-right: 5px;
   color: white;
+  border: 1px solid #02ff87;
+  // border-top: 0;
+
+  * {
+    // z-index: 0;
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+  }
+
+  &::-webkit-scrollbar-thumb {
+    z-index: 2;
+    background-color: #02ff87;
+  }
 
   a {
     color: white;
@@ -194,6 +252,7 @@ img {
   }
 
   .hero {
+    z-index: 1;
     position: relative;
     overflow: hidden;
     aspect-ratio: 16 / 5 !important;
@@ -267,6 +326,7 @@ img {
   }
 
   .gig {
+    max-height: 95%;
     margin-bottom: 70px;
     padding: 0 20px;
 
@@ -756,6 +816,10 @@ img {
 
     .fifty-fifty img {
       margin: 0;
+    }
+
+    .project-img {
+      max-width: none;
     }
   }
 }

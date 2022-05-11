@@ -11,7 +11,7 @@ import NavPC from "../../components/layout/navigation/NavPC/NavPC";
 import useWindowDimensions from "../../utils/windowDimensions";
 
 import { setupMap } from "./setupMap";
-import { markersModals } from "./markersModals";
+import { markersProjectModals } from "./markersProjectModals";
 import { modals } from "./modals";
 
 import "./MapOne.scss";
@@ -38,12 +38,12 @@ const MapOne = () => {
   // const [lat, setLat] = useState(38.95397959307656);
 
   // Desktop Start
-  const [lng, setLng] = useState(-120.46122859325533);
-  const [lat, setLat] = useState(38.738060959397785);
+  // const [lng, setLng] = useState(-120.46122859325533);
+  // const [lat, setLat] = useState(38.738060959397785);
 
   // Test Locations
-  // const [lng, setLng] = useState(-120.3339982540318);
-  // const [lat, setLat] = useState(39.29408664826935);
+  const [lng, setLng] = useState(-120.3339982540318);
+  const [lat, setLat] = useState(39.29408664826935);
 
   const [zoom, setZoom] = useState(15);
 
@@ -77,7 +77,7 @@ const MapOne = () => {
 
       // ————————————————————————————————————o Project Markers + Modals —>
       //
-      markersModals(map.current, geoFile);
+      markersProjectModals(map.current, geoFile);
       modals(map.current);
     });
   });
