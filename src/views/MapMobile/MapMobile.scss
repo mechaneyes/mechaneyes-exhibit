@@ -60,49 +60,49 @@ body {
   }
 }
 
-.logo-mechaneyes {
-  position: absolute;
-  top: 7%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  width: 65%;
-  opacity: 1;
-  transition: opacity 0.5s;
+// .logo-mechaneyes {
+//   position: absolute;
+//   top: 7%;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   z-index: 1;
+//   width: 65%;
+//   opacity: 1;
+//   transition: opacity 0.5s;
 
-  &--hidden {
-    // opacity: 0;
-    // transition: opacity 0.5s;
-    display: none;
-  }
+//   &--hidden {
+//     // opacity: 0;
+//     // transition: opacity 0.5s;
+//     display: none;
+//   }
 
-  &.enter {
-    opacity: 1;
-  }
+//   &.enter {
+//     opacity: 1;
+//   }
   
-  &.enter-active {
-    opacity: 1;
-    transition: opacity 500ms;
-  }
+//   &.enter-active {
+//     opacity: 1;
+//     transition: opacity 500ms;
+//   }
   
-  &.enter-done {
-    opacity: 0;
-  }
+//   &.enter-done {
+//     opacity: 0;
+//   }
   
-  &.exit {
-    opacity: 0;
-  }
+//   &.exit {
+//     opacity: 0;
+//   }
   
-  &.exit-active {
-    opacity: 0;
-    transition: opacity 500ms;
-  }
+//   &.exit-active {
+//     opacity: 0;
+//     transition: opacity 500ms;
+//   }
   
-  &.exit-done {
-    opacity: 0;
-    transition: opacity 500ms;
-  }
-}
+//   &.exit-done {
+//     opacity: 0;
+//     transition: opacity 500ms;
+//   }
+// }
 
 .gradient-overlay {
   display: block;
