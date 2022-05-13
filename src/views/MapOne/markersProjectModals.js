@@ -43,26 +43,13 @@ export const markersProjectModals = (map, geoFile) => {
               .then((response) => response.text())
               .then(imagesLoad())
               .then(videosLoad())
-              .then(videoPlayPause())
+              // .then(videoPlayPause())
               .then((html) => {
                 // console.log(html);
                 popup
                   .setLngLat(coordinates)
                   .setHTML(`<div class="project-modal">${html}</div>`)
                   .addTo(map);
-              })
-
-              // ———————————————————————————————————— Modal Close Button Position —>
-              // Measures modal distance to top and adds 20px to get
-              // the proper vertical position of the modal close button
-              //
-              .then(() => {
-                let modalMeasure = document.querySelector(".project-modal");
-                modalMeasure = modalMeasure.getBoundingClientRect().top;
-                let modalClose = document.querySelector(
-                  ".mapboxgl-popup-close-button"
-                );
-                modalClose.style.top = modalMeasure + 20 + "px";
               })
               .catch((err) => {
                 console.log("not so fetchy");
@@ -74,32 +61,29 @@ export const markersProjectModals = (map, geoFile) => {
         // Close popup when clicking on background outside popup itself
         //
         popup.on("open", () => {
-          const popupClose = document.querySelector(".mapboxgl-popup-content");
-          const popupChild = document.querySelector(".project-modal");
+          const popupParent = document.querySelector(".mapboxgl-popup-content");
+          const popupInner = document.querySelector(".project-modal");
+          const popupClose = document.querySelector(
+            ".mapboxgl-popup-close-button"
+          );
+          
+          // Move close button to inside .project-modal sibling
+          // Allows for proper positioning
+          // 
+          popupInner.appendChild(popupClose);
 
           // Close Modal ... but only when clicking outside the modal -- on
           // the page backtround -- not on the modal itself
-          popupChild.addEventListener("click", (e) => {
+          // 
+          popupInner.addEventListener("click", (e) => {
             e.stopPropagation();
 
-            popupClose.addEventListener("click", () => {
-              // console.log("popup remove");
+            popupParent.addEventListener("click", () => {
               popup.remove();
             });
           });
         });
       }
-
-      // ———————————————————————————————————— Modal Close Button Position —>
-      // Repositioning the modal close button when screen is resized
-      //
-      window.addEventListener("resize", () => {
-        let modalMeasure = document.querySelector(".project-modal");
-        modalMeasure = modalMeasure.getBoundingClientRect().top;
-        // console.log("modalMeasuress", modalMeasure);
-        let modalClose = document.querySelector(".mapboxgl-popup-close-button");
-        modalClose.style.top = modalMeasure + 20 + "px";
-      });
     });
 };
 
@@ -142,9 +126,9 @@ const videosLoad = () => {
 };
 
 // ————————————————————————————————————o————————————————————————————————————o Play/Pause Videos -->
-// ———————————————————————————————————— Play/Pause Videos —>
+// ————————————————————————————————————o Play/Pause Videos —>
 // also ... add/remove play buttons
-// 
+//
 // When one video is playing, by clicking another vid the first
 // pauses and let's the second play
 //
@@ -154,36 +138,58 @@ const videoPlayPause = () => {
     "project-video__button"
   );
 
-  let vidsArray
-  let vidsBtnsArray
-
+  // if (vidsBtnsArray > 0) {
   setTimeout(() => {
-    vidsArray = Array.from(vidsCollection);
-    vidsBtnsArray = Array.from(vidBtnsCollection);
-    // console.log("vidsArray", vidsArray);
+    let vidsArray = Array.from(vidsCollection);
+    let vidsBtnsArray = Array.from(vidBtnsCollection);
+    // console.log('vidsArray', vidsArray.length)
 
-    for (let i = 0; i < vidsArray.length; i++) {
-      vidsArray[i].addEventListener("click", (event) => {
-        if (vidsArray[i].paused) {
-          vidsArray.forEach((vid) => {
-            vid.pause();
-          });
-          vidsBtnsArray.forEach((btn) => {
-            btn.classList.remove("project-video__button--hidden");
-          });
-          vidsArray[i].volume = 0.3;
-          vidsArray[i].play();
-          vidsBtnsArray[i].classList.add("project-video__button--hidden");
+    if (vidsBtnsArray.length > 1) {
+      for (let i = 0; i < vidsArray.length; i++) {
+        vidsArray[i].addEventListener("click", (event) => {
+          if (vidsArray[i].paused) {
+            console.log(
+              "vidsBtnsArray[i].classList",
+              vidsBtnsArray[0].classList
+            );
+            vidsArray.forEach((vid) => {
+              vid.pause();
+            });
+            vidsBtnsArray.forEach((btn) => {
+              btn.classList.remove("project-video__button--hidden");
+            });
+            vidsBtnsArray[i].classList.add("project-video__button--hidden");
+            vidsArray[i].volume = 0.3;
+            vidsArray[i].play();
+          } else {
+            vidsArray[i].pause();
+            vidsBtnsArray[i].classList.remove("project-video__button--hidden");
+          }
+        });
+      }
+    } else {
+      // TODO: work on the logic here for other cases
+      //
+      // ————————————————————————————————————o video hero + single video in body —>
+      // this pertains to better breaks specifically
+      // it has a video hero and a single video in the
+      // body of the page
+      //
+      const soloVid = vidsArray[1];
+      const soloBtn = vidsBtnsArray[0];
+
+      soloVid.addEventListener("click", (event) => {
+        console.log("soloBtn", soloBtn);
+        if (soloVid.paused) {
+          soloBtn.classList.add("project-video__button--hidden");
+          soloVid.volume = 0.3;
+          soloVid.play();
         } else {
-          vidsArray[i].pause();
-          vidsBtnsArray[i].classList.remove("project-video__button--hidden");
-        }
-  
-        if (vidsArray[i].playing) {
-          vidsArray[i].pause();
-          vidsBtnsArray[i].classList.remove("project-video__button--hidden");
+          soloVid.pause();
+          soloBtn.classList.remove("project-video__button--hidden");
         }
       });
     }
   }, 100);
+  // }
 };

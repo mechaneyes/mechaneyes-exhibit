@@ -62,7 +62,9 @@ body {
 
   .mapboxgl-popup-close-button {
     // top: calc(20px + 7.5vh);
-    right: 6vw;
+    top: 20px;
+    right: 20px;
+    width: 35px;
     height: 35px;
     font-size: 35px;
     color: #02ff87;
@@ -71,6 +73,7 @@ body {
     border: 1px solid #02ff87;
     background-color: #001634;
     transition: all 0.2s;
+    z-index: 1;
 
     &:hover {
       color: #001634;
