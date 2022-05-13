@@ -77,10 +77,10 @@ export const markersProjectModals = (map, geoFile) => {
           // 
           popupInner.addEventListener("click", (e) => {
             e.stopPropagation();
+          });
 
-            popupParent.addEventListener("click", () => {
-              popup.remove();
-            });
+          popupParent.addEventListener("click", () => {
+            popup.remove();
           });
         });
       }

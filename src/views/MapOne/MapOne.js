@@ -38,12 +38,12 @@ const MapOne = () => {
   // const [lat, setLat] = useState(38.95397959307656);
 
   // Desktop Start
-  // const [lng, setLng] = useState(-120.46122859325533);
-  // const [lat, setLat] = useState(38.738060959397785);
+  const [lng, setLng] = useState(-120.46122859325533);
+  const [lat, setLat] = useState(38.738060959397785);
 
   // Test Locations
-  const [lng, setLng] = useState(-120.3339982540318);
-  const [lat, setLat] = useState(39.29408664826935);
+  // const [lng, setLng] = useState(-120.3339982540318);
+  // const [lat, setLat] = useState(39.29408664826935);
 
   const [zoom, setZoom] = useState(15);
 
