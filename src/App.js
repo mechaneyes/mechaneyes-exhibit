@@ -1,5 +1,4 @@
 import MapOne from "./views/MapOne/MapOne";
-import MapMobile from "./views/MapMobile/MapMobile";
 import useWindowDimensions from "./utils/windowDimensions";
 
 function App() {

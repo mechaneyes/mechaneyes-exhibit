@@ -15,6 +15,7 @@ import { markersProjectModals } from "./markersProjectModals";
 import { modals } from "./modals";
 
 import "./MapOne.scss";
+import "./MapMobile.scss";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWVjaGFuZXllcyIsImEiOiJ6V2F6bmFNIn0.mauWWMuRub6GkCxkc49sTg";
