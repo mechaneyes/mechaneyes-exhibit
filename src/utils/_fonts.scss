@@ -1,3 +1,4 @@
+@use "tools" as *;
 @import url(https://use.typekit.net/dbx2czm.css);
 
 // Cholla Sans
@@ -44,11 +45,13 @@
 h1 {
   @include cholla-unicase;
   font-size: 3.5rem;
+  line-height: 0.8;
 }
 
 h2 {
   @include cholla-unicase;
   font-size: 2.4rem;
+  line-height: 1;
 }
 
 h3 {
@@ -64,4 +67,10 @@ p {
     &.ital {
         @include cholla-unicase-reg-it;
     }
+}
+
+@include bp(mob) {
+  h1 {
+    font-size: 3rem;
+  }
 }
