@@ -48,7 +48,16 @@ const MapOne = () => {
 
   const [zoom, setZoom] = useState(15);
 
-  const [activeNav, setActiveNav] = useState("mechaneyes");
+  // ————————————————————————————————————o Lifting Current Category —>
+  // The currently displayed category is being set by the
+  // child, NavMobile component. liftCat is passed as a prop 
+  // and the state is set by setActiveCat()
+  // 
+  const [activeCat, setActiveCat] = useState("mechaneyes");
+  const liftCat = theCat => {
+    setActiveCat(theCat)
+    console.log('activeCat', activeCat)
+  }
 
   let geoFile;
   const { height, width } = useWindowDimensions();
@@ -58,8 +67,6 @@ const MapOne = () => {
     } else {
       geoFile = "/data/mountains.geojson";
     }
-
-    // console.log('geoFile', geoFile)
   });
 
   // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
@@ -81,7 +88,7 @@ const MapOne = () => {
       // ————————————————————————————————————o Project Markers + Modals —>
       //
       markersProjectModals(map.current, geoFile);
-      modals(map.current);
+      modals(map.current, activeCat);
     });
   });
 
@@ -117,7 +124,7 @@ const MapOne = () => {
     <main className="map-one">
       <div className="nav-wrapper">
         <NavPC map={map} />
-        <NavMobile map={map} />
+        <NavMobile map={map} liftCat={liftCat} />
       </div>
       <div ref={mapContainer} className="map-container" />
     </main>

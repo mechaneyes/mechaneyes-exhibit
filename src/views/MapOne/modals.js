@@ -1,9 +1,14 @@
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
-export const modals = (map) => {
+export const modals = (map, activeCat) => {
   let staticCards;
   let infoCards;
+
+  // console.log('activeCatactiveCat', activeCat)
+  // if (activeCat == "design") {
+  //   console.log('designey')
+  // }
 
   fetch("/data/mountains.geojson")
     .then((res) => res.json())

@@ -3,17 +3,15 @@ import { useState, useEffect } from "react";
 import useWindowDimensions from "../../../utils/windowDimensions";
 import "./NavMobile.scss";
 
-let Nav = (props) => {
+let Nav = ( { map, liftCat } ) => {
   const { height, width } = useWindowDimensions();
-  const map = props.map;
+  // const map = props.map;
 
   const [isVisible, setVisible] = useState(false);
   const toggleHamb = () => {
     setVisible(!isVisible);
     console.log(isVisible);
   };
-
-  const [activeNav, setActiveNav] = useState("mechaneyes");
 
   // ————————————————————————————————————o————————————————————————————————————o scrollZoom -->
   // ———————————————————————————————————— scrollZoom —>
@@ -24,7 +22,7 @@ let Nav = (props) => {
   //
   useEffect(() => {
     fetch("/data/mountains.geojson").then(() => {
-      if (activeNav === "mechaneyes") {
+      if (liftCat === "mechaneyes") {
         map.current.scrollZoom.disable();
       } else {
         map.current.scrollZoom.enable();
@@ -99,7 +97,7 @@ let Nav = (props) => {
             className="mecha-nav__item mecha-nav__item--title"
             onClick={() => {
               fly(27, 0, 15, 10);
-              setActiveNav("mechaneyes");
+              liftCat("mechaneyes");
             }}
           >
             <h2 className="nav-headline nav-headline--mechaneyes nav-headline--active">
@@ -111,12 +109,12 @@ let Nav = (props) => {
             className="mecha-nav__item"
             onClick={() => {
               fly(0, 35, 13.3, 88);
-              setActiveNav("photography");
+              liftCat("photography");
             }}
           >
             <h2
               className={
-                activeNav == "photography"
+                liftCat == "photography"
                   ? "nav-headline nav-headline--photography nav-headline--active"
                   : "nav-headline nav-headline--photography"
               }
@@ -129,12 +127,12 @@ let Nav = (props) => {
             className="mecha-nav__item"
             onClick={() => {
               fly(6, 10, 11.81, 310, true);
-              setActiveNav("programming");
+              liftCat("programming");
             }}
           >
             <h2
               className={
-                activeNav == "programming"
+                liftCat == "programming"
                   ? "nav-headline nav-headline--programming nav-headline--active"
                   : "nav-headline nav-headline--programming"
               }
@@ -147,12 +145,12 @@ let Nav = (props) => {
             className="mecha-nav__item"
             onClick={() => {
               fly(18, 0, 13.3, 285);
-              setActiveNav("generative");
+              liftCat("generative");
             }}
           >
             <h2
               className={
-                activeNav == "generative"
+                liftCat == "generative"
                   ? "nav-headline nav-headline--generative nav-headline--active"
                   : "nav-headline nav-headline--generative"
               }
@@ -165,12 +163,12 @@ let Nav = (props) => {
             className="mecha-nav__item"
             onClick={() => {
               fly(13, 0, 13.5, 275);
-              setActiveNav("design");
+              liftCat("design");
             }}
           >
             <h2
               className={
-                activeNav == "design"
+                liftCat == "design"
                   ? "nav-headline nav-headline--design nav-headline--active"
                   : "nav-headline nav-headline--design"
               }
@@ -183,12 +181,12 @@ let Nav = (props) => {
             className="mecha-nav__item"
             onClick={() => {
               fly(28, 0, 15, 10);
-              setActiveNav("about");
+              liftCat("about");
             }}
           >
             <h2
               className={
-                activeNav == "about"
+                liftCat == "about"
                   ? "nav-headline nav-headline--about nav-headline--active"
                   : "nav-headline nav-headline--about"
               }
