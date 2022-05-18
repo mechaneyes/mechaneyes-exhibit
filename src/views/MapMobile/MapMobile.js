@@ -15,8 +15,8 @@ import mapboxgl from "!mapbox-gl";
 import { CSSTransition } from "react-transition-group";
 
 import useWindowDimensions from "../../utils/windowDimensions";
-import Nav from "../../components/layout/navigation/NavPC/NavPC";
-import HamburgerMenu from "../../components/layout/navigation/HamburgerMenu/HamburgerMenu";
+import Nav from "../../components/navigation/NavPC/NavPC";
+import NavMobile from "../../components/navigation/NavMobile/NavMobile";
 import AboutContext from "../../store/transition/transition.about.js";
 import About from "../About/About";
 
@@ -245,7 +245,7 @@ const MapMobile = () => {
           nodeRef={hamburgerRef}
         >
           <div ref={hamburgerRef} className="hamburger-holder">
-            <HamburgerMenu map={map} />
+            <NavMobile map={map} />
           </div>
         </CSSTransition>
         <div

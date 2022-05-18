@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import useWindowDimensions from "../../../../utils/windowDimensions";
+import useWindowDimensions from "../../../utils/windowDimensions";
 import "./NavPC.scss";
 
 let Nav = (props) => {

@@ -6,8 +6,8 @@ import { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
-import HamburgerMenu from "../../components/layout/navigation/HamburgerMenu/HamburgerMenu";
-import NavPC from "../../components/layout/navigation/NavPC/NavPC";
+import NavMobile from "../../components/navigation/NavMobile/NavMobile";
+import NavPC from "../../components/navigation/NavPC/NavPC";
 import useWindowDimensions from "../../utils/windowDimensions";
 
 import { setupMap } from "./setupMap";
@@ -46,6 +46,8 @@ const MapOne = () => {
   // const [lat, setLat] = useState(39.29408664826935);
 
   const [zoom, setZoom] = useState(15);
+
+  const [activeNav, setActiveNav] = useState("mechaneyes");
 
   let geoFile;
   const { height, width } = useWindowDimensions();
@@ -114,7 +116,7 @@ const MapOne = () => {
     <main className="map-one">
       <div className="nav-wrapper">
         <NavPC map={map} />
-        <HamburgerMenu map={map} />
+        <NavMobile map={map} />
       </div>
       <div ref={mapContainer} className="map-container" />
     </main>
