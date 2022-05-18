@@ -20,6 +20,8 @@ import "./MapMobile.scss";
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWVjaGFuZXllcyIsImEiOiJ6V2F6bmFNIn0.mauWWMuRub6GkCxkc49sTg";
 
+let firstLoad;
+
 const MapOne = () => {
   // const { height, width } = useWindowDimensions();
 
@@ -48,19 +50,11 @@ const MapOne = () => {
 
   const [zoom, setZoom] = useState(15);
 
-  // ————————————————————————————————————o Lifting Current Category —>
-  // The currently displayed category is being set by the
-  // child, NavMobile component. liftCat is passed as a prop 
-  // and the state is set by setActiveCat()
-  // 
-  const [activeCat, setActiveCat] = useState("mechaneyes");
-  const liftCat = theCat => {
-    setActiveCat(theCat)
-    console.log('activeCat', activeCat)
-  }
-
+  // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
+  // ————————————————————————————————————o MAPPIN —>
   let geoFile;
   const { height, width } = useWindowDimensions();
+
   useEffect(() => {
     if (width < 600) {
       geoFile = "/data/mobile.geojson";
@@ -69,8 +63,6 @@ const MapOne = () => {
     }
   });
 
-  // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
-  // ————————————————————————————————————o MAPPIN —>
   useEffect(() => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
@@ -90,6 +82,27 @@ const MapOne = () => {
       markersProjectModals(map.current, geoFile);
       modals(map.current, activeCat);
     });
+  });
+
+
+  // ————————————————————————————————————o————————————————————————————————————o Current Category -->
+  // ————————————————————————————————————o Lifting Current Category —>
+  // The currently displayed category is being set by the
+  // child, NavMobile component. liftCat is passed as a prop
+  // and the state is set by setActiveCat()
+  //
+  const [activeCat, setActiveCat] = useState("mechaneyes");
+  const liftCat = (theCat) => {
+    setActiveCat(theCat);
+    console.log("activeCat", activeCat);
+  };
+
+  useEffect(() => {
+    firstLoad = false;
+  }, []);
+
+  useEffect(() => {
+    modals(map.current, activeCat);
   });
 
   // ————————————————————————————————————o————————————————————————————————————o Tools -->
@@ -123,7 +136,7 @@ const MapOne = () => {
   return (
     <main className="map-one">
       <div className="nav-wrapper">
-        <NavPC map={map} />
+        <NavPC map={map} liftCat={liftCat} />
         <NavMobile map={map} liftCat={liftCat} />
       </div>
       <div ref={mapContainer} className="map-container" />

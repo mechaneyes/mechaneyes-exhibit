@@ -1,14 +1,9 @@
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
-export const modals = (map, activeCat) => {
+export let modals = (map, activeCat) => {
   let staticCards;
   let infoCards;
-
-  // console.log('activeCatactiveCat', activeCat)
-  // if (activeCat == "design") {
-  //   console.log('designey')
-  // }
 
   fetch("/data/mountains.geojson")
     .then((res) => res.json())
@@ -40,19 +35,21 @@ export const modals = (map, activeCat) => {
             .setLngLat(feature.geometry.coordinates)
             .addTo(map);
         } else {
-          // ————————————————————————————————————o————————————————————————————————————o Category Info Modals -->
-          // ———————————————————————————————————— Category Info Modals —>
-          // Added as markers glued in place via mountains.geojson
-          //
-          let infoFile = feature.properties.infoFile;
+        }
+
+        // ————————————————————————————————————o————————————————————————————————————o Category Info Modals -->
+        // ———————————————————————————————————— Category Info Modals —>
+        // Added as markers glued in place via mountains.geojson
+        //
+        const getInfoCard = (infoFileName) => {
+          // let infoFile = feature.properties.infoFile;
           const em = document.createElement("div");
-          em.className = `info-card info-card--hidden ${infoFile}`;
+          em.className = `info-card info-card--hidden ${infoFileName}`;
 
           // ———————————————————————————————————— Fetch Info/About HTML —>
-          fetch(`/info/${infoFile}.html`)
+          fetch(`/info/${infoFileName}.html`)
             .then((response) => response.text())
             .then((html) => {
-              // console.log(html);
               em.innerHTML = html;
             })
             .catch((err) => {
@@ -63,6 +60,40 @@ export const modals = (map, activeCat) => {
             new mapboxgl.Marker(em)
               .setLngLat(feature.geometry.coordinates)
               .addTo(map);
+          }
+        };
+
+        console.log('activeCat', activeCat)
+
+        if (activeCat == "photography") {
+          if (
+            Object.values(feature.properties).indexOf(
+              "info-card--photography"
+            ) > -1
+          ) {
+            console.log("feature", feature.properties.infoFile);
+            getInfoCard(feature.properties.infoFile);
+          }
+        } else if (activeCat == "programming") {
+          if (
+            Object.values(feature.properties).indexOf(
+              "info-card--programming"
+            ) > -1
+          ) {
+            getInfoCard(feature.properties.infoFile);
+          }
+        } else if (activeCat == "design") {
+          if (
+            Object.values(feature.properties).indexOf("info-card--design") > -1
+          ) {
+            getInfoCard(feature.properties.infoFile);
+          }
+        } else if (activeCat == "generative") {
+          if (
+            Object.values(feature.properties).indexOf("info-card--generative") >
+            -1
+          ) {
+            getInfoCard(feature.properties.infoFile);
           }
         }
       }

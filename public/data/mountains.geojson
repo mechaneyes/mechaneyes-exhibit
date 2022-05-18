@@ -21,7 +21,8 @@
       "properties": {
         "hide": "hide",
         "info": true,
-        "infoFile": "info-card--photography"
+        "infoFile": "info-card--photography",
+        "category": "photography"
       }
     },
     {
@@ -105,7 +106,8 @@
       "properties": {
         "hide": "hide",
         "info": true,
-        "infoFile": "info-card--programming"
+        "infoFile": "info-card--programming",
+        "category": "photography"
       }
     },
     {
@@ -204,7 +206,8 @@
       "properties": {
         "hide": "hide",
         "info": true,
-        "infoFile": "info-card--design"
+        "infoFile": "info-card--design",
+        "category": "design"
       }
     },
     {
@@ -276,7 +279,8 @@
       "properties": {
         "hide": "hide",
         "info": true,
-        "infoFile": "info-card--generative"
+        "infoFile": "info-card--generative",
+        "category": "generative"
       }
     },
     {

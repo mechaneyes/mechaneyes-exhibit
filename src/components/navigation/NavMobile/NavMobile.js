@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import useWindowDimensions from "../../../utils/windowDimensions";
 import "./NavMobile.scss";
 
-let Nav = ( { map, liftCat } ) => {
+let Nav = ({ map, liftCat }) => {
   const { height, width } = useWindowDimensions();
   // const map = props.map;
 
