@@ -10,7 +10,6 @@ let Nav = ({ map, liftCat }) => {
   const [isVisible, setVisible] = useState(false);
   const toggleHamb = () => {
     setVisible(!isVisible);
-    console.log(isVisible);
   };
 
   // ————————————————————————————————————o————————————————————————————————————o scrollZoom -->

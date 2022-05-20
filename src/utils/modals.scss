@@ -166,7 +166,10 @@ img {
 }
 
 .mapboxgl-marker.static-card {
+  // display: block;
   border: 1px solid #02ff87;
+  opacity: 1;
+  transition: opacity 0.8s;
 
   &.static-card--intro {
     z-index: 1;
@@ -179,6 +182,12 @@ img {
     padding: 0;
     border: 0;
     background-color: rgba(0, 22, 51, 1);
+  }
+
+  &.static-card--hidden {
+    // display: none !important;
+    opacity: 0;
+    transition: opacity 0.8s;
   }
 
   h3 {

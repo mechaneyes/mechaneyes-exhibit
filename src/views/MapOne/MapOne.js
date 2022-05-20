@@ -20,7 +20,7 @@ import "./MapMobile.scss";
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWVjaGFuZXllcyIsImEiOiJ6V2F6bmFNIn0.mauWWMuRub6GkCxkc49sTg";
 
-let firstLoad;
+let firstLoad = true
 
 const MapOne = () => {
   // const { height, width } = useWindowDimensions();
@@ -80,16 +80,15 @@ const MapOne = () => {
       // ————————————————————————————————————o Project Markers + Modals —>
       //
       markersProjectModals(map.current, geoFile);
-      modals(map.current, activeCat);
+      modals(map.current, activeCat, firstLoad);
     });
   });
 
-
   // ————————————————————————————————————o————————————————————————————————————o Current Category -->
-  // ————————————————————————————————————o Lifting Current Category —>
-  // The currently displayed category is being set by the
-  // child, NavMobile component. liftCat is passed as a prop
-  // and the state is set by setActiveCat()
+  // ————————————————————————————————————o Lifting Current Category Prop —>
+  // The currently displayed category is being set by the child, 
+  // NavMobile component. liftCat is passed as a prop and the state is 
+  // set by setActiveCat()
   //
   const [activeCat, setActiveCat] = useState("mechaneyes");
   const liftCat = (theCat) => {
@@ -98,11 +97,15 @@ const MapOne = () => {
   };
 
   useEffect(() => {
-    firstLoad = false;
+    setTimeout(() => {
+      firstLoad = false;
+    }, 2000)
   }, []);
 
   useEffect(() => {
-    modals(map.current, activeCat);
+    if (!firstLoad) {
+      modals(map.current, activeCat, firstLoad);
+    }
   });
 
   // ————————————————————————————————————o————————————————————————————————————o Tools -->
