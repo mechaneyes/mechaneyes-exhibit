@@ -66,15 +66,21 @@ export const markersProjectModals = (map, geoFile) => {
           const popupClose = document.querySelector(
             ".mapboxgl-popup-close-button"
           );
-          
+
           // Move close button to inside .project-modal sibling
           // Allows for proper positioning
-          // 
+          //
+          // TODO: is adding tons of buttons. One for each modal?
+          //
           popupInner.appendChild(popupClose);
+          console.log("popupClose", popupClose);
 
           // Close Modal ... but only when clicking outside the modal -- on
           // the page backtround -- not on the modal itself
-          // 
+          //
+          popupClose.onclick = function () {
+            popupParent.remove();
+          };
           popupInner.addEventListener("click", (e) => {
             e.stopPropagation();
           });

@@ -5,6 +5,15 @@ export let modals = (map, activeCat, firstLoad) => {
   let staticCards;
   let infoCards;
 
+  // ———————————————————————————————————— Remove Active Card —>
+  // Remove any cards on the page when navigating to the next
+  // category. They were getting piled on top of each other.
+  // 
+  let allCards = document.querySelectorAll('.info-card')
+  allCards.forEach(card => {
+    card.remove()
+  })
+
   fetch("/data/mountains.geojson")
     .then((res) => res.json())
     .then((result) => {
@@ -136,6 +145,22 @@ export let modals = (map, activeCat, firstLoad) => {
             }
           });
         }
+
+        // ———————————————————————————————————— Remove Active Card —>
+        // On clicking close button, strip card from the DOM
+        // 
+        let cardClose = document.querySelector('.mapboxgl-popup-close-button')        
+        cardClose.onclick = function() {
+          allCards = document.querySelectorAll('.info-card')
+          allCards.forEach(card => {
+            card.remove()
+          })
+        }
       });
-    });
+    })
+
+    // .then(() => {
+    //   let cardClose = document.querySelector('.mapboxgl-popup-close-button')
+    //   console.log('cardClose', cardClose)
+    // })
 };

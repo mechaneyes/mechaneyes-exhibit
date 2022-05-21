@@ -196,9 +196,135 @@ img {
   }
 }
 
+.map-one .mapboxgl-popup {
+  z-index: 2;
+}
+
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+  display: none;
+}
+
+.mapboxgl-popup-close-button {
+  display: none;
+}
+
+.map-one
+  .project-modal
+  .mapboxgl-popup-close-button {
+    display: block;
+  }
+
+// ————————————————————————————————————o————————————————————————————————————o Intro + About -->
+// ———————————————————————————————————— Intro + About —>
+.project.project--intro {
+  display: block;
+  width: 95vw;
+  height: 80vh;
+  max-width: 1010px;
+  max-height: 690px;
+  // padding: 20px;
+  background-color: rgba(0, 22, 51, 0.4);
+  opacity: 1;
+  transition: opacity 0.8s;
+
+  @include bp(mob) {
+    width: 100%;
+    height: 100%;
+  }
+
+  &--hidden {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  &__object {
+    width: 100%;
+    height: 100%;
+  }
+
+  .static-card__object {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(2, 255, 135, 0.6);
+  }
+
+  &--about {
+    border: 1px solid #02ff87;
+    background-color: rgba(0, 22, 51, 0.4);
+  }
+
+  &--mechaneyes {
+    border: 1px solid #02ff87;
+  }
+}
+
+// ————————————————————————————————————o————————————————————————————————————o Info Modals -->
+// ———————————————————————————————————— Info Modals —>
+.map-container {
+  .info-card {
+    display: block;
+    width: 500px;
+    height: auto;
+    padding: 10px 30px 15px;
+    border: 1px solid #02ff87;
+    background-color: rgba(0, 22, 51, 0.8);
+    opacity: 1;
+    transition: opacity 0.8s;
+    z-index: 1;
+
+    &--hidden {
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    h3 {
+      padding-bottom: 5px;
+      font-family: cholla-unicase, sans-serif;
+      line-height: 1;
+    }
+
+    .mapboxgl-popup-close-button {
+      display: none;
+    }
+
+    .info-cta {
+      display: inline;
+      border-bottom: 1px solid white;
+    }
+
+    &--intro {
+      width: 95vw;
+      height: 80vh;
+      padding: 0;
+      background-color: rgba(0, 22, 51, 0.1);
+    }
+
+    @include bp(mob) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) !important;
+      width: 90vw;
+      height: 80vh;
+      background-color: rgba(0, 22, 51, 1);
+      transition-duration: 0s;
+
+      h3 {
+        margin-top: 45%;
+      }
+
+      .mapboxgl-popup-close-button {
+        display: block;
+        top: 10px;
+        right: 10px;
+      }
+    }
+  }
+}
+
 // ————————————————————————————————————o————————————————————————————————————o Project Modals -->
 // ———————————————————————————————————— Project Modals —>
-.project-modal {
+.map-one .project-modal {
   // pointer-events: none;
   position: absolute;
   top: 50%;
@@ -231,6 +357,11 @@ img {
   object {
     width: 100%;
     height: 100%;
+  }
+
+  .mapboxgl-popup-close-button {
+    top: 20px;
+    right: 20px;
   }
 }
 
