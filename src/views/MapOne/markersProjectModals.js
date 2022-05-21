@@ -4,7 +4,7 @@ import mapboxgl from "!mapbox-gl";
 // ————————————————————————————————————o————————————————————————————————————o Project Markers + Modals -->
 // ———————————————————————————————————— Project Markers + Modals —>
 //
-export const markersProjectModals = (map, geoFile) => {
+export const markersProjectModals = (map, geoFile, activeCat) => {
   // Create popup, but don't add to map yet
   const popup = new mapboxgl.Popup({
     closeButton: true,
@@ -13,6 +13,30 @@ export const markersProjectModals = (map, geoFile) => {
 
   let zoomLevel = map.getZoom();
   // console.log('zoomLevelzoomLevel', zoomLevel)
+
+  setTimeout(() => {
+    if (activeCat === "about") {
+      // ———————————————————————————————————— Fetch Project HTML —>
+      fetch("/info/info-card--about.html")
+        .then((response) => response.text())
+        .then((html) => {
+          // console.log(html);
+          popup
+            .setLngLat([-120.37764069625877, 39.126354852592584])
+            .setHTML(`<div class="project-modal">${html}</div>`)
+            .addTo(map);
+        })
+        .then(() => {
+          const aboutModal = document.getElementsByClassName("mapboxgl-popup");
+          const aboutCloseBtn = document.querySelectorAll(
+            ".mapboxgl-popup-close-button"
+          );
+        })
+        .catch((err) => {
+          console.log("not so fetchy");
+        });
+    }
+  }, 50);
 
   fetch(geoFile)
     .then((res) => res.json())
@@ -35,6 +59,7 @@ export const markersProjectModals = (map, geoFile) => {
           // ———————————————————————————————————— —>
           //
           marker.getElement().addEventListener("click", () => {
+            console.log("marker click");
             let coordinates = feature.geometry.coordinates.slice();
             let htmlFile = feature.properties.htmlFile;
 
@@ -73,20 +98,53 @@ export const markersProjectModals = (map, geoFile) => {
           // TODO: is adding tons of buttons. One for each modal?
           //
           popupInner.appendChild(popupClose);
-          console.log("popupClose", popupClose);
+          // console.log("popupClose", popupClose);
 
           // Close Modal ... but only when clicking outside the modal -- on
           // the page backtround -- not on the modal itself
           //
-          popupClose.onclick = function () {
-            popupParent.remove();
-          };
+          // Closing About page and revealing hamburger nav
+          //
+          let aboutCloseBtn = document.querySelector(
+            ".project--about + .mapboxgl-popup-close-button"
+          );
+          if (aboutCloseBtn) {
+            aboutCloseBtn.onclick = function () {
+              console.log("aboutCloseBtn aboutCloseBtn aboutCloseBtn");
+              let hamburgerReplace = document.querySelector(".hamburger");
+              hamburgerReplace.classList.remove("hamburger--hidden");
+              popup.remove();
+            };
+            // if NOT About page, just close the modal
+            //
+          } else {
+            popupClose.onclick = function () {
+              popupParent.remove();
+            };
+          }
+
           popupInner.addEventListener("click", (e) => {
             e.stopPropagation();
           });
 
           popupParent.addEventListener("click", () => {
             popup.remove();
+          });
+
+          // ———————————————————————————————————— After About Close.. Hammy —>
+          // Messy, I know ... after About page is shown, the hamburger menu
+          // is revealed. Below is what's needed to then hide the menu when
+          // selecting the next category to navigate to
+          //
+          const headlineClicked = document.querySelectorAll(".nav-headline");
+          headlineClicked.forEach((headline) => {
+            headline.onclick = function () {
+              setTimeout(() => {
+                const hamburgerReplace = document.querySelector(".hamburger");
+                hamburgerReplace.classList.add("hamburger--hidden");
+                console.log("hamburgerReplace", hamburgerReplace);
+              }, 50);
+            };
           });
         });
       }

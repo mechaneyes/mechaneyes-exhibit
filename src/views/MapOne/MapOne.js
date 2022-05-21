@@ -20,7 +20,7 @@ import "./MapMobile.scss";
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWVjaGFuZXllcyIsImEiOiJ6V2F6bmFNIn0.mauWWMuRub6GkCxkc49sTg";
 
-let firstLoad = true
+let firstLoad = true;
 
 const MapOne = () => {
   // const { height, width } = useWindowDimensions();
@@ -79,15 +79,15 @@ const MapOne = () => {
 
       // ————————————————————————————————————o Project Markers + Modals —>
       //
-      markersProjectModals(map.current, geoFile);
+      markersProjectModals(map.current, geoFile, activeCat);
       modals(map.current, activeCat, firstLoad);
     });
   });
 
   // ————————————————————————————————————o————————————————————————————————————o Current Category -->
   // ————————————————————————————————————o Lifting Current Category Prop —>
-  // The currently displayed category is being set by the child, 
-  // NavMobile component. liftCat is passed as a prop and the state is 
+  // The currently displayed category is being set by the child,
+  // NavMobile component. liftCat is passed as a prop and the state is
   // set by setActiveCat()
   //
   const [activeCat, setActiveCat] = useState("mechaneyes");
@@ -99,12 +99,13 @@ const MapOne = () => {
   useEffect(() => {
     setTimeout(() => {
       firstLoad = false;
-    }, 2000)
+    }, 2000);
   }, []);
 
   useEffect(() => {
     if (!firstLoad) {
       modals(map.current, activeCat, firstLoad);
+      markersProjectModals(map.current, geoFile, activeCat);
     }
   });
 
@@ -112,29 +113,29 @@ const MapOne = () => {
   // ————————————————————————————————————o Lat+Long of Mouse —>
   // output lat+long of mouse click position to console
   //
-  useEffect(() => {
-    map.current.on("click", (e) => {
-      let latlong =
-        '"coordinates": ' +
-        JSON.stringify(e.lngLat.wrap())
-          .replace('"lng":', "")
-          .replace('"lat":', " ")
-          .replace("{", "[")
-          .replace("}", "]");
-      console.log(latlong);
-    });
+  // useEffect(() => {
+  //   map.current.on("click", (e) => {
+  //     let latlong =
+  //       '"coordinates": ' +
+  //       JSON.stringify(e.lngLat.wrap())
+  //         .replace('"lng":', "")
+  //         .replace('"lat":', " ")
+  //         .replace("{", "[")
+  //         .replace("}", "]");
+  //     console.log(latlong);
+  //   });
 
-    map.current.on("touchstart", (e) => {
-      let latlong =
-        '"coordinates": ' +
-        JSON.stringify(e.lngLat.wrap())
-          .replace('"lng":', "")
-          .replace('"lat":', " ")
-          .replace("{", "[")
-          .replace("}", "]");
-      console.log(latlong);
-    });
-  });
+  //   map.current.on("touchstart", (e) => {
+  //     let latlong =
+  //       '"coordinates": ' +
+  //       JSON.stringify(e.lngLat.wrap())
+  //         .replace('"lng":', "")
+  //         .replace('"lat":', " ")
+  //         .replace("{", "[")
+  //         .replace("}", "]");
+  //     console.log(latlong);
+  //   });
+  // });
 
   return (
     <main className="map-one">

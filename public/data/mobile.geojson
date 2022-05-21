@@ -412,7 +412,7 @@
         "theFocuss": "// ———————————————————————————————————— About —>",
         "theArray#": "// ———————————————————————————————————— 28 —>",
         "htmlFile": "about",
-        "staticClass": "static-card--about"
+        "infoFile": "info-card--about"
       }
     }
   ]

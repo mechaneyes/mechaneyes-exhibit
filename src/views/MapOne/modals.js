@@ -2,9 +2,6 @@ import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
 export let modals = (map, activeCat, firstLoad) => {
-  let staticCards;
-  let infoCards;
-
   // ———————————————————————————————————— Remove Active Card —>
   // Remove any cards on the page when navigating to the next
   // category. They were getting piled on top of each other.
@@ -23,6 +20,7 @@ export let modals = (map, activeCat, firstLoad) => {
         // Added as markers glued in place via mountains.geojson
         //
         const getInfoCard = (infoFileName) => {
+          // console.log('infoFileName', infoFileName)
           const em = document.createElement("div");
           em.className = `info-card info-card--hidden ${infoFileName}`;
 
@@ -43,7 +41,7 @@ export let modals = (map, activeCat, firstLoad) => {
 
         // console.log("activeCat", activeCat);
 
-        if (activeCat == "mechaneyes") {
+        if (activeCat === "mechaneyes") {
           if (
             Object.values(feature.properties).indexOf("info-card--intro") > -1
           ) {
@@ -58,14 +56,14 @@ export let modals = (map, activeCat, firstLoad) => {
               introCard.classList.remove("info-card--hidden");
             }
           }
-        } else if (activeCat == "about") {
+        } else if (activeCat === "about") {
           if (
             Object.values(feature.properties).indexOf("info-card--about") > -1
           ) {
             // console.log("feature", feature.properties.infoFile);
-            getInfoCard(feature.properties.infoFile);
+            // getInfoCard(feature.properties.infoFile);
           }
-        } else if (activeCat == "photography") {
+        } else if (activeCat === "photography") {
           if (
             Object.values(feature.properties).indexOf(
               "info-card--photography"
@@ -74,7 +72,7 @@ export let modals = (map, activeCat, firstLoad) => {
             // console.log("feature", feature.properties.infoFile);
             getInfoCard(feature.properties.infoFile);
           }
-        } else if (activeCat == "programming") {
+        } else if (activeCat === "programming") {
           if (
             Object.values(feature.properties).indexOf(
               "info-card--programming"
@@ -82,13 +80,13 @@ export let modals = (map, activeCat, firstLoad) => {
           ) {
             getInfoCard(feature.properties.infoFile);
           }
-        } else if (activeCat == "design") {
+        } else if (activeCat === "design") {
           if (
             Object.values(feature.properties).indexOf("info-card--design") > -1
           ) {
             getInfoCard(feature.properties.infoFile);
           }
-        } else if (activeCat == "generative") {
+        } else if (activeCat === "generative") {
           if (
             Object.values(feature.properties).indexOf("info-card--generative") >
             -1
@@ -100,13 +98,9 @@ export let modals = (map, activeCat, firstLoad) => {
     })
 
     .then(() => {
-      staticCards = document.querySelectorAll(".static-card");
-      infoCards = document.querySelectorAll(".info-card");
+      let infoCards = document.querySelectorAll(".info-card");
 
       map.on("movestart", () => {
-        for (const card of staticCards) {
-          card.classList.add("static-card--hidden");
-        }
         for (const card of infoCards) {
           card.classList.add("info-card--hidden");
         }
@@ -114,16 +108,7 @@ export let modals = (map, activeCat, firstLoad) => {
 
       map.on("moveend", () => {
         let zoomLevel = map.getZoom();
-        console.log("zoomLevel", zoomLevel);
-
-        for (const card of staticCards) {
-          if (zoomLevel >= 13.4) {
-            card.style.display = "block";
-            card.classList.remove("static-card--hidden");
-          } else {
-            card.style.display = "none";
-          }
-        }
+        // console.log("zoomLevel", zoomLevel);
 
         for (const card of infoCards) {
           if (window.innerWidth < 425 && zoomLevel >= 12) {
@@ -146,15 +131,17 @@ export let modals = (map, activeCat, firstLoad) => {
           });
         }
 
-        // ———————————————————————————————————— Remove Active Card —>
-        // On clicking close button, strip card from the DOM
+        // ———————————————————————————————————— Close Card on Click —>
         // 
-        let cardClose = document.querySelector('.mapboxgl-popup-close-button')        
-        cardClose.onclick = function() {
-          allCards = document.querySelectorAll('.info-card')
-          allCards.forEach(card => {
-            card.remove()
-          })
+        let cardClose = document.querySelector('.mapboxgl-popup-close-button') 
+        if (cardClose) {
+          cardClose.onclick = function() {
+            allCards = document.querySelectorAll('.info-card')
+            allCards.forEach(card => {
+              card.classList.add("info-card--hidden");
+              card.remove()
+            })
+          }
         }
       });
     })
