@@ -14,27 +14,25 @@ export const markersProjectModals = (map, geoFile, activeCat) => {
   let zoomLevel = map.getZoom();
   // console.log('zoomLevelzoomLevel', zoomLevel)
 
+  // ———————————————————————————————————— About Modal —>
+  //
+  console.log("window.innerWidth", window.innerWidth);
   setTimeout(() => {
-    if (activeCat === "about") {
-      // ———————————————————————————————————— Fetch Project HTML —>
-      fetch("/info/info-card--about.html")
-        .then((response) => response.text())
-        .then((html) => {
-          // console.log(html);
-          popup
-            .setLngLat([-120.37764069625877, 39.126354852592584])
-            .setHTML(`<div class="project-modal">${html}</div>`)
-            .addTo(map);
-        })
-        .then(() => {
-          const aboutModal = document.getElementsByClassName("mapboxgl-popup");
-          const aboutCloseBtn = document.querySelectorAll(
-            ".mapboxgl-popup-close-button"
-          );
-        })
-        .catch((err) => {
-          console.log("not so fetchy");
-        });
+    if (window.innerWidth < 767) {
+      if (activeCat === "about") {
+        fetch("/info/info-card--about.html")
+          .then((response) => response.text())
+          .then((html) => {
+            // console.log(html);
+            popup
+              .setLngLat([-120.37764069625877, 39.126354852592584])
+              .setHTML(`<div class="project-modal">${html}</div>`)
+              .addTo(map);
+          })
+          .catch((err) => {
+            console.log("not so fetchy");
+          });
+      }
     }
   }, 50);
 

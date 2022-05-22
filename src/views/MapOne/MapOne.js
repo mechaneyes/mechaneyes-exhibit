@@ -140,7 +140,7 @@ const MapOne = () => {
   return (
     <main className="map-one">
       <div className="nav-wrapper">
-        <NavPC map={map} liftCat={liftCat} />
+        <NavPC map={map} liftCat={liftCat} activeCat={activeCat} />
         <NavMobile map={map} liftCat={liftCat} />
       </div>
       <div ref={mapContainer} className="map-container" />

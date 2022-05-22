@@ -61,7 +61,7 @@ export let modals = (map, activeCat, firstLoad) => {
             Object.values(feature.properties).indexOf("info-card--about") > -1
           ) {
             // console.log("feature", feature.properties.infoFile);
-            // getInfoCard(feature.properties.infoFile);
+            getInfoCard(feature.properties.infoFile);
           }
         } else if (activeCat === "photography") {
           if (
