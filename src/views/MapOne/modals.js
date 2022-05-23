@@ -112,13 +112,14 @@ export let modals = (map, activeCat, firstLoad) => {
 
         for (const card of infoCards) {
           if (window.innerWidth < 425 && zoomLevel >= 12) {
-            card.style.display = "block";
+            // card.style.display = "block";
             card.classList.remove("info-card--hidden");
           } else if (zoomLevel >= 13) {
-            card.style.display = "block";
+            // card.style.display = "block";
             card.classList.remove("info-card--hidden");
           } else {
-            card.style.display = "none";
+            // card.style.display = "none";
+            card.classList.remove("info-card--hidden");
           }
         }
 
