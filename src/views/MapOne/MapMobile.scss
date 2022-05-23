@@ -1,4 +1,5 @@
 @import url("https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css");
+@import "../../utils/breakpoints.scss";
 
 :root {
   --height: 100vh;
@@ -6,9 +7,13 @@
 
 html,
 body {
-  height: calc(var(--height) - 1px);
+  // height: calc(var(--height) - 1px);
   overflow: hidden;
   box-sizing: border-box;
+
+  @include bp(mob) {
+    height: calc(var(--window-inner-height) - 1px);
+  }
 }
 
 body {
@@ -23,6 +28,11 @@ body {
 .map-one {
   width: 100vw;
   height: 100vh;
+  
+  @include bp(mob) {
+    position: relative;
+    height: -webkit-fill-available;
+  }
 
   .mecha-nav {
     top: 60%;
@@ -32,6 +42,10 @@ body {
 .map-container {
   width: 100vw;
   height: var(--height);
+
+  @include bp(mob) {
+    height: 100%;
+  }
 }
 
 .nav-visible {

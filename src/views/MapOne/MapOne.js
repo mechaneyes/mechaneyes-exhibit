@@ -64,12 +64,22 @@ const MapOne = () => {
   });
 
   useEffect(() => {
+    if (width < 600) {
+      document.documentElement.style.setProperty(
+        "--window-inner-height",
+        `${window.innerHeight}px`
+      );
+    }
+  });
+
+  useEffect(() => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/mechaneyes/ckb6f9oyu2j4l1ilayacdz8yy",
       center: [lng, lat],
       zoom: zoom,
+      interactive: false,
     });
 
     map.current.on("load", () => {

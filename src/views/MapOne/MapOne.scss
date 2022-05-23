@@ -36,6 +36,7 @@ body {
 
     @include bp(mob) {
       z-index: 2;
+      height: -webkit-fill-available;
     }
   }
 
@@ -44,6 +45,11 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: transparent;
+
+    @include bp(mob) {
+      height: -webkit-fill-available;
+      height: 100%;
+    }
   }
 
   @include bp(mob) {
