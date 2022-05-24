@@ -12,7 +12,7 @@ import useWindowDimensions from "../../utils/windowDimensions";
 
 import { setupMap } from "./setupMap";
 import { markersProjectModals } from "./markersProjectModals";
-import { modals } from "./modals";
+import { infoCards } from "./infoCards";
 
 import "./MapOne.scss";
 import "./MapMobile.scss";
@@ -70,6 +70,17 @@ const MapOne = () => {
         `${window.innerHeight}px`
       );
     }
+
+    // Is this an iOS device?
+    var isIOS =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+    if (isIOS) {
+      console.log("This is a IOS device");
+      document.querySelector('.map-one').style.height = '-webkit-fill-available'
+    } else {
+      console.log("This is Not a IOS device");
+    }
   });
 
   useEffect(() => {
@@ -79,7 +90,7 @@ const MapOne = () => {
       style: "mapbox://styles/mechaneyes/ckb6f9oyu2j4l1ilayacdz8yy",
       center: [lng, lat],
       zoom: zoom,
-      interactive: false,
+      // interactive: disableInteractive,
     });
 
     map.current.on("load", () => {
@@ -90,7 +101,7 @@ const MapOne = () => {
       // ————————————————————————————————————o Project Markers + Modals —>
       //
       markersProjectModals(map.current, geoFile, activeCat);
-      modals(map.current, activeCat, firstLoad);
+      infoCards(map.current, activeCat, firstLoad);
     });
   });
 
@@ -103,7 +114,7 @@ const MapOne = () => {
   const [activeCat, setActiveCat] = useState("mechaneyes");
   const liftCat = (theCat) => {
     setActiveCat(theCat);
-    console.log("activeCat", activeCat);
+    // console.log("liftedCat", activeCat);
   };
 
   useEffect(() => {
@@ -114,7 +125,7 @@ const MapOne = () => {
 
   useEffect(() => {
     if (!firstLoad) {
-      modals(map.current, activeCat, firstLoad);
+      infoCards(map.current, activeCat, firstLoad);
       markersProjectModals(map.current, geoFile, activeCat);
     }
   });

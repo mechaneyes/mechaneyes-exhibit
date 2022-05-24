@@ -7,7 +7,7 @@ import mapboxgl from "!mapbox-gl";
 export const markersProjectModals = (map, geoFile, activeCat) => {
   // Create popup, but don't add to map yet
   const popup = new mapboxgl.Popup({
-    closeButton: true,
+    closeButton: false,
     closeOnClick: false,
   });
 
@@ -57,7 +57,6 @@ export const markersProjectModals = (map, geoFile, activeCat) => {
           // ———————————————————————————————————— —>
           //
           marker.getElement().addEventListener("click", () => {
-            console.log("marker click");
             let coordinates = feature.geometry.coordinates.slice();
             let htmlFile = feature.properties.htmlFile;
 
@@ -68,7 +67,6 @@ export const markersProjectModals = (map, geoFile, activeCat) => {
               .then(videosLoad())
               // .then(videoPlayPause())
               .then((html) => {
-                // console.log(html);
                 popup
                   .setLngLat(coordinates)
                   .setHTML(`<div class="project-modal">${html}</div>`)
@@ -87,37 +85,53 @@ export const markersProjectModals = (map, geoFile, activeCat) => {
           const popupParent = document.querySelector(".mapboxgl-popup-content");
           const popupInner = document.querySelector(".project-modal");
           const popupClose = document.querySelector(
-            ".mapboxgl-popup-close-button"
+            // ".mapboxgl-popup-close-button"
+            ".project-close-button"
           );
 
           // Move close button to inside .project-modal sibling
           // Allows for proper positioning
           //
-          // TODO: is adding tons of buttons. One for each modal?
-          //
+          // TODO: lotta close buttons being added. limit it to the one - https://trello.com/c/8bMdPnP4/56-todo-lotta-close-buttons-being-added-limit-it-to-the-one
           popupInner.appendChild(popupClose);
-          // console.log("popupClose", popupClose);
 
+          // ———————————————————————————————————— About Popup —>
           // Close Modal ... but only when clicking outside the modal -- on
           // the page backtround -- not on the modal itself
           //
           // Closing About page and revealing hamburger nav
           //
+          //TODO: TODO About modal re-added after hidden and hamburger displayed - https://trello.com/c/dxOrLXyU/59-todo-about-modal-re-added-after-hidden-and-hamburger-displayed
           let aboutCloseBtn = document.querySelector(
             ".project--about + .mapboxgl-popup-close-button"
           );
           if (aboutCloseBtn) {
             aboutCloseBtn.onclick = function () {
               console.log("aboutCloseBtn aboutCloseBtn aboutCloseBtn");
+              document
+                .querySelector(".mapboxgl-popup-content")
+                .classList.add("mapboxgl-popup-content--hidden");
+              setTimeout(() => {
+                document
+                  .querySelector(".mapboxgl-popup-content--hidden")
+                  .remove();
+              }, 600);
+
               let hamburgerReplace = document.querySelector(".hamburger");
               hamburgerReplace.classList.remove("hamburger--hidden");
-              popup.remove();
             };
-            // if NOT About page, just close the modal
+            // if NOT About page, fade out and close the modal
             //
           } else {
             popupClose.onclick = function () {
-              popupParent.remove();
+              popupParent.classList.add("mapboxgl-popup-content--hidden");
+
+              setTimeout(() => {
+                document
+                  .querySelector(".mapboxgl-popup-content--hidden")
+                  .remove();
+                popupParent.classList.remove("mapboxgl-popup-content--hidden");
+              }, 600);
             };
           }
 
@@ -125,9 +139,9 @@ export const markersProjectModals = (map, geoFile, activeCat) => {
             e.stopPropagation();
           });
 
-          popupParent.addEventListener("click", () => {
-            popup.remove();
-          });
+          // popupParent.addEventListener("click", () => {
+          //   popup.remove();
+          // });
 
           // ———————————————————————————————————— After About Close.. Hammy —>
           // Messy, I know ... after About page is shown, the hamburger menu
@@ -149,6 +163,7 @@ export const markersProjectModals = (map, geoFile, activeCat) => {
     });
 };
 
+//TODO: TODO: Move these three functions to own file - https://trello.com/c/WebrWOBn/60-todo-move-these-three-functions-to-own-file
 // ————————————————————————————————————o————————————————————————————————————o Images+Video -->
 // ———————————————————————————————————— Img Sizing + Aspect Ratio —>
 // Programmatically setting widths + heights + aspect ratios of all

@@ -29,9 +29,12 @@ body {
   width: 100vw;
   height: 100vh;
   
+  // Detect if iOS
+  // https://gist.github.com/codearryaas/d6bc868d9f545b7d658235128fb595af
+  // 
   @include bp(mob) {
     position: relative;
-    height: -webkit-fill-available;
+    // height: -webkit-fill-available;
   }
 
   .mecha-nav {

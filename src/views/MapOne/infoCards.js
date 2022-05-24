@@ -1,7 +1,7 @@
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
-export let modals = (map, activeCat, firstLoad) => {
+export let infoCards = (map, activeCat, firstLoad) => {
   // ———————————————————————————————————— Remove Active Card —>
   // Remove any cards on the page when navigating to the next
   // category. They were getting piled on top of each other.
@@ -106,6 +106,7 @@ export let modals = (map, activeCat, firstLoad) => {
         }
       });
 
+      //TODO: Animate info card fade in before moveend - https://trello.com/c/NJhz6wxR/57-animate-info-card-fade-in-before-moveend
       map.on("moveend", () => {
         let zoomLevel = map.getZoom();
         // console.log("zoomLevel", zoomLevel);
