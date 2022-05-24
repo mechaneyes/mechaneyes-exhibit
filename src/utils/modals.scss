@@ -374,8 +374,7 @@ img {
   margin-top: 20px;
   padding: 0;
   color: white;
-  border-top: 1px solid #02ff87;
-  border-bottom: 1px solid #02ff87;
+  border: 1px solid #02ff87;
   background-color: rgba(0, 22, 51, 1);
 
   @include bp(mob) {
@@ -911,8 +910,14 @@ img {
   // ————————————————————————————————————o————————————————————————————————————o Munari Veil -->
   // ———————————————————————————————————— Munari Veil —>
   &--munari-veil {
+    padding-bottom: 30px;
+    
     h1 {
       color: white;
+    }
+
+    h2 {
+      margin-bottom: 10px;
     }
 
     .hero {
@@ -930,33 +935,17 @@ img {
       }
     }
 
-    .gig {
-      .project-img {
-        display: block;
-        margin-bottom: 20px;
+    .main-content {
+      padding: 0 20px;
+    }
 
-        @include bp(mob) {
-          margin: 0;
-        }
+    .project-img {
+      display: block;
+      margin-bottom: 0;
+
+      @include bp(mob) {
+        margin: 0;
       }
-
-      &-slick {
-        width: 100%;
-        // max-width: 50%;
-        height: auto;
-
-        .project-img {
-          margin-bottom: 0;
-        }
-      }
-
-      // .fifty-fifty {
-      //   img {
-      //     width: 100%;
-      //     max-width: 90vh;
-      //     height: auto;
-      //   }
-      // }
     }
   }
 
