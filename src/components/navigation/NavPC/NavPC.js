@@ -3,8 +3,13 @@ import { useState, useEffect } from "react";
 import useWindowDimensions from "../../../utils/windowDimensions";
 import "./NavPC.scss";
 
-let Nav = ({ map, liftCat, activeCat }) => {
+let Nav = ({ map, geoFile, liftCat, activeCat }) => {
   const { height, width } = useWindowDimensions();
+
+  let isIpad = false
+  if (window.innerWidth <= 768) {
+    isIpad = true
+  }
 
   // ————————————————————————————————————o————————————————————————————————————o scrollZoom -->
   // ———————————————————————————————————— scrollZoom —>
@@ -14,7 +19,7 @@ let Nav = ({ map, liftCat, activeCat }) => {
   // to start the experience completely lost
   // 
   useEffect(() => {
-    fetch("/data/mountains.geojson").then(() => {
+    fetch(geoFile).then(() => {
       if (liftCat === "mechaneyes") {
         map.current.scrollZoom.disable();
       } else {
@@ -44,7 +49,7 @@ let Nav = ({ map, liftCat, activeCat }) => {
         zoom += 0.4;
         // console.log('isProgramming', isProgramming)``
       }
-      fetch("/data/mountains.geojson")
+      fetch(geoFile)
         .then((res) => res.json())
         .then((result) => {
           mountainsLoc = result.features;
@@ -92,7 +97,12 @@ let Nav = ({ map, liftCat, activeCat }) => {
         <a
           className="mecha-nav__item"
           onClick={() => {
-            fly(0, 0, 13.9, 198);
+            if (isIpad) {
+              fly(0, 0, 13.6, 238);
+            } else {
+              fly(0, 0, 13.9, 198);
+            }
+            
             liftCat("photography");
           }}
         >
@@ -110,7 +120,11 @@ let Nav = ({ map, liftCat, activeCat }) => {
         <a
           className="mecha-nav__item"
           onClick={() => {
-            fly(6, 30, 13.16, 25, true);
+            if (isIpad) {
+              fly(6, 30, 13.16, 300, true);
+            } else {
+              fly(6, 30, 13.16, 25, true);
+            }
             liftCat("programming");
           }}
         >

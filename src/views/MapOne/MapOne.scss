@@ -5,6 +5,10 @@
 body {
   color: white;
   background-color: #010f1e;
+
+  * {
+    box-sizing: border-box;
+  }
 }
 
 .mapboxgl-ctrl-bottom-right {
@@ -14,6 +18,8 @@ body {
 .map-container.mapboxgl-map {
   position: absolute;
   top: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .map-one {
@@ -26,6 +32,10 @@ body {
 
   button {
     // display: none;
+  }
+
+  .mapboxgl-control-container {
+    display: none;
   }
 
   .mapboxgl-popup {

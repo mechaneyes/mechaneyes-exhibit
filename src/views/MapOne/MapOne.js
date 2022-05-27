@@ -22,6 +22,17 @@ mapboxgl.accessToken =
 
 let firstLoad = true;
 
+let geoFile;
+// if (width <= 666) {
+//   geoFile = "/data/mobile.geojson";
+if (window.innerWidth <= 768) {
+  geoFile = "/data/mobileToIpad.geojson";
+} else {
+  geoFile = "/data/mountains.geojson";
+}
+console.log("geoFile", geoFile);
+
+
 const MapOne = () => {
   // const { height, width } = useWindowDimensions();
 
@@ -45,24 +56,15 @@ const MapOne = () => {
   const [lat, setLat] = useState(38.738060959397785);
 
   // Test Locations
-  // const [lng, setLng] = useState(-120.3339982540318);
+  // const [lng, setLng] = useState(-120.3319982540318);
   // const [lat, setLat] = useState(39.29408664826935);
 
   const [zoom, setZoom] = useState(15);
 
-  // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
-  // ————————————————————————————————————o MAPPIN —>
-  let geoFile;
   const { height, width } = useWindowDimensions();
 
-  useEffect(() => {
-    if (width < 600) {
-      geoFile = "/data/mobile.geojson";
-    } else {
-      geoFile = "/data/mountains.geojson";
-    }
-  });
-
+  // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
+  // ————————————————————————————————————o MAPPIN —>
   useEffect(() => {
     if (width < 600) {
       document.documentElement.style.setProperty(
@@ -77,7 +79,8 @@ const MapOne = () => {
 
     if (isIOS) {
       console.log("This is a IOS device");
-      document.querySelector('.map-one').style.height = '-webkit-fill-available'
+      document.querySelector(".map-one").style.height =
+        "-webkit-fill-available";
     } else {
       console.log("This is Not a IOS device");
     }
@@ -101,7 +104,7 @@ const MapOne = () => {
       // ————————————————————————————————————o Project Markers + Modals —>
       //
       markersProjectModals(map.current, geoFile, activeCat);
-      infoCards(map.current, activeCat, firstLoad);
+      infoCards(map.current, geoFile, activeCat, firstLoad);
     });
   });
 
@@ -125,7 +128,7 @@ const MapOne = () => {
 
   useEffect(() => {
     if (!firstLoad) {
-      infoCards(map.current, activeCat, firstLoad);
+      infoCards(map.current, geoFile, activeCat, firstLoad);
       markersProjectModals(map.current, geoFile, activeCat);
     }
   });
@@ -134,34 +137,39 @@ const MapOne = () => {
   // ————————————————————————————————————o Lat+Long of Mouse —>
   // output lat+long of mouse click position to console
   //
-  // useEffect(() => {
-  //   map.current.on("click", (e) => {
-  //     let latlong =
-  //       '"coordinates": ' +
-  //       JSON.stringify(e.lngLat.wrap())
-  //         .replace('"lng":', "")
-  //         .replace('"lat":', " ")
-  //         .replace("{", "[")
-  //         .replace("}", "]");
-  //     console.log(latlong);
-  //   });
+  useEffect(() => {
+    map.current.on("click", (e) => {
+      let latlong =
+        '"coordinates": ' +
+        JSON.stringify(e.lngLat.wrap())
+          .replace('"lng":', "")
+          .replace('"lat":', " ")
+          .replace("{", "[")
+          .replace("}", "]");
+      console.log(latlong);
+    });
 
-  //   map.current.on("touchstart", (e) => {
-  //     let latlong =
-  //       '"coordinates": ' +
-  //       JSON.stringify(e.lngLat.wrap())
-  //         .replace('"lng":', "")
-  //         .replace('"lat":', " ")
-  //         .replace("{", "[")
-  //         .replace("}", "]");
-  //     console.log(latlong);
-  //   });
-  // });
+    map.current.on("touchstart", (e) => {
+      let latlong =
+        '"coordinates": ' +
+        JSON.stringify(e.lngLat.wrap())
+          .replace('"lng":', "")
+          .replace('"lat":', " ")
+          .replace("{", "[")
+          .replace("}", "]");
+      console.log(latlong);
+    });
+  });
 
   return (
     <main className="map-one">
       <div className="nav-wrapper">
-        <NavPC map={map} liftCat={liftCat} activeCat={activeCat} />
+        <NavPC
+          map={map}
+          geoFile={geoFile}
+          liftCat={liftCat}
+          activeCat={activeCat}
+        />
         <NavMobile map={map} liftCat={liftCat} />
       </div>
       <div ref={mapContainer} className="map-container" />

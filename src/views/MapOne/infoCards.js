@@ -1,7 +1,7 @@
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
-export let infoCards = (map, activeCat, firstLoad) => {
+export let infoCards = (map, geoFile, activeCat, firstLoad) => {
   // ———————————————————————————————————— Remove Active Card —>
   // Remove any cards on the page when navigating to the next
   // category. They were getting piled on top of each other.
@@ -11,7 +11,7 @@ export let infoCards = (map, activeCat, firstLoad) => {
     card.remove()
   })
 
-  fetch("/data/mountains.geojson")
+  fetch(geoFile)
     .then((res) => res.json())
     .then((result) => {
       for (const feature of result.features) {
@@ -39,7 +39,7 @@ export let infoCards = (map, activeCat, firstLoad) => {
             .addTo(map);
         };
 
-        // console.log("activeCat", activeCat);
+        console.log("activeCat", activeCat);
 
         if (activeCat === "mechaneyes") {
           if (
