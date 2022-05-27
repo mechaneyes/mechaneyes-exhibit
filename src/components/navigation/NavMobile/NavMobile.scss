@@ -32,7 +32,7 @@
   width: 100vw;
   height: 100vh;
   padding-top: 80px;
-  background-color: rgba(0, 18, 37, 0.85);
+  background-color: rgb(0, 18, 37);
   z-index: 2;
 
   @include bp(mid) {

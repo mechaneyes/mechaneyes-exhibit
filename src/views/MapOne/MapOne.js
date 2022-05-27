@@ -101,6 +101,8 @@ const MapOne = () => {
       //
       setupMap(map.current, geoFile);
 
+      map.current.resize();
+
       // ————————————————————————————————————o Project Markers + Modals —>
       //
       markersProjectModals(map.current, geoFile, activeCat);
@@ -171,6 +173,12 @@ const MapOne = () => {
           activeCat={activeCat}
         />
         <NavMobile map={map} liftCat={liftCat} />
+      </div>
+      <div className="centerGrid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
       <div ref={mapContainer} className="map-container" />
     </main>

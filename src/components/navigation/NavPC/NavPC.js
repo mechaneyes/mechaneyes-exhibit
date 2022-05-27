@@ -142,7 +142,11 @@ let Nav = ({ map, geoFile, liftCat, activeCat }) => {
         <a
           className="mecha-nav__item"
           onClick={() => {
-            fly(18, 0, 13.3, 285);
+            if (isIpad) {
+              fly(18, 50, 14, 170);
+            } else {
+              fly(18, 0, 13.3, 285);
+            }
             liftCat("generative");
           }}
         >
@@ -160,7 +164,11 @@ let Nav = ({ map, geoFile, liftCat, activeCat }) => {
         <a
           className="mecha-nav__item"
           onClick={() => {
-            fly(13, 0, 14, 210);
+            if (isIpad) {
+              fly(13, 30, 14, 210);
+            } else {
+              fly(13, 0, 14, 210);
+            }
             liftCat("design");
           }}
         >

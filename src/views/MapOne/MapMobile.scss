@@ -5,23 +5,17 @@
   --height: 100vh;
 }
 
+// lock ios location bar in place, killing scroll
+// https://pqina.nl/blog/how-to-prevent-scrolling-the-page-on-ios-safari/
+// 
 html,
 body {
-  // height: calc(var(--height) - 1px);
   overflow: hidden;
-  box-sizing: border-box;
-
-  @include bp(mob) {
-    height: calc(var(--window-inner-height) - 1px);
-  }
-}
-
-body {
   color: white;
   background-color: black;
 
-  * {
-    box-sizing: border-box;
+  @include bp(mob) {
+    height: calc(var(--window-inner-height) - 1px);
   }
 }
 
@@ -34,7 +28,7 @@ body {
   // 
   @include bp(mob) {
     position: relative;
-    // height: -webkit-fill-available;
+    height: -webkit-fill-available;
   }
 
   .mecha-nav {
