@@ -125,7 +125,7 @@ let Nav = ({ map, liftCat }) => {
           <a
             className="mecha-nav__item"
             onClick={() => {
-              fly(6, 10, 11.81, 310, true);
+              fly(6, 0, 11.81, 130, true);
               liftCat("programming");
             }}
           >

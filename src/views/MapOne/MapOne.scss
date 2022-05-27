@@ -11,6 +11,10 @@ body {
   }
 }
 
+*:focus {
+  outline: none;
+}
+
 .centerGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
