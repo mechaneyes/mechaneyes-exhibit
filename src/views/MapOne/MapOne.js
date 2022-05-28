@@ -128,6 +128,8 @@ const MapOne = () => {
     }, 2000);
   }, []);
 
+
+  //TODO: Do we need to run these repeatedly? - https://trello.com/c/tUnEXxaJ/63-todo-do-we-need-to-run-these-repeatedly
   useEffect(() => {
     if (!firstLoad) {
       infoCards(map.current, geoFile, activeCat, firstLoad);
@@ -139,29 +141,29 @@ const MapOne = () => {
   // ————————————————————————————————————o Lat+Long of Mouse —>
   // output lat+long of mouse click position to console
   //
-  useEffect(() => {
-    map.current.on("click", (e) => {
-      let latlong =
-        '"coordinates": ' +
-        JSON.stringify(e.lngLat.wrap())
-          .replace('"lng":', "")
-          .replace('"lat":', " ")
-          .replace("{", "[")
-          .replace("}", "]");
-      console.log(latlong);
-    });
+  // useEffect(() => {
+  //   map.current.on("click", (e) => {
+  //     let latlong =
+  //       '"coordinates": ' +
+  //       JSON.stringify(e.lngLat.wrap())
+  //         .replace('"lng":', "")
+  //         .replace('"lat":', " ")
+  //         .replace("{", "[")
+  //         .replace("}", "]");
+  //     console.log(latlong);
+  //   });
 
-    map.current.on("touchstart", (e) => {
-      let latlong =
-        '"coordinates": ' +
-        JSON.stringify(e.lngLat.wrap())
-          .replace('"lng":', "")
-          .replace('"lat":', " ")
-          .replace("{", "[")
-          .replace("}", "]");
-      console.log(latlong);
-    });
-  });
+  //   map.current.on("touchstart", (e) => {
+  //     let latlong =
+  //       '"coordinates": ' +
+  //       JSON.stringify(e.lngLat.wrap())
+  //         .replace('"lng":', "")
+  //         .replace('"lat":', " ")
+  //         .replace("{", "[")
+  //         .replace("}", "]");
+  //     console.log(latlong);
+  //   });
+  // });
 
   return (
     <main className="map-one">
