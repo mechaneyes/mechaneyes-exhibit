@@ -32,7 +32,6 @@ if (window.innerWidth <= 768) {
 }
 console.log("geoFile", geoFile);
 
-
 const MapOne = () => {
   // const { height, width } = useWindowDimensions();
 
@@ -128,7 +127,6 @@ const MapOne = () => {
     }, 2000);
   }, []);
 
-
   //TODO: Do we need to run these repeatedly? - https://trello.com/c/tUnEXxaJ/63-todo-do-we-need-to-run-these-repeatedly
   useEffect(() => {
     if (!firstLoad) {
@@ -174,7 +172,7 @@ const MapOne = () => {
           liftCat={liftCat}
           activeCat={activeCat}
         />
-        <NavMobile map={map} liftCat={liftCat} />
+        <NavMobile map={map} liftCat={liftCat} activeCat={activeCat} />
       </div>
       <div className="centerGrid">
         <div></div>

@@ -63,7 +63,7 @@ export const markersProjectModals = (map, geoFile, activeCat) => {
       allMarkers.forEach(function (marker) {
         // console.log("marker", marker);
         marker.addEventListener("click", () => {
-          console.log("marker", marker.classList[2]);
+          // console.log("marker", marker.classList[2]);
 
           let htmlFile = marker.classList[2];
 

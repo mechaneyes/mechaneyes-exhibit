@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import useWindowDimensions from "../../../utils/windowDimensions";
 import "./NavMobile.scss";
 
-let Nav = ({ map, liftCat }) => {
+let Nav = ({ map, liftCat, activeCat }) => {
   const { height, width } = useWindowDimensions();
   // const map = props.map;
 
@@ -113,7 +113,7 @@ let Nav = ({ map, liftCat }) => {
           >
             <h2
               className={
-                liftCat == "photography"
+                activeCat == "photography"
                   ? "nav-headline nav-headline--photography nav-headline--active"
                   : "nav-headline nav-headline--photography"
               }
@@ -131,7 +131,7 @@ let Nav = ({ map, liftCat }) => {
           >
             <h2
               className={
-                liftCat == "programming"
+                activeCat == "programming"
                   ? "nav-headline nav-headline--programming nav-headline--active"
                   : "nav-headline nav-headline--programming"
               }
@@ -149,7 +149,7 @@ let Nav = ({ map, liftCat }) => {
           >
             <h2
               className={
-                liftCat == "generative"
+                activeCat == "generative"
                   ? "nav-headline nav-headline--generative nav-headline--active"
                   : "nav-headline nav-headline--generative"
               }
@@ -167,7 +167,7 @@ let Nav = ({ map, liftCat }) => {
           >
             <h2
               className={
-                liftCat == "design"
+                activeCat == "design"
                   ? "nav-headline nav-headline--design nav-headline--active"
                   : "nav-headline nav-headline--design"
               }
@@ -179,13 +179,13 @@ let Nav = ({ map, liftCat }) => {
           <a
             className="mecha-nav__item"
             onClick={() => {
-              fly(28, 0, 15, 10);
+              // fly(28, 0, 15, 10);
               liftCat("about");
             }}
           >
             <h2
               className={
-                liftCat == "about"
+                activeCat == "about"
                   ? "nav-headline nav-headline--about nav-headline--active"
                   : "nav-headline nav-headline--about"
               }
