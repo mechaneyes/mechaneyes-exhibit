@@ -5,11 +5,11 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
   // ———————————————————————————————————— Remove Active Card —>
   // Remove any cards on the page when navigating to the next
   // category. They were getting piled on top of each other.
-  // 
-  let allCards = document.querySelectorAll('.info-card')
-  allCards.forEach(card => {
-    card.remove()
-  })
+  //
+  let allCards = document.querySelectorAll(".info-card");
+  allCards.forEach((card) => {
+    card.remove();
+  });
 
   fetch(geoFile)
     .then((res) => res.json())
@@ -21,22 +21,25 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
         //
         const getInfoCard = (infoFileName) => {
           // console.log('infoFileName', infoFileName)
-          const em = document.createElement("div");
-          em.className = `info-card info-card--hidden ${infoFileName}`;
 
-          // ———————————————————————————————————— Fetch Info/About HTML —>
-          fetch(`/info/${infoFileName}.html`)
-            .then((response) => response.text())
-            .then((html) => {
-              em.innerHTML = html;
-            })
-            .catch((err) => {
-              console.log("not so info fetchy");
-            });
+          if (!document.querySelector(`.${infoFileName}`)) {
+            const em = document.createElement("div");
+            em.className = `info-card info-card--hidden ${infoFileName}`;
 
-          new mapboxgl.Marker(em)
-            .setLngLat(feature.geometry.coordinates)
-            .addTo(map);
+            // ———————————————————————————————————— Fetch Info/About HTML —>
+            fetch(`/info/${infoFileName}.html`)
+              .then((response) => response.text())
+              .then((html) => {
+                em.innerHTML = html;
+              })
+              .catch((err) => {
+                console.log("not so info fetchy");
+              });
+
+            new mapboxgl.Marker(em)
+              .setLngLat(feature.geometry.coordinates)
+              .addTo(map);
+          }
         };
 
         console.log("activeCat", activeCat);
@@ -134,22 +137,22 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
         }
 
         // ———————————————————————————————————— Close Card on Click —>
-        // 
-        let cardClose = document.querySelector('.mapboxgl-popup-close-button') 
+        //
+        let cardClose = document.querySelector(".mapboxgl-popup-close-button");
         if (cardClose) {
-          cardClose.onclick = function() {
-            allCards = document.querySelectorAll('.info-card')
-            allCards.forEach(card => {
+          cardClose.onclick = function () {
+            allCards = document.querySelectorAll(".info-card");
+            allCards.forEach((card) => {
               card.classList.add("info-card--hidden");
-              card.remove()
-            })
-          }
+              card.remove();
+            });
+          };
         }
       });
-    })
+    });
 
-    // .then(() => {
-    //   let cardClose = document.querySelector('.mapboxgl-popup-close-button')
-    //   console.log('cardClose', cardClose)
-    // })
+  // .then(() => {
+  //   let cardClose = document.querySelector('.mapboxgl-popup-close-button')
+  //   console.log('cardClose', cardClose)
+  // })
 };
