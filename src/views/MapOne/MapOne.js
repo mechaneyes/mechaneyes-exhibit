@@ -8,10 +8,10 @@ import mapboxgl from "!mapbox-gl";
 
 import NavMobile from "../../components/navigation/NavMobile/NavMobile";
 import NavPC from "../../components/navigation/NavPC/NavPC";
-import useWindowDimensions from "../../utils/windowDimensions";
 
 import { setupMap } from "./setupMap";
-import { markersProjectModals } from "./markersProjectModals";
+import { markersAndProjectModals } from "./markersAndProjectModals";
+import { projectModalsAndAbout } from "./projectModalsAndAbout";
 import { infoCards } from "./infoCards";
 
 import "./MapOne.scss";
@@ -23,14 +23,14 @@ mapboxgl.accessToken =
 let firstLoad = true;
 
 let geoFile;
-// if (width <= 666) {
-//   geoFile = "/data/mobile.geojson";
-if (window.innerWidth <= 768) {
+if (window.innerWidth <= 444) {
+  geoFile = "/data/mobile.geojson";
+} else if (window.innerWidth <= 768) {
   geoFile = "/data/mobileToIpad.geojson";
 } else {
   geoFile = "/data/mountains.geojson";
 }
-console.log("geoFile", geoFile);
+// console.log("geoFile", geoFile);
 
 const MapOne = () => {
   // const { height, width } = useWindowDimensions();
@@ -60,12 +60,10 @@ const MapOne = () => {
 
   const [zoom, setZoom] = useState(15);
 
-  const { height, width } = useWindowDimensions();
-
   // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
   // ————————————————————————————————————o MAPPIN —>
   useEffect(() => {
-    if (width < 600) {
+    if (window.innerWidth < 600) {
       document.documentElement.style.setProperty(
         "--window-inner-height",
         `${window.innerHeight}px`
@@ -77,11 +75,11 @@ const MapOne = () => {
       /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
     if (isIOS) {
-      console.log("This is a IOS device");
+      console.log("very much iOS");
       document.querySelector(".map-one").style.height =
         "-webkit-fill-available";
     } else {
-      console.log("This is Not a IOS device");
+      console.log("not iOS in the slightest");
     }
   });
 
@@ -100,11 +98,13 @@ const MapOne = () => {
       //
       setupMap(map.current, geoFile);
 
+      // Force map to expand to fill viewport
+      // Sometimes was loading only in a small area
       map.current.resize();
 
-      // ————————————————————————————————————o Project Markers + Modals —>
+      // ————————————————————————————————————o Category Info Cards —>
       //
-      markersProjectModals(map.current, geoFile, activeCat);
+      markersAndProjectModals(map.current, geoFile, activeCat);
       infoCards(map.current, geoFile, activeCat, firstLoad);
     });
   });
@@ -121,6 +121,9 @@ const MapOne = () => {
     // console.log("liftedCat", activeCat);
   };
 
+  // ————————————————————————————————————o————————————————————————————————————o First Run -->
+  // ————————————————————————————————————o First Run —>
+  // 
   useEffect(() => {
     setTimeout(() => {
       firstLoad = false;
@@ -130,8 +133,8 @@ const MapOne = () => {
   //TODO: Do we need to run these repeatedly? - https://trello.com/c/tUnEXxaJ/63-todo-do-we-need-to-run-these-repeatedly
   useEffect(() => {
     if (!firstLoad) {
+      projectModalsAndAbout(map.current, activeCat);
       infoCards(map.current, geoFile, activeCat, firstLoad);
-      markersProjectModals(map.current, geoFile, activeCat);
     }
   });
 
@@ -174,6 +177,7 @@ const MapOne = () => {
         />
         <NavMobile map={map} liftCat={liftCat} activeCat={activeCat} />
       </div>
+      {/* Used for positioning various element locations incl category screens */}
       <div className="centerGrid">
         <div></div>
         <div></div>

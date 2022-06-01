@@ -42,8 +42,6 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
           }
         };
 
-        console.log("activeCat", activeCat);
-
         if (activeCat === "mechaneyes") {
           if (
             Object.values(feature.properties).indexOf("info-card--intro") > -1
@@ -59,6 +57,8 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
               introCard.classList.remove("info-card--hidden");
             }
           }
+          // About modal for desktop
+          // 
         } else if (activeCat === "about" && window.innerWidth >= 768) {
           if (
             Object.values(feature.properties).indexOf("info-card--about") > -1

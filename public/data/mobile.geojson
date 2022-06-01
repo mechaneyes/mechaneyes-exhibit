@@ -4,7 +4,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.3319982540318, 39.29408664826935]
+        "coordinates": [-120.33242530172936, 39.29198214037433]
       },
       "properties": {
         "hide": "hide",
@@ -27,7 +27,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.328394, 39.287903]
+        "coordinates": [-120.315747, 39.298561]
       },
       "type": "Feature",
       "properties": {
@@ -41,7 +41,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.350158, 39.297067]
+        "coordinates": [-120.3413373, 39.2947416]
       },
       "type": "Feature",
       "properties": {
@@ -55,7 +55,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.3413373, 39.2947416]
+        "coordinates": [-120.350158, 39.297067]
       },
       "type": "Feature",
       "properties": {
@@ -69,7 +69,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.315747, 39.298561]
+        "coordinates": [-120.328394, 39.287903]
       },
       "type": "Feature",
       "properties": {
@@ -83,7 +83,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.24754464402213, 39.170185511982595]
+        "coordinates": [-120.24912952747331, 39.16941380001089]
       },
       "properties": {
         "hide": "hide",
@@ -107,7 +107,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.269674, 39.180667]
+        "coordinates": [-120.223217, 39.157976]
       },
       "type": "Feature",
       "properties": {
@@ -122,7 +122,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.277183, 39.189108]
+        "coordinates": [-120.241808, 39.18302]
       },
       "type": "Feature",
       "properties": {
@@ -137,7 +137,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.241808, 39.18302]
+        "coordinates": [-120.245917, 39.147966]
       },
       "type": "Feature",
       "properties": {
@@ -152,7 +152,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.245917, 39.147966]
+        "coordinates": [-120.269674, 39.180667]
       },
       "type": "Feature",
       "properties": {
@@ -167,7 +167,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.223217, 39.157976]
+        "coordinates": [-120.277183, 39.189108]
       },
       "type": "Feature",
       "properties": {
@@ -393,11 +393,11 @@
       "properties": {
         "static": true,
         "hide": "hide",
-        "theResort": "// ———————————————————————————————————— Mechaneyes —>",
-        "theFocuss": "// ———————————————————————————————————— Mechaneyes —>",
+        "info": true,
+        "theResort": "// ———————————————————————————————————— Intro —>",
+        "theFocuss": "// ———————————————————————————————————— Intro —>",
         "theArray#": "// ———————————————————————————————————— 27 —>",
-        "htmlFile": "mechaneyes",
-        "staticClass": "static-card--mechaneyes"
+        "infoFile": "info-card--intro"
       }
     },
     {
