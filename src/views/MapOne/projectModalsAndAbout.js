@@ -31,6 +31,24 @@ export const projectModalsAndAbout = (map, geoFile, activeCat) => {
     }
   }
 
+  // // ———————————————————————————————————— Whirligrid Modal —>
+  // //
+  // if (activeCat === "about") {
+  //   if (window.innerWidth <= 767) {
+  //     fetch("/info/info-card--about.html")
+  //       .then((response) => response.text())
+  //       .then((html) => {
+  //         popup
+  //           .setLngLat([-120.37764069625877, 39.126354852592584])
+  //           .setHTML(`<div class="project-modal">${html}</div>`)
+  //           .addTo(map);
+  //       })
+  //       .catch((err) => {
+  //         console.log("not so fetchy");
+  //       });
+  //   }
+  // }
+
   fetch(geoFile)
     .then((res) => res.json())
     .then(() => {

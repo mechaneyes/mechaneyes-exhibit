@@ -1,5 +1,3 @@
-
-
 //TODO: TODO: Move these three functions to own file - https://trello.com/c/WebrWOBn/60-todo-move-these-three-functions-to-own-file
 // ————————————————————————————————————o————————————————————————————————————o Images+Video -->
 // ———————————————————————————————————— Img Sizing + Aspect Ratio —>
@@ -81,6 +79,24 @@ export const videoPlayPause = () => {
           }
         });
       }
+      // TODO: work on the logic here for other cases
+      //
+      // ————————————————————————————————————o no video hero + single video in body —>
+    } else if (vidsBtnsArray.length === 1) {
+      const soloVidInBody = vidsArray[0];
+      const soloBtnInBody = vidsBtnsArray[0];
+
+      soloVidInBody.addEventListener("click", (event) => {
+        console.log("soloBtn", soloBtnInBody);
+        if (soloVidInBody.paused) {
+          soloBtnInBody.classList.add("project-video__button--hidden");
+          soloVidInBody.volume = 0.3;
+          soloVidInBody.play();
+        } else {
+          soloVidInBody.pause();
+          soloBtnInBody.classList.remove("project-video__button--hidden");
+        }
+      });
     } else {
       // TODO: work on the logic here for other cases
       //
