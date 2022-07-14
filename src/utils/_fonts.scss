@@ -63,6 +63,11 @@ h3 {
   font-size: 2.2rem;
 }
 
+a {
+  @include cholla-unicase-reg;
+  font-size: 1.2rem;
+}
+
 p {
     @include cholla-unicase-reg;
     font-size: 1.3rem;
@@ -101,6 +106,6 @@ p {
 
   p {
     width: 100%;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }

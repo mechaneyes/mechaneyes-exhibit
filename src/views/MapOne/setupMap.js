@@ -133,7 +133,6 @@ export const setupMap = (map, geoFile) => {
       )
       .addTo(map);
   });
-
   
   // ———————————————————————————————————— Popup Close on Click —>
   // Close popup when clicking on background outside popup itself

@@ -40,7 +40,7 @@ export const projectModalsAndAbout = (map, geoFile, activeCat) => {
       let allMarkers = document.querySelectorAll(".marker");
       allMarkers.forEach(function (marker) {
         marker.addEventListener("click", () => {
-          // console.log("marker", marker.classList[2]);
+          console.log("marker", marker.classList[2]);
 
           let htmlFile = marker.classList[2];
 

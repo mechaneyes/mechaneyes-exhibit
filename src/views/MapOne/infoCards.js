@@ -57,8 +57,12 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
               introCard.classList.remove("info-card--hidden");
             }
           }
+
+          // disable map zoom when using scroll
+          map.scrollZoom.disable();
+          
           // About modal for desktop
-          // 
+          //
         } else if (activeCat === "about" && window.innerWidth >= 768) {
           if (
             Object.values(feature.properties).indexOf("info-card--about") > -1

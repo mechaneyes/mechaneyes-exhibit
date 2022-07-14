@@ -55,6 +55,23 @@ export const markersAndProjectModals = (map, geoFile, activeCat) => {
       }
     })
     .then(() => {
+
+      // ————————————————————————————————————o————————————————————————————————————o Force Modal for Dev Purposes -->
+      // ———————————————————————————————————— Force Modal for Dev Purposes —>
+      //
+      // fetch(`/projects/projects/mechaneyes.html`)
+      //   .then((response) => response.text())
+      //   .then(imagesLoad())
+      //   .then((html) => {
+      //     popup
+      //       .setLngLat([0, 0])
+      //       .setHTML(`<div class="project-modal">${html}</div>`)
+      //       .addTo(map);
+      //   })
+      //   .catch((err) => {
+      //     console.log("not so fetchy");
+      //   });
+
       // ————————————————————————————————————o————————————————————————————————————o Popup on Marker Click -->
       // ———————————————————————————————————— Popup on Marker Click —>
       //
