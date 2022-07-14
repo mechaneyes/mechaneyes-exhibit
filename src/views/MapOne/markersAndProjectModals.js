@@ -59,9 +59,11 @@ export const markersAndProjectModals = (map, geoFile, activeCat) => {
       // ————————————————————————————————————o————————————————————————————————————o Force Modal for Dev Purposes -->
       // ———————————————————————————————————— Force Modal for Dev Purposes —>
       //
-      fetch(`/projects/projects/monolyth.html`)
+      fetch(`/projects/projects/whirligrid.html`)
         .then((response) => response.text())
         .then(imagesLoad())
+        .then(videosLoad())
+        .then(videoPlayPause())
         .then((html) => {
           popup
             .setLngLat([0, 0])
@@ -81,6 +83,8 @@ export const markersAndProjectModals = (map, geoFile, activeCat) => {
           // console.log("marker", marker.classList[2]);
 
           let htmlFile = marker.classList[2];
+          
+          console.log('htmlFile', htmlFile)
 
           // ———————————————————————————————————— Fetch Project HTML —>
           fetch(`/projects/projects/${htmlFile}.html`)
@@ -126,7 +130,6 @@ export const markersAndProjectModals = (map, geoFile, activeCat) => {
         console.log("aboutCloseBtn", aboutCloseBtn);
         if (aboutCloseBtn) {
           aboutCloseBtn.onclick = function () {
-            console.log("aboutCloseBtn aboutCloseBtn aboutCloseBtn");
             document
               .querySelector(".mapboxgl-popup-content")
               .classList.add("mapboxgl-popup-content--hidden");
@@ -143,7 +146,6 @@ export const markersAndProjectModals = (map, geoFile, activeCat) => {
           //
         } else {
           popupClose.onclick = function () {
-            console.log("popup close");
             popupParent.classList.add("mapboxgl-popup-content--hidden");
 
             setTimeout(() => {
