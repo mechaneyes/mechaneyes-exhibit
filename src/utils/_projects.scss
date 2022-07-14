@@ -481,19 +481,33 @@
   &--monolyth {
     margin-bottom: 50px;
 
-    #hero--bloom {
-      width: 100vw;
-      height: 100%;
+    // #hero--bloom {
+    //   width: 100vw;
+    //   height: 100%;
 
-      @include bp(mob) {
-        width: 100%;
-        height: 100%;
+    //   @include bp(mob) {
+    //     width: 100%;
+    //     height: 100%;
+    //   }
+    // }
+
+    // .p5Canvas {
+    //   width: 100%;
+    //   height: 100%;
+    // }
+
+    .hero {
+      img {
+        bottom: 60%;
+
+        @include bp(mob) {
+          bottom: 10%;
+        }
+
+        @include bp(lg) {
+          bottom: 87%;
+        }
       }
-    }
-
-    .p5Canvas {
-      width: 100%;
-      height: 100%;
     }
 
     .fifty-fifty--grid {
