@@ -1,6 +1,6 @@
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
-import { imagesLoad, videosLoad, videoPlayPause } from "./media";
+import { handleMedia } from "./media";
 
 // ————————————————————————————————————o————————————————————————————————————o Project Markers + Modals -->
 // ———————————————————————————————————— Project Markers + Modals —>
@@ -65,9 +65,7 @@ export const projectModalsAndAbout = (map, geoFile, activeCat) => {
           // ———————————————————————————————————— Fetch Project HTML —>
           fetch(`/projects/projects/${htmlFile}.html`)
             .then((response) => response.text())
-            .then(imagesLoad())
-            .then(videosLoad())
-            .then(videoPlayPause())
+            .then(handleMedia())
             .then((html) => {
               popup
                 .setLngLat([0, 0])
