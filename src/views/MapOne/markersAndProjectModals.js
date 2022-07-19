@@ -1,6 +1,6 @@
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
-import { imagesLoad, videosLoad, videoPlayPause } from "./media";
+import { handleMedia } from "./media";
 
 // ————————————————————————————————————o————————————————————————————————————o Project Markers + Modals -->
 // ———————————————————————————————————— Project Markers + Modals —>
@@ -55,24 +55,25 @@ export const markersAndProjectModals = (map, geoFile, activeCat) => {
       }
     })
     .then(() => {
-
       // ————————————————————————————————————o————————————————————————————————————o Force Modal for Dev Purposes -->
       // ———————————————————————————————————— Force Modal for Dev Purposes —>
       //
-      fetch(`/projects/projects/whirligrid.html`)
-        .then((response) => response.text())
-        .then(imagesLoad())
-        .then(videosLoad())
-        .then(videoPlayPause())
-        .then((html) => {
-          popup
-            .setLngLat([0, 0])
-            .setHTML(`<div class="project-modal">${html}</div>`)
-            .addTo(map);
-        })
-        .catch((err) => {
-          console.log("not so fetchy");
-        });
+      // fetch(`/projects/projects/stereoh-design.html`)
+      //   .then((response) => response.text())
+      //   .then((html) => {
+      //     popup
+      //       .setLngLat([0, 0])
+      //       .setHTML(`<div class="project-modal">${html}</div>`)
+      //       .addTo(map);
+      //   })
+      //   .then(() => {
+      //     setTimeout(() => {
+      //       handleMedia();
+      //     }, 950);
+      //   })
+      //   .catch((err) => {
+      //     console.log("not so fetchy");
+      //   });
 
       // ————————————————————————————————————o————————————————————————————————————o Popup on Marker Click -->
       // ———————————————————————————————————— Popup on Marker Click —>
@@ -83,20 +84,21 @@ export const markersAndProjectModals = (map, geoFile, activeCat) => {
           // console.log("marker", marker.classList[2]);
 
           let htmlFile = marker.classList[2];
-          
-          console.log('htmlFile', htmlFile)
+          // console.log("htmlFile", htmlFile);
 
           // ———————————————————————————————————— Fetch Project HTML —>
           fetch(`/projects/projects/${htmlFile}.html`)
             .then((response) => response.text())
-            .then(imagesLoad())
-            .then(videosLoad())
-            .then(videoPlayPause())
             .then((html) => {
               popup
                 .setLngLat([0, 0])
                 .setHTML(`<div class="project-modal">${html}</div>`)
                 .addTo(map);
+            })
+            .then(() => {
+              setTimeout(() => {
+                handleMedia();
+              }, 250);
             })
             .catch((err) => {
               console.log("not so fetchy");
@@ -127,7 +129,7 @@ export const markersAndProjectModals = (map, geoFile, activeCat) => {
         let aboutCloseBtn = document.querySelector(
           ".project--about + .mapboxgl-popup-close-button"
         );
-        console.log("aboutCloseBtn", aboutCloseBtn);
+
         if (aboutCloseBtn) {
           aboutCloseBtn.onclick = function () {
             document

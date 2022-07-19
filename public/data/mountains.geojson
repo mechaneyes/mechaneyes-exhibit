@@ -167,7 +167,7 @@
         "title": "Stereoh",
         "description": "Ward Peak",
         "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/breaks/",
-        "htmlFile": "stereoh"
+        "htmlFile": "stereoh-dev"
       }
     },
     {
@@ -223,7 +223,7 @@
         "description": "Ellis Peak",
         "elevation": "8744 ft / 2665 m",
         "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/",
-        "htmlFile": "stereoh"
+        "htmlFile": "stereoh-design"
       }
     },
     {
@@ -255,7 +255,7 @@
         "description": "Quail Lifthouse",
         "elevation": "8744 ft / 2665 m",
         "url": "https://www.peakbagger.com/peak.aspx?pid=26156",
-        "htmlFile": "monolyth"
+        "htmlFile": "pager"
       }
     },
     {

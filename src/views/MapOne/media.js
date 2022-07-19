@@ -3,7 +3,7 @@
 // ———————————————————————————————————— Img Sizing + Aspect Ratio —>
 // Programmatically setting widths + heights + aspect ratios of all
 // images on each individual page.
-export const imagesLoad = () => {
+const imagesLoad = () => {
   var allImages = document.getElementsByTagName("img");
   setTimeout(() => {
     for (const img of allImages) {
@@ -21,7 +21,7 @@ export const imagesLoad = () => {
 // ———————————————————————————————————— Video Sizing + Aspect Ratio —>
 // delay for loop until all videos are loaded
 //
-export const videosLoad = () => {
+const videosLoad = () => {
   const allVideos = document.getElementsByTagName("video");
 
   setTimeout(() => {
@@ -44,7 +44,7 @@ export const videosLoad = () => {
 // When one video is playing, by clicking another vid the first
 // pauses and let's the second play
 //
-export const videoPlayPause = () => {
+const videoPlayPause = () => {
   let vidsCollection = document.getElementsByTagName("video");
   const vidBtnsCollection = document.getElementsByClassName(
     "project-video__button"
@@ -122,4 +122,25 @@ export const videoPlayPause = () => {
     }
   }, 100);
   // }
+};
+
+export const handleMedia = () => {
+  let imgs = document.images,
+    len = imgs.length,
+    counter = 0;
+
+  [].forEach.call(imgs, function (img) {
+    if (img.complete) incrementCounter();
+    else img.addEventListener("load", incrementCounter, false);
+  });
+
+  function incrementCounter() {
+    counter++;
+    if (counter === len) {
+      // console.log("images loaded");
+      imagesLoad()
+      videosLoad()
+      videoPlayPause()
+    }
+  }
 };

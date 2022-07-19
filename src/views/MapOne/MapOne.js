@@ -75,11 +75,11 @@ const MapOne = () => {
       /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
     if (isIOS) {
-      console.log("very much iOS");
+      // console.log("very much iOS");
       document.querySelector(".map-one").style.height =
         "-webkit-fill-available";
     } else {
-      console.log("not iOS in the slightest");
+      // console.log("not iOS in the slightest");
     }
   });
 
