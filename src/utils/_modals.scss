@@ -474,6 +474,7 @@ img {
 // ———————————————————————————————————— Project Modals —>
 .map-one .project-modal {
   // pointer-events: none;
+  overflow-x: hidden;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -487,6 +488,7 @@ img {
   background-color: rgba(0, 22, 51, 1);
 
   @include bp(mob) {
+    overflow-y: scroll;
     top: 0;
     left: 0;
     transform: none;
