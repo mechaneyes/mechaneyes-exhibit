@@ -457,6 +457,7 @@
         top: -68%;
         top: -20vw;
         left: 0;
+        max-width: none;
 
         @include bp(mob) {
           position: static;

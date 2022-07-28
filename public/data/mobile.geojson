@@ -116,7 +116,7 @@
         "title": "UNIQLO",
         "description": "Squaw Peak",
         "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/",
-        "htmlFile": "stereoh"
+        "htmlFile": "uniqlo"
       }
     },
     {
@@ -146,7 +146,7 @@
         "title": "Mechaneyes",
         "description": "KT-22",
         "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/",
-        "htmlFile": "breaks"
+        "htmlFile": "mechaneyes"
       }
     },
     {
@@ -161,7 +161,7 @@
         "title": "Stereoh",
         "description": "Ward Peak",
         "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/breaks/",
-        "htmlFile": "stereoh"
+        "htmlFile": "stereoh-dev"
       }
     },
     {
@@ -216,7 +216,7 @@
         "description": "Ellis Peak",
         "elevation": "8744 ft / 2665 m",
         "url": "//rayweitzenberg.github.io/mechaneyes-projects/projects/stereoh/",
-        "htmlFile": "stereoh"
+        "htmlFile": "stereoh-design"
       }
     },
     {
