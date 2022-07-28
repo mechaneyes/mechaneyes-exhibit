@@ -13,6 +13,10 @@
   // border: 1px solid #02ff87;
   // border-top: 0;
 
+  // @include bp(mob) {
+  //   overflow-y: initial;
+  // }
+
   &::-webkit-scrollbar {
     width: 5px;
   }
@@ -256,12 +260,22 @@
         position: absolute;
         top: -4vw;
         left: 0;
+      }
 
-        @include bp(mob) {
-          position: static;
-          top: 0;
-          width: auto;
-          height: 100%;
+      @include bp(mob) {
+        aspect-ratio: 2.55319 / 1 !important;
+
+        video {
+          @include bp(mob) {
+            position: static;
+            top: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        h1 {
+          left: 10px;
         }
       }
     }
@@ -276,6 +290,10 @@
 
     p {
       margin-top: 10px;
+
+      @include bp(mob) {
+        // width: 80%;
+      }
     }
 
     .project-video {
@@ -345,109 +363,6 @@
     }
   }
 
-  //   &--intro {
-  //     // border: 1px solid #02ff87bf;
-  //     width: 100%;
-  //     height: 100%;
-  //     border: 0;
-
-  //     .intro {
-  //       display: flex;
-  //       justify-content: center;
-  //       align-items: center;
-  //       // position: absolute;
-  //       // top: 0;
-  //       // left: 0;
-  //       width: 100%;
-  //       height: 100%;
-  //       text-align: center;
-  //       z-index: 2;
-  //       // background-color: rgba(0, 22, 51, 0.5);
-  //       pointer-events: none;
-
-  //       @include bp(xs) {
-  //         // padding: 20px;
-  //       }
-
-  //       h1 {
-  //         margin: 13px auto 5px;
-  //         // font-size: 2.66rem;
-  //         line-height: 1;
-  //       }
-
-  //       h3 {
-  //         margin-bottom: 20px;
-  //         font-size: 1.8rem;
-  //       }
-
-  //       p {
-  //         width: 100%;
-  //         margin: 0;
-  //         padding: 0 0 20px;
-  //         // font-size: 1.2rem;
-  //         font-weight: 400;
-  //         letter-spacing: 1px;
-  //         line-height: 1.3;
-
-  //         &:first-of-type {
-  //           margin-bottom: 10px;
-  //         }
-
-  //         &:last-child {
-  //           padding: 0;
-  //         }
-  //       }
-
-  //       @include bp(mob) {
-  //       }
-
-  //       &__inner {
-  //         // overflow: hidden;
-  //         display: flex;
-  //         flex-direction: column;
-  //         justify-content: center;
-  //         align-items: center;
-  //         position: relative;
-  //         width: 100%;
-  //         height: 100%;
-  //         // max-width: 1000px;
-  //         padding: 0 30px;
-  //         background-color: rgba(0, 22, 51, 0.8);
-  //         pointer-events: auto;
-
-  //         @include bp(xxs) {
-  //           padding: 40px 70px;
-  //           border: 1px solid #02ff87;
-  //         }
-
-  //         @include bp(xs) {
-  //           padding: 60px 70px;
-  //         }
-
-  //         @include bp(md) {
-  //         }
-
-  //         @include bp(lg) {
-  //           padding: 5%;
-  //         }
-  //       }
-
-  //       .logo-mechaneyes {
-  //         position: relative;
-  //         width: 180px;
-  //         height: auto;
-  //         margin: 0 auto;
-  //         left: auto;
-  //         transform: none;
-
-  //         @include bp(xxs) {
-  //           width: 240px;
-  //           margin: 0 auto 15px;
-  //         }
-  //       }
-  //     }
-  //   }
-
   // ————————————————————————————————————o————————————————————————————————————o Loops -->
   // ———————————————————————————————————— Loops —>
   &--loops {
@@ -506,20 +421,9 @@
 
   // ————————————————————————————————————o————————————————————————————————————o Mechaneyes -->
   // ———————————————————————————————————— Mechaneyes —>
-  &--formalism {
-    .hero {
-      img {
-        // bottom: 107%;
-        bottom: 0;
-
-        // @include bp(mob) {
-        //   bottom: 20%;
-        // }
-
-        // @include bp(lg) {
-        //   bottom: 147%;
-        // }
-      }
+  &--mecha {
+    @include bp(mob) {
+      overflow-y: initial;
     }
   }
 
@@ -527,6 +431,10 @@
   // ———————————————————————————————————— Monolyth —>
   &--monolyth {
     margin-bottom: 50px;
+
+    @include bp(mob) {
+      overflow-y: initial;
+    }
 
     // #hero--bloom {
     //   width: 100vw;
