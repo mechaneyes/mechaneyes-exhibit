@@ -13,6 +13,10 @@
   // border: 1px solid #02ff87;
   // border-top: 0;
 
+  // @include bp(mob) {
+  //   overflow-y: initial;
+  // }
+
   &::-webkit-scrollbar {
     width: 5px;
   }
@@ -256,12 +260,22 @@
         position: absolute;
         top: -4vw;
         left: 0;
+      }
 
-        @include bp(mob) {
-          position: static;
-          top: 0;
-          width: auto;
-          height: 100%;
+      @include bp(mob) {
+        aspect-ratio: 2.55319 / 1 !important;
+
+        video {
+          @include bp(mob) {
+            position: static;
+            top: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        h1 {
+          left: 10px;
         }
       }
     }
@@ -276,6 +290,10 @@
 
     p {
       margin-top: 10px;
+
+      @include bp(mob) {
+        // width: 80%;
+      }
     }
 
     .project-video {
@@ -403,20 +421,9 @@
 
   // ————————————————————————————————————o————————————————————————————————————o Mechaneyes -->
   // ———————————————————————————————————— Mechaneyes —>
-  &--formalism {
-    .hero {
-      img {
-        // bottom: 107%;
-        bottom: 0;
-
-        // @include bp(mob) {
-        //   bottom: 20%;
-        // }
-
-        // @include bp(lg) {
-        //   bottom: 147%;
-        // }
-      }
+  &--mecha {
+    @include bp(mob) {
+      overflow-y: initial;
     }
   }
 
@@ -424,6 +431,10 @@
   // ———————————————————————————————————— Monolyth —>
   &--monolyth {
     margin-bottom: 50px;
+
+    @include bp(mob) {
+      overflow-y: initial;
+    }
 
     // #hero--bloom {
     //   width: 100vw;

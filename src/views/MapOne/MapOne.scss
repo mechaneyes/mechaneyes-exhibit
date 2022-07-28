@@ -80,6 +80,8 @@ body {
     background-color: transparent;
 
     @include bp(mob) {
+      position: absolute;
+      top: 0;
       height: -webkit-fill-available;
       // height: 100%;
     }
