@@ -65,11 +65,15 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
           //
         // } else if (activeCat === "about" && window.innerWidth >= 768) {
         } else if (activeCat === "about") {
+          console.log('about about about')
           if (
             Object.values(feature.properties).indexOf("info-card--about") > -1
           ) {
             // console.log("feature", feature.properties.infoFile);
             getInfoCard(feature.properties.infoFile);
+
+            // disable map zoom when using scroll
+            map.scrollZoom.disable();
           }
         } else if (activeCat === "photography") {
           if (

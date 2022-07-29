@@ -299,6 +299,8 @@ img {
 
     // ———————————————————————————————————— About —>
     &--about.info-card {
+      padding: 60px 11px 30px;
+
       @include bp(xxs) {
         position: fixed;
         top: 50%;
@@ -310,6 +312,7 @@ img {
       }
 
       .project--about {
+        height: 100%;
         border: 1px solid #02ff87;
       }
     }
