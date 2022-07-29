@@ -6,12 +6,6 @@ import { popupClick } from "./popupClick";
 // ———————————————————————————————————— Project Markers + Modals —>
 //
 export const markersAndProjectModals = (map, geoFile, activeCat) => {
-  // Create popup, but don't add to map yet
-  const popup = new mapboxgl.Popup({
-    closeButton: false,
-    closeOnClick: false,
-  });
-
   let zoomLevel = map.getZoom();
   // console.log('zoomLevelzoomLevel', zoomLevel)
 
@@ -55,6 +49,6 @@ export const markersAndProjectModals = (map, geoFile, activeCat) => {
       //   });
 
       // ———————————————————————————————————— Popup on Marker Click —>
-      popupClick(map, popup);
+      popupClick(map);
     });
 };

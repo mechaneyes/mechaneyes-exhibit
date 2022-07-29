@@ -11,7 +11,6 @@ import NavPC from "../../components/navigation/NavPC/NavPC";
 
 import { setupMap } from "./setupMap";
 import { markersAndProjectModals } from "./markersAndProjectModals";
-import { projectModalsAndAbout } from "./projectModalsAndAbout";
 import { infoCards } from "./infoCards";
 
 import "./MapOne.scss";
@@ -133,7 +132,6 @@ const MapOne = () => {
   //TODO: Do we need to run these repeatedly? - https://trello.com/c/tUnEXxaJ/63-todo-do-we-need-to-run-these-repeatedly
   useEffect(() => {
     if (!firstLoad) {
-      projectModalsAndAbout(map.current, activeCat);
       infoCards(map.current, geoFile, activeCat, firstLoad);
     }
   });
