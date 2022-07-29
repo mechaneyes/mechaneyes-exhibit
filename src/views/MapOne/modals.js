@@ -5,7 +5,7 @@ import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 import { handleMedia } from "./media";
 
-export const popupClick = (map) => {
+export const modals = (map) => {
   // Create popup, but don't add to map yet
   const popup = new mapboxgl.Popup({
     closeButton: false,

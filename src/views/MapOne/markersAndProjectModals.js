@@ -1,6 +1,6 @@
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
-import { popupClick } from "./popupClick";
+import { modals } from "./modals";
 
 // ————————————————————————————————————o————————————————————————————————————o Project Markers + Modals -->
 // ———————————————————————————————————— Project Markers + Modals —>
@@ -49,6 +49,6 @@ export const markersAndProjectModals = (map, geoFile, activeCat) => {
       //   });
 
       // ———————————————————————————————————— Popup on Marker Click —>
-      popupClick(map);
+      modals(map);
     });
 };
