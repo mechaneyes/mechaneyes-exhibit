@@ -42,69 +42,79 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
           }
         };
 
-        if (activeCat === "mechaneyes") {
-          if (
-            Object.values(feature.properties).indexOf("info-card--intro") > -1
-          ) {
-            getInfoCard(feature.properties.infoFile);
-            const introCard = document.querySelector(".info-card--intro");
+        const kittyCat = activeCat;
+        switch (kittyCat) {
+          case "mechaneyes":
+            if (
+              Object.values(feature.properties).indexOf("info-card--intro") > -1
+            ) {
+              getInfoCard(feature.properties.infoFile);
+              const introCard = document.querySelector(".info-card--intro");
 
-            // ———————————————————————————————————— Intro Visibility on Load —>
-            // Removing the 'hidden' class for the intro on the first page load
-            // Subsequent loads disregard this
-            //
-            if (firstLoad) {
-              introCard.classList.remove("info-card--hidden");
+              // ———————————————————————————————————— Intro Visibility on Load —>
+              // Removing the 'hidden' class for the intro on the first page load
+              // Subsequent loads disregard this
+              //
+              if (firstLoad) {
+                introCard.classList.remove("info-card--hidden");
+              }
             }
-          }
-
-          // disable map zoom when using scroll
-          map.scrollZoom.disable();
-          
-          // About modal for desktop
-          //
-        // } else if (activeCat === "about" && window.innerWidth >= 768) {
-        } else if (activeCat === "about") {
-          console.log('about about about')
-          if (
-            Object.values(feature.properties).indexOf("info-card--about") > -1
-          ) {
-            // console.log("feature", feature.properties.infoFile);
-            getInfoCard(feature.properties.infoFile);
 
             // disable map zoom when using scroll
             map.scrollZoom.disable();
-          }
-        } else if (activeCat === "photography") {
-          if (
-            Object.values(feature.properties).indexOf(
-              "info-card--photography"
-            ) > -1
-          ) {
-            // console.log("feature", feature.properties.infoFile);
-            getInfoCard(feature.properties.infoFile);
-          }
-        } else if (activeCat === "programming") {
-          if (
-            Object.values(feature.properties).indexOf(
-              "info-card--programming"
-            ) > -1
-          ) {
-            getInfoCard(feature.properties.infoFile);
-          }
-        } else if (activeCat === "design") {
-          if (
-            Object.values(feature.properties).indexOf("info-card--design") > -1
-          ) {
-            getInfoCard(feature.properties.infoFile);
-          }
-        } else if (activeCat === "generative") {
-          if (
-            Object.values(feature.properties).indexOf("info-card--generative") >
-            -1
-          ) {
-            getInfoCard(feature.properties.infoFile);
-          }
+            break;
+
+          case "about":
+            console.log("about about about");
+            if (
+              Object.values(feature.properties).indexOf("info-card--about") > -1
+            ) {
+              // console.log("feature", feature.properties.infoFile);
+              getInfoCard(feature.properties.infoFile);
+
+              // disable map zoom when using scroll
+              map.scrollZoom.disable();
+            }
+            break;
+
+          case "photography":
+            if (
+              Object.values(feature.properties).indexOf(
+                "info-card--photography"
+              ) > -1
+            ) {
+              getInfoCard(feature.properties.infoFile);
+            }
+            break;
+
+          case "programming":
+            if (
+              Object.values(feature.properties).indexOf(
+                "info-card--programming"
+              ) > -1
+            ) {
+              getInfoCard(feature.properties.infoFile);
+            }
+            break;
+
+          case "generative":
+            if (
+              Object.values(feature.properties).indexOf(
+                "info-card--generative"
+              ) > -1
+            ) {
+              getInfoCard(feature.properties.infoFile);
+            }
+
+            break;
+          case "design":
+            if (
+              Object.values(feature.properties).indexOf("info-card--design") >
+              -1
+            ) {
+              getInfoCard(feature.properties.infoFile);
+            }
+            break;
         }
       }
     })

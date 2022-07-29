@@ -49,6 +49,7 @@ export const markers = (map, geoFile) => {
       //   });
 
       // ———————————————————————————————————— Wire Up Modals —>
+      // Once markers setup promise is returned get modals setup
       // 
       modals(map);
     });
