@@ -3,7 +3,7 @@
 //
 import { handleMedia } from "./media";
 
-export default function popupClick(map, popup) {
+export const popupClick = (map, popup) => {
   let allMarkers = document.querySelectorAll(".marker");
   allMarkers.forEach(function (marker) {
     marker.addEventListener("click", () => {

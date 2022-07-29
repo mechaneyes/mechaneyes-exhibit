@@ -1,7 +1,6 @@
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
-import { handleMedia } from "./media";
-import popupClick from "./popupClick"
+import { popupClick } from "./popupClick";
 
 // ————————————————————————————————————o————————————————————————————————————o Project Markers + Modals -->
 // ———————————————————————————————————— Project Markers + Modals —>
@@ -53,9 +52,8 @@ export const projectModalsAndAbout = (map, geoFile, activeCat) => {
   fetch(geoFile)
     .then((res) => res.json())
     .then(() => {
-
       // ———————————————————————————————————— Popup on Marker Click —>
-      popupClick(map, popup)
+      popupClick(map, popup);
 
       // ———————————————————————————————————— Popup Close on Click —>
       // Close popup when clicking on background outside popup itself

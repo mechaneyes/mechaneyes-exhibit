@@ -1,7 +1,6 @@
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
-import { handleMedia } from "./media";
-import popupClick from "./popupClick";
+import { popupClick } from "./popupClick";
 
 // ————————————————————————————————————o————————————————————————————————————o Project Markers + Modals -->
 // ———————————————————————————————————— Project Markers + Modals —>
