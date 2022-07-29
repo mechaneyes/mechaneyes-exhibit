@@ -63,7 +63,8 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
           
           // About modal for desktop
           //
-        } else if (activeCat === "about" && window.innerWidth >= 768) {
+        // } else if (activeCat === "about" && window.innerWidth >= 768) {
+        } else if (activeCat === "about") {
           if (
             Object.values(feature.properties).indexOf("info-card--about") > -1
           ) {

@@ -3,7 +3,6 @@
 //
 import { handleMedia } from "./media";
 
-// const popupClick = (map, popup) => {
 export default function popupClick(map, popup) {
   let allMarkers = document.querySelectorAll(".marker");
   allMarkers.forEach(function (marker) {
@@ -33,5 +32,3 @@ export default function popupClick(map, popup) {
     });
   });
 }
-
-// export default { popupClick };

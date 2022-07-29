@@ -118,7 +118,7 @@ const MapOne = () => {
   const [activeCat, setActiveCat] = useState("mechaneyes");
   const liftCat = (theCat) => {
     setActiveCat(theCat);
-    // console.log("liftedCat", activeCat);
+    console.log("liftedCat", activeCat);
   };
 
   // ————————————————————————————————————o————————————————————————————————————o First Run -->
