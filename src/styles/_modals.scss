@@ -296,6 +296,10 @@ img {
     &--about.info-card {
       padding: 60px 11px 30px;
 
+      @include bp(mob) {
+        background: transparent;
+      }
+
       @include bp(xxs) {
         position: fixed;
         top: 50%;
@@ -313,7 +317,7 @@ img {
     }
 
     @include bp(mob) {
-      background-color: rgba(0, 22, 51, 1);
+      background-color: rgba(0, 22, 51, 0.9);
     }
 
     @include bp(mobOnly) {
