@@ -10,7 +10,7 @@ import NavMobile from "../../components/navigation/NavMobile/NavMobile";
 import NavPC from "../../components/navigation/NavPC/NavPC";
 
 import { setupMap } from "./setupMap";
-import { markersAndProjectModals } from "./markersAndProjectModals";
+import { markers } from "./markers";
 import { infoCards } from "./infoCards";
 
 import "./MapOne.scss";
@@ -32,8 +32,6 @@ if (window.innerWidth <= 444) {
 // console.log("geoFile", geoFile);
 
 const MapOne = () => {
-  // const { height, width } = useWindowDimensions();
-
   const mapContainer = useRef(null);
   const map = useRef(null);
 
@@ -103,7 +101,7 @@ const MapOne = () => {
 
       // ————————————————————————————————————o Category Info Cards —>
       //
-      markersAndProjectModals(map.current, geoFile, activeCat);
+      markers(map.current, geoFile, activeCat);
       infoCards(map.current, geoFile, activeCat, firstLoad);
     });
   });

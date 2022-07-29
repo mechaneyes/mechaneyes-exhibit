@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
-
-import useWindowDimensions from "../../../utils/windowDimensions";
 import "./NavMobile.scss";
 
 let Nav = ({ map, liftCat, activeCat }) => {
-  const { height, width } = useWindowDimensions();
   // const map = props.map;
 
   const [isVisible, setVisible] = useState(false);
@@ -42,11 +39,11 @@ let Nav = ({ map, liftCat, activeCat }) => {
       bearing = 0,
       isProgramming = false
     ) => {
-      if (width > 1700) {
+      if (window.innerWidth > 1700) {
         zoom += 0.2;
       }
 
-      if (isProgramming && width < 600) {
+      if (isProgramming && window.innerWidth < 600) {
         zoom += 0.4;
         // console.log('isProgramming', isProgramming)``
       }

@@ -5,8 +5,8 @@ import { modals } from "./modals";
 // ————————————————————————————————————o————————————————————————————————————o Project Markers + Modals -->
 // ———————————————————————————————————— Project Markers + Modals —>
 //
-export const markersAndProjectModals = (map, geoFile, activeCat) => {
-  let zoomLevel = map.getZoom();
+export const markers = (map, geoFile) => {
+  // let zoomLevel = map.getZoom();
   // console.log('zoomLevelzoomLevel', zoomLevel)
 
   fetch(geoFile)
@@ -48,7 +48,8 @@ export const markersAndProjectModals = (map, geoFile, activeCat) => {
       //     console.log("not so fetchy");
       //   });
 
-      // ———————————————————————————————————— Popup on Marker Click —>
+      // ———————————————————————————————————— Wire Up Modals —>
+      // 
       modals(map);
     });
 };

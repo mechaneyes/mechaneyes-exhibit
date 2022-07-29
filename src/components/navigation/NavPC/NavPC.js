@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
-
-import useWindowDimensions from "../../../utils/windowDimensions";
 import "./NavPC.scss";
 
 let Nav = ({ map, geoFile, liftCat, activeCat }) => {
-  const { height, width } = useWindowDimensions();
 
   let isIpad = false
   if (window.innerWidth <= 768) {
@@ -41,11 +38,11 @@ let Nav = ({ map, geoFile, liftCat, activeCat }) => {
       bearing = 0,
       isProgramming = false
     ) => {
-      if (width > 1700) {
+      if (window.innerWidth > 1700) {
         zoom += 0.2;
       }
 
-      if (isProgramming && width > 1700) {
+      if (isProgramming && window.innerWidth > 1700) {
         zoom += 0.4;
         // console.log('isProgramming', isProgramming)``
       }
