@@ -135,24 +135,12 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
 
         for (const card of infoCards) {
           if (window.innerWidth < 425 && zoomLevel >= 12) {
-            // card.style.display = "block";
             card.classList.remove("info-card--hidden");
           } else if (zoomLevel >= 13) {
-            // card.style.display = "block";
             card.classList.remove("info-card--hidden");
           } else {
-            // card.style.display = "none";
             card.classList.remove("info-card--hidden");
           }
-        }
-
-        const infoCtas = document.querySelectorAll(".info-cta");
-        for (const cta of infoCtas) {
-          cta.addEventListener("click", (e) => {
-            for (const card of infoCards) {
-              card.style.display = "none";
-            }
-          });
         }
 
         // ———————————————————————————————————— Close Card on Click —>
