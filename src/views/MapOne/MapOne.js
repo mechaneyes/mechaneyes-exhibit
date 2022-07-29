@@ -115,7 +115,6 @@ const MapOne = () => {
   const [activeCat, setActiveCat] = useState("mechaneyes");
   const liftCat = (theCat) => {
     setActiveCat(theCat);
-    console.log("liftedCat", activeCat);
   };
 
   // ————————————————————————————————————o————————————————————————————————————o First Run -->
@@ -124,7 +123,7 @@ const MapOne = () => {
   useEffect(() => {
     setTimeout(() => {
       firstLoad = false;
-    }, 2000);
+    }, 500);
   }, []);
 
   //TODO: Do we need to run these repeatedly? - https://trello.com/c/tUnEXxaJ/63-todo-do-we-need-to-run-these-repeatedly
@@ -174,12 +173,12 @@ const MapOne = () => {
         <NavMobile map={map} liftCat={liftCat} activeCat={activeCat} />
       </div>
       {/* Used for positioning various element locations incl category screens */}
-      <div className="centerGrid">
+      {/* <div className="centerGrid">
         <div></div>
         <div></div>
         <div></div>
         <div></div>
-      </div>
+      </div> */}
       <div ref={mapContainer} className="map-container" />
     </main>
   );

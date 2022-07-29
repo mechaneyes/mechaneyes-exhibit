@@ -122,6 +122,8 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
     .then(() => {
       let infoCards = document.querySelectorAll(".info-card");
 
+      // ———————————————————————————————————— Move Start/End —>
+      //
       map.on("movestart", () => {
         for (const card of infoCards) {
           card.classList.add("info-card--hidden");
@@ -157,9 +159,4 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
         }
       });
     });
-
-  // .then(() => {
-  //   let cardClose = document.querySelector('.mapboxgl-popup-close-button')
-  //   console.log('cardClose', cardClose)
-  // })
 };
