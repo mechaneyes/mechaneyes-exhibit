@@ -74,6 +74,7 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
 
               // disable map zoom when using scroll
               map.scrollZoom.disable();
+              map.dragPan.disable();
             }
             break;
 
