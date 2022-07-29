@@ -81,11 +81,27 @@ const videoPlayPause = () => {
       }
       // TODO: work on the logic here for other cases
       //
-      // ————————————————————————————————————o no video hero + single video in body —>
     } else if (vidsBtnsArray.length === 1) {
       const soloVidInBody = vidsArray[0];
       const soloBtnInBody = vidsBtnsArray[0];
 
+      // ————————————————————————————————————o video hero + single video in body —>
+      if (vidsArray[1]) {
+        vidsArray[1].addEventListener("click", (event) => {
+          console.log("soloBtn", soloBtnInBody);
+          if (vidsArray[1].paused) {
+            soloBtnInBody.classList.add("project-video__button--hidden");
+            vidsArray[1].volume = 0.3;
+            vidsArray[1].play();
+          } else {
+            vidsArray[1].pause();
+            soloBtnInBody.classList.remove("project-video__button--hidden");
+          }
+        });
+      }
+
+      // ————————————————————————————————————o no video hero + single video in body —>
+      // 
       soloVidInBody.addEventListener("click", (event) => {
         console.log("soloBtn", soloBtnInBody);
         if (soloVidInBody.paused) {
