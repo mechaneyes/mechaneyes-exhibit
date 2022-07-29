@@ -55,6 +55,7 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
               // Removing the 'hidden' class for the intro on the first page load
               // Subsequent loads disregard this
               //
+              console.log("firstLoad", firstLoad);
               if (firstLoad) {
                 introCard.classList.remove("info-card--hidden");
               }
@@ -65,7 +66,6 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
             break;
 
           case "about":
-            console.log("about about about");
             if (
               Object.values(feature.properties).indexOf("info-card--about") > -1
             ) {

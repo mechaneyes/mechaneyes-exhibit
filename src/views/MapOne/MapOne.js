@@ -121,9 +121,11 @@ const MapOne = () => {
   // ————————————————————————————————————o First Run —>
   // 
   useEffect(() => {
+    firstLoad = true;
+    infoCards(map.current, geoFile, activeCat, firstLoad);
     setTimeout(() => {
       firstLoad = false;
-    }, 500);
+    }, 1500);
   }, []);
 
   //TODO: Do we need to run these repeatedly? - https://trello.com/c/tUnEXxaJ/63-todo-do-we-need-to-run-these-repeatedly
