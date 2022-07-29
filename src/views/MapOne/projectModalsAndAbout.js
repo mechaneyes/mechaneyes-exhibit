@@ -1,6 +1,7 @@
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 import { handleMedia } from "./media";
+import popupClick from "./popupClick"
 
 // ————————————————————————————————————o————————————————————————————————————o Project Markers + Modals -->
 // ———————————————————————————————————— Project Markers + Modals —>
@@ -52,31 +53,9 @@ export const projectModalsAndAbout = (map, geoFile, activeCat) => {
   fetch(geoFile)
     .then((res) => res.json())
     .then(() => {
-      // ————————————————————————————————————o————————————————————————————————————o Popup on Marker Click -->
+
       // ———————————————————————————————————— Popup on Marker Click —>
-      //
-      let allMarkers = document.querySelectorAll(".marker");
-      allMarkers.forEach(function (marker) {
-        marker.addEventListener("click", () => {
-          console.log("marker", marker.classList[2]);
-
-          let htmlFile = marker.classList[2];
-
-          // ———————————————————————————————————— Fetch Project HTML —>
-          fetch(`/projects/projects/${htmlFile}.html`)
-            .then((response) => response.text())
-            .then(handleMedia())
-            .then((html) => {
-              popup
-                .setLngLat([0, 0])
-                .setHTML(`<div class="project-modal">${html}</div>`)
-                .addTo(map);
-            })
-            .catch((err) => {
-              console.log("not so fetchy");
-            });
-        });
-      });
+      popupClick(map, popup)
 
       // ———————————————————————————————————— Popup Close on Click —>
       // Close popup when clicking on background outside popup itself

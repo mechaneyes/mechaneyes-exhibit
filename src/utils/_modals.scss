@@ -97,7 +97,8 @@ img {
 
     @include bp(mob) {
       flex-direction: column;
-      margin-bottom: 20px;
+      gap: 10px;
+      margin-bottom: 10px;
 
       .project-img {
         justify-content: flex-start;
@@ -106,6 +107,7 @@ img {
         margin-bottom: 10px;
 
         &:last-child {
+          margin-bottom: 20px;
         }
 
         p {
