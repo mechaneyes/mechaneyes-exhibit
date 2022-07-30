@@ -147,16 +147,23 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
         }
 
         // ———————————————————————————————————— Close Card on Click —>
+        // Close when clicking any part of the info card. Excludes 'About' card
         //
-        let cardClose = document.querySelector(".mapboxgl-popup-close-button");
-        if (cardClose) {
-          cardClose.onclick = function () {
-            allCards = document.querySelectorAll(".info-card");
-            allCards.forEach((card) => {
-              card.classList.add("info-card--hidden");
-              card.remove();
-            });
-          };
+        if (
+          !document
+            .querySelector(".info-card")
+            .classList.contains("info-card--about")
+        ) {
+          let cardClose = document.querySelector(".info-card");
+          if (cardClose) {
+            cardClose.onclick = function () {
+              allCards = document.querySelectorAll(".info-card");
+              allCards.forEach((card) => {
+                card.classList.add("info-card--hidden");
+                card.remove();
+              });
+            };
+          }
         }
       });
     });
