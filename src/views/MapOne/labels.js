@@ -47,7 +47,7 @@ export const labels = (map, geoFile) => {
     let htmlFile = e.features[0].properties.htmlFile;
 
     // ———————————————————————————————————— Fetch Project HTML —>
-    fetch(`/projects/projects/${htmlFile}.html`)
+    fetch(`/projects/${htmlFile}.html`)
       .then((response) => response.text())
       .then((html) => {
         popup

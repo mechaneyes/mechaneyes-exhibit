@@ -31,7 +31,7 @@ export const markers = (map, geoFile) => {
       // ————————————————————————————————————o————————————————————————————————————o Force Modal for Dev Purposes -->
       // ———————————————————————————————————— Force Modal for Dev Purposes —>
       //
-      // fetch(`/projects/projects/mechaneyes.html`)
+      // fetch(`/projects/mechaneyes.html`)
       //   .then((response) => response.text())
       //   .then((html) => {
       //     popup

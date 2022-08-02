@@ -21,7 +21,7 @@ export const modals = (map) => {
       // console.log("htmlFile", htmlFile);
 
       // ———————————————————————————————————— Fetch Project HTML —>
-      fetch(`/projects/projects/${htmlFile}.html`)
+      fetch(`/projects/${htmlFile}.html`)
         .then((response) => response.text())
         .then((html) => {
           popup
