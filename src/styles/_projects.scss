@@ -459,7 +459,7 @@
   // ————————————————————————————————————o————————————————————————————————————o Monolyth -->
   // ———————————————————————————————————— Monolyth —>
   &--monolyth {
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
 
     @include bp(mob) {
       overflow-y: initial;

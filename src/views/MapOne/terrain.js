@@ -1,4 +1,4 @@
-export const setupMap = (map) => {
+export const terrain = (map) => {
   map.addSource("mapbox-terrain", {
     type: "vector",
 

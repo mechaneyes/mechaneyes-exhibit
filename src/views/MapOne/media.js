@@ -31,7 +31,7 @@ const videosLoad = () => {
       oneVid.style.aspectRatio = oneVid.videoWidth / oneVid.videoHeight;
       oneVid.parentElement.style.aspectRatio =
         oneVid.videoWidth / oneVid.videoHeight;
-      console.log("aspect", oneVid.style.aspectRatio);
+      // console.log("aspect", oneVid.style.aspectRatio);
       // console.log("oneVid", oneVid.width);
     }
   }, 100);
@@ -101,7 +101,7 @@ const videoPlayPause = () => {
       }
 
       // ————————————————————————————————————o no video hero + single video in body —>
-      // 
+      //
       soloVidInBody.addEventListener("click", (event) => {
         console.log("soloBtn", soloBtnInBody);
         if (soloVidInBody.paused) {
@@ -124,17 +124,19 @@ const videoPlayPause = () => {
       const soloVid = vidsArray[1];
       const soloBtn = vidsBtnsArray[0];
 
-      soloVid.addEventListener("click", (event) => {
-        console.log("soloBtn", soloBtn);
-        if (soloVid.paused) {
-          soloBtn.classList.add("project-video__button--hidden");
-          soloVid.volume = 0.3;
-          soloVid.play();
-        } else {
-          soloVid.pause();
-          soloBtn.classList.remove("project-video__button--hidden");
-        }
-      });
+      if (typeof soloVid !== "undefined") {
+        soloVid.addEventListener("click", (event) => {
+          console.log("soloBtn", soloBtn);
+          if (soloVid.paused) {
+            soloBtn.classList.add("project-video__button--hidden");
+            soloVid.volume = 0.3;
+            soloVid.play();
+          } else {
+            soloVid.pause();
+            soloBtn.classList.remove("project-video__button--hidden");
+          }
+        });
+      }
     }
   }, 100);
   // }
@@ -154,9 +156,9 @@ export const handleMedia = () => {
     counter++;
     if (counter === len) {
       // console.log("images loaded");
-      imagesLoad()
-      videosLoad()
-      videoPlayPause()
+      imagesLoad();
+      videosLoad();
+      videoPlayPause();
     }
   }
 };

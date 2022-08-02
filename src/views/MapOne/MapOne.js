@@ -9,8 +9,9 @@ import mapboxgl from "!mapbox-gl";
 import NavMobile from "../../components/navigation/NavMobile/NavMobile";
 import NavPC from "../../components/navigation/NavPC/NavPC";
 
-import { setupMap } from "./setupMap";
+import { terrain } from "./terrain";
 import { markers } from "./markers";
+import { labels } from "./labels";
 import { infoCards } from "./infoCards";
 
 import "./MapOne.scss";
@@ -93,7 +94,7 @@ const MapOne = () => {
     map.current.on("load", () => {
       // ————————————————————————————————————o Setup the Map + Terrain —>
       //
-      setupMap(map.current, geoFile);
+      terrain(map.current);
 
       // Force map to expand to fill viewport
       // Sometimes was loading only in a small area
@@ -102,6 +103,7 @@ const MapOne = () => {
       // ————————————————————————————————————o Category Info Cards —>
       //
       markers(map.current, geoFile, activeCat);
+      labels(map.current, geoFile);
       infoCards(map.current, geoFile, activeCat, firstLoad);
     });
   });
