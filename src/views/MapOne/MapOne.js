@@ -105,6 +105,11 @@ const MapOne = () => {
       markers(map.current, geoFile, activeCat);
       labels(map.current, geoFile);
       infoCards(map.current, geoFile, activeCat, firstLoad);
+      setTimeout(() => {
+        const introCard = document.querySelector(".info-card--intro");
+        introCard.classList.remove("info-card--hidden");
+        // console.log("render");
+      }, 500);
     });
   });
 
@@ -121,11 +126,14 @@ const MapOne = () => {
 
   // ————————————————————————————————————o————————————————————————————————————o First Run -->
   // ————————————————————————————————————o First Run —>
-  // 
+  //
   useEffect(() => {
     firstLoad = true;
     infoCards(map.current, geoFile, activeCat, firstLoad);
+
     setTimeout(() => {
+      const introCard = document.querySelector(".info-card--intro");
+      introCard.classList.remove("info-card--hidden");
       firstLoad = false;
     }, 1500);
   }, []);
@@ -139,6 +147,7 @@ const MapOne = () => {
 
   // ————————————————————————————————————o————————————————————————————————————o Tools -->
   // ————————————————————————————————————o Lat+Long of Mouse —>
+  // tool for positioning projects on catebgory pages.
   // output lat+long of mouse click position to console
   //
   // useEffect(() => {
