@@ -10,7 +10,7 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
   }
 
   const eventTrack = (category, action, label) => {
-    // console.log("GA event:", category, ":", action, ":", label);
+    console.log("GA event:", category, ":", action, ":", label);
     ReactGA.event({
       category: category,
       action: action,
@@ -97,8 +97,8 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
           onClick={() => {
             fly(27, 0, 15, 10);
             liftCat("mechaneyes");
-            eventTrack("Nav", "Mechaneyes Link", "Button")
             liftTitle("Mechaneyes === Ray Weitzenberg")
+            eventTrack("Link", "Nav Click", "Mechaneyes Nav")
           }}
         >
           <h2 className="nav-headline nav-headline--mechaneyes nav-headline--active">
@@ -115,9 +115,8 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
               fly(0, 0, 13.9, 198);
             }
             liftCat("photography");
-            eventTrack("Nav", "Photography Link", "Button")
             liftTitle("Mechaneyes === Ray Weitzenberg: Photography")
-            // document.title = theTitle;
+            eventTrack("Link", "Nav Click", "Photography Nav")
           }}
         >
           <h2
@@ -140,8 +139,8 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
               fly(6, 30, 13.16, 25, true);
             }
             liftCat("programming");
-            eventTrack("Nav", "Programming Link", "Button")
             liftTitle("Mechaneyes === Ray Weitzenberg: Programming")
+            eventTrack("Link", "Nav Click", "Programming Nav")
           }}
         >
           <h2
@@ -164,8 +163,8 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
               fly(18, 0, 13.3, 285);
             }
             liftCat("generative");
-            eventTrack("Nav", "Generative Link", "Button")
             liftTitle("Mechaneyes === Ray Weitzenberg: Generative")
+            eventTrack("Link", "Nav Click", "Generative Nav")
           }}
         >
           <h2
@@ -188,8 +187,8 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
               fly(13, 0, 14, 210);
             }
             liftCat("design");
-            eventTrack("Nav", "Design Link", "Button")
             liftTitle("Mechaneyes === Ray Weitzenberg: Design")
+            eventTrack("Link", "Nav Click", "Design Nav")
           }}
         >
           <h2
@@ -208,8 +207,8 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
           onClick={() => {
             fly(28, 0, 15, 10);
             liftCat("about");
-            eventTrack("Nav", "About Link", "Button")
             liftTitle("Mechaneyes === Ray Weitzenberg: About")
+            eventTrack("Link", "Nav Click", "About Nav")
           }}
         >
           <h2
