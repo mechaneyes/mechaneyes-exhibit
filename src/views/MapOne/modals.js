@@ -1,11 +1,21 @@
 // ————————————————————————————————————o————————————————————————————————————o Popup on Marker Click -->
 // ———————————————————————————————————— Popup on Marker Click —>
 //
+import ReactGA from "react-ga";
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 import { handleMedia } from "./media";
 
 export const modals = (map) => {
+  const eventTrack = (category, action, label) => {
+    console.log("GA event:", category, ":", action, ":", label);
+    ReactGA.event({
+      category: category,
+      action: action,
+      label: label,
+    });
+  };
+
   // Create popup, but don't add to map yet
   const popup = new mapboxgl.Popup({
     closeButton: false,
@@ -18,7 +28,7 @@ export const modals = (map) => {
       // console.log("marker", marker.classList[2]);
 
       let htmlFile = marker.classList[2];
-      // console.log("htmlFile", htmlFile);
+      console.log("htmlFile", htmlFile);
 
       // ———————————————————————————————————— Fetch Project HTML —>
       fetch(`/projects/${htmlFile}.html`)
@@ -33,6 +43,7 @@ export const modals = (map) => {
           setTimeout(() => {
             handleMedia();
           }, 250);
+          eventTrack("Modal", "Modal Open", htmlFile)
         })
         .catch((err) => {
           console.log("not so fetchy");
