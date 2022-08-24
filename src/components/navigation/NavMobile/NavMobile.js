@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import ReactGA from 'react-ga';
 import "./NavMobile.scss";
 
-let Nav = ({ map, liftCat, activeCat }) => {
+let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
   // const map = props.map;
 
   const eventTrack = (category, action, label) => {
@@ -105,6 +105,7 @@ let Nav = ({ map, liftCat, activeCat }) => {
               eventTrack("Nav", "Mechaneyes Link", "Button")
               fly(27, 0, 15, 10);
               liftCat("mechaneyes");
+              liftTitle("Mechaneyes === Ray Weitzenberg")
             }}
           >
             <h2 className="nav-headline nav-headline--mechaneyes nav-headline--active">
@@ -118,6 +119,7 @@ let Nav = ({ map, liftCat, activeCat }) => {
               eventTrack("Nav", "Photography Link", "Button")
               fly(0, 35, 13.3, 88);
               liftCat("photography");
+              liftTitle("Mechaneyes === Ray Weitzenberg: Photography")
             }}
           >
             <h2
@@ -137,6 +139,7 @@ let Nav = ({ map, liftCat, activeCat }) => {
               fly(6, 0, 11.81, 130, true);
               liftCat("programming");
               eventTrack("Nav", "Programming Link", "Button")
+              liftTitle("Mechaneyes === Ray Weitzenberg: Programming")
             }}
           >
             <h2
@@ -156,6 +159,7 @@ let Nav = ({ map, liftCat, activeCat }) => {
               fly(18, 0, 13.3, 285);
               liftCat("generative");
               eventTrack("Nav", "Generative Link", "Button")
+              liftTitle("Mechaneyes === Ray Weitzenberg: Generative")
             }}
           >
             <h2
@@ -175,6 +179,7 @@ let Nav = ({ map, liftCat, activeCat }) => {
               fly(13, 0, 13.5, 275);
               liftCat("design");
               eventTrack("Nav", "Design Link", "Button")
+              liftTitle("Mechaneyes === Ray Weitzenberg: Design")
             }}
           >
             <h2
@@ -194,6 +199,7 @@ let Nav = ({ map, liftCat, activeCat }) => {
               fly(28, 0, 15, 10);
               liftCat("about");
               eventTrack("Nav", "About Link", "Button")
+              liftTitle("Mechaneyes === Ray Weitzenberg: About")
             }}
           >
             <h2

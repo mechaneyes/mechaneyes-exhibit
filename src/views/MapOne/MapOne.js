@@ -59,6 +59,19 @@ const MapOne = () => {
 
   const [zoom, setZoom] = useState(15);
 
+  // ————————————————————————————————————o————————————————————————————————————o Page Title -->
+  // ————————————————————————————————————o Set Page Title —>
+  // Page title set on nav clicks
+  //
+  const [activeTitle, setTheTitle] = useState("Mechaneyes === Ray Weitzenberg");
+  const liftTitle = (theTitle) => {
+    setTheTitle(theTitle);
+  };
+
+  useEffect(() => {
+    document.title = activeTitle;
+  });
+
   // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
   // ————————————————————————————————————o MAPPIN —>
   useEffect(() => {
@@ -183,8 +196,14 @@ const MapOne = () => {
           geoFile={geoFile}
           liftCat={liftCat}
           activeCat={activeCat}
+          liftTitle={liftTitle}
         />
-        <NavMobile map={map} liftCat={liftCat} activeCat={activeCat} />
+        <NavMobile
+          map={map}
+          liftCat={liftCat}
+          activeCat={activeCat}
+          liftTitle={liftTitle}
+        />
       </div>
       {/* Used for positioning various element locations incl category screens */}
       {/* <div className="centerGrid">
