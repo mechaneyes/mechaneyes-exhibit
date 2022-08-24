@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ReactGA from 'react-ga';
 import "./NavPC.scss";
 
 let Nav = ({ map, geoFile, liftCat, activeCat }) => {
@@ -6,6 +7,15 @@ let Nav = ({ map, geoFile, liftCat, activeCat }) => {
   let isIpad = false
   if (window.innerWidth <= 768) {
     isIpad = true
+  }
+
+  const eventTrack = (category, action, label) => {
+    // console.log("GA event:", category, ":", action, ":", label);
+    ReactGA.event({
+      category: category,
+      action: action,
+      label: label,
+    })
   }
 
   // ————————————————————————————————————o————————————————————————————————————o scrollZoom -->
@@ -84,6 +94,7 @@ let Nav = ({ map, geoFile, liftCat, activeCat }) => {
           onClick={() => {
             fly(27, 0, 15, 10);
             liftCat("mechaneyes");
+            eventTrack("Nav", "Mechaneyes Link", "Button")
           }}
         >
           <h2 className="nav-headline nav-headline--mechaneyes nav-headline--active">
@@ -99,8 +110,8 @@ let Nav = ({ map, geoFile, liftCat, activeCat }) => {
             } else {
               fly(0, 0, 13.9, 198);
             }
-            
             liftCat("photography");
+            eventTrack("Nav", "Photography Link", "Button")
           }}
         >
           <h2
@@ -123,6 +134,7 @@ let Nav = ({ map, geoFile, liftCat, activeCat }) => {
               fly(6, 30, 13.16, 25, true);
             }
             liftCat("programming");
+            eventTrack("Nav", "Programming Link", "Button")
           }}
         >
           <h2
@@ -145,6 +157,7 @@ let Nav = ({ map, geoFile, liftCat, activeCat }) => {
               fly(18, 0, 13.3, 285);
             }
             liftCat("generative");
+            eventTrack("Nav", "Generative Link", "Button")
           }}
         >
           <h2
@@ -167,6 +180,7 @@ let Nav = ({ map, geoFile, liftCat, activeCat }) => {
               fly(13, 0, 14, 210);
             }
             liftCat("design");
+            eventTrack("Nav", "Design Link", "Button")
           }}
         >
           <h2
@@ -185,6 +199,7 @@ let Nav = ({ map, geoFile, liftCat, activeCat }) => {
           onClick={() => {
             fly(28, 0, 15, 10);
             liftCat("about");
+            eventTrack("Nav", "About Link", "Button")
           }}
         >
           <h2

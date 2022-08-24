@@ -1,8 +1,18 @@
 import { useState, useEffect } from "react";
+import ReactGA from 'react-ga';
 import "./NavMobile.scss";
 
 let Nav = ({ map, liftCat, activeCat }) => {
   // const map = props.map;
+
+  const eventTrack = (category, action, label) => {
+    console.log("GA event:", category, ":", action, ":", label);
+    ReactGA.event({
+      category: category,
+      action: action,
+      label: label,
+    })
+  }
 
   const [isVisible, setVisible] = useState(false);
   const toggleHamb = () => {
@@ -92,6 +102,7 @@ let Nav = ({ map, liftCat, activeCat }) => {
           <a
             className="mecha-nav__item mecha-nav__item--title"
             onClick={() => {
+              eventTrack("Nav", "Mechaneyes Link", "Button")
               fly(27, 0, 15, 10);
               liftCat("mechaneyes");
             }}
@@ -104,6 +115,7 @@ let Nav = ({ map, liftCat, activeCat }) => {
           <a
             className="mecha-nav__item"
             onClick={() => {
+              eventTrack("Nav", "Photography Link", "Button")
               fly(0, 35, 13.3, 88);
               liftCat("photography");
             }}
@@ -124,6 +136,7 @@ let Nav = ({ map, liftCat, activeCat }) => {
             onClick={() => {
               fly(6, 0, 11.81, 130, true);
               liftCat("programming");
+              eventTrack("Nav", "Programming Link", "Button")
             }}
           >
             <h2
@@ -142,6 +155,7 @@ let Nav = ({ map, liftCat, activeCat }) => {
             onClick={() => {
               fly(18, 0, 13.3, 285);
               liftCat("generative");
+              eventTrack("Nav", "Generative Link", "Button")
             }}
           >
             <h2
@@ -160,6 +174,7 @@ let Nav = ({ map, liftCat, activeCat }) => {
             onClick={() => {
               fly(13, 0, 13.5, 275);
               liftCat("design");
+              eventTrack("Nav", "Design Link", "Button")
             }}
           >
             <h2
@@ -178,6 +193,7 @@ let Nav = ({ map, liftCat, activeCat }) => {
             onClick={() => {
               fly(28, 0, 15, 10);
               liftCat("about");
+              eventTrack("Nav", "About Link", "Button")
             }}
           >
             <h2

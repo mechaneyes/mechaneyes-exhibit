@@ -14,6 +14,7 @@ import { markers } from "./markers";
 import { labels } from "./labels";
 import { infoCards } from "./infoCards";
 
+import "mapbox-gl/dist/mapbox-gl.css";
 import "./MapOne.scss";
 import "./MapMobile.scss";
 
