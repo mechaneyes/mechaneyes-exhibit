@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 import "./NavMobile.scss";
 
 let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
@@ -11,8 +11,8 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
       category: category,
       action: action,
       label: label,
-    })
-  }
+    });
+  };
 
   const [isVisible, setVisible] = useState(false);
   const toggleHamb = () => {
@@ -102,10 +102,10 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
           <a
             className="mecha-nav__item mecha-nav__item--title"
             onClick={() => {
-              eventTrack("Nav", "Mechaneyes Link", "Button")
               fly(27, 0, 15, 10);
               liftCat("mechaneyes");
-              liftTitle("Mechaneyes === Ray Weitzenberg")
+              liftTitle("Mechaneyes === Ray Weitzenberg");
+              eventTrack("Mobile Nav", "Click", "Mechaneyes Nav");
             }}
           >
             <h2 className="nav-headline nav-headline--mechaneyes nav-headline--active">
@@ -116,10 +116,10 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
           <a
             className="mecha-nav__item"
             onClick={() => {
-              eventTrack("Nav", "Photography Link", "Button")
               fly(0, 35, 13.3, 88);
               liftCat("photography");
-              liftTitle("Mechaneyes === Ray Weitzenberg: Photography")
+              liftTitle("Mechaneyes === Ray Weitzenberg: Photography");
+              eventTrack("Mobile Nav", "Click", "Photography Nav");
             }}
           >
             <h2
@@ -138,8 +138,8 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
             onClick={() => {
               fly(6, 0, 11.81, 130, true);
               liftCat("programming");
-              eventTrack("Nav", "Programming Link", "Button")
-              liftTitle("Mechaneyes === Ray Weitzenberg: Programming")
+              liftTitle("Mechaneyes === Ray Weitzenberg: Programming");
+              eventTrack("Mobile Nav", "Click", "Programming Nav");
             }}
           >
             <h2
@@ -158,8 +158,8 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
             onClick={() => {
               fly(18, 0, 13.3, 285);
               liftCat("generative");
-              eventTrack("Nav", "Generative Link", "Button")
-              liftTitle("Mechaneyes === Ray Weitzenberg: Generative")
+              liftTitle("Mechaneyes === Ray Weitzenberg: Generative");
+              eventTrack("Mobile Nav", "Click", "Generative Nav");
             }}
           >
             <h2
@@ -178,8 +178,8 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
             onClick={() => {
               fly(13, 0, 13.5, 275);
               liftCat("design");
-              eventTrack("Nav", "Design Link", "Button")
-              liftTitle("Mechaneyes === Ray Weitzenberg: Design")
+              liftTitle("Mechaneyes === Ray Weitzenberg: Design");
+              eventTrack("Mobile Nav", "Click", "Design Nav");
             }}
           >
             <h2
@@ -198,8 +198,8 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
             onClick={() => {
               fly(28, 0, 15, 10);
               liftCat("about");
-              eventTrack("Nav", "About Link", "Button")
-              liftTitle("Mechaneyes === Ray Weitzenberg: About")
+              liftTitle("Mechaneyes === Ray Weitzenberg: About");
+              eventTrack("Mobile Nav", "Click", "About Nav");
             }}
           >
             <h2
