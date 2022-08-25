@@ -43,7 +43,7 @@ export const modals = (map) => {
           setTimeout(() => {
             handleMedia();
           }, 250);
-          eventTrack("Modal", "Modal Open", htmlFile)
+          eventTrack("Modal", "Modal Open", htmlFile);
         })
         .catch((err) => {
           console.log("not so fetchy");

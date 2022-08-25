@@ -9,6 +9,9 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
     isIpad = true
   }
 
+  // ————————————————————————————————————o————————————————————————————————————o GA Tracking -->
+  // ———————————————————————————————————— GA Tracking —>
+  // 
   const eventTrack = (category, action, label) => {
     console.log("GA event:", category, ":", action, ":", label);
     ReactGA.event({
@@ -17,8 +20,6 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
       label: label,
     })
   }
-
-  // const [theTitle, setTheTitle] = useState('Mechaneyes === Ray Weitzenberg')
 
   // ————————————————————————————————————o————————————————————————————————————o scrollZoom -->
   // ———————————————————————————————————— scrollZoom —>
