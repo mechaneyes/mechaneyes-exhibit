@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/info/info-card.css">
+
 <main class="project project--intro">
   <section class="intro">
     <div class="intro__inner">
@@ -15,6 +17,12 @@
         that monkeys begin to dance.
       </p>
       <p>Inside is a glimpse of what I see and create for others to see.</p>
+      <div 
+        class="intro-hamburger-div"
+        onclick="console.log('Button clicked!'); window.dispatchEvent(new CustomEvent('toggleHamburger'));"
+      >
+        Explore
+      </div>
     </div>
   </section>
 </main>

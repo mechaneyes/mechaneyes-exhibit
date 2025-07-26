@@ -4,7 +4,7 @@ import AboutContext from "../../store/transition/transition.about.js";
 import "./Intro.scss";
 
 let Intro = () => {
-  const { isIntroVisible, setIntroVisible } = useContext(AboutContext);
+  const { isIntroVisible, setIntroVisible, toggleHamburger } = useContext(AboutContext);
   let hideIntro;
 
   useEffect(() => {
@@ -28,7 +28,14 @@ let Intro = () => {
             monkeys begin to dance.
           </p>
           <p>Inside is a glimpse of what I see and create for others to see.</p>
+          <button 
+            className="intro-hamburger-button"
+            onClick={toggleHamburger}
+          >
+            Menu
+          </button>
         </div>
+        
       </section>
     </>
   );

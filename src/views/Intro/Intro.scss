@@ -87,6 +87,34 @@
     transform: none;
   }
 
+  .intro-hamburger-button {
+    margin-top: 30px;
+    padding: 12px 24px;
+    font-family: cholla-wide, sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: #02ff87;
+    background-color: transparent;
+    border: 2px solid #02ff87;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &:hover {
+      background-color: #02ff87;
+      color: rgba(0, 22, 51, 0.9);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(2, 255, 135, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(2, 255, 135, 0.3);
+    }
+  }
+
   &__social {
     font-family: cholla-wide, sans-serif;
     font-weight: 500;

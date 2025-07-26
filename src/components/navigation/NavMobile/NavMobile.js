@@ -1,8 +1,11 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useEffect, useCallback, useRef, useContext } from "react";
 import ReactGA from "react-ga";
+import AboutContext from "../../../store/transition/transition.about.js";
 import "./NavMobile.scss";
 
 let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
+  const { isHamburgerVisible, toggleHamburger } = useContext(AboutContext);
+
   // ————————————————————————————————————o————————————————————————————————————o GA Tracking -->
   // ———————————————————————————————————— GA Tracking —>
   //
@@ -15,10 +18,21 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
     });
   };
 
-  const [isVisible, setVisible] = useState(false);
-  const toggleHamb = () => {
-    setVisible(!isVisible);
-  };
+  // ————————————————————————————————————o————————————————————————————————————o Event Listener for Intro Button -->
+  // ———————————————————————————————————— Event Listener for Intro Button —>
+  //
+  useEffect(() => {
+    const handleToggleHamburger = () => {
+      console.log("Custom event received, toggling hamburger");
+      toggleHamburger();
+    };
+
+    window.addEventListener('toggleHamburger', handleToggleHamburger);
+
+    return () => {
+      window.removeEventListener('toggleHamburger', handleToggleHamburger);
+    };
+  }, [toggleHamburger]);
 
   // ————————————————————————————————————o————————————————————————————————————o scrollZoom -->
   // ———————————————————————————————————— scrollZoom —>
@@ -89,13 +103,13 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
     <>
       <img
         className="hamburger-trigger"
-        onClick={toggleHamb}
+        onClick={toggleHamburger}
         src="/images/hamburger-trigger.png"
         alt="hamburger-trigger"
       />
       <section
-        className={isVisible ? "hamburger" : "hamburger hamburger--hidden"}
-        onClick={() => setVisible(!isVisible)}
+        className={isHamburgerVisible ? "hamburger" : "hamburger hamburger--hidden"}
+        onClick={() => toggleHamburger()}
       >
         <nav className="mecha-nav mecha-nav--mob">
           <button

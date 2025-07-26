@@ -32,3 +32,20 @@ p {
 p:last-child {
   margin-bottom: 0;
 }
+
+.intro-hamburger-div {
+  display: none;
+  padding: 12px 24px;
+  font-family: cholla-unicase, sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+  color: #02ff87;
+  text-align: center;
+}
+
+/* Show only on mobile devices (width less than 768px) */
+@media (max-width: 767px) {
+  .intro-hamburger-div {
+    display: block;
+  }
+}
