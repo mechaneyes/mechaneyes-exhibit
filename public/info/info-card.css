@@ -11,6 +11,10 @@ body {
   color: white;
 }
 
+.logo-mechaneyes {
+  padding-bottom: 16px;
+}
+
 .info-modal__inner {
 }
 
@@ -31,6 +35,12 @@ p {
 
 p:last-child {
   margin-bottom: 0;
+}
+
+.tag-line {
+  font-family: cholla-wide, sans-serif;
+  font-weight: 500;
+  font-style: italic;
 }
 
 .intro-hamburger-div {
