@@ -1,3 +1,4 @@
+import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 import { modals } from "./modals";
 
@@ -18,12 +19,13 @@ export const markers = (map, geoFile) => {
         el.className = `marker marker--${feature.properties.htmlFile} ${feature.properties.htmlFile}`;
         el.style.backgroundImage = `url(/images/map-marker-1.0.0.svg)`;
 
-        // if (feature.properties.hide !== "hide") {
-        //   const marker = new mapboxgl.Marker(el)
-        //     .setLngLat(feature.geometry.coordinates)
-        //     .addTo(map)
-        //     .setOffset([0, 4]);
-        // }
+        if (feature.properties.hide !== "hide") {
+          /* eslint-disable-next-line no-unused-vars */
+          const marker = new mapboxgl.Marker(el)
+            .setLngLat(feature.geometry.coordinates)
+            .addTo(map)
+            .setOffset([0, 4]);
+        }
       }
     })
     .then(() => {
