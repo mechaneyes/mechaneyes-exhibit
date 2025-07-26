@@ -276,18 +276,11 @@ img {
       padding: 0;
       background-color: rgba(0, 22, 51, 0.6);
 
-      @include bp(mobOnly) {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) !important;
-        border: 1px solid #02ff87;
-      }
-
       @include bp(xxs) {
         position: fixed;
         top: 50%;
         left: 50%;
+        max-height: none;
         transform: translate(-50%, -50%) !important;
         padding: 20px;
       }
@@ -410,7 +403,7 @@ img {
     p {
       width: 100%;
       margin: 0;
-      padding: 0 0 20px;
+      padding: 0 0 16px;
       // font-size: 1.2rem;
       font-weight: 400;
       letter-spacing: 1px;
@@ -444,7 +437,7 @@ img {
       pointer-events: auto;
 
       @include bp(xxs) {
-        padding: 40px 70px;
+        padding: 40px 20px;
         border: 1px solid #02ff87;
       }
 
@@ -470,7 +463,7 @@ img {
 
       @include bp(xxs) {
         width: 240px;
-        margin: 0 auto 15px;
+        margin: 0 auto 16px;
       }
     }
   }

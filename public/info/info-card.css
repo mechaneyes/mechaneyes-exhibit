@@ -11,10 +11,6 @@ body {
   color: white;
 }
 
-.logo-mechaneyes {
-  padding-bottom: 16px;
-}
-
 h1 {
   font-size: 2.3rem;
 }
@@ -46,10 +42,10 @@ p:last-child {
 
 .intro-hamburger-div {
   display: none;
-  padding: 12px 24px;
+  padding: 12px 24px 0;
   font-family: cholla-unicase, sans-serif;
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 2.3rem;
   color: #02ff87;
   text-align: center;
 }
