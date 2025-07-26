@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import ReactGA from "react-ga";
 import "./NavMobile.scss";
 
@@ -39,54 +39,51 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
 
   // ————————————————————————————————————o————————————————————————————————————o FLY -->
   // ———————————————————————————————————— FLY —>
-  let mountainsLoc;
-  let fly;
+  const mountainsLocRef = useRef(null);
 
-  useEffect(() => {
-    fly = (
-      resortLoc,
-      pitch = 0,
-      zoom = 14,
-      bearing = 0,
-      isProgramming = false
-    ) => {
-      if (window.innerWidth > 1700) {
-        zoom += 0.2;
-      }
+  const fly = useCallback((
+    resortLoc,
+    pitch = 0,
+    zoom = 14,
+    bearing = 0,
+    isProgramming = false
+  ) => {
+    if (window.innerWidth > 1700) {
+      zoom += 0.2;
+    }
 
-      if (isProgramming && window.innerWidth < 600) {
-        zoom += 0.4;
-        // console.log('isProgramming', isProgramming)``
-      }
-      fetch("/data/mobile.geojson")
-        .then((res) => res.json())
-        .then((result) => {
-          mountainsLoc = result.features;
-          // console.log("mountainsLoc", mountainsLoc[0].geometry.coordinates);
-        })
-        .then(() => {
-          map.current.flyTo({
-            center: [
-              mountainsLoc[resortLoc].geometry.coordinates[0],
-              mountainsLoc[resortLoc].geometry.coordinates[1],
-            ],
-            pitch: pitch,
-            bearing: bearing,
-            zoom: zoom,
-            speed: 0.7,
-            curve: 1.6, // zoom speed
-            essential: true, // this animation is considered essential with respect to prefers-reduced-motion
-          });
+    if (isProgramming && window.innerWidth < 600) {
+      zoom += 0.4;
+      // console.log('isProgramming', isProgramming)``
+    }
+    fetch("/data/mobile.geojson")
+      .then((res) => res.json())
+      .then((result) => {
+        mountainsLocRef.current = result.features;
+        // console.log("mountainsLoc", mountainsLocRef.current[0].geometry.coordinates);
+      })
+      .then(() => {
+        map.current.flyTo({
+          center: [
+            mountainsLocRef.current[resortLoc].geometry.coordinates[0],
+            mountainsLocRef.current[resortLoc].geometry.coordinates[1],
+          ],
+          pitch: pitch,
+          bearing: bearing,
+          zoom: zoom,
+          speed: 0.7,
+          curve: 1.6, // zoom speed
+          essential: true, // this animation is considered essential with respect to prefers-reduced-motion
         });
+      });
 
-      // If a project popup is visible remove it on nav click
-      //
-      const popup = document.getElementsByClassName("mapboxgl-popup");
-      if (popup.length) {
-        popup[0].remove();
-      }
-    };
-  });
+    // If a project popup is visible remove it on nav click
+    //
+    const popup = document.getElementsByClassName("mapboxgl-popup");
+    if (popup.length) {
+      popup[0].remove();
+    }
+  }, [map]);
 
   return (
     <>
@@ -94,6 +91,7 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
         className="hamburger-trigger"
         onClick={toggleHamb}
         src="/images/hamburger-trigger.png"
+        alt="hamburger-trigger"
       />
       <section
         className={isVisible ? "hamburger" : "hamburger hamburger--hidden"}
@@ -125,7 +123,7 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
           >
             <h2
               className={
-                activeCat == "photography"
+                activeCat === "photography"
                   ? "nav-headline nav-headline--photography nav-headline--active"
                   : "nav-headline nav-headline--photography"
               }
@@ -145,7 +143,7 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
           >
             <h2
               className={
-                activeCat == "programming"
+                activeCat === "programming"
                   ? "nav-headline nav-headline--programming nav-headline--active"
                   : "nav-headline nav-headline--programming"
               }
@@ -165,7 +163,7 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
           >
             <h2
               className={
-                activeCat == "generative"
+                activeCat === "generative"
                   ? "nav-headline nav-headline--generative nav-headline--active"
                   : "nav-headline nav-headline--generative"
               }
@@ -185,7 +183,7 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
           >
             <h2
               className={
-                activeCat == "design"
+                activeCat === "design"
                   ? "nav-headline nav-headline--design nav-headline--active"
                   : "nav-headline nav-headline--design"
               }
@@ -205,7 +203,7 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
           >
             <h2
               className={
-                activeCat == "about"
+                activeCat === "about"
                   ? "nav-headline nav-headline--about nav-headline--active"
                   : "nav-headline nav-headline--about"
               }

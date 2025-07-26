@@ -51,14 +51,14 @@ const MapOne = () => {
   // const [lat, setLat] = useState(38.95397959307656);
 
   // Desktop Start
-  const [lng, setLng] = useState(-120.46122859325533);
-  const [lat, setLat] = useState(38.738060959397785);
+  const [lng] = useState(-120.46122859325533);
+  const [lat] = useState(38.738060959397785);
 
   // Test Locations
   // const [lng, setLng] = useState(-120.3319982540318);
   // const [lat, setLat] = useState(39.29408664826935);
 
-  const [zoom, setZoom] = useState(15);
+  const [zoom] = useState(15);
 
   // ————————————————————————————————————o————————————————————————————————————o Page Title -->
   // ————————————————————————————————————o Set Page Title —>
@@ -152,6 +152,7 @@ const MapOne = () => {
       introCard.classList.remove("info-card--hidden");
       firstLoad = false;
     }, 1500);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //TODO: Do we need to run these repeatedly? - https://trello.com/c/tUnEXxaJ/63-todo-do-we-need-to-run-these-repeatedly

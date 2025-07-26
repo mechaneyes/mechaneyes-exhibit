@@ -117,6 +117,8 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
               getInfoCard(feature.properties.infoFile);
             }
             break;
+          default:
+            break;
         }
       }
     })

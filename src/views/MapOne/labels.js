@@ -43,7 +43,6 @@ export const labels = (map, geoFile) => {
   });
 
   map.on("click", "unclustered-label", (e) => {
-    let coordinates = e.features[0].geometry.coordinates.slice();
     let htmlFile = e.features[0].properties.htmlFile;
 
     // ———————————————————————————————————— Fetch Project HTML —>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import ReactGA from "react-ga";
 import "./NavPC.scss";
 
@@ -121,7 +121,7 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
         >
           <h2
             className={
-              activeCat == "photography"
+              activeCat === "photography"
                 ? "nav-headline nav-headline--photography nav-headline--active"
                 : "nav-headline nav-headline--photography"
             }
@@ -145,7 +145,7 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
         >
           <h2
             className={
-              activeCat == "programming"
+              activeCat === "programming"
                 ? "nav-headline nav-headline--programming nav-headline--active"
                 : "nav-headline nav-headline--programming"
             }
@@ -169,7 +169,7 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
         >
           <h2
             className={
-              activeCat == "generative"
+              activeCat === "generative"
                 ? "nav-headline nav-headline--generative nav-headline--active"
                 : "nav-headline nav-headline--generative"
             }
@@ -193,7 +193,7 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
         >
           <h2
             className={
-              activeCat == "design"
+              activeCat === "design"
                 ? "nav-headline nav-headline--design nav-headline--active"
                 : "nav-headline nav-headline--design"
             }
@@ -213,7 +213,7 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
         >
           <h2
             className={
-              activeCat == "about"
+              activeCat === "about"
                 ? "nav-headline nav-headline--about nav-headline--active"
                 : "nav-headline nav-headline--about"
             }
