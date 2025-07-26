@@ -21,6 +21,7 @@
 }
 
 @mixin bp($point) {
+  $mobOnly: "(max-width: 499px)";
   $xxSmall: "(min-width: 320px)";
   $xSmall: "(min-width: 500px)";
   $small: "(min-width: 768px)";
@@ -30,6 +31,12 @@
   $mobile: "(max-width: 599px)";
   $mid: "(min-width: 600px)";
   $v4k: "(min-width: 2000px) and (min-height: 3000px)";
+
+  @if $point==mobOnly {
+    @media all and #{$mobOnly} {
+      @content;
+    }
+  }
 
   @if $point==xxs {
     @media all and #{$xxSmall} {
