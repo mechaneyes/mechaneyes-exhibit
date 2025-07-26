@@ -1,10 +1,43 @@
-import { useEffect, useCallback, useRef, useContext } from "react";
+import { useEffect, useCallback, useRef, useContext, useState } from "react";
 import ReactGA from "react-ga";
 import AboutContext from "../../../store/transition/transition.about.js";
 import "./NavMobile.scss";
 
 let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
   const { isHamburgerVisible, toggleHamburger } = useContext(AboutContext);
+  const [isIntroVisible, setIsIntroVisible] = useState(false);
+
+  // ————————————————————————————————————o————————————————————————————————————o Check Intro Visibility -->
+  // ———————————————————————————————————— Check Intro Visibility —>
+  //
+  useEffect(() => {
+    const checkIntroVisibility = () => {
+      const introCard = document.querySelector(".info-card--intro");
+      const isVisible = !!introCard; // Element exists = visible, doesn't exist = not visible
+      setIsIntroVisible(isVisible);
+    };
+
+    // Check initially
+    checkIntroVisibility();
+
+    // Set up observer to watch for changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        // Check if any elements were added or removed
+        if (mutation.type === 'childList') {
+          checkIntroVisibility();
+        }
+      });
+    });
+
+    // Observe the entire document body for changes
+    observer.observe(document.body, { 
+      childList: true,
+      subtree: true
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   // ————————————————————————————————————o————————————————————————————————————o GA Tracking -->
   // ———————————————————————————————————— GA Tracking —>
@@ -101,12 +134,14 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
 
   return (
     <>
-      <img
-        className="hamburger-trigger"
-        onClick={toggleHamburger}
-        src="/images/hamburger-trigger.png"
-        alt="hamburger-trigger"
-      />
+      {!isIntroVisible && (
+        <img
+          className="hamburger-trigger"
+          onClick={toggleHamburger}
+          src="/images/hamburger-trigger.png"
+          alt="hamburger-trigger"
+        />
+      )}
       <section
         className={isHamburgerVisible ? "hamburger" : "hamburger hamburger--hidden"}
         onClick={() => toggleHamburger()}
