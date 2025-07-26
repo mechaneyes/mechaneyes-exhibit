@@ -98,7 +98,7 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
         onClick={() => setVisible(!isVisible)}
       >
         <nav className="mecha-nav mecha-nav--mob">
-          <a
+          <button
             className="mecha-nav__item mecha-nav__item--title"
             onClick={() => {
               fly(27, 0, 15, 10);
@@ -110,9 +110,9 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
             <h2 className="nav-headline nav-headline--mechaneyes nav-headline--active">
               Mechaneyes
             </h2>
-          </a>
+          </button>
 
-          <a
+          <button
             className="mecha-nav__item"
             onClick={() => {
               fly(0, 35, 13.3, 88);
@@ -130,9 +130,9 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
             >
               Photography
             </h2>
-          </a>
+          </button>
 
-          <a
+          <button
             className="mecha-nav__item"
             onClick={() => {
               fly(6, 0, 11.81, 130, true);
@@ -150,9 +150,9 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
             >
               Programming
             </h2>
-          </a>
+          </button>
 
-          <a
+          <button
             className="mecha-nav__item"
             onClick={() => {
               fly(18, 0, 13.3, 285);
@@ -165,14 +165,14 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
               className={
                 activeCat === "generative"
                   ? "nav-headline nav-headline--generative nav-headline--active"
-                  : "nav-headline nav-headline--generative"
+                : "nav-headline nav-headline--generative"
               }
             >
               Generative
             </h2>
-          </a>
+          </button>
 
-          <a
+          <button
             className="mecha-nav__item"
             onClick={() => {
               fly(13, 0, 13.5, 275);
@@ -190,9 +190,9 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
             >
               Design
             </h2>
-          </a>
+          </button>
 
-          <a
+          <button
             className="mecha-nav__item"
             onClick={() => {
               fly(28, 0, 15, 10);
@@ -210,7 +210,7 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
             >
               About
             </h2>
-          </a>
+          </button>
         </nav>
       </section>
     </>

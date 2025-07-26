@@ -89,7 +89,7 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
   return (
     <>
       <nav className="mecha-nav mecha-nav--pc">
-        <a
+        <button
           className="mecha-nav__item mecha-nav__item--title"
           onClick={() => {
             fly(27, 0, 15, 10);
@@ -101,9 +101,9 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
           <h2 className="nav-headline nav-headline--mechaneyes nav-headline--active">
             Mechaneyes
           </h2>
-        </a>
+        </button>
 
-        <a
+        <button
           className="mecha-nav__item"
           onClick={() => {
             if (isIpad) {
@@ -125,9 +125,9 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
           >
             Photography
           </h2>
-        </a>
+        </button>
 
-        <a
+        <button
           className="mecha-nav__item"
           onClick={() => {
             if (isIpad) {
@@ -149,9 +149,9 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
           >
             Programming
           </h2>
-        </a>
+        </button>
 
-        <a
+        <button
           className="mecha-nav__item"
           onClick={() => {
             if (isIpad) {
@@ -173,9 +173,9 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
           >
             Generative
           </h2>
-        </a>
+        </button>
 
-        <a
+        <button
           className="mecha-nav__item"
           onClick={() => {
             if (isIpad) {
@@ -197,9 +197,9 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
           >
             Design
           </h2>
-        </a>
+        </button>
 
-        <a
+        <button
           className="mecha-nav__item"
           onClick={() => {
             fly(28, 0, 15, 10);
@@ -217,7 +217,7 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
           >
             About
           </h2>
-        </a>
+        </button>
       </nav>
     </>
   );
