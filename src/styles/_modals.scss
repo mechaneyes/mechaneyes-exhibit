@@ -242,6 +242,7 @@ img {
     opacity: 1;
     transition: opacity 0.6s;
     z-index: 1;
+    pointer-events: auto;
 
     @include bp(mobOnly) {
       position: fixed;
