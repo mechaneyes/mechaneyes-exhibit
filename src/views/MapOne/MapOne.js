@@ -96,6 +96,15 @@ const MapOne = () => {
       // Sometimes was loading only in a small area
       map.current.resize();
 
+      // ————————————————————————————————————o Disable Zoom/Pan/Etc Effects —>
+      //
+      map.current.scrollZoom.disable();
+      map.current.boxZoom.disable();
+      map.current.dragPan.disable();
+      map.current.touchZoomRotate.disable();
+      map.current.keyboard.disable();
+      map.current.doubleClickZoom.disable();
+
       // ————————————————————————————————————o Category Info Cards —>
       //
       markers(map.current, geoFile);
