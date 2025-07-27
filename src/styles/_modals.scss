@@ -253,7 +253,16 @@ img {
       transform: none !important;
       border: 0;
       background: black;
-      // display: none;
+    }
+
+    .close-info-card {
+      display: none;
+      font-size: 1.3rem;
+      color: #02ff87;
+
+      @include bp(mobOnly) {
+        display: block;
+      }
     }
 
     &--hidden {
