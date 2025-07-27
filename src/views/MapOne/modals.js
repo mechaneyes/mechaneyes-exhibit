@@ -65,7 +65,7 @@ export const modals = (map) => {
   // Close popup when clicking on background outside popup itself
   //
   popup.on("open", () => {
-    const popupClose = document.querySelector(".mapboxgl-popup-content");
+    const popupClose = document.querySelector(".project-close-button");
     popupClose.addEventListener("click", () => {
       popup.remove();
     });

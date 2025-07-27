@@ -63,14 +63,4 @@ export const labels = (map, geoFile) => {
         console.log("not so fetchy");
       });
   });
-
-  // ———————————————————————————————————— Popup Close on Click —>
-  // Close popup when clicking on background outside popup itself
-  //
-  popup.on("open", () => {
-    const popupClose = document.querySelector(".mapboxgl-popup-content");
-    popupClose.addEventListener("click", () => {
-      popup.remove();
-    });
-  });
 };
