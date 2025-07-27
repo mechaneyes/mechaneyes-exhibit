@@ -34,14 +34,17 @@
   padding-top: 80px;
   background-color: rgb(0, 18, 37);
   z-index: 2;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 
   @include bp(mid) {
     display: none;
   }
 
-  // &--hidden {
-  //   display: none;
-  // }
+  &--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
 
   &-headline {
     padding-bottom: 5px;
@@ -77,14 +80,17 @@
 @include bp(mob) {
   .hamburger {
     &--hidden {
-      display: none;
+      opacity: 0;
+      pointer-events: none;
 
       h2 {
-        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
       }
 
       .mecha-nav {
-        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
       }
     }
   }
