@@ -29,29 +29,6 @@ export const markers = (map, geoFile) => {
       }
     })
     .then(() => {
-      // ————————————————————————————————————o————————————————————————————————————o Force Modal for Dev Purposes -->
-      // ———————————————————————————————————— Force Modal for Dev Purposes —>
-      //
-      // fetch(`/projects/mechaneyes.html`)
-      //   .then((response) => response.text())
-      //   .then((html) => {
-      //     popup
-      //       .setLngLat([0, 0])
-      //       .setHTML(`<div class="project-modal">${html}</div>`)
-      //       .addTo(map);
-      //   })
-      //   .then(() => {
-      //     setTimeout(() => {
-      //       handleMedia();
-      //     }, 950);
-      //   })
-      //   .catch((err) => {
-      //     console.log("not so fetchy");
-      //   });
-
-      // ———————————————————————————————————— Wire Up Modals —>
-      // Once markers setup promise is returned get modals setup
-      // 
       modals(map);
     });
 };

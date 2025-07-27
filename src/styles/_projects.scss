@@ -11,14 +11,7 @@
   overflow-y: overlay;
   width: 100%;
   height: 100%;
-  // margin-right: 5px;
   color: white;
-  // border: 1px solid #02ff87;
-  // border-top: 0;
-
-  // @include bp(mob) {
-  //   overflow-y: initial;
-  // }
 
   &::-webkit-scrollbar {
     width: 5px;
@@ -124,7 +117,6 @@
       left: 0;
       width: 100%;
       height: 100%;
-      // background: rgb(0, 18, 37);
       background: linear-gradient(
         0deg,
         rgba(14, 32, 61, 0.6) 0%,
@@ -185,7 +177,6 @@
     height: auto;
     width: auto;
     max-height: 80vh;
-    // max-width: 40vw;
 
     @include bp(mob) {
       width: 100%;
@@ -233,7 +224,6 @@
     width: 100%;
     height: 100%;
     padding: 20px 15px 25px;
-    // z-index: 2;
     height: -webkit-fill-available;
 
     h1 {
@@ -249,10 +239,6 @@
 
     p {
       width: 100%;
-    }
-
-    .about-page__inner {
-      // padding: 30px;
     }
 
     .about-page__social {
@@ -298,10 +284,6 @@
 
     p {
       margin-top: 10px;
-
-      @include bp(mob) {
-        // width: 80%;
-      }
     }
 
     .project-video {
@@ -346,7 +328,6 @@
       left: 0;
       width: 100%;
       height: 100%;
-      // background: rgb(0, 18, 37);
       background: linear-gradient(
         0deg,
         rgba(0, 0, 0, 0.6) 0%,
@@ -430,13 +411,6 @@
   // ————————————————————————————————————o————————————————————————————————————o Mechaneyes -->
   // ———————————————————————————————————— Mechaneyes —>
   &--mechaneyes {
-    // @include bp(mob) {
-    //   overflow-y: initial;
-    //   overflow-y: scroll;
-    //   height: 100%;
-    //   height: fit-content;
-    // }
-    
     .hero {
       @include bp(mob) {
         img {
@@ -462,26 +436,10 @@
   // ————————————————————————————————————o————————————————————————————————————o Monolyth -->
   // ———————————————————————————————————— Monolyth —>
   &--monolyth {
-    // margin-bottom: 50px;
 
     @include bp(mob) {
       overflow-y: initial;
     }
-
-    // #hero--bloom {
-    //   width: 100vw;
-    //   height: 100%;
-
-    //   @include bp(mob) {
-    //     width: 100%;
-    //     height: 100%;
-    //   }
-    // }
-
-    // .p5Canvas {
-    //   width: 100%;
-    //   height: 100%;
-    // }
 
     .hero {
       img {
@@ -531,10 +489,6 @@
           rgba(0, 0, 0, 0) 100%
         );
       }
-    }
-
-    .main-content {
-      // padding: 0 20px;
     }
 
     .project-img {
