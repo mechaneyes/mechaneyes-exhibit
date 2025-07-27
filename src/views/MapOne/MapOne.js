@@ -84,6 +84,7 @@ const MapOne = () => {
       style: "mapbox://styles/mechaneyes/ckb6f9oyu2j4l1ilayacdz8yy",
       center: [lng, lat],
       zoom: zoom,
+      scrollZoom: false,
       // interactive: disableInteractive,
     });
 
@@ -100,10 +101,32 @@ const MapOne = () => {
       //
       map.current.scrollZoom.disable();
       map.current.boxZoom.disable();
-      map.current.dragPan.disable();
+      // map.current.dragPan.disable();
       map.current.touchZoomRotate.disable();
       map.current.keyboard.disable();
       map.current.doubleClickZoom.disable();
+      
+      // Additional scroll wheel prevention
+      map.current.getCanvas().addEventListener('wheel', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+      }, { passive: false });
+      
+      // Re-disable zoom events after interactions
+      const reDisableEffects = () => {
+        map.current.scrollZoom.disable();
+        map.current.boxZoom.disable();
+        map.current.touchZoomRotate.disable();
+        map.current.keyboard.disable();
+        map.current.doubleClickZoom.disable();
+      };
+      
+      // Listen for events that might re-enable zoom
+      map.current.on('click', reDisableEffects);
+      map.current.on('popupopen', reDisableEffects);
+      map.current.on('popupclose', reDisableEffects);
+      map.current.on('zoom', reDisableEffects);
+      map.current.on('move', reDisableEffects);
 
       // ————————————————————————————————————o Category Info Cards —>
       //
