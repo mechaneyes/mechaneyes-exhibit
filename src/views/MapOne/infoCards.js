@@ -128,11 +128,11 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
 
       // ———————————————————————————————————— Move Start/End —>
       //
-      map.on("movestart", () => {
-        for (const card of infoCards) {
-          card.classList.add("info-card--hidden");
-        }
-      });
+      // map.on("movestart", () => {
+      //   for (const card of infoCards) {
+      //     card.classList.add("info-card--hidden");
+      //   }
+      // });
 
       //TODO: Animate info card fade in before moveend - https://trello.com/c/NJhz6wxR/57-animate-info-card-fade-in-before-moveend
       map.on("moveend", () => {
