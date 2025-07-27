@@ -12,8 +12,6 @@ export const modals = (map) => {
   allMarkers.forEach(function (marker, index) {
     marker.addEventListener("click", () => {
       let htmlFile = marker.classList[2];
-      console.log("htmlFile", htmlFile);
-      console.log("marker", marker);
 
       // Remove any existing popup
       if (currentPopup) {
@@ -22,13 +20,15 @@ export const modals = (map) => {
 
       // Create new popup for this modal
       currentPopup = new mapboxgl.Popup({
-        closeButton: true,
+        closeButton: false, // Disable Mapbox's built-in close button
         closeOnClick: false,
       });
 
       // ———————————————————————————————————— Fetch Project HTML —>
       fetch(`/projects/${htmlFile}.html`)
-        .then((response) => response.text())
+        .then((response) => {
+          return response.text();
+        })
         .then((html) => {
           currentPopup
             .setLngLat([0, 0])
@@ -47,7 +47,7 @@ export const modals = (map) => {
             if (projectContent) {
               projectContent.scrollTop = 0;
             }
-            
+
             // Set up close button event listener after content is loaded
             const popupClose = document.querySelector(".project-close-button");
             if (popupClose) {
