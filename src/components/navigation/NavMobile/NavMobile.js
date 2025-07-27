@@ -156,7 +156,7 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
               eventTrack("Mobile Nav", "Click", "Mechaneyes Nav");
             }}
           >
-            <h2 className="nav-headline nav-headline--mechaneyes nav-headline--active">
+            <h2 className="nav-headline nav-headline--mechaneyes nav-headline--title">
               Mechaneyes
             </h2>
           </button>
