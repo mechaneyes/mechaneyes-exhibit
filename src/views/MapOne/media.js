@@ -60,10 +60,6 @@ const videoPlayPause = () => {
       for (let i = 0; i < vidsArray.length; i++) {
         vidsArray[i].addEventListener("click", (event) => {
           if (vidsArray[i].paused) {
-            console.log(
-              "vidsBtnsArray[i].classList",
-              vidsBtnsArray[0].classList
-            );
             vidsArray.forEach((vid) => {
               vid.pause();
             });

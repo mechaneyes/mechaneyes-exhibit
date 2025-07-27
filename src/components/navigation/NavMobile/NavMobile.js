@@ -1,5 +1,4 @@
 import { useEffect, useCallback, useRef, useContext, useState } from "react";
-import ReactGA from "react-ga";
 import AboutContext from "../../../store/transition/transition.about.js";
 import "./NavMobile.scss";
 
@@ -39,24 +38,11 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
     return () => observer.disconnect();
   }, []);
 
-  // ————————————————————————————————————o————————————————————————————————————o GA Tracking -->
-  // ———————————————————————————————————— GA Tracking —>
-  //
-  const eventTrack = (category, action, label) => {
-    console.log("GA event:", category, ":", action, ":", label);
-    ReactGA.event({
-      category: category,
-      action: action,
-      label: label,
-    });
-  };
-
   // ————————————————————————————————————o————————————————————————————————————o Event Listener for Intro Button -->
   // ———————————————————————————————————— Event Listener for Intro Button —>
   //
   useEffect(() => {
     const handleToggleHamburger = () => {
-      console.log("Custom event received, toggling hamburger");
       toggleHamburger();
     };
 
@@ -153,7 +139,6 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
               fly(27, 0, 15, 10);
               liftCat("mechaneyes");
               liftTitle("Mechaneyes === Ray Weitzenberg");
-              eventTrack("Mobile Nav", "Click", "Mechaneyes Nav");
             }}
           >
             <h2 className="nav-headline nav-headline--mechaneyes nav-headline--title">
@@ -167,7 +152,6 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
               fly(0, 35, 13.3, 88);
               liftCat("photography");
               liftTitle("Mechaneyes === Ray Weitzenberg: Photography");
-              eventTrack("Mobile Nav", "Click", "Photography Nav");
             }}
           >
             <h2
@@ -187,7 +171,6 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
               fly(6, 0, 11.81, 130, true);
               liftCat("programming");
               liftTitle("Mechaneyes === Ray Weitzenberg: Programming");
-              eventTrack("Mobile Nav", "Click", "Programming Nav");
             }}
           >
             <h2
@@ -207,7 +190,6 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
               fly(18, 0, 13.3, 285);
               liftCat("generative");
               liftTitle("Mechaneyes === Ray Weitzenberg: Generative");
-              eventTrack("Mobile Nav", "Click", "Generative Nav");
             }}
           >
             <h2
@@ -227,7 +209,6 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
               fly(13, 0, 13.5, 275);
               liftCat("design");
               liftTitle("Mechaneyes === Ray Weitzenberg: Design");
-              eventTrack("Mobile Nav", "Click", "Design Nav");
             }}
           >
             <h2
@@ -247,7 +228,6 @@ let Nav = ({ map, liftCat, activeCat, liftTitle }) => {
               fly(28, 0, 15, 10);
               liftCat("about");
               liftTitle("Mechaneyes === Ray Weitzenberg: About");
-              eventTrack("Mobile Nav", "Click", "About Nav");
             }}
           >
             <h2

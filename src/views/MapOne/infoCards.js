@@ -1,4 +1,3 @@
-import ReactGA from "react-ga";
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
@@ -168,28 +167,6 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
             };
           }
         }
-
-        const eventTrack = (category, action, label) => {
-          // console.log("GA event:", category, ":", action, ":", label);
-          ReactGA.event({
-            category: category,
-            action: action,
-            label: label,
-          });
-        };
-
-        const socialLinks = document.querySelectorAll(".about-page__social a");
-
-        socialLinks.forEach((link) => {
-          // console.log("link", link.dataset.social);
-          link.addEventListener(
-            "click",
-            function () {
-              eventTrack("Link", "Social Click", link.dataset.social);
-            },
-            false
-          );
-        });
       });
     });
 };

@@ -21,8 +21,6 @@ export const markers = (map, geoFile) => {
           el.className = `marker marker--${feature.properties.htmlFile} ${feature.properties.htmlFile}`;
           el.style.backgroundImage = `url(/images/map-marker-1.0.0.svg)`;
 
-          console.log(`Creating marker for: ${feature.properties.title} with htmlFile: ${feature.properties.htmlFile}`);
-
           /* eslint-disable-next-line no-unused-vars */
           const marker = new mapboxgl.Marker(el)
             .setLngLat(feature.geometry.coordinates)

@@ -1,5 +1,4 @@
 import { useEffect, useCallback, useRef } from "react";
-import ReactGA from "react-ga";
 import "./NavPC.scss";
 
 let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
@@ -7,18 +6,6 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
   if (window.innerWidth <= 768) {
     isIpad = true;
   }
-
-  // ————————————————————————————————————o————————————————————————————————————o GA Tracking -->
-  // ———————————————————————————————————— GA Tracking —>
-  // 
-  const eventTrack = (category, action, label) => {
-    console.log("GA event:", category, ":", action, ":", label);
-    ReactGA.event({
-      category: category,
-      action: action,
-      label: label,
-    });
-  };
 
   // ————————————————————————————————————o————————————————————————————————————o scrollZoom -->
   // ———————————————————————————————————— scrollZoom —>
@@ -95,7 +82,6 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
             fly(27, 0, 15, 10);
             liftCat("mechaneyes");
             liftTitle("Mechaneyes === Ray Weitzenberg");
-            eventTrack("Desktop Nav", "Click", "Mechaneyes Nav");
           }}
         >
           <h2 className="nav-headline nav-headline--mechaneyes nav-headline--active">
@@ -113,7 +99,6 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
             }
             liftCat("photography");
             liftTitle("Mechaneyes === Ray Weitzenberg: Photography");
-            eventTrack("Desktop Nav", "Click", "Photography Nav");
           }}
         >
           <h2
@@ -137,7 +122,6 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
             }
             liftCat("programming");
             liftTitle("Mechaneyes === Ray Weitzenberg: Programming");
-            eventTrack("Desktop Nav", "Click", "Programming Nav");
           }}
         >
           <h2
@@ -161,7 +145,6 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
             }
             liftCat("generative");
             liftTitle("Mechaneyes === Ray Weitzenberg: Generative");
-            eventTrack("Desktop Nav", "Click", "Generative Nav");
           }}
         >
           <h2
@@ -185,7 +168,6 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
             }
             liftCat("design");
             liftTitle("Mechaneyes === Ray Weitzenberg: Design");
-            eventTrack("Desktop Nav", "Click", "Design Nav");
           }}
         >
           <h2
@@ -205,7 +187,6 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
             fly(28, 0, 15, 10);
             liftCat("about");
             liftTitle("Mechaneyes === Ray Weitzenberg: About");
-            eventTrack("Desktop Nav", "Click", "About Nav");
           }}
         >
           <h2

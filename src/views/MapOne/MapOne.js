@@ -3,7 +3,6 @@
 //
 
 import { useRef, useEffect, useState } from "react";
-import ReactGA from 'react-ga';
 import mapboxgl from "!mapbox-gl";
 /* eslint import/no-webpack-loader-syntax: off */
 
@@ -54,7 +53,6 @@ const MapOne = () => {
 
   useEffect(() => {
     document.title = activeTitle;
-    ReactGA.pageview(activeTitle);
   });
 
   // ————————————————————————————————————o————————————————————————————————————o MAPPIN -->
