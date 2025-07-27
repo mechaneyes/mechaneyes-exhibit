@@ -43,6 +43,15 @@ export const modals = (map) => {
         .then(() => {
           setTimeout(() => {
             handleMedia();
+            // Scroll modal content to top
+            const modalContent = document.querySelector('.project-modal');
+            const projectContent = document.querySelector('.project');
+            if (modalContent) {
+              modalContent.scrollTop = 0;
+            }
+            if (projectContent) {
+              projectContent.scrollTop = 0;
+            }
           }, 250);
           eventTrack("Modal", "Modal Open", htmlFile);
         })
