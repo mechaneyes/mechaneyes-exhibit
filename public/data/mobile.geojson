@@ -107,7 +107,7 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [-120.223217, 39.157976]
+        "coordinates": [-120.269674, 39.180667]
       },
       "type": "Feature",
       "properties": {
@@ -115,53 +115,7 @@
         "resort": "Palisades",
         "title": "UNIQLO",
         "description": "Squaw Peak",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/stereoh/",
         "htmlFile": "uniqlo"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-120.241808, 39.18302]
-      },
-      "type": "Feature",
-      "properties": {
-        "interest": "programming",
-        "resort": "Palisades",
-        "title": "Monolyth",
-        "description": "Emigrant Peak",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/monolyth/",
-        "htmlFile": "monolyth"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-120.245917, 39.147966]
-      },
-      "type": "Feature",
-      "properties": {
-        "interest": "programming",
-        "resort": "Palisades",
-        "title": "Mechaneyes",
-        "description": "KT-22",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/stereoh/",
-        "htmlFile": "mechaneyes"
-      }
-    },
-    {
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-120.269674, 39.180667]
-      },
-      "type": "Feature",
-      "properties": {
-        "interest": "programming",
-        "resort": "Palisades",
-        "title": "Stereoh",
-        "description": "Ward Peak",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/breaks/",
-        "htmlFile": "stereoh-dev"
       }
     },
     {
@@ -173,9 +127,50 @@
       "properties": {
         "interest": "programming",
         "resort": "Palisades",
+        "title": "Monolyth",
+        "description": "Emigrant Peak",
+        "htmlFile": "monolyth"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.241808, 39.18302]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "programming",
+        "resort": "Palisades",
+        "title": "Mechaneyes",
+        "description": "KT-22",
+        "htmlFile": "mechaneyes"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.245917, 39.147966]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "programming",
+        "resort": "Palisades",
+        "title": "Stereoh",
+        "description": "Ward Peak",
+        "htmlFile": "stereoh-dev"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-120.223217, 39.157976]
+      },
+      "type": "Feature",
+      "properties": {
+        "interest": "programming",
+        "resort": "Palisades",
         "title": "Better Breaks",
         "description": "Scott Peak",
-        "url": "//rayweitzenberg.github.io/mechaneyes-projects/breaks/",
         "htmlFile": "breaks"
       }
     },

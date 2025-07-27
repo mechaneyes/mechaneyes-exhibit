@@ -32,31 +32,14 @@ if (window.innerWidth <= 444) {
 } else {
   geoFile = "/data/mountains.geojson";
 }
-// console.log("geoFile", geoFile);
 
 const MapOne = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
 
-  // Fitz Roy
-  // const [lng, setLng] = useState(-73.0508902);
-  // const [lat, setLat] = useState(-49.2740535);
-
-  // Bryce
-  // const [lng, setLng] = useState(-112.3183959);
-  // const [lat, setLat] = useState(37.573297);
-
-  // Emerald Bay
-  // const [lng, setLng] = useState(-120.15983846533709);
-  // const [lat, setLat] = useState(38.95397959307656);
-
   // Desktop Start
   const [lng] = useState(-120.46122859325533);
   const [lat] = useState(38.738060959397785);
-
-  // Test Locations
-  // const [lng, setLng] = useState(-120.3319982540318);
-  // const [lat, setLat] = useState(39.29408664826935);
 
   const [zoom] = useState(15);
 
@@ -89,11 +72,8 @@ const MapOne = () => {
       /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
     if (isIOS) {
-      // console.log("very much iOS");
       document.querySelector(".map-one").style.height =
         "-webkit-fill-available";
-    } else {
-      // console.log("not iOS in the slightest");
     }
   });
 
@@ -118,7 +98,7 @@ const MapOne = () => {
 
       // ————————————————————————————————————o Category Info Cards —>
       //
-      markers(map.current, geoFile, activeCat);
+      markers(map.current, geoFile);
       labels(map.current, geoFile);
       infoCards(map.current, geoFile, activeCat, firstLoad);
       setTimeout(() => {
@@ -162,35 +142,6 @@ const MapOne = () => {
     }
   });
 
-  // ————————————————————————————————————o————————————————————————————————————o Tools -->
-  // ————————————————————————————————————o Lat+Long of Mouse —>
-  // tool for positioning projects on catebgory pages.
-  // output lat+long of mouse click position to console
-  //
-  // useEffect(() => {
-  //   map.current.on("click", (e) => {
-  //     let latlong =
-  //       '"coordinates": ' +
-  //       JSON.stringify(e.lngLat.wrap())
-  //         .replace('"lng":', "")
-  //         .replace('"lat":', " ")
-  //         .replace("{", "[")
-  //         .replace("}", "]");
-  //     console.log(latlong);
-  //   });
-
-  //   map.current.on("touchstart", (e) => {
-  //     let latlong =
-  //       '"coordinates": ' +
-  //       JSON.stringify(e.lngLat.wrap())
-  //         .replace('"lng":', "")
-  //         .replace('"lat":', " ")
-  //         .replace("{", "[")
-  //         .replace("}", "]");
-  //     console.log(latlong);
-  //   });
-  // });
-
   return (
     <main className="map-one">
       <div className="nav-wrapper">
@@ -208,13 +159,6 @@ const MapOne = () => {
           liftTitle={liftTitle}
         />
       </div>
-      {/* Used for positioning various element locations incl category screens */}
-      {/* <div className="centerGrid">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div> */}
       <div ref={mapContainer} className="map-container" />
     </main>
   );

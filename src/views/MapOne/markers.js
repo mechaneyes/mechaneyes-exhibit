@@ -15,11 +15,14 @@ export const markers = (map, geoFile) => {
       // ———————————————————————————————————— Set Markers —>
       //
       for (const feature of result.features) {
-        const el = document.createElement("div");
-        el.className = `marker marker--${feature.properties.htmlFile} ${feature.properties.htmlFile}`;
-        el.style.backgroundImage = `url(/images/map-marker-1.0.0.svg)`;
+        // Only create markers for features that have htmlFile and are not hidden
+        if (feature.properties.htmlFile && feature.properties.hide !== "hide") {
+          const el = document.createElement("div");
+          el.className = `marker marker--${feature.properties.htmlFile} ${feature.properties.htmlFile}`;
+          el.style.backgroundImage = `url(/images/map-marker-1.0.0.svg)`;
 
-        if (feature.properties.hide !== "hide") {
+          console.log(`Creating marker for: ${feature.properties.title} with htmlFile: ${feature.properties.htmlFile}`);
+
           /* eslint-disable-next-line no-unused-vars */
           const marker = new mapboxgl.Marker(el)
             .setLngLat(feature.geometry.coordinates)
