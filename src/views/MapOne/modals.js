@@ -40,22 +40,21 @@ export const modals = (map) => {
             if (projectContent) {
               projectContent.scrollTop = 0;
             }
+            
+            // Set up close button event listener after content is loaded
+            const popupClose = document.querySelector(".project-close-button");
+            console.log("popupClose", popupClose);
+            if (popupClose) {
+              popupClose.addEventListener("click", () => {
+                popup.remove();
+                console.log("popup closed");
+              });
+            }
           }, 250);
         })
         .catch((err) => {
           console.log("not so fetchy");
         });
-    });
-  });
-
-  // ———————————————————————————————————— Popup Close on Click —>
-  // Close popup when clicking on background outside popup itself
-  //
-  popup.on("open", () => {
-    const popupClose = document.querySelector(".project-close-button");
-    popupClose.addEventListener("click", () => {
-      popup.remove();
-      console.log("popup closed");
     });
   });
 };

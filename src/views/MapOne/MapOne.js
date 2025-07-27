@@ -133,7 +133,9 @@ const MapOne = () => {
       infoCards(map.current, geoFile, activeCat, firstLoad);
       setTimeout(() => {
         const introCard = document.querySelector(".info-card--intro");
-        introCard.classList.remove("info-card--hidden");
+        if (introCard) {
+          introCard.classList.remove("info-card--hidden");
+        }
         // console.log("render");
       }, 500);
     });
@@ -159,7 +161,9 @@ const MapOne = () => {
 
     setTimeout(() => {
       const introCard = document.querySelector(".info-card--intro");
-      introCard.classList.remove("info-card--hidden");
+      if (introCard) {
+        introCard.classList.remove("info-card--hidden");
+      }
       firstLoad = false;
     }, 1500);
     // eslint-disable-next-line react-hooks/exhaustive-deps
