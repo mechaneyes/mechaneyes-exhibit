@@ -65,6 +65,11 @@ img {
 
 // ————————————————————————————————————o————————————————————————————————————o Fifty 50 -->
 // ———————————————————————————————————— Fifty 50 —>
+
+.project-img {
+  padding-bottom: 24px;
+}
+
 .fifty-fifty {
   img {
     width: 100%;
@@ -76,15 +81,10 @@ img {
     height: auto;
   }
 
-  .project-img {
-    padding-bottom: 24px;
-  }
-
   &--flex {
     display: flex;
     gap: 20px;
     height: 100%;
-    padding-bottom: 20px;
 
     &:last-of-type {
       padding-bottom: 50px;
@@ -97,7 +97,6 @@ img {
     @include bp(mob) {
       flex-direction: column;
       gap: 10px;
-      margin-bottom: 10px;
 
       .project-img {
         justify-content: flex-start;
