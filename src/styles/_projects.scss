@@ -632,12 +632,6 @@
       position: relative;
     }
 
-    @include bp(mob) {
-      .caption + .project-img {
-        margin-bottom: 20px;
-      }
-    }
-
     .fifty-fifty img {
       margin: 0;
     }
