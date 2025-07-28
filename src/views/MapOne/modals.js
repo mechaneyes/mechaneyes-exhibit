@@ -88,7 +88,7 @@ export const modals = (map) => {
 
   // Function to open modal programmatically
   const openModal = () => {
-    let htmlFile = "stereoh-design"; // Temporarily hardcoded for dev
+    let htmlFile = "pager"; // Temporarily hardcoded for dev
 
     // Remove any existing popup
     if (currentPopup) {

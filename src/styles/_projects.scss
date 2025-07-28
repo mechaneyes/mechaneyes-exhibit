@@ -135,7 +135,6 @@
   }
 
   .gig {
-    max-height: 95%;
     padding-bottom: 40px;
     padding: 0 20px;
 
@@ -182,7 +181,6 @@
     width: 100%;
     height: auto;
     width: auto;
-    max-height: 80vh;
 
     @include bp(mob) {
       width: 100%;
