@@ -88,7 +88,7 @@ export const modals = (map) => {
 
   // Function to open modal programmatically
   const openModal = () => {
-    let htmlFile = "monolyth"; // Temporarily hardcoded for dev
+    let htmlFile = "mechaneyes"; // Temporarily hardcoded for dev
 
     // Remove any existing popup
     if (currentPopup) {

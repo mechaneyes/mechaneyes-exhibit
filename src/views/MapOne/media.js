@@ -1,42 +1,3 @@
-//TODO: TODO: Move these three functions to own file - https://trello.com/c/WebrWOBn/60-todo-move-these-three-functions-to-own-file
-// ————————————————————————————————————o————————————————————————————————————o Images+Video -->
-// ———————————————————————————————————— Img Sizing + Aspect Ratio —>
-// Programmatically setting widths + heights + aspect ratios of all
-// images on each individual page.
-const imagesLoad = () => {
-  var allImages = document.getElementsByTagName("img");
-  setTimeout(() => {
-    for (const img of allImages) {
-      img.width = img.naturalWidth;
-      img.height = img.naturalHeight;
-      img.style.aspectRatio = img.naturalWidth / img.naturalHeight;
-      img.parentElement.style.aspectRatio =
-        img.naturalWidth / img.naturalHeight;
-      // console.log('aspect', img.style.aspectRatio)
-      // console.log("allImages", allImages);
-    }
-  }, 100);
-};
-
-// ———————————————————————————————————— Video Sizing + Aspect Ratio —>
-// delay for loop until all videos are loaded
-//
-const videosLoad = () => {
-  const allVideos = document.getElementsByTagName("video");
-
-  setTimeout(() => {
-    for (let oneVid of allVideos) {
-      oneVid.width = oneVid.videoWidth;
-      oneVid.height = oneVid.videoHeight;
-      oneVid.style.aspectRatio = oneVid.videoWidth / oneVid.videoHeight;
-      oneVid.parentElement.style.aspectRatio =
-        oneVid.videoWidth / oneVid.videoHeight;
-      // console.log("aspect", oneVid.style.aspectRatio);
-      // console.log("oneVid", oneVid.width);
-    }
-  }, 100);
-};
-
 // ————————————————————————————————————o————————————————————————————————————o Play/Pause Videos -->
 // ————————————————————————————————————o Play/Pause Videos —>
 // also ... add/remove play buttons
@@ -182,9 +143,6 @@ export const handleMedia = () => {
   function incrementCounter() {
     counter++;
     if (counter === len) {
-      // console.log("images loaded");
-      imagesLoad();
-      videosLoad();
       videoPlayPause();
     }
   }
