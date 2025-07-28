@@ -37,7 +37,7 @@ export const modals = (map) => {
         })
         .then(() => {
           setTimeout(() => {
-            handleMedia();
+            // handleMedia();
             // Scroll modal content to top
             const modalContent = document.querySelector(".project-modal");
             const projectContent = document.querySelector(".project");

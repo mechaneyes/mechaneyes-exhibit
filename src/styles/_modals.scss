@@ -11,14 +11,14 @@ img {
 .project-img {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
   width: 100%;
   max-width: fit-content;
   height: 100%;
   max-height: 85vh;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 
   img {
     width: 100%;
@@ -77,8 +77,7 @@ img {
   }
 
   .project-img {
-    width: 50%;
-    width: calc(50% - 10px);
+    padding-bottom: 24px;
   }
 
   &--flex {
@@ -119,7 +118,7 @@ img {
 
   &--grid {
     display: grid;
-    grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 20px;
 
     @include bp(mob) {
