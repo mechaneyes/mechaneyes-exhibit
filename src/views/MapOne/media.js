@@ -56,6 +56,37 @@ const videoPlayPause = () => {
     let vidsBtnsArray = Array.from(vidBtnsCollection);
     // console.log('vidsArray', vidsArray.length)
 
+    // Add play button click handlers for all videos
+    for (let i = 0; i < vidsBtnsArray.length; i++) {
+      vidsBtnsArray[i].addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        // Find the corresponding video (should be the next sibling or within the same container)
+        const videoContainer = vidsBtnsArray[i].closest('.project-video');
+        const video = videoContainer ? videoContainer.querySelector('video') : null;
+        
+        if (video) {
+          // Pause all other videos first
+          vidsArray.forEach((vid) => {
+            if (vid !== video) {
+              vid.pause();
+            }
+          });
+          
+          // Hide all play buttons
+          vidsBtnsArray.forEach((btn) => {
+            btn.classList.remove("project-video__button--hidden");
+          });
+          
+          // Play the clicked video and hide its play button
+          video.volume = 0.3;
+          video.play();
+          vidsBtnsArray[i].classList.add("project-video__button--hidden");
+        }
+      });
+    }
+
     if (vidsBtnsArray.length > 1) {
       for (let i = 0; i < vidsArray.length; i++) {
         vidsArray[i].addEventListener("click", (event) => {
