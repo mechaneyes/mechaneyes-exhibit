@@ -88,7 +88,7 @@ export const modals = (map) => {
 
   // Function to open modal programmatically
   const openModal = () => {
-    let htmlFile = "whirligrid"; // Temporarily hardcoded for dev
+    let htmlFile = "munari"; // Temporarily hardcoded for dev
 
     // Remove any existing popup
     if (currentPopup) {
