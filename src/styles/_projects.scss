@@ -6,6 +6,9 @@
 
 // ————————————————————————————————————o————————————————————————————————————o Project -->
 // ———————————————————————————————————— Project —>
+
+
+
 .project {
   overflow-y: scroll;
   overflow-y: overlay;
@@ -41,10 +44,6 @@
     @include bp(lg) {
       width: 50%;
     }
-  }
-
-  @include bp(xxs) {
-    height: 100vh;
   }
 
   // ————————————————————————————————————o————————————————————————————————————o hero -->
@@ -209,20 +208,6 @@
     }
 
     align-items: flex-start;
-
-    &__video {
-      width: 100%;
-      height: auto;
-      width: auto;
-      max-height: 80vh;
-      max-width: 40vw;
-
-      @include bp(mob) {
-        width: 100%;
-        max-width: none;
-        max-height: none;
-      }
-    }
   }
 
   // ————————————————————————————————————o————————————————————————————————————o About -->
@@ -390,20 +375,6 @@
     .project-video {
       align-items: flex-start;
 
-      &__video {
-        width: 100%;
-        height: auto;
-        width: auto;
-        max-height: 80vh;
-        max-width: 40vw;
-
-        @include bp(mob) {
-          width: 100%;
-          max-width: none;
-          max-height: none;
-        }
-      }
-
       &--fairfield {
         width: auto;
         max-width: none;
@@ -443,7 +414,6 @@
   // ————————————————————————————————————o————————————————————————————————————o Monolyth -->
   // ———————————————————————————————————— Monolyth —>
   &--monolyth {
-
     @include bp(mob) {
       overflow-y: initial;
     }
