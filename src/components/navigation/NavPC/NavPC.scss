@@ -11,7 +11,8 @@
   transform: none;
 
   @include bp(mob) {
-    h2 {}
+    h2 {
+    }
   }
 
   @include bp(mid) {
@@ -34,11 +35,12 @@
     transition: all 0.2s ease-in-out;
 
     &--active {
-      // border-color: white;
+      // background: #0876fc;
     }
 
     &--title {
-      border-color: #0876fc;
+      // border-color: #3d95ff;
+      // border-color: white;
     }
 
     &:hover {

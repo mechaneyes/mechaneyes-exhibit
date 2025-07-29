@@ -124,6 +124,14 @@ img {
       @include bp(mob) {
         margin: 0;
       }
+
+      &--span-2 {
+        grid-column: span 2;
+
+        @include bp(mob) {
+          grid-column: span 1;
+        }
+      }
     }
   }
 }
