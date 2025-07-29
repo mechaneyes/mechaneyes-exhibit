@@ -419,7 +419,7 @@ img {
 
     @include bp(xs) {
       p {
-        padding: 0 120px 16px;
+        padding: 0 88px 16px;
       }
     }
 
@@ -442,7 +442,7 @@ img {
     }
 
     .logo-mechaneyes {
-      width: 200px;
+      width: 256px;
       padding-bottom: 32px;
 
       @include bp(mob) {

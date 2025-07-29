@@ -23,10 +23,10 @@ h3 {
 }
 
 p {
-  margin-top: 10px;
+  margin: 24px 0 0;
   font-family: cholla-wide, sans-serif;
   font-weight: 300;
-  font-size: 1.05rem;
+  /* font-size: 1.05rem; */
   line-height: 1.8;
 }
 
