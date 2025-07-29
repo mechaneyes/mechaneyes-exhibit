@@ -252,6 +252,7 @@ img {
       display: none;
       font-size: 1.3rem;
       color: #02ff87;
+      padding-top: 16px;
 
       @include bp(mobOnly) {
         display: block;
@@ -273,6 +274,9 @@ img {
     h4 {
       font-family: cholla-unicase, sans-serif;
       font-size: 1.8rem;
+      // color: #0d77ff;
+      color: #a5a5a5;
+      line-height: 1;
       margin: 0;
       padding-bottom: 16px;
     }
