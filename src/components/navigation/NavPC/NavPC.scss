@@ -31,6 +31,7 @@
     border: 1px solid #00fd70;
     border-radius: 32px;
     background: #001633;
+    transition: all 0.2s ease-in-out;
 
     &--active {
       // border-color: white;
@@ -38,6 +39,16 @@
 
     &--title {
       border-color: #0876fc;
+    }
+
+    &:hover {
+      border-color: white;
+      transition: all 0.2s ease-in-out;
+
+      h2 {
+        color: white;
+        transition: all 0.2s ease-in-out;
+      }
     }
   }
 
@@ -50,6 +61,7 @@
     font-size: 1.4rem;
     font-size: 1.25rem;
     color: #00fe70;
+    transition: all 0.2s ease-in-out;
 
     @include bp(md) {
       font-size: 1.3rem;
@@ -57,10 +69,12 @@
 
     &:hover {
       color: white;
+      transition: all 0.2s ease-in-out;
     }
 
     &--active {
       color: white;
+      transition: all 0.2s ease-in-out;
     }
 
     &--title {

@@ -71,7 +71,7 @@ a {
 p {
     @include cholla-unicase-reg;
     font-size: 1.3rem;
-    line-height: 1.3;
+    line-height: 1.4;
 
     &.ital {
         @include cholla-unicase-reg-it;
