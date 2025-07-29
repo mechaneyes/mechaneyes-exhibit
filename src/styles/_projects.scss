@@ -218,7 +218,7 @@
     height: -webkit-fill-available;
 
     h1 {
-      margin: 0 0 16px;
+      margin: 0 0 4px;
       font-size: 2.7rem;
     }
 
@@ -233,7 +233,12 @@
     }
 
     .about-page__social {
+      padding-top: 16px;
       margin-bottom: 0;
+
+      a {
+        color: #02ff87;
+      }
     }
   }
 

@@ -268,7 +268,7 @@ img {
       font-family: cholla-unicase, sans-serif;
       line-height: 1;
       margin: 0;
-      padding-bottom: 8px;
+      padding-bottom: 4px;
     }
 
     h4 {
@@ -278,7 +278,7 @@ img {
       color: #a5a5a5;
       line-height: 1;
       margin: 0;
-      padding-bottom: 16px;
+      padding-bottom: 12px;
     }
 
     p {
@@ -372,7 +372,7 @@ img {
     }
 
     @include bp(xs) {
-      padding: 24px 32px;
+      padding: 24px 32px 32px;
     }
 
     &--about {
