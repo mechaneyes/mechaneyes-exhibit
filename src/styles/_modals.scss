@@ -266,6 +266,12 @@ img {
     h3 {
       font-family: cholla-unicase, sans-serif;
       line-height: 1;
+      margin: 0;
+      padding-bottom: 8px;
+    }
+
+    p {
+      margin: 0;
     }
 
     // ———————————————————————————————————— Intro —>
@@ -355,8 +361,7 @@ img {
     }
 
     @include bp(xs) {
-      max-width: 900px;
-      padding: 10px 20px;
+      padding: 24px 32px;
     }
 
     &--about {
