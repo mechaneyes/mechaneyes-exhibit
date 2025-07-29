@@ -222,18 +222,16 @@
       font-size: 2.7rem;
     }
 
-    h3 {
-      margin: 0 0 16px;
-      font-size: 1.5rem;
-      line-height: 1.2;
+    h4.tag-line {
+      margin: 0 0 4px !important;
     }
 
     p {
       width: 100%;
+      padding-bottom: 16px;
     }
 
     .about-page__social {
-      padding-top: 16px;
       margin-bottom: 0;
 
       a {
