@@ -40,9 +40,9 @@ p:last-child {
   font-style: italic;
 }
 
-.intro-hamburger-div {
+.intro-explore-link {
   display: none;
-  padding: 12px 24px 0;
+  padding-top: 20px;
   font-family: cholla-unicase, sans-serif;
   font-weight: 500;
   font-size: 2.3rem;
@@ -50,9 +50,8 @@ p:last-child {
   text-align: center;
 }
 
-/* Show only on mobile devices (width less than 768px) */
 @media (max-width: 767px) {
-  .intro-hamburger-div {
+  .intro-explore-link {
     display: block;
   }
 }
