@@ -264,7 +264,6 @@ img {
     }
 
     h3 {
-      margin-bottom: 5px;
       font-family: cholla-unicase, sans-serif;
       line-height: 1;
     }
@@ -307,8 +306,17 @@ img {
       }
 
       .project--about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         height: 100%;
         border: 1px solid #02ff87;
+      }
+      .about-page {
+        @include bp(xs) {
+          padding: 16px;
+        }
       }
     }
 
