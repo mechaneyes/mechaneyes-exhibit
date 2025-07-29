@@ -84,13 +84,17 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
             liftTitle("Mechaneyes === Ray Weitzenberg");
           }}
         >
-          <h2 className="nav-headline nav-headline--mechaneyes nav-headline--active">
+          <h2 className="nav-headline nav-headline--mechaneyes nav-headline--title">
             Mechaneyes
           </h2>
         </button>
 
         <button
-          className="mecha-nav__item"
+          className={
+            activeCat === "photography"
+              ? "mecha-nav__item mecha-nav__item--active"
+              : "mecha-nav__item"
+            }
           onClick={() => {
             if (isIpad) {
               fly(0, 0, 13.6, 238);
@@ -113,7 +117,11 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
         </button>
 
         <button
-          className="mecha-nav__item"
+          className={
+            activeCat === "programming"
+              ? "mecha-nav__item mecha-nav__item--active"
+              : "mecha-nav__item"
+          }
           onClick={() => {
             if (isIpad) {
               fly(6, 30, 13.16, 300, true);
@@ -136,7 +144,11 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
         </button>
 
         <button
-          className="mecha-nav__item"
+          className={
+            activeCat === "generative"
+              ? "mecha-nav__item mecha-nav__item--active"
+              : "mecha-nav__item"
+          }
           onClick={() => {
             if (isIpad) {
               fly(18, 50, 14, 170);
@@ -159,7 +171,11 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
         </button>
 
         <button
-          className="mecha-nav__item"
+          className={
+            activeCat === "design"
+              ? "mecha-nav__item mecha-nav__item--active"
+              : "mecha-nav__item"
+          }
           onClick={() => {
             if (isIpad) {
               fly(13, 30, 14, 210);
@@ -182,7 +198,11 @@ let Nav = ({ map, geoFile, liftCat, activeCat, liftTitle }) => {
         </button>
 
         <button
-          className="mecha-nav__item"
+          className={
+            activeCat === "about"
+              ? "mecha-nav__item mecha-nav__item--active"
+              : "mecha-nav__item"
+          }
           onClick={() => {
             fly(28, 0, 15, 10);
             liftCat("about");

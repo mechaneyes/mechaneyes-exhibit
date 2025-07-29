@@ -28,16 +28,16 @@
     margin: 0 5px 0;
     padding: 5px 12px;
     cursor: pointer;
-    border: 1.5px solid #00fd70;
+    border: 1px solid #00fd70;
     border-radius: 32px;
     background: #001633;
 
-    &--title {
+    &--active {
       // border-color: white;
     }
 
-    &--about {
-      margin: 0;
+    &--title {
+      border-color: #0876fc;
     }
   }
 
