@@ -516,7 +516,7 @@
 
   // ————————————————————————————————————o————————————————————————————————————o So I Do -->
   // ———————————————————————————————————— So I Do —>
-  &--soido {
+  &--dialogues {
     .hero {
       img {
         bottom: 0;
@@ -533,18 +533,6 @@
           width: auto;
           height: 100%;
         }
-      }
-    }
-
-    .fifty-fifty--flex {
-      gap: 40px;
-    }
-
-    .project-img {
-      margin-bottom: 40px;
-
-      @include bp(mob) {
-        margin: 0;
       }
     }
   }
