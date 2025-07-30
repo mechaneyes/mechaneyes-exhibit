@@ -219,11 +219,11 @@
       "properties": {
         "interest": "design",
         "resort": "Homewood",
-        "title": "Stereoh",
+        "title": "Dialogues on Freedom",
         "description": "Ellis Peak",
         "elevation": "8744 ft / 2665 m",
         "url": "//rayweitzenberg.github.io/mechaneyes-projects/stereoh/",
-        "htmlFile": "stereoh-design"
+        "htmlFile": "dialogues-on-freedom"
       }
     },
     {
@@ -251,11 +251,11 @@
       "properties": {
         "interest": "design",
         "resort": "Homewood",
-        "title": "Pager",
+        "title": "Stereoh",
         "description": "Quail Lifthouse",
         "elevation": "8744 ft / 2665 m",
         "url": "https://www.peakbagger.com/peak.aspx?pid=26156",
-        "htmlFile": "pager"
+        "htmlFile": "stereoh-design"
       }
     },
     {
