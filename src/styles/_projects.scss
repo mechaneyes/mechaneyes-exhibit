@@ -524,14 +524,11 @@
     }
 
     @include bp(mob) {
-      overflow-y: scroll;
-      height: 100%;
-      height: fit-content;
-
       .hero {
         img {
           width: auto;
           height: 100%;
+          left: -250px;
         }
       }
     }
