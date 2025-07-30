@@ -591,20 +591,9 @@
   // ———————————————————————————————————— UNIQLO —>
   &--uniqlo {
     .hero {
-      background-color: white;
-
+      // background-color: white;
       img {
-        bottom: 30%;
-
-        @include bp(mob) {
-          bottom: 0%;
-        }
-
-        @include bp(lg) {
-          bottom: 30%;
-          width: 80%;
-          margin: auto;
-        }
+        bottom: 0;
       }
     }
   }
