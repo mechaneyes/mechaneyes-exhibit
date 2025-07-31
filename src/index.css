@@ -46,3 +46,21 @@ p {
 .App {
   height: 100vh;
 }
+
+/* iOS Status Bar Styling */
+@supports (-webkit-touch-callout: none) {
+  /* iOS-specific styles */
+  body {
+    /* Ensure the body background matches the status bar */
+    background-color: #001633;
+  }
+  
+  /* For PWA mode, ensure the status bar area is properly colored */
+  @media screen and (display-mode: standalone) {
+    body {
+      background-color: #001633;
+      /* Add padding for status bar on iOS */
+      padding-top: env(safe-area-inset-top);
+    }
+  }
+}
