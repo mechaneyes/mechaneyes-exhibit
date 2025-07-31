@@ -187,3 +187,20 @@ The first time I saw this vibration effect was at [Max Fish](https://maxfishbar.
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## PWA Setup
+
+This app is configured as a Progressive Web App (PWA) and can be added to the iPhone home screen. The PWA setup includes:
+
+- **Manifest.json**: Configured with proper app name, icons, and theme colors
+- **Service Worker**: Provides offline functionality and caching
+- **Apple Meta Tags**: Optimized for iOS home screen installation
+- **Touch Icons**: Multiple sizes for different iOS devices
+
+### To add to iPhone home screen:
+1. Open the website in Safari on your iPhone
+2. Tap the Share button (square with arrow)
+3. Scroll down and tap "Add to Home Screen"
+4. Customize the name if desired and tap "Add"
+
+The app will now appear on your home screen and launch in standalone mode (without Safari UI).
