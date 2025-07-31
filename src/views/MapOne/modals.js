@@ -25,7 +25,8 @@ export const modals = (map) => {
       });
 
       // ———————————————————————————————————— Fetch Project HTML —>
-      fetch(`/projects/${htmlFile}.html`)
+      const timestamp = new Date().getTime();
+      fetch(`/projects/${htmlFile}.html?timestamp=${timestamp}`)
         .then((response) => {
           return response.text();
         })

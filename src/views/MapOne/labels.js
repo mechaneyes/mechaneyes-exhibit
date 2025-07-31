@@ -54,7 +54,8 @@ export const labels = (map, geoFile) => {
     });
 
     // ———————————————————————————————————— Fetch Project HTML —>
-    fetch(`/projects/${htmlFile}.html`)
+    const timestamp = new Date().getTime();
+    fetch(`/projects/${htmlFile}.html?timestamp=${timestamp}`)
       .then((response) => response.text())
       .then((html) => {
         currentPopup
