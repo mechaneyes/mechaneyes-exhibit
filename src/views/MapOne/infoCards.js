@@ -27,7 +27,8 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
             em.className = `info-card info-card--hidden ${infoFileName}`;
 
             // ———————————————————————————————————— Fetch Info/About HTML —>
-            fetch(`/info/${infoFileName}.html`)
+            const timestamp = new Date().getTime();
+            fetch(`/info/${infoFileName}.html?timestamp=${timestamp}`)
               .then((response) => response.text())
               .then((html) => {
                 em.innerHTML = html;
