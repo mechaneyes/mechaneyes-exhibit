@@ -581,10 +581,6 @@
       img {
         bottom: 0;
       }
-
-      @include bp(mob) {
-        aspect-ratio: 16/4 !important;
-      }
     }
   }
 
