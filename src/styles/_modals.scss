@@ -114,7 +114,9 @@ img {
     gap: 20px;
 
     @include bp(mob) {
-      grid-template-columns: 100%;
+      // grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
       gap: 0;
     }
 
