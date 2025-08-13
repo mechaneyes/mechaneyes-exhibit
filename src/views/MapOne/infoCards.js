@@ -206,7 +206,8 @@ export let infoCards = (map, geoFile, activeCat, firstLoad) => {
         ) {
           let cardClose = document.querySelector(".info-card");
           if (cardClose) {
-            cardClose.onclick = function () {
+            cardClose.onclick = function (event) {
+              event.stopPropagation();
               allCards = document.querySelectorAll(".info-card");
               allCards.forEach((card) => {
                 card.classList.add("info-card--hidden");
