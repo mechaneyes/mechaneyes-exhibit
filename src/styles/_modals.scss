@@ -329,7 +329,7 @@ img {
         transform: translate(-50%, -50%) !important;
         width: 95vw;
         max-width: 1000px;
-        padding: 20px;
+        padding: 16px;
       }
 
       .project--about {
@@ -337,7 +337,7 @@ img {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100%;
+        height: auto;
         border: 1px solid #02ff87;
       }
       .about-page {
@@ -399,7 +399,7 @@ img {
     }
 
     .project--about {
-      padding: 25px;
+      padding: 24px;
       background-color: rgba(0, 22, 51, 0.8);
     }
   }
